@@ -1,5 +1,7 @@
 # JSKOS JSON Schemas
 
+[![Build Status](https://travis-ci.com/gbv/jskos-json-schemas.svg?branch=master)](https://travis-ci.com/gbv/jskos-json-schemas)
+
 > JSON Schemas and tests for the JSKOS data format.
 
 This repository contains [JSON Schemas](http://json-schema.org) and tests for the [JSKOS data format for knowledge organization systems](http://gbv.github.io/jskos/).
