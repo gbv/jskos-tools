@@ -1,0 +1,63 @@
+{
+  "$id": "https://gbv.github.io/jskos-json-schemas/resource.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "JSKOS Resource",
+  "type": "object",
+  "properties": {
+    "uri": {
+      "description": "primary globally unique identifier",
+      "type": "string",
+      "format": "uri"
+    },
+    "type": {
+      "description": "URIs of types",
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri",
+        "$comment": "Question: Only allow certain URIs here?"
+      }
+    },
+    "@context": {
+      "description": "reference to a JSON-LD context document",
+      "type": "string",
+      "format": "uri",
+      "$comment": "Question: Only allow https://gbv.github.io/jskos/context.json ?"
+    },
+    "created": {
+      "description": "date of creation",
+      "type": "string",
+      "format": "date"
+    },
+    "issued": {
+      "description": "date of publication",
+      "type": "string",
+      "format": "date"
+    },
+    "modified": {
+      "description": "date of last modification",
+      "type": "string",
+      "format": "date"
+    },
+    "creator": {
+      "description": "agent primarily responsible for creation of resource",
+      "type": "array",
+      "$comment": "TODO"
+    },
+    "contributor": {
+      "description": "agent responsible for making contributions to the resource",
+      "type": "array",
+      "$comment": "TODO"
+    },
+    "publisher": {
+      "description": "agent responsible for making the resource available",
+      "type": "array",
+      "$comment": "TODO"
+    },
+    "partOf": {
+      "description": "resources which this resource is part of (if no other field applies)",
+      "type": "array",
+      "$comment": "TODO"
+    }
+  }
+}

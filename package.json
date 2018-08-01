@@ -1,0 +1,17 @@
+{
+  "name": "jskos-json-schemas",
+  "version": "0.0.0",
+  "description": "JSON Schemas and tests for the JSKOS data format.",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Stefan Peters",
+  "devDependencies": {
+    "eslint": "^5.2.0",
+    "mocha": "^5.2.0"
+  },
+  "dependencies": {
+    "ajv": "^6.5.2"
+  }
+}

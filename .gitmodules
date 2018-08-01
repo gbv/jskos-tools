@@ -1,0 +1,3 @@
+[submodule "examples/jskos"]
+	path = examples/jskos
+	url = https://github.com/gbv/jskos.git
