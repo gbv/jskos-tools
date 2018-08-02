@@ -1,0 +1,9 @@
+{
+  "uri": "http://example.com/concept/1",
+  "created": "2018",
+  "narrower": [
+    {
+      "uri": "http://example.com/concept/1.1"
+    }
+  ]
+}
