@@ -2,7 +2,71 @@
   "$id": "https://gbv.github.io/jskos-json-schemas/resource.schema.json",
   "$schema": "http://json-schema.org/draft-07/schema#",
   "title": "JSKOS Resource",
+  "description": "all kinds of entities",
   "type": "object",
+  "definitions": {
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "pattern": "^https?://"
+    },
+    "non-negative-integer": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "percentage": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "date": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date"
+        },
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "type": "string",
+          "pattern": "^\\d{4}-[01]\\d$"
+        },
+        {
+          "type": "string",
+          "pattern": "^\\d{4}$"
+        }
+      ]
+    },
+    "list": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "null"
+          },
+          {
+            "type": "string"
+          }
+        ]
+      }
+    },
+    "set": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "null"
+          },
+          {
+            "$ref": "#"
+          }
+        ]
+      },
+      "$comment": "Question: Add sets of specific types?"
+    }
+  },
   "properties": {
     "uri": {
       "description": "primary globally unique identifier",
@@ -26,38 +90,31 @@
     },
     "created": {
       "description": "date of creation",
-      "type": "string",
-      "format": "date"
+      "$ref": "#/definitions/date"
     },
     "issued": {
       "description": "date of publication",
-      "type": "string",
-      "format": "date"
+      "$ref": "#/definitions/date"
     },
     "modified": {
       "description": "date of last modification",
-      "type": "string",
-      "format": "date"
+      "$ref": "#/definitions/date"
     },
     "creator": {
       "description": "agent primarily responsible for creation of resource",
-      "type": "array",
-      "$comment": "TODO"
+      "$ref": "#/definitions/set"
     },
     "contributor": {
       "description": "agent responsible for making contributions to the resource",
-      "type": "array",
-      "$comment": "TODO"
+      "$ref": "#/definitions/set"
     },
     "publisher": {
       "description": "agent responsible for making the resource available",
-      "type": "array",
-      "$comment": "TODO"
+      "$ref": "#/definitions/set"
     },
     "partOf": {
       "description": "resources which this resource is part of (if no other field applies)",
-      "type": "array",
-      "$comment": "TODO"
+      "$ref": "#/definitions/set"
     }
   }
 }
