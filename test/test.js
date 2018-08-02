@@ -61,32 +61,28 @@ describe("JSKOS JSON Schemas", function() {
   var validateConcept
 
   // Add schemas to validator
-  it("should be added to validator without errors", function() {
+  before("should be added to validator without errors", function() {
     assert.doesNotThrow(function() {
       ajv.addSchema(resourceSchema)
       ajv.addSchema(itemSchema)
       ajv.addSchema(conceptSchema)
-    })
-  })
-
-  // Compile schemas into validators
-  it("should compile without errors", function() {
-    assert.doesNotThrow(function() {
       validateConcept = ajv.compile(conceptSchema)
     })
   })
 
   // Validate concepts
-  it("should validate concepts (" + examples.concept.length + ")", function() {
-    for (let { object: concept, expected } of examples.concept) {
-      let result = validateConcept(concept)
-      let errorText =
-        !result
-          ? `Concept ${concept.uri} did not validate:
-          ${validateConcept.errors.reduce((t, c) => t + "-" + c.message + "\n", "")}`
-          : (expected ? "" : `Concept ${concept.uri} passed even though it shouldn't.`)
-      assert.equal(result, expected, errorText)
-    }
+  describe("Concepts", function() {
+    it("should validate concepts (" + examples.concept.length + ")", function() {
+      for (let { object: concept, expected } of examples.concept) {
+        let result = validateConcept(concept)
+        let errorText =
+          !result
+            ? `Concept ${concept.uri} did not validate:
+            ${validateConcept.errors.reduce((t, c) => t + "-" + c.message + "\n", "")}`
+            : (expected ? "" : `Concept ${concept.uri} passed even though it shouldn't.`)
+        assert.equal(result, expected, errorText)
+      }
+    })
   })
 
 })
