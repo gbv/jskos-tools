@@ -56,13 +56,13 @@ for (let file of files) {
   }
 }
 
-describe("JSKOS JSON Schemas", function() {
+describe("JSKOS JSON Schemas", () => {
 
-  var validateConcept
+  let validateConcept
 
   // Add schemas to validator
-  before("should be added to validator without errors", function() {
-    assert.doesNotThrow(function() {
+  before("should be added to validator without errors", () => {
+    assert.doesNotThrow(() => {
       ajv.addSchema(resourceSchema)
       ajv.addSchema(itemSchema)
       ajv.addSchema(conceptSchema)
@@ -71,14 +71,14 @@ describe("JSKOS JSON Schemas", function() {
   })
 
   // Validate concepts
-  describe("Concepts", function() {
-    it("should validate concepts (" + examples.concept.length + ")", function() {
+  describe("Concepts", () => {
+    it("should validate concepts (" + examples.concept.length + ")", () => {
       for (let { object: concept, expected } of examples.concept) {
         let result = validateConcept(concept)
         let errorText =
           !result
             ? `Concept ${concept.uri} did not validate:
-            ${validateConcept.errors.reduce((t, c) => t + "-" + c.message + "\n", "")}`
+            ${validateConcept.errors.reduce((t, c) => `${t}-${c.message}\n`, "")}`
             : (expected ? "" : `Concept ${concept.uri} passed even though it shouldn't.`)
         assert.equal(result, expected, errorText)
       }
