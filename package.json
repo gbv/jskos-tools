@@ -1,6 +1,6 @@
 {
   "name": "jskos-json-schemas",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "JSON Schemas and tests for the JSKOS data format.",
   "homepage": "https://github.com/gbv/jskos-json-schemas",
   "repository": {
