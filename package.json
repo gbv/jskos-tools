@@ -2,6 +2,14 @@
   "name": "jskos-json-schemas",
   "version": "0.0.0",
   "description": "JSON Schemas and tests for the JSKOS data format.",
+  "homepage": "https://github.com/gbv/jskos-json-schemas",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gbv/jskos-json-schemas.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gbv/jskos-json-schemas/issues"
+  },
   "main": "index.js",
   "scripts": {
     "test": "mocha"
