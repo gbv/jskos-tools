@@ -24,7 +24,8 @@ for (let type of types) {
         let object = JSON.parse(fs.readFileSync(file))
         examples[type].push({
           object,
-          expected
+          expected,
+          file
         })
       } catch(error) {
         console.log("Unable to parse file", file)
@@ -49,7 +50,8 @@ for (let file of files) {
     let object = JSON.parse(fs.readFileSync(file))
     examples[type].push({
       object,
-      expected: true
+      expected: true,
+      file
     })
   } catch(error) {
     console.log("Unable to parse file", file)
@@ -72,8 +74,8 @@ describe("JSKOS JSON Schemas", () => {
 
   // Validate concepts
   describe("Concepts", () => {
-    it("should validate concepts (" + examples.concept.length + ")", () => {
-      for (let { object: concept, expected } of examples.concept) {
+    for (let { object: concept, expected, file } of examples.concept) {
+      it(`should validate concepts (${file})`, () => {
         let result = validateConcept(concept)
         let errorText =
           !result
@@ -81,8 +83,8 @@ describe("JSKOS JSON Schemas", () => {
             ${validateConcept.errors.reduce((t, c) => `${t}-${c.message}\n`, "")}`
             : (expected ? "" : `Concept ${concept.uri} passed even though it shouldn't.`)
         assert.equal(result, expected, errorText)
-      }
-    })
+      })
+    }
   })
 
 })
