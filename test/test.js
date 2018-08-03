@@ -4,9 +4,14 @@ const fs = require("fs")
 const assert = require("assert")
 const ajv = new require("ajv")({ extendRefs: true })
 
-const resourceSchema = require("../schemas/resource.schema.json")
-const itemSchema = require("../schemas/item.schema.json")
-const conceptSchema = require("../schemas/concept.schema.json")
+let schemas = {
+  resource: require("../schemas/resource.schema.json"),
+  item: require("../schemas/item.schema.json"),
+  concept: require("../schemas/concept.schema.json"),
+  scheme: require("../schemas/scheme.schema.json"),
+  mapping: require("../schemas/mapping.schema.json"),
+  occurrence: require("../schemas/occurrence.schema.json")
+}
 
 let examples = {
   concept: [],
@@ -60,32 +65,42 @@ for (let file of files) {
 
 describe("JSKOS JSON Schemas", () => {
 
-  let validateConcept
+  let validate = {}
 
   // Add schemas to validator
   before("should be added to validator without errors", () => {
     assert.doesNotThrow(() => {
-      ajv.addSchema(resourceSchema)
-      ajv.addSchema(itemSchema)
-      ajv.addSchema(conceptSchema)
-      validateConcept = ajv.compile(conceptSchema)
+      ajv.addSchema(schemas.resource)
+      ajv.addSchema(schemas.item)
+      for (let type of types) {
+        validate[type] = ajv.compile(schemas[type])
+      }
     })
   })
 
-  // Validate concepts
-  describe("Concepts", () => {
-    for (let { object: concept, expected, file } of examples.concept) {
-      it(`should validate concepts (${file})`, () => {
-        let result = validateConcept(concept)
-        let errorText =
-          !result
-            ? `Concept ${concept.uri} did not validate:
-            ${validateConcept.errors.reduce((t, c) => `${t}-${c.message}\n`, "")}`
-            : (expected ? "" : `Concept ${concept.uri} passed even though it shouldn't.`)
-        assert.equal(result, expected, errorText)
-      })
-    }
-  })
+  // Validate difference object types
+  for (let type of types) {
+    let typePlural = type + "s"
+    describe(typePlural, () => {
+      for (let { object, expected, file } of examples[type]) {
+        it(`should validate ${typePlural} (${file})`, () => {
+          // Support for arrays of objects
+          let objects = [object]
+          if (Array.isArray(object)) {
+            objects = object
+          }
+          for (let object of objects) {
+            let result = validate[type](object)
+            let errorText =
+              !result
+                ? `${type} ${object.uri} did not validate:
+                ${validate[type].errors.reduce((t, c) => `${t}-${c.message}\n`, "")}`
+                : (expected ? "" : `${type} ${object.uri} passed even though it shouldn't.`)
+            assert.equal(result, expected, errorText)
+          }
+        })
+      }
+    })
+  }
 
 })
-

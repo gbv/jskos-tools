@@ -1,0 +1,14 @@
+{
+  "$id": "https://gbv.github.io/jskos-json-schemas/occurrence.schema.json",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "JSKOS Concept Occurrence",
+  "description": "counts of concept uses",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "resource.schema.json"
+    }
+  ],
+  "$comment": "TODO",
+  "properties": {}
+}
