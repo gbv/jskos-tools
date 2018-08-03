@@ -11,12 +11,30 @@ Note that currently all of the schemas are incomplete or non-existent.
 ## Install
 
 ```bash
+npm i jskos-json-schemas
+```
+
+## Usage
+
+```javascript
+const { validate } = require("jskos-json-schemas")
+
+let concept = {
+  ...
+}
+
+validate.concept(concept) // returns true or false
+```
+
+## Build
+
+```bash
 git clone --recursive https://github.com/gbv/jskos-json-schemas.git
 cd jskos-json-schemas/
 npm install
 ```
 
-## Usage
+## Test
 
 ```bash
 npm test
