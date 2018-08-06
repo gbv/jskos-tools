@@ -6,12 +6,14 @@ let schemas = {
   concept: require("./schemas/concept.schema.json"),
   scheme: require("./schemas/scheme.schema.json"),
   mapping: require("./schemas/mapping.schema.json"),
-  occurrence: require("./schemas/occurrence.schema.json")
+  occurrence: require("./schemas/occurrence.schema.json"),
+  conceptBundle: require("./schemas/conceptBundle.schema.json")
 }
 let types = Object.keys(schemas)
 
 ajv.addSchema(schemas.resource)
 ajv.addSchema(schemas.item)
+ajv.addSchema(schemas.conceptBundle)
 let validate = {}
 for (let type of types) {
   validate[type] = ajv.compile(schemas[type])
