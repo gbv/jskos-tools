@@ -44,5 +44,3 @@ npm install
 ```bash
 npm test
 ```
-
-Note: Tests currently fail due to a failing example in [https://github.com/gbv/jskos](https://github.com/gbv/jskos).
