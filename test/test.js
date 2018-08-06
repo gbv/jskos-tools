@@ -79,7 +79,7 @@ describe("JSKOS JSON Schemas", () => {
               !result
                 ? `${type} did not validate:
                 ${validate[type].errors.reduce((t, c) => `${t}- ${c.dataPath} ${c.message}\n`, "")}`
-                : (expected ? "" : `${type} ${object.uri} passed even though it shouldn't.`)
+                : (expected ? "" : `${type} passed even though it shouldn't.`)
             assert.equal(result, expected, errorText)
           }
         })
