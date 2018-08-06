@@ -14,9 +14,9 @@ let schemas = {
 }
 let types = Object.keys(schemas)
 
-ajv.addSchema(schemas.resource)
-ajv.addSchema(schemas.item)
-ajv.addSchema(schemas.conceptBundle)
+for (let type of types) {
+  ajv.addSchema(schemas[type])
+}
 let validate = {}
 for (let type of types) {
   validate[type] = ajv.compile(schemas[type])

@@ -4,6 +4,21 @@
   "title": "JSKOS Concept Mapping",
   "description": "A mapping represents a mapping between concepts of two concept schemes. It consists two concept bundles with additional metadata not fully defined yet.",
   "type": "object",
+  "definitions": {
+    "set": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "null"
+          },
+          {
+            "$ref": "#"
+          }
+        ]
+      }
+    }
+  },
   "allOf": [
     {
       "$ref": "item.schema.json"

@@ -4,52 +4,61 @@
   "title": "JSKOS Concept",
   "description": "entities from a knowledge organization system",
   "type": "object",
+  "definitions": {
+    "set": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "null"
+          },
+          {
+            "$ref": "#"
+          }
+        ]
+      }
+    }
+  },
   "allOf": [
     {
       "$ref": "item.schema.json"
     }
   ],
-  "$comment": "TODO: previous, next, adjust sets to more specific ones",
+  "$comment": "TODO: previous, next",
   "properties": {
     "narrower": {
       "description": "narrower concepts",
-      "$ref": "resource.schema.json#/definitions/set",
-      "$comment": "Currently allows non-concepts to be part of the set."
+      "$ref": "#/definitions/set"
     },
     "broader": {
       "description": "broader concepts",
-      "$ref": "resource.schema.json#/definitions/set",
-      "$comment": "Currently allows non-concepts to be part of the set."
+      "$ref": "#/definitions/set"
     },
     "related": {
       "description": "generally related concepts",
-      "$ref": "resource.schema.json#/definitions/set",
-      "$comment": "Currently allows non-concepts to be part of the set."
+      "$ref": "#/definitions/set"
     },
     "ancestors": {
       "description": "list of ancestors, possibly up to a top concept",
-      "$ref": "resource.schema.json#/definitions/set",
-      "$comment": "Currently allows non-concepts to be part of the set."
+      "$ref": "#/definitions/set"
     },
     "inScheme": {
       "description": "concept schemes or URI of the concept schemes",
-      "$ref": "resource.schema.json#/definitions/set",
-      "$comment": "Currently allows non-schemes to be part of the set. Question: Should a list of strings be allowed as well?"
+      "$ref": "scheme.schema.json#/definitions/set",
+      "$comment": "Question: Should a list of strings be allowed as well?"
     },
     "topConceptOf": {
       "description": "concept schemes or URI of the concept schemes",
-      "$ref": "resource.schema.json#/definitions/set",
-      "$comment": "Currently allows non-schemes to be part of the set. Question: Should a list of strings be allowed as well?"
+      "$ref": "scheme.schema.json#/definitions/set",
+      "$comment": "Question: Should a list of strings be allowed as well?"
     },
     "mappings": {
       "description": "mappings from and/or to this concept",
-      "$ref": "resource.schema.json#/definitions/set",
-      "$comment": "Currently allows non-mappings to be part of the set."
+      "$ref": "mapping.schema.json#/definitions/set"
     },
     "occurrences": {
       "description": "occurrences with this concept",
-      "$ref": "resource.schema.json#/definitions/set",
-      "$comment": "Currently allows non-occurrences to be part of the set."
+      "$ref": "occurrence.schema.json#/definitions/set"
     }
   }
 }

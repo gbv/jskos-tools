@@ -4,6 +4,21 @@
   "title": "JSKOS Distribution",
   "description": "available forms to access the content of an item",
   "type": "object",
+  "definitions": {
+    "set": {
+      "type": "array",
+      "items": {
+        "anyOf": [
+          {
+            "type": "null"
+          },
+          {
+            "$ref": "#"
+          }
+        ]
+      }
+    }
+  },
   "allOf": [
     {
       "$ref": "item.schema.json"

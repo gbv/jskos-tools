@@ -63,8 +63,7 @@
             "$ref": "#"
           }
         ]
-      },
-      "$comment": "Question: Add sets of specific types?"
+      }
     }
   },
   "properties": {

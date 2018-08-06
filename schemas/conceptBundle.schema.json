@@ -8,18 +8,15 @@
   "properties": {
     "memberSet": {
       "description": "concepts in this bundle (unordered)",
-      "$ref": "resource.schema.json#/definitions/set",
-      "$comment": "Currently allows non-concepts to be part of the set."
+      "$ref": "concept.schema.json#/definitions/set"
     },
     "memberList": {
       "description": "concepts in this bundle (ordered)",
-      "$ref": "resource.schema.json#/definitions/set",
-      "$comment": "Currently allows non-concepts to be part of the set."
+      "$ref": "concept.schema.json#/definitions/set"
     },
     "memberChoice": {
       "description": "concepts in this bundle to choose from",
-      "$ref": "resource.schema.json#/definitions/set",
-      "$comment": "Currently allows non-concepts to be part of the set."
+      "$ref": "concept.schema.json#/definitions/set"
     }
   },
   "oneOf": [
