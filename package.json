@@ -1,14 +1,14 @@
 {
-  "name": "jskos-json-schemas",
+  "name": "jskos-validation",
   "version": "0.0.1",
-  "description": "JSON Schemas and tests for the JSKOS data format.",
-  "homepage": "https://github.com/gbv/jskos-json-schemas",
+  "description": "JSON Schemas and tests for validating JSKOS data format.",
+  "homepage": "https://github.com/gbv/jskos-validation",
   "repository": {
     "type": "git",
-    "url": "https://github.com/gbv/jskos-json-schemas.git"
+    "url": "https://github.com/gbv/jskos-validation.git"
   },
   "bugs": {
-    "url": "https://github.com/gbv/jskos-json-schemas/issues"
+    "url": "https://github.com/gbv/jskos-validation/issues"
   },
   "main": "index.js",
   "scripts": {
