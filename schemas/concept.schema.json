@@ -9,7 +9,7 @@
       "$ref": "item.schema.json"
     }
   ],
-  "$comment": "TODO",
+  "$comment": "TODO: previous, next, adjust sets to more specific ones",
   "properties": {
     "narrower": {
       "description": "narrower concepts",

@@ -9,6 +9,6 @@
       "$ref": "item.schema.json"
     }
   ],
-  "$comment": "TODO",
+  "$comment": "TODO: mappings, distribution, fromScheme, toScheme, extent, license",
   "properties": {}
 }

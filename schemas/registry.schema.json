@@ -9,6 +9,6 @@
       "$ref": "item.schema.json"
     }
   ],
-  "$comment": "TODO",
+  "$comment": "TODO: concepts, schemes, types, mappings, registries, concordances, occurrences, extent, languages, license",
   "properties": {}
 }

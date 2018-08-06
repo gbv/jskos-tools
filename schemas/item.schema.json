@@ -9,7 +9,7 @@
       "$ref": "resource.schema.json"
     }
   ],
-  "$comment": "TODO",
+  "$comment": "TODO: prefLabel, altLabel, hiddenLabel, scopeNote, definition, example, historyNote, editorialNote, changeNote, startDate, endDate, relatedDate, location, subject, subjectOf, depiction",
   "properties": {
     "url": {
       "description": "",

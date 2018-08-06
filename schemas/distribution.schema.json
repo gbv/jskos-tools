@@ -9,6 +9,6 @@
       "$ref": "item.schema.json"
     }
   ],
-  "$comment": "TODO",
+  "$comment": "TODO: download, mimetype, format",
   "properties": {}
 }
