@@ -9,6 +9,47 @@
       "$ref": "item.schema.json"
     }
   ],
-  "$comment": "TODO",
-  "properties": {}
+  "$comment": "TODO: types, languages, adjust sets to more specific ones",
+  "properties": {
+    "topConcepts": {
+      "description": "top concepts of the scheme",
+      "$ref": "resource.schema.json#/definitions/set",
+      "$comment": "Currently allows non-concepts to be part of the set."
+    },
+    "versionOf": {
+      "description": "concept scheme which this scheme is a version or edition of",
+      "$ref": "resource.schema.json#/definitions/set",
+      "$comment": "Currently allows non-schemes to be part of the set."
+    },
+    "namespace": {
+      "description": "URI namespace that all concepts URIs are expected to start with",
+      "type": "string",
+      "format": "uri"
+    },
+    "concepts": {
+      "description": "JSKOS API concepts endpoint returning all concepts in this scheme",
+      "anyOf": [
+        {
+          "$ref": "resource.schema.json#/definitions/url"
+        },
+        {
+          "$ref": "resource.schema.json#/definitions/set",
+          "$comment": "Currently allows non-concepts to be part of the set."
+        }
+      ]
+    },
+    "distributions": {
+      "description": "Distributions to access the content of the concept scheme",
+      "$ref": "resource.schema.json#/definitions/set",
+      "$comment": "Currently allows non-distributions to be part of the set."
+    },
+    "extent": {
+      "description": "Size of the concept scheme",
+      "type": "string"
+    },
+    "license": {
+      "description": "Licenses which the full scheme can be used under",
+      "$ref": "resource.schema.json#/definitions/set"
+    }
+  }
 }
