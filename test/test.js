@@ -2,26 +2,14 @@ const glob = require("glob")
 const fs = require("fs")
 
 const assert = require("assert")
-const ajv = new require("ajv")({ extendRefs: true })
+const { validate } = require("../index")
 
-let schemas = {
-  resource: require("../schemas/resource.schema.json"),
-  item: require("../schemas/item.schema.json"),
-  concept: require("../schemas/concept.schema.json"),
-  scheme: require("../schemas/scheme.schema.json"),
-  mapping: require("../schemas/mapping.schema.json"),
-  occurrence: require("../schemas/occurrence.schema.json")
-}
+let types = ["resource", "item", "concept", "scheme", "mapping", "concordance", "registry", "distribution", "occurrence", "conceptBundle"]
+let examples = {}
 
-let examples = {
-  concept: [],
-  scheme: [],
-  mapping: [],
-  occurrence: []
-}
-let types = Object.keys(examples)
 // Import local example objects
 for (let type of types) {
+  examples[type] = []
   for (let expected of [true, false]) {
     let files = glob.sync(`examples/${type}/${expected ? "pass" : "fail"}/*.json`)
     for (let file of files) {
@@ -65,17 +53,13 @@ for (let file of files) {
 
 describe("JSKOS JSON Schemas", () => {
 
-  let validate = {}
-
-  // Add schemas to validator
-  before("should be added to validator without errors", () => {
-    assert.doesNotThrow(() => {
-      ajv.addSchema(schemas.resource)
-      ajv.addSchema(schemas.item)
-      for (let type of types) {
-        validate[type] = ajv.compile(schemas[type])
-      }
-    })
+  // Check if all validators exist
+  describe("validators", () => {
+    for (let type of types) {
+      it(`should exist for ${type}`, () => {
+        assert.equal(validate[type] != null, true, `validator for ${type} does not exist`)
+      })
+    }
   })
 
   // Validate difference object types
@@ -93,7 +77,7 @@ describe("JSKOS JSON Schemas", () => {
             let result = validate[type](object)
             let errorText =
               !result
-                ? `${type} ${object.uri} did not validate:
+                ? `${type} did not validate:
                 ${validate[type].errors.reduce((t, c) => `${t}- ${c.dataPath} ${c.message}\n`, "")}`
                 : (expected ? "" : `${type} ${object.uri} passed even though it shouldn't.`)
             assert.equal(result, expected, errorText)
