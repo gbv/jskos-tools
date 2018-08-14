@@ -31,6 +31,8 @@ validate.concept(concept) // returns true or false
 // ...
 ```
 
+Directory `bin` also contains a command line script for validation.
+
 ## Build
 
 ```bash
