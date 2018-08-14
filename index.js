@@ -1,16 +1,16 @@
 const ajv = new require("ajv")({ extendRefs: true })
 
 let schemas = {
-  resource: require("./schemas/resource.schema.json"),
-  item: require("./schemas/item.schema.json"),
-  concept: require("./schemas/concept.schema.json"),
-  scheme: require("./schemas/scheme.schema.json"),
-  mapping: require("./schemas/mapping.schema.json"),
-  concordance: require("./schemas/concordance.schema.json"),
-  registry: require("./schemas/registry.schema.json"),
-  distribution: require("./schemas/distribution.schema.json"),
-  occurrence: require("./schemas/occurrence.schema.json"),
-  conceptBundle: require("./schemas/conceptBundle.schema.json")
+  resource: require("./jskos/schemas/resource.schema.json"),
+  item: require("./jskos/schemas/item.schema.json"),
+  concept: require("./jskos/schemas/concept.schema.json"),
+  scheme: require("./jskos/schemas/scheme.schema.json"),
+  mapping: require("./jskos/schemas/mapping.schema.json"),
+  concordance: require("./jskos/schemas/concordance.schema.json"),
+  registry: require("./jskos/schemas/registry.schema.json"),
+  distribution: require("./jskos/schemas/distribution.schema.json"),
+  occurrence: require("./jskos/schemas/occurrence.schema.json"),
+  conceptBundle: require("./jskos/schemas/conceptBundle.schema.json")
 }
 let types = Object.keys(schemas)
 
