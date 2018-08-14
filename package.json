@@ -17,10 +17,10 @@
   "author": "Stefan Peters",
   "devDependencies": {
     "eslint": "^5.2.0",
+    "glob": "^7.1.2",
     "mocha": "^5.2.0"
   },
   "dependencies": {
-    "ajv": "^6.5.2",
-    "glob": "^7.1.2"
+    "ajv": "^6.5.2"
   }
 }
