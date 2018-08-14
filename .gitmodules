@@ -1,4 +1,4 @@
-[submodule "examples/jskos"]
-	path = examples/jskos
+[submodule "jskos"]
+	path = jskos
 	url = https://github.com/gbv/jskos.git
-	branch = stefandesu-patch-1
+    branch = master

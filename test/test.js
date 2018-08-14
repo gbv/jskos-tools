@@ -27,7 +27,7 @@ for (let type of types) {
   }
 }
 // Import remote example objects
-let files = glob.sync("examples/jskos/examples/*.json")
+let files = glob.sync("jskos/examples/*.json")
 for (let file of files) {
   let type = null
   for (let possibleType of types) {
