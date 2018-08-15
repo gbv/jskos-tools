@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-const fs = require('fs')
-const path = require('path')
-const { validate } = require(path.join(__dirname, '..', 'index.js'))
+const fs = require("fs")
+const path = require("path")
+const { validate } = require(path.join(__dirname, "..", "index.js"))
 const args = process.argv.slice(2)
 
 function usage(message) {
@@ -18,7 +18,7 @@ if (!args.length) {
   usage()
 }
 
-let type = 'item'
+let type = "item"
 
 if (args[0] in validate) {
   type = args.shift()
@@ -32,7 +32,7 @@ args.forEach( (file, i) => {
   let data = JSON.parse(fs.readFileSync(file))
   let objects = Array.isArray(data) ? data : [data]
   let status = objects.every(obj => validate[type](obj))
-  
+
   console.log(`${status ? "ok" : "not ok"} ${i+1} ${file}`)
   fail += status
 })
