@@ -2,7 +2,7 @@ const glob = require("glob")
 const fs = require("fs")
 
 const assert = require("assert")
-const { validate } = require("../index")
+const validate = require("../lib/validate")
 
 let types = ["resource", "item", "concept", "scheme", "mapping", "concordance", "registry", "distribution", "occurrence", "conceptBundle"]
 let examples = {}
