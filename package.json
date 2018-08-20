@@ -10,6 +10,7 @@
   "bugs": {
     "url": "https://github.com/gbv/jskos-tools/issues"
   },
+  "license": "MIT",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
@@ -21,6 +22,7 @@
     "mocha": "^5.2.0"
   },
   "dependencies": {
-    "ajv": "^6.5.2"
+    "ajv": "^6.5.2",
+    "simple-sha1": "^2.1.1"
   }
 }

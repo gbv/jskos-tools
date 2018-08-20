@@ -1,3 +1,4 @@
 const validate = require("./lib/validate")
+const identifiers = require("./lib/identifiers")
 
-module.exports = { validate }
+module.exports = Object.assign({ validate }, identifiers)
