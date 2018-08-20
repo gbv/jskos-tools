@@ -20,7 +20,7 @@ This repository contains tools for working with the [JSKOS data format for knowl
     - [compare](#compare)
     - [isConcept](#isconcept)
     - [isScheme](#isscheme)
-    - [isContainedIn](#iscontainedIn)
+    - [isContainedIn](#iscontainedin)
     - [sortConcepts](#sortconcepts)
     - [sortSchemes](#sortschemes)
 - [Build](#build)
