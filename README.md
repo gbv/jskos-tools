@@ -23,6 +23,7 @@ This repository contains tools for working with the [JSKOS data format for knowl
     - [isContainedIn](#iscontainedin)
     - [sortConcepts](#sortconcepts)
     - [sortSchemes](#sortschemes)
+    - [minifyMapping](#minifymapping)
 - [Build](#build)
 - [Test](#test)
 - [Maintainers](#maintainers)
@@ -142,6 +143,13 @@ Sorts a list of schemes by their German prefLabel, then URI. Returns a copy of t
 
 ```javascript
 jskos.sortSchemes(schemes)
+```
+
+#### minifyMapping
+Removes unnecessary properties from mapping before export or saving. In particular, all properties except for `to`, `from`, `toScheme`, `fromScheme`, `type`, and `creator` on the mapping will be removed, and all properties except for `uri` and `notation` on concepts and schemes will be removed.
+
+```javascript
+let newMapping = jskos.minifyMapping(mapping)
 ```
 
 

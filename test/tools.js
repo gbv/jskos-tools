@@ -144,4 +144,44 @@ describe("Tools", () => {
     assert.ok(sortedSchemes[2].uri == "2")
   })
 
+  it("minifyMapping", () => {
+    let mapping = {
+      from: {
+        memberSet: [
+          {
+            uri: "test",
+            test: "hello world"
+          }
+        ]
+      },
+      to: {
+        memberChoice: [
+          {
+            notation: ["TEST2"],
+            test: "hello world"
+          }
+        ]
+      },
+      fromScheme: {
+        test: "hello world"
+      },
+      toScheme: {
+        test: "hello world"
+      },
+      type: ["test"],
+      test: "hello world"
+    }
+    let newMapping = tools.minifyMapping(mapping)
+    // Check if test properties got removed
+    assert.ok(!newMapping.test)
+    assert.ok(!newMapping.from.memberSet[0].test)
+    assert.ok(!newMapping.to.memberChoice[0].test)
+    assert.ok(!newMapping.fromScheme.test)
+    assert.ok(!newMapping.toScheme.test)
+    // Check if important properties remained
+    assert.ok(newMapping.type && newMapping.type.length)
+    assert.equal(newMapping.from.memberSet[0].uri, mapping.from.memberSet[0].uri)
+    assert.equal(newMapping.to.memberChoice[0].uri, mapping.to.memberChoice[0].uri)
+  })
+
 })
