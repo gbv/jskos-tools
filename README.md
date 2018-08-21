@@ -12,7 +12,11 @@ This repository contains tools for working with the [JSKOS data format for knowl
 - [Install](#install)
 - [Usage](#usage)
   - [Validation](#validation)
+    - [validate](#validate)
   - [Mapping Identifiers](#mapping-identifiers)
+    - [mappingContentIdentifier](#mappingcontentidentifier)
+    - [mappingMembersIdentifier](#mappingmembersidentifier)
+    - [addMappingIdentifiers](#addmappingidentifiers)
   - [Tools](#tools)
     - [clean](#clean)
     - [copyDeep](#copydeep)
@@ -44,6 +48,8 @@ const jskos = require("jskos-tools")
 
 ### Validation
 
+#### validate
+
 ```javascript
 let concept = {
   ...
@@ -63,12 +69,26 @@ Directory `bin` also contains a command line script for validation.
 let mapping = {
   ...
 }
+```
 
-// mappingContentIdentifier starts with urn:jskos:mapping:content: and takes concepts and type into consideration.
+#### mappingContentIdentifier
+`mappingContentIdentifier` starts with urn:jskos:mapping:content: and takes concepts and type into consideration. It uses the `mappingContent` function to get relevant properties from the mapping.
+
+```javascript
 let contentIdentifier = jskos.mappingContentIdentifier(mapping)
-// mappingMembersIdentifier starts with urn:jskos:mapping:members: and only takes concepts into consideration.
+```
+
+#### mappingMembersIdentifier
+`mappingMembersIdentifier` starts with urn:jskos:mapping:members: and only takes concepts into consideration. It uses the `mappingMembers` function to get relevant properties from the mapping.
+
+```javascript
 let membersIdentifier = jskos.mappingMembersIdentifier(mapping)
-// addMappingIdentifiers creates a new mapping with property "identifiers", containing mappingContentIdentifier and mappingMembersIdentifier.
+```
+
+#### addMappingIdentifiers
+`addMappingIdentifiers` creates a new mapping with property "identifiers", containing mappingContentIdentifier and mappingMembersIdentifier.
+
+```javascript
 let mappingWithIdentifiers = jskos.addMappingIdentifiers(mapping)
 ```
 
