@@ -115,4 +115,12 @@ describe("JSKOS Mapping Identifiers", () => {
     }
   })
 
+  it("should compare mappings correctly", () => {
+    assert.ok(identifiers.compareMappings(examples[0].mapping, examples[0].mapping))
+    assert.ok(!identifiers.compareMappings(examples[0].mapping, examples[1].mapping))
+    assert.ok(!identifiers.compareMappings(examples[0].mapping, examples[2].mapping))
+    assert.ok(identifiers.compareMappingMembers(examples[0].mapping, examples[1].mapping))
+    assert.ok(!identifiers.compareMappingMembers(examples[0].mapping, examples[2].mapping))
+  })
+
 })

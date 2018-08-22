@@ -17,6 +17,8 @@ This repository contains tools for working with the [JSKOS data format for knowl
     - [mappingContentIdentifier](#mappingcontentidentifier)
     - [mappingMembersIdentifier](#mappingmembersidentifier)
     - [addMappingIdentifiers](#addmappingidentifiers)
+    - [compareMappings](#comparemappings)
+    - [compareMappingMembers](#comparemappingmembers)
   - [Tools](#tools)
     - [clean](#clean)
     - [copyDeep](#copydeep)
@@ -90,6 +92,22 @@ let membersIdentifier = jskos.mappingMembersIdentifier(mapping)
 
 ```javascript
 let mappingWithIdentifiers = jskos.addMappingIdentifiers(mapping)
+```
+
+#### compareMappings
+`compareMappings` compares two mappings based on their `mappingContentIdentifier`.
+
+```javascript
+if (jskos.compareMappings(mapping1, mapping2)) { ... }
+```
+
+Aliases: `compareMappingContent`
+
+#### compareMappingMembers
+`compareMappingMembers` compares two mappings based on their `mappingMembersIdentifier`.
+
+```javascript
+if (jskos.compareMappingMembers(mapping1, mapping2)) { ... }
 ```
 
 ### Tools
