@@ -188,6 +188,9 @@ describe("Tools", () => {
     assert.ok(mapping.fromScheme.test)
     assert.ok(mapping.toScheme.test)
     assert.ok(mapping.test)
+    // Check if null value gets converted to empty object
+    let emptyNewMapping = tools.minifyMapping({})
+    assert.equal(Object.keys(emptyNewMapping).length, 0, "minifyMapping added properties to empty mapping")
   })
 
 })
