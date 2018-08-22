@@ -182,6 +182,12 @@ describe("Tools", () => {
     assert.ok(newMapping.type && newMapping.type.length)
     assert.equal(newMapping.from.memberSet[0].uri, mapping.from.memberSet[0].uri)
     assert.equal(newMapping.to.memberChoice[0].uri, mapping.to.memberChoice[0].uri)
+    // Check if test properties remain in original object
+    assert.ok(mapping.from.memberSet[0].test)
+    assert.ok(mapping.to.memberChoice[0].test)
+    assert.ok(mapping.fromScheme.test)
+    assert.ok(mapping.toScheme.test)
+    assert.ok(mapping.test)
   })
 
 })
