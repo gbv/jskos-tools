@@ -4,7 +4,7 @@ const fs = require("fs")
 const assert = require("assert")
 const validate = require("../lib/validate")
 
-let types = ["resource", "item", "concept", "scheme", "mapping", "concordance", "registry", "distribution", "occurrence", "conceptBundle"]
+let types = ["resource", "item", "concept", "scheme", "mapping", "concordance", "registry", "distribution", "occurrence", "bundle"]
 let examples = {}
 
 // Import local example objects
