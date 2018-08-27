@@ -13,6 +13,7 @@ This repository contains tools for working with the [JSKOS data format for knowl
 - [Usage](#usage)
   - [Validation](#validation)
     - [validate](#validate)
+    - [version](#version)
   - [Mapping Identifiers](#mapping-identifiers)
     - [mappingContentIdentifier](#mappingcontentidentifier)
     - [mappingMembersIdentifier](#mappingmembersidentifier)
@@ -64,6 +65,13 @@ jskos.validate.concept(concept) // returns true or false
 ```
 
 Directory `bin` also contains a command line script for validation.
+
+#### version
+Returns the version of the JSKOS specification that's used for validation.
+
+```javascript
+jskos.version // 0.4.2
+```
 
 ### Mapping Identifiers
 
