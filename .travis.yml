@@ -1,3 +1,11 @@
 language: node_js
 node_js:
-  - "node"
+- node
+deploy:
+  provider: npm
+  email: stefandesu@exo.pm
+  api_key:
+    secure: d2taxPn8szdGze/V2SG7ebb0CIjD2kQTou/WM9m0rCFzt91QA85zu68ZTlm8n5dSOhvq1z01rkIzhCtICttUuvD3WuPaFPiviWs5X5Crb3heHh7RO2mmzcO7f2lxuJgH/F/CETF+w385i8wdyWWQV/NNWF+PdxUr5/i2lFgvrFY5qT+e9ZRv5pnUeAnAwSppP+0kZTMbH0E9i66VF0kZ82jO84n+EHgAaLzUVY3Bh6eHHcima0bV+b0ieo9EpUIqJAm7r/Qw8MfzwhU6WHgnGavck04cDIC7/ObC/lKmcFU1gSa1+CGYnvH3I6r9sNQbfTM2WVBQq3tkG2gjZ9I/Re3hZTOe5//axxuUGN1MU0HgRDLsXa/a2EFkJsSVHET5nFHXkQMgeKO8LQtruxa2jjnEBkJEgPBwxaUeR6sgrPmKXFsy5EQoNrajYckgnDIl/qtYf7P5IQ3Gf08vFHQ5blfGaKOwpR/u3NA0GxWg0JJHYEPp5A5qITxh3fymgXq5vWQ5+wWyeS4M101YE1ZvHaJIYF8SWj9HnSuMPn/sVC3VIlIRRSaVvEbHqHphM/6P6S8H+SoD8VdJYxkXxSV0dmXHTZ7g1Afbb4doXhbzWx75gCCK9VYNExZ2DH7DfBqGJv64PRUNPO3EB4ihBwtjbLPQbQFYt0lEA1CQ1zQsx9Q=
+  on:
+    tags: true
+    repo: gbv/jskos-tools
