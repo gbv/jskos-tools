@@ -15,11 +15,13 @@
   "scripts": {
     "test": "mocha"
   },
+  "pre-commit": "test",
   "author": "Stefan Peters",
   "devDependencies": {
     "eslint": "^5.2.0",
     "glob": "^7.1.2",
-    "mocha": "^5.2.0"
+    "mocha": "^5.2.0",
+    "pre-commit": "^1.2.2"
   },
   "dependencies": {
     "ajv": "^6.5.2",
