@@ -33,6 +33,10 @@ This repository contains tools for working with the [JSKOS data format for knowl
     - [sortConcepts](#sortconcepts)
     - [sortSchemes](#sortschemes)
     - [minifyMapping](#minifymapping)
+    - [mappingTypes](#mappingtypes)
+    - [mappingTypeByUri](#mappingtypebyuri)
+    - [mappingTypeByType](#mappingtypebytype)
+    - [defaultMappingType](#defaultmappingtype)
 - [Build](#build)
 - [Test](#test)
 - [Maintainers](#maintainers)
@@ -200,6 +204,45 @@ Removes unnecessary properties from mapping before export or saving. In particul
 let newMapping = jskos.minifyMapping(mapping)
 ```
 
+#### mappingTypes
+An array of mapping types in form of objects. Objects can have the following properties:
+
+- `notation` - an array of notations (in this case symbols)
+- `uri` - the URI of the mapping type
+- `prefLabel` - a language maps of labels
+- `broader` - array of broader mapping types for this type
+- `related` - array of related mapping types
+- `RELEVANCE` - relevance label for GND terms (low, medium, high, very high)
+- `short` - a short name for the type, used for CSV import/export
+
+Example object:
+```json
+{
+  "notation": ["≈"],
+  "uri": "http://www.w3.org/2004/02/skos/core#closeMatch",
+  "prefLabel": { "en": "close match" },
+  "broader": [ { "uri": "http://www.w3.org/2004/02/skos/core#mappingRelation" } ],
+  "RELEVANCE": "high",
+  "short": "close"
+}
+```
+
+#### mappingTypeByUri
+Returns a mapping type object for an URI.
+
+```javascript
+jskos.mappingTypeByUri("http://www.w3.org/2004/02/skos/core#closeMatch")
+```
+
+#### mappingTypeByType
+Returns a mapping type for a JSKOS type property. This is usually an array where the first type is taken, but a workaround for string types is included as well.
+
+```javascript
+jskos.mappingTypeByType(mapping.type)
+```
+
+#### defaultMappingType
+The default mapping type (currently `mapping relation`).
 
 ## Build
 
