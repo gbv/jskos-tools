@@ -38,7 +38,7 @@ This repository contains tools for working with the [JSKOS data format for knowl
     - [mappingTypeByUri](#mappingtypebyuri)
     - [mappingTypeByType](#mappingtypebytype)
     - [defaultMappingType](#defaultmappingtype)
-    - [mappingToCSV](#mappingToCSV)
+    - [mappingToCSV](#mappingtocsv)
 - [Build](#build)
 - [Test](#test)
 - [Maintainers](#maintainers)
@@ -253,8 +253,8 @@ jskos.mappingTypeByType(mapping.type)
 #### defaultMappingType
 The default mapping type (currently `mapping relation`).
 
-### mappingToCSV
-Returns a configured converter from JSKOS mapping to CSV line. By now only simple 1-to-1 mappings and 1-to-0 mappings are supported.
+#### mappingToCSV
+Returns a configured converter from JSKOS mapping to CSV line. For now only simple 1-to-1 mappings and 1-to-0 mappings are supported.
 
 ```js
 let mappingToCsv = jskos.mappingToCSV({ delimiter: ';' })
