@@ -35,8 +35,8 @@
   "author": "Stefan Peters",
   "devDependencies": {
     "eslint": "^5.6.0",
-    "eslint-staged": "^1.0.1",
     "glob": "^7.1.2",
+    "lint-staged": "^7.3.0",
     "mocha": "^5.2.0",
     "pre-commit": "^1.2.2"
   },
