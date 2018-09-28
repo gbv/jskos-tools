@@ -261,6 +261,8 @@ let mappingToCsv = jskos.mappingToCSV({ delimiter: ';' })
 mappingToCsv(mapping)
 ```
 
+Concept labels are included only if configuration field `language` is set. The order of CSV fields is fromNotation, (fromLabel,) toNotation, (toLabel,) mappingType.
+
 ## Build
 
 ```bash
