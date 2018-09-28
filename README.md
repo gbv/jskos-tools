@@ -23,6 +23,7 @@ This repository contains tools for working with the [JSKOS data format for knowl
     - [compareMappings](#comparemappings)
     - [compareMappingMembers](#comparemappingmembers)
   - [Tools](#tools)
+    - [addContext](#addContext)
     - [clean](#clean)
     - [copyDeep](#copydeep)
     - [getAllUris](#getalluris)
@@ -51,7 +52,7 @@ npm i jskos-tools
 
 ## Usage
 
-```javascript
+```js
 const jskos = require("jskos-tools")
 ```
 
@@ -59,7 +60,7 @@ const jskos = require("jskos-tools")
 
 #### validate
 
-```javascript
+```js
 let concept = {
   ...
 }
@@ -75,13 +76,13 @@ Directory `bin` also contains a command line script for validation.
 #### version
 Returns the version of the JSKOS specification that's used for validation.
 
-```javascript
+```js
 jskos.version // 0.4.2
 ```
 
 ### Mapping Identifiers
 
-```javascript
+```js
 let mapping = {
   ...
 }
@@ -90,28 +91,28 @@ let mapping = {
 #### mappingContentIdentifier
 `mappingContentIdentifier` starts with urn:jskos:mapping:content: and takes concepts and type into consideration. It uses the `mappingContent` function to get relevant properties from the mapping.
 
-```javascript
+```js
 let contentIdentifier = jskos.mappingContentIdentifier(mapping)
 ```
 
 #### mappingMembersIdentifier
 `mappingMembersIdentifier` starts with urn:jskos:mapping:members: and only takes concepts into consideration. It uses the `mappingMembers` function to get relevant properties from the mapping.
 
-```javascript
+```js
 let membersIdentifier = jskos.mappingMembersIdentifier(mapping)
 ```
 
 #### addMappingIdentifiers
 `addMappingIdentifiers` creates a new mapping with property "identifiers", containing mappingContentIdentifier and mappingMembersIdentifier.
 
-```javascript
+```js
 let mappingWithIdentifiers = jskos.addMappingIdentifiers(mapping)
 ```
 
 #### compareMappings
 `compareMappings` compares two mappings based on their `mappingContentIdentifier`.
 
-```javascript
+```js
 if (jskos.compareMappings(mapping1, mapping2)) { ... }
 ```
 
@@ -120,16 +121,23 @@ Aliases: `compareMappingContent`
 #### compareMappingMembers
 `compareMappingMembers` compares two mappings based on their `mappingMembersIdentifier`.
 
-```javascript
+```js
 if (jskos.compareMappingMembers(mapping1, mapping2)) { ... }
 ```
 
 ### Tools
 
+#### addContext
+Add `@context` URI to a JSKOS object or to an array of JSKOS objects.
+
+```js
+jskos.addContext(object)
+```
+
 #### clean
 Removes properties starting with `_` or containing only uppercase letters from a JSKOS object.
 
-```javascript
+```js
 jskos.clean(object)
 ```
 
@@ -138,7 +146,7 @@ Aliases: `cleanJSKOS`
 #### copyDeep
 Creates a deep copy of a JSKOS object, replacing possibly circular structures with open world `[null]` statements.
 
-```javascript
+```js
 jskos.copyDeep(object)
 ```
 
@@ -147,14 +155,14 @@ Aliases: `deepCopy`
 #### getAllUris
 Returns all possible URIs for a JSKOS object. Takes into consideration both the uri and identifier properties, as well as different variants of those identifiers.
 
-```javascript
+```js
 jskos.getAllUris(object)
 ```
 
 #### compare
 Compares two objects based on their URIs, using `getAllUris`.
 
-```javascript
+```js
 jskos.compare(object1, object2)
 ```
 
@@ -163,21 +171,21 @@ Aliases: `compareObjects`, `compareSchemes`, `compareConcepts`
 #### isConcept
 Checks whether JSKOS object is a concept based on type property.
 
-```javascript
+```js
 jskos.isConcept(object)
 ```
 
 #### isScheme
 Checks whether JSKOS object is a concept scheme based on type property.
 
-```javascript
+```js
 jskos.isScheme(object)
 ```
 
 #### isContainedIn
 // Checks whether an object is contained in a list of objects using `compare`.
 
-```javascript
+```js
 jskos.isContainedIn(object, listOfObjects)
 ```
 
@@ -186,21 +194,21 @@ Aliases: `isSchemeInList`
 #### sortConcepts
 Sorts a list of concepts by their notation, then URI. Returns a copy of the list.
 
-```javascript
+```js
 jskos.sortConcepts(concepts)
 ```
 
 #### sortSchemes
 Sorts a list of schemes by their German prefLabel, then URI. Returns a copy of the list.
 
-```javascript
+```js
 jskos.sortSchemes(schemes)
 ```
 
 #### minifyMapping
 Removes unnecessary properties from mapping before export or saving. In particular, all properties except for `to`, `from`, `toScheme`, `fromScheme`, `type`, and `creator` on the mapping will be removed, and all properties except for `uri` and `notation` on concepts and schemes will be removed.
 
-```javascript
+```js
 let newMapping = jskos.minifyMapping(mapping)
 ```
 
@@ -230,14 +238,14 @@ Example object:
 #### mappingTypeByUri
 Returns a mapping type object for an URI.
 
-```javascript
+```js
 jskos.mappingTypeByUri("http://www.w3.org/2004/02/skos/core#closeMatch")
 ```
 
 #### mappingTypeByType
 Returns a mapping type for a JSKOS type property. This is usually an array where the first type is taken, but a workaround for string types is included as well.
 
-```javascript
+```js
 jskos.mappingTypeByType(mapping.type)
 ```
 

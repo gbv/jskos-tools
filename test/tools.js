@@ -2,6 +2,13 @@ const assert = require("assert")
 const tools = require("../lib/tools")
 
 describe("Tools", () => {
+  it("addContext", () => {
+    let object = { }
+    assert.equal(tools.addContext(object), object)
+    assert.equal(object['@context'], 'https://gbv.github.io/jskos/context.json')
+    let array = tools.addContext([{}])
+    assert.equal(array[0]['@context'], 'https://gbv.github.io/jskos/context.json')
+  })
 
   it("clean", () => {
     let object = {
