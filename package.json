@@ -13,12 +13,26 @@
   "license": "MIT",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "lint": "eslint ./*.js ./**/*.js",
+    "fix": "eslint --fix ./*.js ./**/*.js",
+    "lint-staged": "lint-staged"
   },
-  "pre-commit": "test",
+  "lint-staged": {
+    "**/*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "pre-commit": [ "test", "lint-staged" ],
   "author": "Stefan Peters",
   "devDependencies": {
-    "eslint": "^5.2.0",
+    "eslint": "^5.6.0",
+    "eslint-staged": "^1.0.1",
     "glob": "^7.1.2",
     "mocha": "^5.2.0",
     "pre-commit": "^1.2.2"
