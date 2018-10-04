@@ -83,6 +83,9 @@ describe("Tools", () => {
     }
     assert.ok(tools.compare(object1, object2))
     assert.ok(!tools.compare(object1, object3))
+    assert.ok(!tools.compare(object1, null))
+    assert.ok(!tools.compare(null, object3))
+    assert.ok(tools.compare(null, null))
   })
 
   it("isConcept, isScheme", () => {
@@ -205,7 +208,7 @@ describe("Tools", () => {
       from: { memberSet: [{ notation: ["0"], prefLabel: { en: "'" }}] },
       to: { memberSet: [{ notation: ["a'c"], prefLabel: { en: "0" } }] },
       type: ["http://www.w3.org/2004/02/skos/core#broadMatch"]
-    } 
+    }
     let csv = (options) => tools.mappingToCSV(options)(mapping)
 
     assert.equal(csv(), "\"0\",\"a'c\",\"broad\"\n")

@@ -154,14 +154,14 @@ jskos.copyDeep(object)
 Aliases: `deepCopy`
 
 #### getAllUris
-Returns all possible URIs for a JSKOS object. Takes into consideration both the uri and identifier properties, as well as different variants of those identifiers.
+Returns all possible URIs for a JSKOS object. Takes into consideration both the uri and identifier properties, as well as different variants of those identifiers. Returns an empty array if object is `null`.
 
 ```js
 jskos.getAllUris(object)
 ```
 
 #### compare
-Compares two objects based on their URIs, using `getAllUris`.
+Compares two objects based on their URIs, using `getAllUris`. Returns `true` if both objects are `null`.
 
 ```js
 jskos.compare(object1, object2)
