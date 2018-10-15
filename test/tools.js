@@ -218,4 +218,36 @@ describe("Tools", () => {
     assert.equal(csv({language:"en", quoteChar:"'"}), "'0','''','a''c','0',''\n")
     assert.equal(csv({language:"xx", quoteChar:"'"}), "'0','','a''c','',''\n")
   })
+
+  it("conceptsOfMapping", () => {
+    let mappings = [
+      {
+        from: { memberSet: [{ uri: "http://test1" }] },
+        to: { memberSet: [{ uri: "http://test2" }, { uri: "http://test3" }] },
+        fromResult: 1,
+        toResult: 2,
+      },
+      {
+        from: { memberSet: [{ uri: "http://test1" }] },
+        to: { memberList: [{ uri: "http://test2" }, { uri: "http://test3" }, { uri: "http://test4" }] },
+        fromResult: 1,
+        toResult: 3,
+      },
+      {
+        from: { memberSet: [{ uri: "http://test1" }] },
+        to: { memberChoice: [{ uri: "http://test2" }, { uri: "http://test3" }, { uri: "http://test3" }, { uri: "http://test4" }] },
+        fromResult: 1,
+        toResult: 4,
+      },
+    ]
+    for (let mapping of mappings) {
+      // Test sides
+      for (let side of ["from", "to"]) {
+        assert.equal(tools.conceptsOfMapping(mapping, side).length, mapping[`${side}Result`])
+      }
+      // Test total
+      assert.equal(tools.conceptsOfMapping(mapping).length, mapping["fromResult"]+mapping["toResult"])
+    }
+  })
+
 })

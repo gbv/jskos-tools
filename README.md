@@ -39,6 +39,7 @@ This repository contains tools for working with the [JSKOS data format for knowl
     - [mappingTypeByType](#mappingtypebytype)
     - [defaultMappingType](#defaultmappingtype)
     - [mappingToCSV](#mappingtocsv)
+    - [conceptsOfMapping](#conceptsofmapping)
 - [Build](#build)
 - [Test](#test)
 - [Maintainers](#maintainers)
@@ -262,6 +263,13 @@ mappingToCsv(mapping)
 ```
 
 Concept labels are included only if configuration field `language` is set. The order of CSV fields is fromNotation, (fromLabel,) toNotation, (toLabel,) mappingType.
+
+#### conceptsOfMapping
+Returns an array of concepts contained in a mapping. `side` can either be `from` or `to`. If `side` is left out, concepts from both sides will be returned.
+
+```js
+jskos.conceptsOfMapping(mapping)
+```
 
 ## Build
 
