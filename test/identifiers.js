@@ -139,6 +139,30 @@ let examples2 = [
       ]
     },
   },
+  {
+    mapping: {
+      from: {
+        memberSet: [
+          {
+            uri: "http://dewey.info/class/612.112/e23/"
+          }
+        ]
+      },
+      fromScheme: {
+        uri: "http://bartoc.org/en/node/241"
+      },
+      to: {
+        memberSet: []
+      },
+      toScheme: {
+        uri: "http://bartoc.org/en/node/18785",
+        type: ["http://testtype"]
+      },
+      type: [
+        "http://www.w3.org/2004/02/skos/core#mappingRelation"
+      ]
+    },
+  },
 ]
 
 describe("JSKOS Mapping Identifiers", () => {
@@ -172,6 +196,16 @@ describe("JSKOS Mapping Identifiers", () => {
     assert.ok(contentId1 != null)
     assert.ok(contentId2 != null)
     assert.ok(contentId1 != contentId2)
+  })
+
+  it("should ignore type property inside of fromScheme/toScheme", () => {
+    let mapping1 = identifiers.addMappingIdentifiers(examples2[1].mapping)
+    let mapping2 = identifiers.addMappingIdentifiers(examples2[2].mapping)
+    let contentId1 = mapping1.identifier.find(id => id.startsWith("urn:jskos:mapping:content:"))
+    let contentId2 = mapping2.identifier.find(id => id.startsWith("urn:jskos:mapping:content:"))
+    assert.ok(contentId1 != null)
+    assert.ok(contentId2 != null)
+    assert.ok(contentId1 == contentId2)
   })
 
   it("should compare mappings correctly", () => {
