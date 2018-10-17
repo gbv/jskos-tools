@@ -1,6 +1,6 @@
 {
   "name": "jskos-tools",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "Tools for working with the JSKOS data format.",
   "homepage": "https://github.com/gbv/jskos-tools",
   "repository": {
