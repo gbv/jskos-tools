@@ -31,10 +31,10 @@ let fail = 0
 args.forEach( (file, i) => {
   let data = JSON.parse(fs.readFileSync(file))
   let objects = Array.isArray(data) ? data : [data]
-  let status = objects.every(obj => validate[type](obj))
+  let ok = objects.every(obj => validate[type](obj))
 
-  console.log(`${status ? "\x1b[32mok    " : "\x1b[31mnot ok"}  ${i+1}  ${file}\x1b[0m`)
-  fail += status
+  console.log(`${ok ? "\x1b[32mok    " : "\x1b[31mnot ok"}  ${i+1}  ${file}\x1b[0m`)
+  if (fail < 99 && !ok) fail++
 })
 
 process.exit(fail)

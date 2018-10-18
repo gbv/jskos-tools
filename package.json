@@ -14,8 +14,8 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "lint": "eslint ./*.js ./**/*.js",
-    "fix": "eslint --fix ./*.js ./**/*.js",
+    "lint": "eslint ./*.js ./**/*.js ./bin/*",
+    "fix": "eslint --fix ./*.js ./**/*.js ./bin/*",
     "lint-staged": "lint-staged"
   },
   "lint-staged": {
