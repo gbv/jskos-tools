@@ -89,17 +89,27 @@ describe("Tools", () => {
   })
 
   it("isConcept, isScheme", () => {
-    let concept = {
-      type: ["http://www.w3.org/2004/02/skos/core#Concept"]
-    }
+    let concepts = [
+      {
+        type: ["http://www.w3.org/2004/02/skos/core#Concept"]
+      },
+      {
+        inScheme: { uri: "test" }
+      },
+      {
+        topConceptOf: [{ uri: "test" }]
+      }
+    ]
     let scheme = {
       type: ["http://www.w3.org/2004/02/skos/core#ConceptScheme"]
     }
     let other = {
       type: ["something else"]
     }
-    assert.ok(tools.isConcept(concept))
-    assert.ok(!tools.isScheme(concept))
+    for (let concept of concepts) {
+      assert.ok(tools.isConcept(concept))
+      assert.ok(!tools.isScheme(concept))
+    }
     assert.ok(!tools.isConcept(scheme))
     assert.ok(tools.isScheme(scheme))
     assert.ok(!tools.isConcept(other))
