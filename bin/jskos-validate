@@ -20,8 +20,8 @@ if (!args.length) {
 
 let type = "item"
 
-if (args[0] in validate || args[0].replace(/s$/,'') in validate) {
-  type = args.shift().replace(/s$/,'')
+if (args[0] in validate || args[0].replace(/s$/,"") in validate) {
+  type = args.shift().replace(/s$/,"")
 } else if (!fs.existsSync(args[0])) {
   usage(`unknown object type: ${args[0]}`)
 }

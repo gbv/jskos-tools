@@ -38,6 +38,7 @@ This repository contains tools for working with the [JSKOS data format for knowl
     - [mappingTypeByUri](#mappingtypebyuri)
     - [mappingTypeByType](#mappingtypebytype)
     - [defaultMappingType](#defaultmappingtype)
+    - [flattenMapping](#flattenMapping)
     - [mappingToCSV](#mappingtocsv)
     - [conceptsOfMapping](#conceptsofmapping)
 - [Build](#build)
@@ -253,6 +254,9 @@ jskos.mappingTypeByType(mapping.type)
 
 #### defaultMappingType
 The default mapping type (currently `mapping relation`).
+
+#### flattenMapping
+Converts a mapping into a flat object with for serialization as CSV. Returns an object with fields `fromNotation`, `toNotation`, `type`, and (if option `language` has been provided) `fromLabel` and `toLabel`).
 
 #### mappingToCSV
 Returns a configured converter from JSKOS mapping to CSV line. For now only simple 1-to-1 mappings and 1-to-0 mappings are supported.
