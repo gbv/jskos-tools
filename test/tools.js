@@ -23,7 +23,8 @@ describe("Tools", () => {
   it("copyDeep", () => {
     let object = {
       uri: "http://example.com/test",
-      self: null
+      self: null,
+      _test: 3,
     }
     let copy
     // Artifically creating a circular structur
@@ -38,6 +39,8 @@ describe("Tools", () => {
     assert.equal(object.uri, copy.uri)
     copy.uri = "http://example.com/test3"
     assert.notEqual(object.uri, copy.uri)
+    // All properties starting with an underscore should be ignored
+    assert.equal(copy._test, undefined)
   })
 
   it("getAllUris", () => {

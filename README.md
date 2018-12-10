@@ -146,7 +146,7 @@ jskos.clean(object)
 Aliases: `cleanJSKOS`
 
 #### copyDeep
-Creates a deep copy of a JSKOS object, replacing possibly circular structures with open world `[null]` statements.
+Creates a deep copy of a JSKOS object, replacing possibly circular structures with open world `[null]` statements. Ignores all properties starting with `_`.
 
 ```js
 jskos.copyDeep(object)
