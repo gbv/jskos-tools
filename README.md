@@ -22,6 +22,7 @@ This repository contains tools for working with the [JSKOS data format for knowl
     - [addMappingIdentifiers](#addmappingidentifiers)
     - [compareMappings](#comparemappings)
     - [compareMappingMembers](#comparemappingmembers)
+  - [ConceptScheme](#conceptscheme)
   - [Tools](#tools)
     - [addContext](#addContext)
     - [clean](#clean)
@@ -127,6 +128,9 @@ Aliases: `compareMappingContent`
 ```js
 if (jskos.compareMappingMembers(mapping1, mapping2)) { ... }
 ```
+
+### ConceptScheme
+Class `jskos.ConceptScheme` provides utility methods to handle concept schemes with fields `namespace`, `notationPattern`, and/or `uriPattern`.
 
 ### Tools
 
