@@ -13,9 +13,8 @@ This repository contains tools for working with the [JSKOS data format for knowl
 
 - [Install](#install)
 - [Usage](#usage)
-  - [Validation](#validation)
-    - [validate](#validate)
-    - [version](#version)
+  - [validate](#validate)
+  - [version](#version)
   - [Mapping Identifiers](#mapping-identifiers)
     - [mappingContentIdentifier](#mappingcontentidentifier)
     - [mappingMembersIdentifier](#mappingmembersidentifier)
@@ -60,24 +59,14 @@ npm i jskos-tools
 const jskos = require("jskos-tools")
 ```
 
-### Validation
+See <https://gbv.github.io/jskos-tools/> for full API documentation of
+[module jskos-tools](https://gbv.github.io/jskos-tools/module-jskos-tools.html).
 
-#### validate
+### validate
 
-```js
-let concept = {
-  ...
-}
+See [submodule validate](https://gbv.github.io/jskos-tools/module-jskos-tools.module_validate.html).
 
-jskos.validate.concept(concept) // returns true or false
-// or jskos.validate.scheme(scheme)
-// or jskos.validate.mapping(mapping)
-// ...
-```
-
-Directory `bin` also contains a command line script for validation.
-
-#### version
+### version
 Returns the version of the JSKOS specification that's used for validation.
 
 ```js
@@ -130,7 +119,8 @@ if (jskos.compareMappingMembers(mapping1, mapping2)) { ... }
 ```
 
 ### ConceptScheme
-Class `jskos.ConceptScheme` provides utility methods to handle concept schemes with fields `namespace`, `notationPattern`, and/or `uriPattern`.
+
+See [class ConceptScheme](https://gbv.github.io/jskos-tools/module-jskos-tools.ConceptScheme.html).
 
 ### Tools
 
@@ -285,6 +275,12 @@ jskos.conceptsOfMapping(mapping)
 git clone --recursive https://github.com/gbv/jskos-tools.git
 cd jskos-tools/
 npm install
+```
+
+API documentation can be generated in directory `jsdoc/build`:
+
+```bash
+npm run docs
 ```
 
 ## Test
