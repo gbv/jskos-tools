@@ -10,3 +10,6 @@ package-lock.json
 *.ntvs*
 *.njsproj
 *.sln
+
+# build artifacts
+jsdoc/build

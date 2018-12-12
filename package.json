@@ -16,7 +16,8 @@
     "test": "mocha",
     "lint": "eslint ./*.js ./**/*.js ./bin/*",
     "fix": "eslint --fix ./*.js ./**/*.js ./bin/*",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "docs": "jsdoc --configure jsdoc.json && cp -r jsdoc/assets/* jsdoc/build"
   },
   "lint-staged": {
     "**/*.js": [
@@ -35,7 +36,9 @@
   "author": "Stefan Peters",
   "devDependencies": {
     "eslint": "^5.6.0",
+    "foodoc": "0.0.9",
     "glob": "^7.1.2",
+    "jsdoc": "^3.5.5",
     "lint-staged": "^7.3.0",
     "mocha": "^5.2.0",
     "pre-commit": "^1.2.2"

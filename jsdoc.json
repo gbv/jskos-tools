@@ -1,0 +1,25 @@
+{
+  "source": {
+    "include": ["lib", "package.json", "index.js", "README.md"],
+    "includePattern": ".+\\.(js|md|json)$"
+  },
+  "plugins": [
+    "plugins/markdown"
+  ],
+  "markdown": {
+    "idInHeadings": true
+  },
+  "templates": {
+    "systemName": "jskos-tools",
+    "systemSummary": "Tools for working with the JSKOS data format", 
+    "copyright": "",
+    "collapseSymbols": false,
+    "outputSourceFiles": false,
+    "stylesheets": ["style.css"]
+  },
+  "opts": {
+    "destination": "jsdoc/build",
+    "template": "node_modules/foodoc/template",
+    "recurse": true
+  }
+}

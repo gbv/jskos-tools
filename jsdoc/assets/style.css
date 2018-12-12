@@ -1,0 +1,4 @@
+/* hide "returns" section */
+.symbol-details-inner > .callout-success {
+  display: none; 
+}

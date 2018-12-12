@@ -1,4 +1,4 @@
-# JSKOS Tools *(jskos-tools)*
+# JSKOS Tools
 
 [![Build Status](https://travis-ci.com/gbv/jskos-tools.svg?branch=master)](https://travis-ci.com/gbv/jskos-tools)
 [![GitHub package version](https://img.shields.io/github/package-json/v/gbv/jskos-tools.svg?label=version)](https://github.com/gbv/jskos-tools)
