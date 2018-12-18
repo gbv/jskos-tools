@@ -5,7 +5,7 @@ node_js:
 script:
 - npm run lint
 - npm test
-- npm run docs 
+- npm run docs
 deploy:
 - provider: npm
   email: stefandesu@exo.pm
@@ -15,9 +15,9 @@ deploy:
     tags: true
     repo: gbv/jskos-tools
 - provider: pages
-  local_dir: jsdoc/build
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
+  local-dir: jsdoc/build
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
   on:
     node: "7"
     branch: master
