@@ -192,7 +192,12 @@ describe("Tools", () => {
         test: "hello world"
       },
       type: ["test"],
-      test: "hello world"
+      test: "hello world",
+      created: "123",
+      modified: "456",
+      note: {
+        de: ["test"]
+      }
     }
     let newMapping = tools.minifyMapping(mapping)
     // Check if test properties got removed
@@ -205,12 +210,18 @@ describe("Tools", () => {
     assert.ok(newMapping.type && newMapping.type.length)
     assert.equal(newMapping.from.memberSet[0].uri, mapping.from.memberSet[0].uri)
     assert.equal(newMapping.to.memberChoice[0].uri, mapping.to.memberChoice[0].uri)
+    assert.ok(newMapping.created)
+    assert.ok(newMapping.modified)
+    assert.equal(newMapping.note.de[0], mapping.note.de[0])
     // Check if test properties remain in original object
     assert.ok(mapping.from.memberSet[0].test)
     assert.ok(mapping.to.memberChoice[0].test)
     assert.ok(mapping.fromScheme.test)
     assert.ok(mapping.toScheme.test)
     assert.ok(mapping.test)
+    assert.ok(mapping.created)
+    assert.ok(mapping.modified)
+    assert.ok(mapping.note)
     // Check if null value gets converted to empty object
     let emptyNewMapping = tools.minifyMapping({})
     assert.equal(Object.keys(emptyNewMapping).length, 0, "minifyMapping added properties to empty mapping")
