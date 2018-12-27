@@ -50,6 +50,8 @@ This repository contains tools for working with the [JSKOS data format for knowl
 ## Install
 
 ```bash
+git clone --recursive https://github.com/gbv/jskos-tools.git
+cd jskos-tools
 npm i jskos-tools
 ```
 
