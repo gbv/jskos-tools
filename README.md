@@ -205,7 +205,7 @@ jskos.sortSchemes(schemes)
 ```
 
 #### minifyMapping
-Removes unnecessary properties from mapping before export or saving. In particular, all properties except for `to`, `from`, `toScheme`, `fromScheme`, `type`, `creator`, `created`, `modified`, and `note` on the mapping will be removed, and all properties except for `uri` and `notation` on concepts and schemes will be removed.
+Removes unnecessary properties from mapping before export or saving. In particular, all properties except for `to`, `from`, `toScheme`, `fromScheme`, `type`, `creator`, `created`, `modified`, `note`, and `identifier` on the mapping will be removed, and all properties except for `uri` and `notation` on concepts and schemes will be removed.
 
 ```js
 let newMapping = jskos.minifyMapping(mapping)

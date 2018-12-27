@@ -197,7 +197,8 @@ describe("Tools", () => {
       modified: "456",
       note: {
         de: ["test"]
-      }
+      },
+      identifier: ["hallo"]
     }
     let newMapping = tools.minifyMapping(mapping)
     // Check if test properties got removed
@@ -213,6 +214,7 @@ describe("Tools", () => {
     assert.ok(newMapping.created)
     assert.ok(newMapping.modified)
     assert.equal(newMapping.note.de[0], mapping.note.de[0])
+    assert.equal(newMapping.identifier[0], mapping.identifier[0])
     // Check if test properties remain in original object
     assert.ok(mapping.from.memberSet[0].test)
     assert.ok(mapping.to.memberChoice[0].test)
