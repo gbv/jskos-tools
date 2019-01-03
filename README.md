@@ -41,6 +41,7 @@ This repository contains tools for working with the [JSKOS data format for knowl
     - [flattenMapping](#flattenMapping)
     - [mappingToCSV](#mappingtocsv)
     - [conceptsOfMapping](#conceptsofmapping)
+    - [compareMappingsDeep](#comparemappingsdeep)
 - [Build](#build)
 - [Test](#test)
 - [Maintainers](#maintainers)
@@ -270,6 +271,13 @@ Returns an array of concepts contained in a mapping. `side` can either be `from`
 
 ```js
 jskos.conceptsOfMapping(mapping)
+```
+
+#### compareMappingsDeep
+`compareMappingsDeep` compares two mappings based on their properties. Concept sets and schemes are compared by URI.
+
+```js
+if (jskos.compareMappingsDeep(mapping1, mapping2)) { ... }
 ```
 
 ## Build

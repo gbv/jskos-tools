@@ -276,4 +276,138 @@ describe("Tools", () => {
     }
   })
 
+  it("compareMappingsDeep", () => {
+    let mapping1 = {
+      "from": {
+        "memberSet": [
+          {
+            "uri": "http://dewey.info/class/612.112/e23/",
+            "notation": [
+              "612.112"
+            ]
+          }
+        ]
+      },
+      "to": {
+        "memberSet": [
+          {
+            "uri": "http://www.wikidata.org/entity/Q42395",
+            "notation": [
+              "Q42395"
+            ]
+          }
+        ]
+      },
+      "fromScheme": {
+        "uri": "http://dewey.info/scheme/edition/e23/",
+        "notation": [
+          "DDC"
+        ]
+      },
+      "toScheme": {
+        "uri": "http://bartoc.org/en/node/1940"
+      },
+      "creator": [
+        {
+          "prefLabel": {
+            "de": "Stefan Peters (VZG)"
+          }
+        }
+      ]
+    }
+    // Same as mapping1 except without notations
+    let mapping2 = {
+      "from": {
+        "memberSet": [
+          {
+            "uri": "http://dewey.info/class/612.112/e23/"
+          }
+        ]
+      },
+      "to": {
+        "memberSet": [
+          {
+            "uri": "http://www.wikidata.org/entity/Q42395"
+          }
+        ]
+      },
+      "fromScheme": {
+        "uri": "http://dewey.info/scheme/edition/e23/"
+      },
+      "toScheme": {
+        "uri": "http://bartoc.org/en/node/1940"
+      },
+      "creator": [
+        {
+          "prefLabel": {
+            "de": "Stefan Peters (VZG)"
+          }
+        }
+      ]
+    }
+    // Same as mapping2 except with different creator prefLabel
+    let mapping3 = {
+      "from": {
+        "memberSet": [
+          {
+            "uri": "http://dewey.info/class/612.112/e23/"
+          }
+        ]
+      },
+      "to": {
+        "memberSet": [
+          {
+            "uri": "http://www.wikidata.org/entity/Q42395"
+          }
+        ]
+      },
+      "fromScheme": {
+        "uri": "http://dewey.info/scheme/edition/e23/"
+      },
+      "toScheme": {
+        "uri": "http://bartoc.org/en/node/1940"
+      },
+      "creator": [
+        {
+          "prefLabel": {
+            "de": "Stefan Peters"
+          }
+        }
+      ]
+    }
+    // Same as mapping3 except with different concept in from
+    let mapping4 = {
+      "from": {
+        "memberSet": [
+          {
+            "uri": "http://dewey.info/class/612.11/e23/"
+          }
+        ]
+      },
+      "to": {
+        "memberSet": [
+          {
+            "uri": "http://www.wikidata.org/entity/Q42395"
+          }
+        ]
+      },
+      "fromScheme": {
+        "uri": "http://dewey.info/scheme/edition/e23/"
+      },
+      "toScheme": {
+        "uri": "http://bartoc.org/en/node/1940"
+      },
+      "creator": [
+        {
+          "prefLabel": {
+            "de": "Stefan Peters"
+          }
+        }
+      ]
+    }
+    assert.ok(tools.compareMappingsDeep(mapping1, mapping2))
+    assert.ok(!tools.compareMappingsDeep(mapping2, mapping3))
+    assert.ok(!tools.compareMappingsDeep(mapping3, mapping4))
+  })
+
 })
