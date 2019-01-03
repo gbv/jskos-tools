@@ -20,4 +20,5 @@ deploy:
   github-token: $GITHUB_TOKEN
   on:
     node: "7"
+    tags: false
     branch: master
