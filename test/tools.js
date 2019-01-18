@@ -137,34 +137,59 @@ describe("Tools", () => {
     let objects = [
       {
         uri: "1",
-        notation: ["TEST1"],
+        notation: ["1"],
         prefLabel: {
           de: "Erster Test"
         }
       },
       {
+        uri: "0",
+        notation: ["1"],
+        prefLabel: {
+          en: "Erster Test"
+        }
+      },
+      {
         uri: "3",
-        notation: ["TEST3"],
+        notation: ["3"],
         prefLabel: {
           de: "Dritter Test"
         }
       },
       {
         uri: "2",
-        notation: ["TEST2"],
+        notation: ["2"],
         prefLabel: {
           de: "Zweiter Test"
+        }
+      },
+      {
+        uri: "11",
+        notation: ["11"],
+        prefLabel: {
+          en: "vierter Test"
         }
       }
     ]
     let sortedConcepts = tools.sortConcepts(objects)
-    assert.ok(sortedConcepts[0].uri == "1")
-    assert.ok(sortedConcepts[1].uri == "2")
-    assert.ok(sortedConcepts[2].uri == "3")
+    assert.ok(sortedConcepts[0].uri == "0")
+    assert.ok(sortedConcepts[1].uri == "1")
+    assert.ok(sortedConcepts[2].uri == "11")
+    assert.ok(sortedConcepts[3].uri == "2")
+    assert.ok(sortedConcepts[4].uri == "3")
+    // Numerical sorting
+    sortedConcepts = tools.sortConcepts(objects, true)
+    assert.ok(sortedConcepts[0].uri == "0")
+    assert.ok(sortedConcepts[1].uri == "1")
+    assert.ok(sortedConcepts[2].uri == "2")
+    assert.ok(sortedConcepts[3].uri == "3")
+    assert.ok(sortedConcepts[4].uri == "11")
     let sortedSchemes = tools.sortSchemes(objects)
     assert.ok(sortedSchemes[0].uri == "3")
-    assert.ok(sortedSchemes[1].uri == "1")
-    assert.ok(sortedSchemes[2].uri == "2")
+    assert.ok(sortedSchemes[1].uri == "0")
+    assert.ok(sortedSchemes[2].uri == "1")
+    assert.ok(sortedSchemes[3].uri == "11")
+    assert.ok(sortedSchemes[4].uri == "2")
   })
 
   it("minifyMapping", () => {

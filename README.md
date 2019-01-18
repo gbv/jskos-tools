@@ -193,14 +193,14 @@ jskos.isContainedIn(object, listOfObjects)
 Aliases: `isSchemeInList`
 
 #### sortConcepts
-Sorts a list of concepts by their notation, then URI. Returns a copy of the list.
+Sorts a list of concepts by their notation, then URI. Returns a copy of the list. If the second parameter is `true`, it will try to sort by numerical notations.
 
 ```js
 jskos.sortConcepts(concepts)
 ```
 
 #### sortSchemes
-Sorts a list of schemes by their German prefLabel, then URI. Returns a copy of the list.
+Sorts a list of schemes by their prefLabel (de or en), then notation, then URI. Returns a copy of the list.
 
 ```js
 jskos.sortSchemes(schemes)
