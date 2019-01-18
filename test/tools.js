@@ -41,6 +41,9 @@ describe("Tools", () => {
     assert.notEqual(object.uri, copy.uri)
     // All properties starting with an underscore should be ignored
     assert.equal(copy._test, undefined)
+    // Test skipUnderscore
+    let copy2 = tools.copyDeep(object, ["self"], false)
+    assert.equal(copy2._test, object._test)
   })
 
   it("getAllUris", () => {
