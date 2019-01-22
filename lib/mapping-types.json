@@ -5,7 +5,28 @@
     ],
     "uri": "http://www.w3.org/2004/02/skos/core#exactMatch",
     "prefLabel": {
-      "en": "exact match"
+      "be-tarask": "дакладная адпаведнасьць",
+      "ca": "equivalència exacta",
+      "da": "exact match",
+      "de": "exact match",
+      "en": "exact match",
+      "es": "equivalencia exacta",
+      "fi": "vastaava käsite",
+      "fr": "équivalence exacte",
+      "he": "התאמה מדוייקת",
+      "hu": "pontos egyezés",
+      "it": "corrispondenza esatta",
+      "mk": "точно совпаѓање",
+      "nb": "eksakt samsvar",
+      "nl": "exacte match",
+      "nn": "eksakt samsvar",
+      "pl": "dokładne dopasowanie",
+      "pt": "correspondência exata",
+      "ru": "точное соответствие",
+      "sr": "тачно подударање",
+      "sv": "exakt träff",
+      "uk": "точна відповідність",
+      "zh-hans": "精确匹配"
     },
     "broader": [
       {
@@ -21,7 +42,20 @@
     ],
     "uri": "http://www.w3.org/2004/02/skos/core#closeMatch",
     "prefLabel": {
-      "en": "close match"
+      "be-tarask": "блізкая адпаведнасьць",
+      "ca": "equivalència inexacta",
+      "en": "close match",
+      "es": "equivalencia inexacta",
+      "fi": "lähes vastaava käsite",
+      "it": "corrispondenza stretta",
+      "nb": "nært samsvar",
+      "nl": "nabije match",
+      "nn": "nært samsvar",
+      "pl": "częściowe dopasowanie",
+      "pt": "correspondência próxima",
+      "ru": "близкое соответствие",
+      "sv": "nära matchning",
+      "zh-hans": "高度匹配"
     },
     "broader": [
       {
@@ -37,7 +71,16 @@
     ],
     "uri": "http://www.w3.org/2004/02/skos/core#broadMatch",
     "prefLabel": {
-      "en": "broader match"
+      "en": "broad match",
+      "fi": "vastaava laajempi käsite",
+      "it": "corrispondenza generica",
+      "nb": "bredere samsvar",
+      "nl": "brede match",
+      "nn": "breitt samsvar",
+      "pl": "dopasowanie pojęcia o szerszym znaczeniu",
+      "ru": "более широкое соответствие",
+      "sv": "bred träff",
+      "zh-hans": "广泛匹配"
     },
     "broader": [
       {
@@ -58,7 +101,15 @@
     ],
     "uri": "http://www.w3.org/2004/02/skos/core#narrowMatch",
     "prefLabel": {
-      "en": "narrower match"
+      "en": "narrow match",
+      "fi": "vastaava suppeampi käsite",
+      "nb": "smalere samsvar",
+      "nl": "nauwe match",
+      "nn": "snevert samsvar",
+      "pl": "dopasowanie pojęcia o węższym znaczeniu",
+      "ru": "более узкое соответствие",
+      "sv": "smal träff",
+      "zh-hans": "有限匹配"
     },
     "broader": [
       {
@@ -79,7 +130,14 @@
     ],
     "uri": "http://www.w3.org/2004/02/skos/core#relatedMatch",
     "prefLabel": {
-      "en": "related match"
+      "be-tarask": "зьвязаная адпаведнасьць",
+      "en": "related match",
+      "it": "corrispondenza correlata",
+      "nb": "relatert samsvar",
+      "nl": "gerelateerde match",
+      "pl": "dopasowanie pojęcia o powiązanym znaczeniu",
+      "ru": "ассоциативное соответствие",
+      "zh-hans": "关联匹配"
     },
     "broader": [
       {

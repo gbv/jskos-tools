@@ -1,0 +1,37 @@
+#!/usr/bin/env node
+const wdk = require("wikidata-sdk")
+const fs = require("fs")
+const request = require("request-promise-native")
+
+// load existing mapping types
+const { mappingTypes } = require("../index")
+const types = mappingTypes.reduce( (obj, m) => {
+  obj[m.uri] = m
+  m.prefLabel = {}
+  return obj
+}, {})
+
+// override/extend labels from Wikidata
+const query = `SELECT ?uri ?label WHERE {
+  {
+    { ?item wdt:P31 wd:Q60817979 } UNION 
+    { BIND(wd:Q60817979 AS ?item) }
+  }
+  ?item wdt:P2699 ?uri .
+  ?item rdfs:label ?label .
+} ORDER BY LANG(?label)`
+
+request({
+  uri: wdk.sparqlQuery(query),
+  json: true
+}).then(res => res.results.bindings)
+  .then(res => {
+    res.forEach(row => {
+      let uri = row.uri.value
+      let label = row.label.value 
+      let lang = row.label["xml:lang"]
+      types[uri].prefLabel[lang] = label
+    })
+    let json = JSON.stringify(mappingTypes, null, 2)
+    fs.writeFileSync(__dirname+"/../lib/mapping-types.json", json)
+  })
