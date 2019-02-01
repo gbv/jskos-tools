@@ -1,4 +1,7 @@
 #!/usr/bin/env node
+/**
+ * Localize mapping type names from Wikidata.
+ */
 const wdk = require("wikidata-sdk")
 const fs = require("fs")
 const request = require("request-promise-native")

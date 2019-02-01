@@ -42,6 +42,8 @@ This repository contains tools for working with the [JSKOS data format for knowl
     - [mappingToCSV](#mappingtocsv)
     - [conceptsOfMapping](#conceptsofmapping)
     - [compareMappingsDeep](#comparemappingsdeep)
+    - [guessObjectType](#guessObjectType)
+    - [objectTypes](#objectTypes)
 - [Build](#build)
 - [Test](#test)
 - [Maintainers](#maintainers)
@@ -281,6 +283,14 @@ jskos.conceptsOfMapping(mapping)
 ```js
 if (jskos.compareMappingsDeep(mapping1, mapping2)) { ... }
 ```
+
+#### objectTypes
+
+An object that maps JSKOS object type names to their description.
+
+#### guessObjectType
+
+Guess the JSKOS object type of an object or string and return its name.
 
 ## Build
 
