@@ -13,8 +13,6 @@ This repository contains tools for working with the [JSKOS data format for knowl
 
 - [Install](#install)
 - [Usage](#usage)
-  - [validate](#validate)
-  - [version](#version)
   - [Mapping Identifiers](#mapping-identifiers)
     - [mappingContentIdentifier](#mappingcontentidentifier)
     - [mappingMembersIdentifier](#mappingmembersidentifier)
@@ -54,7 +52,7 @@ This repository contains tools for working with the [JSKOS data format for knowl
 ## Install
 
 ```bash
-git clone --recursive https://github.com/gbv/jskos-tools.git
+git clone https://github.com/gbv/jskos-tools.git
 cd jskos-tools
 npm i jskos-tools
 ```
@@ -67,17 +65,6 @@ const jskos = require("jskos-tools")
 
 See <https://gbv.github.io/jskos-tools/> for full API documentation of
 [module jskos-tools](https://gbv.github.io/jskos-tools/module-jskos-tools.html).
-
-### validate
-
-See [submodule validate](https://gbv.github.io/jskos-tools/module-jskos-tools.module_validate.html).
-
-### version
-Returns the version of the JSKOS specification that's used for validation.
-
-```js
-jskos.version // 0.4.2
-```
 
 ### Mapping Identifiers
 
