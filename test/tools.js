@@ -293,6 +293,13 @@ describe("Tools", () => {
         fromResult: 1,
         toResult: 4,
       },
+      // Test `null` values in memberSet (should be omitted).
+      {
+        from: { memberSet: [{ uri: "http://test1" }] },
+        to: { memberSet: [ null ] },
+        fromResult: 1,
+        toResult: 0,
+      },
     ]
     for (let mapping of mappings) {
       // Test sides
