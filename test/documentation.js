@@ -1,7 +1,9 @@
 const assert = require("assert")
 const fs = require("fs")
 const jskos = require("../index")
-const _ = require("lodash")
+const _ = {
+  forOwn: require("lodash/forOwn")
+}
 
 let readme = fs.readFileSync("./README.md", "utf8")
 
