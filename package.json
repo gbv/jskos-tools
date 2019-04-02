@@ -46,7 +46,6 @@
     "wikidata-sdk": "^5.15.10"
   },
   "dependencies": {
-    "ajv": "^6.5.2",
     "lodash": "^4.17.11",
     "simple-sha1": "^2.1.1"
   }

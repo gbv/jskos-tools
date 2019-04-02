@@ -1,8 +1,0 @@
-{
-  "memberSet": [
-    {
-      "narrower": 0
-    }
-  ],
-  "$comment": "Testing nested concepts. Should fail because narrower must be an array."
-}

@@ -1,7 +1,7 @@
 const assert = require("assert")
 
 const { ConceptScheme } = require("../index.js")
-const gnd = require("../jskos/examples/gnd.scheme.json")
+const gnd = require("./gnd.scheme.json")
 
 describe("ConceptConceptScheme", () => {
   let scheme = new ConceptScheme(gnd)

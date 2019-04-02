@@ -1,4 +1,0 @@
-[submodule "jskos"]
-	path = jskos
-	url = https://github.com/gbv/jskos.git
-    branch = master
