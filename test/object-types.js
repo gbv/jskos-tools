@@ -33,4 +33,8 @@ describe("Object Types", () => {
       }
     }
   })
+
+  it("guessObjectType (undefined)", () => {
+    assert.equal(guessObjectType("XXXX", true), undefined)
+  })
 })
