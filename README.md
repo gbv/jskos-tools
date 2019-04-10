@@ -277,7 +277,12 @@ An object that maps JSKOS object type names to their description.
 
 #### guessObjectType
 
-Guess the JSKOS object type of an object or string and return its name.
+Guess the JSKOS object type of an object, URI or name and return its canonical name.
+
+```js
+type = guessObjectType(objectOrString)        // get full name such as `ConceptScheme`
+type = guessObjectType(objectOrString, true)  // get short name such as `scheme`
+```
 
 ## Build
 
