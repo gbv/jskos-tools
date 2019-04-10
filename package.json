@@ -1,6 +1,6 @@
 {
   "name": "jskos-tools",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Tools for working with the JSKOS data format.",
   "homepage": "https://github.com/gbv/jskos-tools",
   "repository": {
@@ -14,8 +14,8 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "lint": "eslint ./*.js ./**/*.js ./bin/*",
-    "fix": "eslint --fix ./*.js ./**/*.js ./bin/*",
+    "lint": "eslint ./*.js ./test/*.js ./lib/*.js ./bin/*",
+    "fix": "eslint --fix ./*.js ./test/*.js ./lib/*.js ./bin/*",
     "lint-staged": "lint-staged",
     "docs": "jsdoc --configure jsdoc.json && cp -r jsdoc/assets/* jsdoc/build"
   },
