@@ -27,8 +27,8 @@ describe("Object Types", () => {
   it("guessObjectType (object)", () => {
     for (let name in objectTypes) {
       const { type } = objectTypes[name]
-      for (let uri of (type || [])) {
-        let obj = { type: [uri] }
+      for (let uri of (type || [])) {        
+        let obj = { type: name === "Annotation" ? uri : [uri] }
         assert.equal(guessObjectType(obj), name)
       }
     }
