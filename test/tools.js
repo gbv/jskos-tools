@@ -445,4 +445,96 @@ describe("Tools", () => {
     assert.ok(!tools.compareMappingsDeep(mapping3, mapping4))
   })
 
+  it("merge", () => {
+    let tests = [
+      // Test empty objects
+      {
+        a: {},
+        b: {},
+        result: {}
+      },
+      // Test adding properties from b to a
+      {
+        a: { uri: "test" },
+        b: { prefLabel: { de: "Test" }},
+        result: { uri: "test", prefLabel: { de: "Test" }}
+      },
+      // Test merging simple object properties
+      {
+        a: { prefLabel: { de: "testDe" }},
+        b: { prefLabel: { en: "testEn" }},
+        result: { prefLabel: { de: "testDe", en: "testEn" }}
+      },
+      // Test merging simple array properties
+      {
+        a: { test: ["a"] },
+        b: { test: ["b"] },
+        result: { test: ["a", "b"] }
+      },
+      // Test throwing an error when object types don't match
+      {
+        a: { type: ["http://www.w3.org/2004/02/skos/core#Concept"] },
+        b: { type: ["http://www.w3.org/2004/02/skos/core#ConceptScheme"] },
+        throws: true
+      },
+      // Test not throwing an error when object types don't match and throwOnTypeMismatch option is false
+      {
+        a: { type: ["http://www.w3.org/2004/02/skos/core#Concept"] },
+        b: { type: ["http://www.w3.org/2004/02/skos/core#ConceptScheme"] },
+        options: { throwOnTypeMismatch: false },
+        result: { type: ["http://www.w3.org/2004/02/skos/core#Concept", "http://www.w3.org/2004/02/skos/core#ConceptScheme"] },
+      },
+      // Test deep merging of arrays
+      {
+        a: { from: { memberSet: [{ uri: "test1" }, { uri: "test2" }] }},
+        b: { from: { memberSet: [{ uri: "test1" }, { uri: "test3" }] }},
+        result: { from: { memberSet: [{ uri: "test1" }, { uri: "test2" }, { uri: "test3" }] }},
+      },
+      // Test URI merging 1
+      {
+        a: { uri: "test1" },
+        b: { uri: "test2" },
+        options: { uriMerge: true },
+        result: { uri: "test1", identifier: ["test2"] }
+      },
+      // Test URI merging 2 ("test1" should be removed from identifier)
+      {
+        a: { uri: "test1" },
+        b: { uri: "test2", identifier: ["test1", "test3"] },
+        options: { uriMerge: true },
+        result: { uri: "test1", identifier: ["test3", "test2"] }
+      },
+      // Test throwing an error on simple property mismatch
+      {
+        a: { uri: "test1" },
+        b: { uri: "test2" },
+        options: { throwOnMismatch: ["uri"] },
+        throws: true
+      },
+      // Test throwing an error on deep property mismatch
+      {
+        a: { prefLabel: { de: "test1" }},
+        b: { prefLabel: { de: "test2" }},
+        options: { throwOnMismatch: ["prefLabel.de"] },
+        throws: true
+      },
+      // Test not throwing an error on deep property match
+      {
+        a: { prefLabel: { de: "test1" }},
+        b: { prefLabel: { de: "test1" }},
+        options: { throwOnMismatch: ["prefLabel.de"] },
+        result: { prefLabel: { de: "test1" }},
+      },
+    ]
+
+    for (let test of tests) {
+      if (test.throws) {
+        assert.throws(() => tools.merge(test.a, test.b, test.options))
+      } else {
+        let result = tools.merge(test.a, test.b, test.options)
+        assert.deepStrictEqual(result, test.result)
+      }
+    }
+  })
+
 })

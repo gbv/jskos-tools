@@ -42,6 +42,7 @@ This repository contains tools for working with the [JSKOS data format for knowl
     - [compareMappingsDeep](#comparemappingsdeep)
     - [guessObjectType](#guessObjectType)
     - [objectTypes](#objectTypes)
+    - [merge](#merge)
 - [Build](#build)
 - [Test](#test)
 - [Maintainers](#maintainers)
@@ -270,6 +271,9 @@ jskos.conceptsOfMapping(mapping)
 ```js
 if (jskos.compareMappingsDeep(mapping1, mapping2)) { ... }
 ```
+
+#### merge
+Merges two JSKOS objects. See [documentation](https://gbv.github.io/jskos-tools/module-jskos-tools.html#.merge) for more information.
 
 #### objectTypes
 
