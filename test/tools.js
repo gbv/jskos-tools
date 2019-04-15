@@ -473,6 +473,45 @@ describe("Tools", () => {
     }
   })
 
+  it("mergeUris", () => {
+    let tests = [
+      {
+        a: {},
+        b: {},
+        result: {}
+      },
+      {
+        a: null,
+        b: {},
+        result: null
+      },
+      {
+        a: {},
+        b: null,
+        result: {}
+      },
+      {
+        a: { uri: "test1" },
+        b: { uri: "test2" },
+        result: { uri: "test1", identifier: ["test2"] }
+      },
+      {
+        a: { uri: "test1" },
+        b: { uri: "test2", identifier: ["test1", "test3"] },
+        result: { uri: "test1", identifier: ["test3", "test2"] }
+      },
+      // Expect identifier property to be removed if empty
+      {
+        a: { uri: "test1" },
+        b: { identifier: ["test1"] },
+        result: { uri: "test1" }
+      },
+    ]
+    for (let test of tests) {
+      assert.deepStrictEqual(tools.mergeUris(test.a, test.b), test.result)
+    }
+  })
+
   it("merge", () => {
     let tests = [
       // Test empty objects

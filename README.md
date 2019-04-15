@@ -43,6 +43,7 @@ This repository contains tools for working with the [JSKOS data format for knowl
     - [guessObjectType](#guessobjecttype)
     - [objectTypes](#objecttypes)
     - [matchObjectTypes](#matchobjecttypes)
+    - [mergeUris](#mergeuris)
     - [merge](#merge)
 - [Build](#build)
 - [Test](#test)
@@ -275,6 +276,9 @@ if (jskos.compareMappingsDeep(mapping1, mapping2)) { ... }
 
 #### matchObjectTypes
 Compares two JSKOS objects based on their types. Returns `false` only if both types could be guessed using [`guessObjectType`](#guessobjecttype) and they did not match, otherwise it will assume that the types match.
+
+#### mergeUris
+Merge URIs of two objects `a` and `b` into `a` by adding/removing URIs from identifier property.
 
 #### merge
 Merges two JSKOS objects. See [documentation](https://gbv.github.io/jskos-tools/module-jskos-tools.html#.merge) for more information.
