@@ -533,35 +533,35 @@ describe("Tools", () => {
       {
         a: { uri: "test1" },
         b: { uri: "test2" },
-        options: { uriMerge: true },
+        options: { mergeUris: true },
         result: { uri: "test1", identifier: ["test2"] }
       },
       // Test URI merging 2 ("test1" should be removed from identifier)
       {
         a: { uri: "test1" },
         b: { uri: "test2", identifier: ["test1", "test3"] },
-        options: { uriMerge: true },
+        options: { mergeUris: true },
         result: { uri: "test1", identifier: ["test3", "test2"] }
       },
       // Test throwing an error on simple property mismatch
       {
         a: { uri: "test1" },
         b: { uri: "test2" },
-        options: { throwOnMismatch: ["uri"] },
+        options: { detectMismatch: ["uri"] },
         throws: true
       },
       // Test throwing an error on deep property mismatch
       {
         a: { prefLabel: { de: "test1" }},
         b: { prefLabel: { de: "test2" }},
-        options: { throwOnMismatch: ["prefLabel.de"] },
+        options: { detectMismatch: ["prefLabel.de"] },
         throws: true
       },
       // Test not throwing an error on deep property match
       {
         a: { prefLabel: { de: "test1" }},
         b: { prefLabel: { de: "test1" }},
-        options: { throwOnMismatch: ["prefLabel.de"] },
+        options: { detectMismatch: ["prefLabel.de"] },
         result: { prefLabel: { de: "test1" }},
       },
     ]
