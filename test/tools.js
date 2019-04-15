@@ -489,6 +489,12 @@ describe("Tools", () => {
         b: { test: ["b"] },
         result: { test: ["a", "b", null] }
       },
+      // Test merging null values in array, null should only appear once and at the end
+      {
+        a: { test: ["a", null] },
+        b: { test: ["b", null] },
+        result: { test: ["a", "b", null] }
+      },
       // Test throwing an error when object types don't match
       {
         a: { type: ["http://www.w3.org/2004/02/skos/core#Concept"] },
