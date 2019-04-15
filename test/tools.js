@@ -445,6 +445,34 @@ describe("Tools", () => {
     assert.ok(!tools.compareMappingsDeep(mapping3, mapping4))
   })
 
+  it("matchObjectTypes", () => {
+    let tests = [
+      {
+        a: { type: ["http://www.w3.org/2004/02/skos/core#Concept"] },
+        b: { type: ["http://www.w3.org/2004/02/skos/core#ConceptScheme"] },
+        result: false
+      },
+      {
+        a: { type: ["http://www.w3.org/2004/02/skos/core#Concept"] },
+        b: { type: ["http://www.w3.org/2004/02/skos/core#Concept"] },
+        result: true
+      },
+      {
+        a: { type: [] },
+        b: { type: ["http://www.w3.org/2004/02/skos/core#Concept"] },
+        result: true
+      },
+      {
+        a: {},
+        b: {},
+        result: true
+      },
+    ]
+    for (let test of tests) {
+      assert.equal(tools.matchObjectTypes(test.a, test.b), test.result)
+    }
+  })
+
   it("merge", () => {
     let tests = [
       // Test empty objects
@@ -494,19 +522,6 @@ describe("Tools", () => {
         a: { test: ["a", null] },
         b: { test: ["b", null] },
         result: { test: ["a", "b", null] }
-      },
-      // Test throwing an error when object types don't match
-      {
-        a: { type: ["http://www.w3.org/2004/02/skos/core#Concept"] },
-        b: { type: ["http://www.w3.org/2004/02/skos/core#ConceptScheme"] },
-        throws: true
-      },
-      // Test not throwing an error when object types don't match and throwOnTypeMismatch option is false
-      {
-        a: { type: ["http://www.w3.org/2004/02/skos/core#Concept"] },
-        b: { type: ["http://www.w3.org/2004/02/skos/core#ConceptScheme"] },
-        options: { throwOnTypeMismatch: false },
-        result: { type: ["http://www.w3.org/2004/02/skos/core#Concept", "http://www.w3.org/2004/02/skos/core#ConceptScheme"] },
       },
       // Test deep merging of arrays
       {
