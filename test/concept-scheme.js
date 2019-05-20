@@ -31,13 +31,22 @@ describe("ConceptScheme", () => {
   })
 
   it("conceptFromUri", () => {
-    assert.deepEqual({uri, notation: [notation]}, scheme.conceptFromUri(uri))
+    let expect = {uri, notation: [notation]}
+    assert.deepEqual(expect, scheme.conceptFromUri(uri))
     assert.equal(null, scheme.conceptFromUri("x:y"))
+
+    expect.inScheme = [{uri: scheme.uri}]
+    assert.deepEqual(expect, scheme.conceptFromUri(uri, { inScheme: true }))
   })
 
   it("conceptFromNotation", () => {
+    let expect = {uri, notation: [notation]}
     let concept = scheme.conceptFromNotation(notation)
-    assert.deepEqual({uri, notation: [notation]}, concept )
+    assert.deepEqual(expect, concept )
+
+    expect.topConceptOf = [{uri: scheme.uri}]
+    concept = scheme.conceptFromNotation(notation, { topConcept: true })
+    assert.deepEqual(expect, concept )
   })
 
 })

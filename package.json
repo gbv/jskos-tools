@@ -1,6 +1,6 @@
 {
   "name": "jskos-tools",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "Tools for working with the JSKOS data format.",
   "homepage": "https://github.com/gbv/jskos-tools",
   "repository": {
@@ -35,20 +35,20 @@
   ],
   "author": "Stefan Peters",
   "devDependencies": {
-    "eslint": "^5.6.0",
+    "eslint": "^5.16.0",
     "foodoc": "0.0.9",
-    "glob": "^7.1.2",
-    "jsdoc": "^3.5.5",
+    "glob": "^7.1.4",
+    "jsdoc": "=3.6.2",
     "lint-staged": "^7.3.0",
     "mocha": "^5.2.0",
     "pre-commit": "^1.2.2",
     "request": "^2.88.0",
     "request-promise-core": "^1.1.2",
-    "request-promise-native": "^1.0.5",
-    "wikidata-sdk": "^5.15.10"
+    "request-promise-native": "^1.0.7",
+    "wikidata-sdk": "^5.16.2"
   },
   "dependencies": {
     "lodash": "^4.17.11",
-    "simple-sha1": "^2.1.1"
+    "simple-sha1": "^2.1.2"
   }
 }
