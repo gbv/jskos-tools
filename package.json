@@ -38,7 +38,7 @@
     "eslint": "^5.16.0",
     "foodoc": "0.0.9",
     "glob": "^7.1.4",
-    "jsdoc": "=3.6.2",
+    "jsdoc": "^3.6.2",
     "lint-staged": "^7.3.0",
     "mocha": "^5.2.0",
     "pre-commit": "^1.2.2",

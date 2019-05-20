@@ -1,7 +1,7 @@
 language: node_js
 node_js:
-- 7
-- 6
+- 11
+- 8
 script:
 - npm run lint
 - npm test
@@ -19,6 +19,6 @@ deploy:
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
   on:
-    node: "7"
+    node: 8
     tags: false
     branch: master
