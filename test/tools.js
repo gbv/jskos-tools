@@ -603,6 +603,20 @@ describe("Tools", () => {
         options: { detectMismatch: ["prefLabel.de"] },
         result: { prefLabel: { de: "test1" }},
       },
+      // Test for skipping paths 1
+      {
+        a: { uri: "test1", prefLabel: { de: "test1" }},
+        b: { uri: "test1" },
+        options: { skipPaths: ["prefLabel"] },
+        result: { uri: "test1" },
+      },
+      // Test for skipping paths 1
+      {
+        a: { uri: "test1", prefLabel: { de: "test1" }},
+        b: { uri: "test1", prefLabel: { en: "test1" }},
+        options: { skipPaths: ["prefLabel.en"] },
+        result: { uri: "test1", prefLabel: { de: "test1" }},
+      },
     ]
 
     for (let test of tests) {
