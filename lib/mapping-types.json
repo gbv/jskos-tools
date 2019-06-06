@@ -1,20 +1,36 @@
 [
   {
+    "RELEVANCE": "very high",
+    "broader": [
+      {
+        "uri": "http://www.w3.org/2004/02/skos/core#closeMatch"
+      }
+    ],
+    "definition": {
+      "de": [
+        "gleiche Bedeutung"
+      ],
+      "en": [
+        "same meaning"
+      ]
+    },
     "notation": [
       "="
     ],
-    "uri": "http://www.w3.org/2004/02/skos/core#exactMatch",
     "prefLabel": {
       "be-tarask": "дакладная адпаведнасьць",
       "ca": "equivalència exacta",
+      "cs": "přesná shoda",
       "da": "exact match",
-      "de": "exact match",
+      "de": "exakte Übereinstimmung",
       "en": "exact match",
+      "eo": "ekzakta ekvivalento",
       "es": "equivalencia exacta",
       "fi": "vastaava käsite",
       "fr": "équivalence exacte",
       "he": "התאמה מדוייקת",
       "hu": "pontos egyezés",
+      "id": "sama persis",
       "it": "corrispondenza esatta",
       "mk": "точно совпаѓање",
       "nb": "eksakt samsvar",
@@ -26,54 +42,76 @@
       "sr": "тачно подударање",
       "sv": "exakt träff",
       "uk": "точна відповідність",
+      "zh": "精確匹配",
       "zh-hans": "精确匹配"
     },
-    "broader": [
-      {
-        "uri": "http://www.w3.org/2004/02/skos/core#closeMatch"
-      }
-    ],
-    "RELEVANCE": "very high",
-    "short": "exact"
+    "short": "exact",
+    "uri": "http://www.w3.org/2004/02/skos/core#exactMatch"
   },
   {
+    "RELEVANCE": "high",
+    "broader": [
+      {
+        "uri": "http://www.w3.org/2004/02/skos/core#mappingRelation"
+      }
+    ],
+    "definition": {
+      "de": [
+        "in etwa gleiche Bedeutung"
+      ],
+      "en": [
+        "same general idea but not fully identical meaning"
+      ]
+    },
     "notation": [
       "≈"
     ],
-    "uri": "http://www.w3.org/2004/02/skos/core#closeMatch",
     "prefLabel": {
       "be-tarask": "блізкая адпаведнасьць",
       "ca": "equivalència inexacta",
+      "de": "hohe Übereinstimmung",
       "en": "close match",
       "es": "equivalencia inexacta",
       "fi": "lähes vastaava käsite",
       "it": "corrispondenza stretta",
+      "mk": "блиско совпаѓање",
       "nb": "nært samsvar",
       "nl": "nabije match",
       "nn": "nært samsvar",
       "pl": "częściowe dopasowanie",
       "pt": "correspondência próxima",
       "ru": "близкое соответствие",
+      "sr": "блиско поклапање",
       "sv": "nära matchning",
       "zh-hans": "高度匹配"
     },
+    "short": "close",
+    "uri": "http://www.w3.org/2004/02/skos/core#closeMatch"
+  },
+  {
+    "RELEVANCE": "medium",
     "broader": [
       {
         "uri": "http://www.w3.org/2004/02/skos/core#mappingRelation"
       }
     ],
-    "RELEVANCE": "high",
-    "short": "close"
-  },
-  {
+    "definition": {
+      "de": [
+        "umfassendere Bedeutung"
+      ],
+      "en": [
+        "broader meaning"
+      ]
+    },
     "notation": [
       ">"
     ],
-    "uri": "http://www.w3.org/2004/02/skos/core#broadMatch",
     "prefLabel": {
+      "de": "allgemeinere Bedeutung",
       "en": "broad match",
       "fi": "vastaava laajempi käsite",
       "it": "corrispondenza generica",
+      "mk": "пошироко совпаѓање",
       "nb": "bredere samsvar",
       "nl": "brede match",
       "nn": "breitt samsvar",
@@ -82,27 +120,37 @@
       "sv": "bred träff",
       "zh-hans": "广泛匹配"
     },
-    "broader": [
-      {
-        "uri": "http://www.w3.org/2004/02/skos/core#mappingRelation"
-      }
-    ],
     "related": [
       {
         "uri": "http://www.w3.org/2004/02/skos/core#narrowMatch"
       }
     ],
-    "RELEVANCE": "medium",
-    "short": "broad"
+    "short": "broad",
+    "uri": "http://www.w3.org/2004/02/skos/core#broadMatch"
   },
   {
+    "RELEVANCE": "medium",
+    "broader": [
+      {
+        "uri": "http://www.w3.org/2004/02/skos/core#mappingRelation"
+      }
+    ],
+    "definition": {
+      "de": [
+        "umfassendere Bedeutung"
+      ],
+      "en": [
+        "more specific meaning"
+      ]
+    },
     "notation": [
       "<"
     ],
-    "uri": "http://www.w3.org/2004/02/skos/core#narrowMatch",
     "prefLabel": {
+      "de": "spezifischere Bedeutung",
       "en": "narrow match",
       "fi": "vastaava suppeampi käsite",
+      "mk": "потесно совпаѓање",
       "nb": "smalere samsvar",
       "nl": "nauwe match",
       "nn": "snevert samsvar",
@@ -111,51 +159,71 @@
       "sv": "smal träff",
       "zh-hans": "有限匹配"
     },
-    "broader": [
-      {
-        "uri": "http://www.w3.org/2004/02/skos/core#mappingRelation"
-      }
-    ],
     "related": [
       {
         "uri": "http://www.w3.org/2004/02/skos/core#broadMatch"
       }
     ],
-    "RELEVANCE": "medium",
-    "short": "narrow"
+    "short": "narrow",
+    "uri": "http://www.w3.org/2004/02/skos/core#narrowMatch"
   },
   {
+    "RELEVANCE": "low",
+    "broader": [
+      {
+        "uri": "http://www.w3.org/2004/02/skos/core#mappingRelation"
+      }
+    ],
+    "definition": {
+      "de": [
+        "assoziative Verknüpfung unterschiedlicher Bedeutungen"
+      ],
+      "en": [
+        "associative link between meanings"
+      ]
+    },
     "notation": [
       "~"
     ],
-    "uri": "http://www.w3.org/2004/02/skos/core#relatedMatch",
     "prefLabel": {
       "be-tarask": "зьвязаная адпаведнасьць",
+      "de": "verwandte Bedeutung",
       "en": "related match",
       "it": "corrispondenza correlata",
+      "mk": "поврзано совпаѓање",
       "nb": "relatert samsvar",
       "nl": "gerelateerde match",
       "pl": "dopasowanie pojęcia o powiązanym znaczeniu",
       "ru": "ассоциативное соответствие",
       "zh-hans": "关联匹配"
     },
-    "broader": [
-      {
-        "uri": "http://www.w3.org/2004/02/skos/core#mappingRelation"
-      }
-    ],
-    "RELEVANCE": "low",
-    "short": "related"
+    "short": "related",
+    "uri": "http://www.w3.org/2004/02/skos/core#relatedMatch"
   },
   {
+    "RELEVANCE": "medium",
+    "definition": {
+      "de": [
+        "unbekannter Bedeutungszusammenhang"
+      ],
+      "en": [
+        "unknown type of link between meanings"
+      ]
+    },
     "notation": [
       "→"
     ],
-    "uri": "http://www.w3.org/2004/02/skos/core#mappingRelation",
     "prefLabel": {
-      "en": "mapping relation"
+      "ca": "relació de mapatge",
+      "de": "allgemeine Mapping-Relation",
+      "en": "generic mapping relation",
+      "id": "relasi pemetaan",
+      "mk": "пресликувачки однос",
+      "sr": "релација мапирања",
+      "sv": "mappnings relation",
+      "zh": "映射關係"
     },
-    "RELEVANCE": "medium",
-    "short": ""
+    "short": "",
+    "uri": "http://www.w3.org/2004/02/skos/core#mappingRelation"
   }
 ]

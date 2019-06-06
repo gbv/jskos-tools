@@ -218,6 +218,8 @@ An array of mapping types in form of objects. Objects can have the following pro
 - `RELEVANCE` - relevance label for GND terms (low, medium, high, very high)
 - `short` - a short name for the type, used for CSV import/export
 
+The labels are taken from Wikidata (see script `bin/localize-mapping-types`).
+
 Example object:
 ```json
 {
