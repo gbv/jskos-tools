@@ -38,6 +38,7 @@ This repository contains tools for working with the [JSKOS data format for knowl
     - [defaultMappingType](#defaultmappingtype)
     - [flattenMapping](#flattenmapping)
     - [mappingToCSV](#mappingtocsv)
+    - [serializeCSV](#serializecsv)
     - [conceptsOfMapping](#conceptsofmapping)
     - [compareMappingsDeep](#comparemappingsdeep)
     - [guessObjectType](#guessobjecttype)
@@ -261,6 +262,9 @@ mappingToCsv(mapping)
 ```
 
 Concept labels are included only if configuration field `language` is set. The order of CSV fields is fromNotation, (fromLabel,) toNotation, (toLabel,) mappingType.
+
+#### serializeCSV
+Returns a function to serialize an array as CSV row as configured with [CSV Dialect](<https://frictionlessdata.io/specs/csv-dialect/>).
 
 #### conceptsOfMapping
 Returns an array of concepts contained in a mapping. `side` can either be `from` or `to`. If `side` is left out, concepts from both sides will be returned. `null` values will be omitted.
