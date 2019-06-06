@@ -269,8 +269,8 @@ describe("Tools", () => {
 
     mapping.type = []
     assert.equal(csv({delimiter:";", quoteChar:"'"}), "'0';'a''c';''\n")
-    assert.equal(csv({language:"en", quoteChar:"'"}), "'0','''','a''c','0',''\n")
-    assert.equal(csv({language:"xx", quoteChar:"'"}), "'0','','a''c','',''\n")
+    assert.equal(csv({language:"en", quoteChar:"'"}), "'0','''','a''c','0','',''\n")
+    assert.equal(csv({language:"xx", quoteChar:"'"}), "'0','','a''c','','',''\n")
   })
 
   it("conceptsOfMapping", () => {

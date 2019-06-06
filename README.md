@@ -251,7 +251,7 @@ jskos.mappingTypeByType(mapping.type)
 The default mapping type (currently `mapping relation`).
 
 #### flattenMapping
-Converts a mapping into a flat object with for serialization as CSV. Returns an object with fields `fromNotation`, `toNotation`, `type`, and (if option `language` has been provided) `fromLabel` and `toLabel`).
+Converts a mapping into a flat object with for serialization as CSV. Returns an object with fields `fromNotation`, `toNotation`, `type`, and (if option `language` has been provided) `fromLabel`, `toLabel`, and `creator`.
 
 #### mappingToCSV
 Returns a configured converter from JSKOS mapping to CSV line. For now only simple 1-to-1 mappings and 1-to-0 mappings are supported.
@@ -261,7 +261,7 @@ let mappingToCsv = jskos.mappingToCSV({ delimiter: ';' })
 mappingToCsv(mapping)
 ```
 
-Concept labels are included only if configuration field `language` is set. The order of CSV fields is fromNotation, (fromLabel,) toNotation, (toLabel,) mappingType.
+Concept labels and creators are included only if configuration field `language` is set. The order of CSV fields is fromNotation, (fromLabel,) toNotation, (toLabel,) mappingType.
 
 #### serializeCSV
 Returns a function to serialize an array as CSV row as configured with [CSV Dialect](<https://frictionlessdata.io/specs/csv-dialect/>).
