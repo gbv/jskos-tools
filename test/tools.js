@@ -629,4 +629,26 @@ describe("Tools", () => {
     }
   })
 
+  it("normalize", () => {
+    let tests = [
+      {
+        a: "ä",
+        b: "ä"
+      },
+      {
+        a: ["ä"],
+        b: ["ä"]
+      },
+      {
+        a: { test: [{ blubb: "ä" }] },
+        b: { test: [{ blubb: "ä" }] },
+      },
+    ]
+
+    for (let test of tests) {
+      assert.notDeepStrictEqual(test.a, test.b)
+      assert.deepStrictEqual(tools.normalize(test.a), tools.normalize(test.b))
+    }
+  })
+
 })

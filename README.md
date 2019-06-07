@@ -46,6 +46,7 @@ This repository contains tools for working with the [JSKOS data format for knowl
     - [matchObjectTypes](#matchobjecttypes)
     - [mergeUris](#mergeuris)
     - [merge](#merge)
+    - [normalize](#normalize)
 - [Build](#build)
 - [Test](#test)
 - [Maintainers](#maintainers)
@@ -288,6 +289,9 @@ Merge URIs of two objects `a` and `b` into `a` by adding/removing URIs from iden
 
 #### merge
 Merges two JSKOS objects. See [documentation](https://gbv.github.io/jskos-tools/module-jskos-tools.html#.merge) for more information.
+
+#### normalize
+Applies recursive unicode normalization to data.
 
 #### objectTypes
 
