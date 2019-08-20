@@ -201,7 +201,7 @@
     "uri": "http://www.w3.org/2004/02/skos/core#relatedMatch"
   },
   {
-    "RELEVANCE": "medium",
+    "RELEVANCE": "generic",
     "definition": {
       "de": [
         "unbekannter Bedeutungszusammenhang"
