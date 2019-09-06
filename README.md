@@ -280,7 +280,7 @@ const csv = jskos.mappingCSV({
   creator: false,
   language: "en",
 })
-// Header line for an array of mappings
+// Header line for an array of mappings (assuming 1-to-1 mappings if no array is given)
 csv.header(mappings)
 // Single CSV line for a mapping (uses fromCount and toCount from the mapping by default)
 csv.fromMapping(mapping, { fromCount: null, toCount: null })

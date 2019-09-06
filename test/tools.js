@@ -312,6 +312,15 @@ describe("Tools", () => {
         }
       },
       {
+        function: "header",
+        params: null,
+        results: {
+          optionsNone: "\"fromNotation\",\"toNotation\",\"type\"\n",
+          optionsAllColumns: "\"fromScheme\",\"fromNotation\",\"fromLabel\",\"toScheme\",\"toNotation\",\"toLabel\",\"type\",\"creator\"\n",
+          optionsOther: "'fromNotation';'toNotation';'type'\n",
+        }
+      },
+      {
         function: "fromMapping",
         param: mappingNormal,
         results: {
