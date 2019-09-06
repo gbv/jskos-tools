@@ -45,7 +45,7 @@
       "zh": "精確匹配",
       "zh-hans": "精确匹配"
     },
-    "short": "exact",
+    "SHORT": "exact",
     "uri": "http://www.w3.org/2004/02/skos/core#exactMatch"
   },
   {
@@ -85,7 +85,7 @@
       "sv": "nära matchning",
       "zh-hans": "高度匹配"
     },
-    "short": "close",
+    "SHORT": "close",
     "uri": "http://www.w3.org/2004/02/skos/core#closeMatch"
   },
   {
@@ -125,7 +125,7 @@
         "uri": "http://www.w3.org/2004/02/skos/core#narrowMatch"
       }
     ],
-    "short": "broad",
+    "SHORT": "broad",
     "uri": "http://www.w3.org/2004/02/skos/core#broadMatch"
   },
   {
@@ -164,7 +164,7 @@
         "uri": "http://www.w3.org/2004/02/skos/core#broadMatch"
       }
     ],
-    "short": "narrow",
+    "SHORT": "narrow",
     "uri": "http://www.w3.org/2004/02/skos/core#narrowMatch"
   },
   {
@@ -197,7 +197,7 @@
       "ru": "ассоциативное соответствие",
       "zh-hans": "关联匹配"
     },
-    "short": "related",
+    "SHORT": "related",
     "uri": "http://www.w3.org/2004/02/skos/core#relatedMatch"
   },
   {
@@ -223,7 +223,7 @@
       "sv": "mappnings relation",
       "zh": "映射關係"
     },
-    "short": "",
+    "SHORT": "",
     "uri": "http://www.w3.org/2004/02/skos/core#mappingRelation"
   }
 ]

@@ -218,7 +218,7 @@ An array of mapping types in form of objects. Objects can have the following pro
 - `broader` - array of broader mapping types for this type
 - `related` - array of related mapping types
 - `RELEVANCE` - relevance label for GND terms (low, medium, high, very high)
-- `short` - a short name for the type, used for CSV import/export
+- `SHORT` - a short name for the type, used for CSV import/export
 
 The labels are taken from Wikidata (see script `bin/localize-mapping-types`).
 
@@ -230,7 +230,7 @@ Example object:
   "prefLabel": { "en": "close match" },
   "broader": [ { "uri": "http://www.w3.org/2004/02/skos/core#mappingRelation" } ],
   "RELEVANCE": "high",
-  "short": "close"
+  "SHORT": "close"
 }
 ```
 
