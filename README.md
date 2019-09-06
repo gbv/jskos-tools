@@ -274,6 +274,7 @@ const csv = jskos.mappingCSV({
   delimiter: ",",
   quoteChar: "\"",
   lineTerminator: "\n",
+  type: true,
   schemes: false,
   labels: false,
   creator: false,
