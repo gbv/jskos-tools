@@ -38,6 +38,7 @@ This repository contains tools for working with the [JSKOS data format for knowl
     - [defaultMappingType](#defaultmappingtype)
     - [flattenMapping](#flattenmapping)
     - [mappingToCSV](#mappingtocsv)
+    - [mappingCSV](#mappingcsv)
     - [serializeCSV](#serializecsv)
     - [conceptsOfMapping](#conceptsofmapping)
     - [compareMappingsDeep](#comparemappingsdeep)
@@ -263,6 +264,30 @@ mappingToCsv(mapping)
 ```
 
 Concept labels and creators are included only if configuration field `language` is set. The order of CSV fields is fromNotation, (fromLabel,) toNotation, (toLabel,) mappingType.
+
+#### mappingCSV
+Returns an object of preconfigured conversion functions to convert mappings into CSV. Supports 1-to-1, 1-to-n, and n-to-n mappings.
+
+```js
+// Initialize converter with default options
+const csv = jskos.mappingCSV({
+  delimiter: ",",
+  quoteChar: "\"",
+  lineTerminator: "\n",
+  schemes: false,
+  labels: false,
+  creator: false,
+  language: "en",
+})
+// Header line for an array of mappings
+csv.header(mappings)
+// Single CSV line for a mapping (uses fromCount and toCount from the mapping by default)
+csv.fromMapping(mapping, { fromCount: null, toCount: null })
+// Multiline CSV from array of mappings (includes header by default)
+csv.fromMappings(mappings, { header: true })
+```
+
+The order of the CSV fields is fromScheme, fromNotation, (fromLabel,) (fromNotation2, fromLabel2, ...) toNotation, (toLabel,) (toNotation2, toLabel2, ...) type, creator.
 
 #### serializeCSV
 Returns a function to serialize an array as CSV row as configured with [CSV Dialect](<https://frictionlessdata.io/specs/csv-dialect/>).
