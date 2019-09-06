@@ -257,20 +257,88 @@ describe("Tools", () => {
     assert.equal(Object.keys(emptyNewMapping).length, 0, "minifyMapping added properties to empty mapping")
   })
 
-  it("mappingToCSV", () => {
-    let mapping = {
+  it("mappingCSV", () => {
+    const mappingNormal = {
+      fromScheme: { notation: ["A"] },
       from: { memberSet: [{ notation: ["0"], prefLabel: { en: "'" }}] },
+      toScheme: { notation: ["B"] },
       to: { memberSet: [{ notation: ["a'c"], prefLabel: { en: "0" } }] },
       type: ["http://www.w3.org/2004/02/skos/core#broadMatch"]
     }
-    let csv = (options) => tools.mappingToCSV(options)(mapping)
+    const mappingCompound = {
+      from: { memberSet: [{ notation: ["0"], prefLabel: { en: "'" }}] },
+      to: { memberSet: [{ notation: ["a'c"], prefLabel: { en: "0" } }, { notation: ["b\"d"], prefLabel: { en: "1" } }] },
+      creator: [{ prefLabel: { en: "someone" } }]
+    }
+    const mappings = [mappingNormal, mappingCompound]
 
-    assert.equal(csv(), "\"0\",\"a'c\",\"broad\"\n")
+    const options = {
+      optionsNone: {},
+      optionsAllColumns: {
+        creator: true,
+        schemes: true,
+        labels: true,
+      },
+      optionsOther: {
+        delimiter: ";",
+        quoteChar: "'",
+      }
+    }
 
-    mapping.type = []
-    assert.equal(csv({delimiter:";", quoteChar:"'"}), "'0';'a''c';''\n")
-    assert.equal(csv({language:"en", quoteChar:"'"}), "'0','''','a''c','0','',''\n")
-    assert.equal(csv({language:"xx", quoteChar:"'"}), "'0','','a''c','','',''\n")
+    const testCases = [
+      {
+        function: "header",
+        param: mappings,
+        results: {
+          optionsNone: "\"fromNotation\",\"toNotation\",\"toNotation2\",\"type\"\n",
+          optionsAllColumns: "\"fromScheme\",\"fromNotation\",\"fromLabel\",\"toScheme\",\"toNotation\",\"toLabel\",\"toNotation2\",\"toLabel2\",\"type\",\"creator\"\n",
+          optionsOther: "'fromNotation';'toNotation';'toNotation2';'type'\n",
+        }
+      },
+      {
+        function: "header",
+        params: null,
+        results: {
+          optionsNone: "\"fromNotation\",\"toNotation\",\"type\"\n",
+          optionsAllColumns: "\"fromScheme\",\"fromNotation\",\"fromLabel\",\"toScheme\",\"toNotation\",\"toLabel\",\"type\",\"creator\"\n",
+          optionsOther: "'fromNotation';'toNotation';'type'\n",
+        }
+      },
+      {
+        function: "fromMapping",
+        param: mappingNormal,
+        results: {
+          optionsNone: "\"0\",\"a'c\",\"broad\"\n",
+          optionsAllColumns: "\"A\",\"0\",\"'\",\"B\",\"a'c\",\"0\",\"broad\",\"\"\n",
+          optionsOther: "'0';'a''c';'broad'\n",
+        }
+      },
+      {
+        function: "fromMapping",
+        param: mappingCompound,
+        results: {
+          optionsNone: "\"0\",\"a'c\",\"b\"\"d\",\"\"\n",
+          optionsAllColumns: "\"\",\"0\",\"'\",\"\",\"a'c\",\"0\",\"b\"\"d\",\"1\",\"\",\"someone\"\n",
+          optionsOther: "'0';'a''c';'b\"d';''\n",
+        }
+      },
+      {
+        function: "fromMappings",
+        param: mappings,
+        results: {
+          optionsNone: "\"fromNotation\",\"toNotation\",\"toNotation2\",\"type\"\n\"0\",\"a'c\",\"\",\"broad\"\n\"0\",\"a'c\",\"b\"\"d\",\"\"\n",
+          optionsAllColumns: "\"fromScheme\",\"fromNotation\",\"fromLabel\",\"toScheme\",\"toNotation\",\"toLabel\",\"toNotation2\",\"toLabel2\",\"type\",\"creator\"\n\"A\",\"0\",\"'\",\"B\",\"a'c\",\"0\",\"\",\"\",\"broad\",\"\"\n\"\",\"0\",\"'\",\"\",\"a'c\",\"0\",\"b\"\"d\",\"1\",\"\",\"someone\"\n",
+          optionsOther: "'fromNotation';'toNotation';'toNotation2';'type'\n'0';'a''c';'';'broad'\n'0';'a''c';'b\"d';''\n",
+        }
+      },
+    ]
+
+    for (let testCase of testCases) {
+      for (let optionType of Object.keys(options)) {
+        assert.equal(tools.mappingCSV(options[optionType])[testCase.function](testCase.param), testCase.results[optionType])
+      }
+    }
+
   })
 
   it("conceptsOfMapping", () => {

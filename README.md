@@ -37,7 +37,7 @@ This repository contains tools for working with the [JSKOS data format for knowl
     - [mappingTypeByType](#mappingtypebytype)
     - [defaultMappingType](#defaultmappingtype)
     - [flattenMapping](#flattenmapping)
-    - [mappingToCSV](#mappingtocsv)
+    - [mappingCSV](#mappingcsv)
     - [serializeCSV](#serializecsv)
     - [conceptsOfMapping](#conceptsofmapping)
     - [compareMappingsDeep](#comparemappingsdeep)
@@ -254,15 +254,30 @@ The default mapping type (currently `mapping relation`).
 #### flattenMapping
 Converts a mapping into a flat object with for serialization as CSV. Returns an object with fields `fromNotation`, `toNotation`, `type`, and (if option `language` has been provided) `fromLabel`, `toLabel`, and `creator`.
 
-#### mappingToCSV
-Returns a configured converter from JSKOS mapping to CSV line. For now only simple 1-to-1 mappings and 1-to-0 mappings are supported.
+#### mappingCSV
+Returns an object of preconfigured conversion functions to convert mappings into CSV. Supports 1-to-1, 1-to-n, and n-to-n mappings.
 
 ```js
-let mappingToCsv = jskos.mappingToCSV({ delimiter: ';' })
-mappingToCsv(mapping)
+// Initialize converter with default options
+const csv = jskos.mappingCSV({
+  delimiter: ",",
+  quoteChar: "\"",
+  lineTerminator: "\n",
+  type: true,
+  schemes: false,
+  labels: false,
+  creator: false,
+  language: "en",
+})
+// Header line for an array of mappings (assuming 1-to-1 mappings if no array is given)
+csv.header(mappings)
+// Single CSV line for a mapping (uses fromCount and toCount from the mapping by default)
+csv.fromMapping(mapping, { fromCount: null, toCount: null })
+// Multiline CSV from array of mappings (includes header by default)
+csv.fromMappings(mappings, { header: true })
 ```
 
-Concept labels and creators are included only if configuration field `language` is set. The order of CSV fields is fromNotation, (fromLabel,) toNotation, (toLabel,) mappingType.
+The order of the CSV fields is fromScheme, fromNotation, (fromLabel,) (fromNotation2, fromLabel2, ...) toNotation, (toLabel,) (toNotation2, toLabel2, ...) type, creator.
 
 #### serializeCSV
 Returns a function to serialize an array as CSV row as configured with [CSV Dialect](<https://frictionlessdata.io/specs/csv-dialect/>).
