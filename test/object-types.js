@@ -11,7 +11,7 @@ describe("Object Types", () => {
       let shortName = name.toLowerCase().replace(/^concept(.+)/, "$1")
       assert.equal(guessObjectType(name, true), shortName)
 
-      let plural = shortName[-1] === "y" 
+      let plural = shortName[-1] === "y"
         ? shortName.slice(0,-1) + "ies" : shortName + "s"
       assert.equal(guessObjectType(plural, true), shortName)
     }
@@ -24,6 +24,8 @@ describe("Object Types", () => {
     }
     assert.equal(guessObjectType("scheme"), "ConceptScheme")
     assert.equal(guessObjectType("occurrences"), "ConceptOccurrence")
+    assert.equal(guessObjectType("annotations"), "Annotation")
+    assert.equal(guessObjectType("http://www.w3.org/ns/oa#Annotation"), "Annotation")
     assert.ok(!guessObjectType(""))
     assert.ok(!guessObjectType("?"))
   })
@@ -31,7 +33,7 @@ describe("Object Types", () => {
   it("guessObjectType (object)", () => {
     for (let name in objectTypes) {
       const { type } = objectTypes[name]
-      for (let uri of (type || [])) {        
+      for (let uri of (type || [])) {
         let obj = { type: name === "Annotation" ? uri : [uri] }
         assert.equal(guessObjectType(obj), name)
       }
