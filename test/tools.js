@@ -257,22 +257,6 @@ describe("Tools", () => {
     assert.equal(Object.keys(emptyNewMapping).length, 0, "minifyMapping added properties to empty mapping")
   })
 
-  it("mappingToCSV", () => {
-    let mapping = {
-      from: { memberSet: [{ notation: ["0"], prefLabel: { en: "'" }}] },
-      to: { memberSet: [{ notation: ["a'c"], prefLabel: { en: "0" } }] },
-      type: ["http://www.w3.org/2004/02/skos/core#broadMatch"]
-    }
-    let csv = (options) => tools.mappingToCSV(options)(mapping)
-
-    assert.equal(csv(), "\"0\",\"a'c\",\"broad\"\n")
-
-    mapping.type = []
-    assert.equal(csv({delimiter:";", quoteChar:"'"}), "'0';'a''c';''\n")
-    assert.equal(csv({language:"en", quoteChar:"'"}), "'0','''','a''c','0','',''\n")
-    assert.equal(csv({language:"xx", quoteChar:"'"}), "'0','','a''c','','',''\n")
-  })
-
   it("mappingCSV", () => {
     const mappingNormal = {
       fromScheme: { notation: ["A"] },

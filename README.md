@@ -37,7 +37,6 @@ This repository contains tools for working with the [JSKOS data format for knowl
     - [mappingTypeByType](#mappingtypebytype)
     - [defaultMappingType](#defaultmappingtype)
     - [flattenMapping](#flattenmapping)
-    - [mappingToCSV](#mappingtocsv)
     - [mappingCSV](#mappingcsv)
     - [serializeCSV](#serializecsv)
     - [conceptsOfMapping](#conceptsofmapping)
@@ -254,16 +253,6 @@ The default mapping type (currently `mapping relation`).
 
 #### flattenMapping
 Converts a mapping into a flat object with for serialization as CSV. Returns an object with fields `fromNotation`, `toNotation`, `type`, and (if option `language` has been provided) `fromLabel`, `toLabel`, and `creator`.
-
-#### mappingToCSV
-Returns a configured converter from JSKOS mapping to CSV line. For now only simple 1-to-1 mappings and 1-to-0 mappings are supported.
-
-```js
-let mappingToCsv = jskos.mappingToCSV({ delimiter: ';' })
-mappingToCsv(mapping)
-```
-
-Concept labels and creators are included only if configuration field `language` is set. The order of CSV fields is fromNotation, (fromLabel,) toNotation, (toLabel,) mappingType.
 
 #### mappingCSV
 Returns an object of preconfigured conversion functions to convert mappings into CSV. Supports 1-to-1, 1-to-n, and n-to-n mappings.
