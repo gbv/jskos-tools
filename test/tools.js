@@ -267,7 +267,7 @@ describe("Tools", () => {
     }
     const mappingCompound = {
       from: { memberSet: [{ notation: ["0"], prefLabel: { en: "'" }}] },
-      to: { memberSet: [{ notation: ["a'c"], prefLabel: { en: "0" } }, { notation: ["b\"d"], prefLabel: { en: "1" } }] },
+      to: { memberSet: [{ notation: ["a'c"], prefLabel: { en: "0" } }, { notation: ["b\"d\""], prefLabel: { en: "1" } }] },
       creator: [{ prefLabel: { en: "someone" } }]
     }
     const mappings = [mappingNormal, mappingCompound]
@@ -317,18 +317,18 @@ describe("Tools", () => {
         function: "fromMapping",
         param: mappingCompound,
         results: {
-          optionsNone: "\"0\",\"a'c\",\"b\"\"d\",\"\"\n",
-          optionsAllColumns: "\"\",\"0\",\"'\",\"\",\"a'c\",\"0\",\"b\"\"d\",\"1\",\"\",\"someone\"\n",
-          optionsOther: "'0';'a''c';'b\"d';''\n",
+          optionsNone: "\"0\",\"a'c\",\"b\"\"d\"\"\",\"\"\n",
+          optionsAllColumns: "\"\",\"0\",\"'\",\"\",\"a'c\",\"0\",\"b\"\"d\"\"\",\"1\",\"\",\"someone\"\n",
+          optionsOther: "'0';'a''c';'b\"d\"';''\n",
         }
       },
       {
         function: "fromMappings",
         param: mappings,
         results: {
-          optionsNone: "\"fromNotation\",\"toNotation\",\"toNotation2\",\"type\"\n\"0\",\"a'c\",\"\",\"broad\"\n\"0\",\"a'c\",\"b\"\"d\",\"\"\n",
-          optionsAllColumns: "\"fromScheme\",\"fromNotation\",\"fromLabel\",\"toScheme\",\"toNotation\",\"toLabel\",\"toNotation2\",\"toLabel2\",\"type\",\"creator\"\n\"A\",\"0\",\"'\",\"B\",\"a'c\",\"0\",\"\",\"\",\"broad\",\"\"\n\"\",\"0\",\"'\",\"\",\"a'c\",\"0\",\"b\"\"d\",\"1\",\"\",\"someone\"\n",
-          optionsOther: "'fromNotation';'toNotation';'toNotation2';'type'\n'0';'a''c';'';'broad'\n'0';'a''c';'b\"d';''\n",
+          optionsNone: "\"fromNotation\",\"toNotation\",\"toNotation2\",\"type\"\n\"0\",\"a'c\",\"\",\"broad\"\n\"0\",\"a'c\",\"b\"\"d\"\"\",\"\"\n",
+          optionsAllColumns: "\"fromScheme\",\"fromNotation\",\"fromLabel\",\"toScheme\",\"toNotation\",\"toLabel\",\"toNotation2\",\"toLabel2\",\"type\",\"creator\"\n\"A\",\"0\",\"'\",\"B\",\"a'c\",\"0\",\"\",\"\",\"broad\",\"\"\n\"\",\"0\",\"'\",\"\",\"a'c\",\"0\",\"b\"\"d\"\"\",\"1\",\"\",\"someone\"\n",
+          optionsOther: "'fromNotation';'toNotation';'toNotation2';'type'\n'0';'a''c';'';'broad'\n'0';'a''c';'b\"d\"';''\n",
         }
       },
     ]
