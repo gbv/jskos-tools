@@ -21,6 +21,9 @@ describe("ConceptScheme", () => {
     assert.ok(scheme.isValidNotation(notation))
     assert.ok(!scheme.isValidNotation(undefined))
     assert.ok(!scheme.isValidNotation("x"))
+    // Remove notation pattern from GND and confirm that function call still succeeds
+    const schemeWithoutPattern = new ConceptScheme(Object.assign({}, gnd, { notationPattern: null }))
+    assert.ok(schemeWithoutPattern.isValidNotation("x"))
   })
 
   it("maps notation <=> uri", () => {
