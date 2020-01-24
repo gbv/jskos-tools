@@ -48,6 +48,7 @@ This repository contains tools for working with the [JSKOS data format for knowl
     - [merge](#merge)
     - [normalize](#normalize)
     - [isValidUri](#isvaliduri)
+    - [compareFunctions](#comparefunctions)
 - [Build](#build)
 - [Test](#test)
 - [Maintainers](#maintainers)
@@ -324,6 +325,13 @@ Guess the JSKOS object type of an object, URI or name and return its canonical n
 type = guessObjectType(objectOrString)        // get full name such as `ConceptScheme`
 type = guessObjectType(objectOrString, true)  // get short name such as `scheme`
 ```
+
+#### compareFunctions
+
+An object containing compare functions that can be used with `array.sort()` etc.
+
+Available functions:
+- `compareFunctions.mappingsByConcepts` - compares mappings by the notations of their first concepts
 
 ## Build
 

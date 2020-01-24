@@ -744,4 +744,13 @@ describe("Tools", () => {
     }
   })
 
+  it("compareFunctions", () => {
+    // Check if functions exist
+    const functions = ["mappingsByConcepts"]
+    for (let func of functions) {
+      assert.equal(typeof tools.compareFunctions[func] === "function", true)
+    }
+    // TODO: Test actual functionality
+  })
+
 })
