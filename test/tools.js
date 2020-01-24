@@ -719,4 +719,29 @@ describe("Tools", () => {
     }
   })
 
+  it("isValidUri", () => {
+    let tests = [
+      {
+        uri: "",
+        valid: false,
+      },
+      {
+        uri: "test",
+        valid: false,
+      },
+      {
+        uri: "test:test",
+        valid: true,
+      },
+      {
+        uri: "http://hello world",
+        valid: false,
+      },
+    ]
+
+    for (let test of tests) {
+      assert.equal(tools.isValidUri(test.uri), test.valid)
+    }
+  })
+
 })

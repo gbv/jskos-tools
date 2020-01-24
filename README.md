@@ -47,6 +47,7 @@ This repository contains tools for working with the [JSKOS data format for knowl
     - [mergeUris](#mergeuris)
     - [merge](#merge)
     - [normalize](#normalize)
+    - [isValidUri](#isvaliduri)
 - [Build](#build)
 - [Test](#test)
 - [Maintainers](#maintainers)
@@ -307,6 +308,9 @@ Merges two JSKOS objects. See [documentation](https://gbv.github.io/jskos-tools/
 
 #### normalize
 Applies recursive unicode normalization to data.
+
+#### isValidUri
+Checks whether a string is a valid URI.
 
 #### objectTypes
 
