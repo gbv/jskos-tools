@@ -835,8 +835,8 @@ let compareFunctions = {
   mappingsByConcepts: (mapping1, mapping2, fromTo) => {
     let bundleFields = ["memberSet", "memberList", "memberChoice"], notation1, notation2
     for (let field of bundleFields) {
-      notation1 = notation1 || notation(_.get(mapping1, fromTo + "." + field + "[0]"))
-      notation2 = notation2 || notation(_.get(mapping2, fromTo + "." + field + "[0]"))
+      notation1 = notation1 || _.get(mapping1, fromTo + "." + field + "[0].notation[0]")
+      notation2 = notation2 || _.get(mapping2, fromTo + "." + field + "[0].notation[0]")
     }
     if (notation1 == null || notation1 &lt; notation2) {
       return -1
