@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+		<title>jskos-tools</title>
+		<!--[if lt IE 9]>
+		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet">
+		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+		<link type="text/css" rel="stylesheet" href="css/prism.min.css">
+		<link type="text/css" rel="stylesheet" href="css/template.min.css">
+			<link type="text/css" rel="stylesheet" href="style.css">
+		<script type="text/javascript">
+			window.TEMPLATE_OPTIONS = {"includeDate":true,"dateFormat":"Do MMM YYYY","systemName":"jskos-tools","systemSummary":"Tools for working with the JSKOS data format","systemLogo":"","systemColor":"","navMembers":[{"kind":"class","title":"Classes","summary":"All documented classes."},{"kind":"external","title":"Externals","summary":"All documented external members."},{"kind":"global","title":"Globals","summary":"All documented globals."},{"kind":"mixin","title":"Mixins","summary":"All documented mixins."},{"kind":"interface","title":"Interfaces","summary":"All documented interfaces."},{"kind":"module","title":"Modules","summary":"All documented modules."},{"kind":"namespace","title":"Namespaces","summary":"All documented namespaces."},{"kind":"tutorial","title":"Tutorials","summary":"All available tutorials."}],"footer":"","copyright":"","linenums":true,"collapseSymbols":false,"inverseNav":true,"inlineNav":false,"outputSourceFiles":false,"sourceRootPath":null,"disablePackagePath":true,"outputSourcePath":false,"showTableOfContents":true,"showAccessFilter":true,"analytics":null,"methodHeadingReturns":true,"sort":"linenum, longname, version, since","search":true,"favicon":null,"stylesheets":["style.css"],"scripts":[],"monospaceLinks":false,"cleverLinks":false};
+			window.DOCLET_TOC_ENABLED = true;
+			window.DOCLET_AFILTER_ENABLED = false;
+		</script>
+</head>
+<body>
+	<!-- start:navbar.hbs -->
+	<header class="navbar navbar-default navbar-fixed-top navbar-inverse">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="index.html">
+					jskos-tools
+				</a>
+				<!-- displayed on small devices -->
+				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="navbar-collapse collapse" id="topNavigation">
+				<ul class="nav navbar-nav">
+								<li class="dropdown">
+									<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Globals<b class="caret"></b></a>
+									<ul class="dropdown-menu">
+											<li><a href="global.html#compareFunctions">compareFunctions</a></li>
+											<li><a href="global.html#isValidUri">isValidUri</a></li>
+											<li><a href="global.html#normalize">normalize</a></li>
+									</ul>
+								</li>
+								<li class="dropdown">
+									<a href="list_class.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+									<ul class="dropdown-menu">
+											<li><a href="module-jskos-tools.ConceptScheme.html">jskos-tools.ConceptScheme</a></li>
+									</ul>
+								</li>
+								<li class="dropdown">
+									<a href="list_module.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
+									<ul class="dropdown-menu">
+											<li><a href="module-jskos-tools.html">jskos-tools</a></li>
+									</ul>
+								</li>
+				</ul>
+					<!-- start:lunr-search-navbar.hbs -->
+					<form class="navbar-form navbar-right" role="search">
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="Search" id="lunr-search-input">
+							<div class="input-group-btn">
+								<button class="btn btn-default" id="lunr-search-submit">
+									<i class="glyphicon glyphicon-search"></i>
+								</button>
+							</div>
+						</div>
+					</form>
+					<!-- start:lunr-search-navbar.hbs -->		</div>
+		</div>
+	</header>
+	<!-- end:navbar.hbs -->		<div class="page-header">
+			<div class="container">
+				<span class="kind">module</span>
+				<h1><span class="name">jskos-tools</span></h1>
+			</div>
+		</div>
+	<div class="container content">
+		<div class="row">
+			<div class="col-md-9 main-content">
+						<ol class="breadcrumb">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="list_module.html">Modules</a></li>
+							<li class="active">jskos-tools</li>
+						</ol>
+					<section>
+		<dl class="symbol">
+			<dt class="symbol-title "></dt>
+			<dd class="symbol-details ">
+				<div class="symbol-details-inner">
+					<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>JSKOS Tools.</p></div>
+					</div>				</div>
+			</dd>
+		</dl>
+							<article class="secondary">
+									<h3>Classes</h3>
+									<dl class="symbol">
+											<hr/>
+											<dt class="symbol-title class public">
+			<h4 id="ConceptScheme" class="class public"><a href="module-jskos-tools.ConceptScheme.html"><span class="signature-new">new&nbsp;</span><span class="name">ConceptScheme</span><span class="signature-params">( [&nbsp;<span class="signature-param">jskos</span>&nbsp;]&nbsp;)</span><span class="signature-type"></span></a></h4>
+		</dt>
+<dd class="symbol-details class public">
+	<div class="symbol-details-inner">
+	</div>
+</dd>
+									</dl>
+									<h3>Methods</h3>
+									<dl class="symbol">
+											<hr/>
+											<dt class="symbol-title function public">
+			<h4 id=".mappingContentIdentifier" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">mappingContentIdentifier</span><span class="signature-params">()</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details function public">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Returns a mapping content identifier. The identifier starts with <code>urn:jskos:mapping:content:</code>
+			and takes concepts and type into consideration. It uses the <code>mappingContent</code> function to get
+			relevant properties from the mapping.</p></div>
+			</div>	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title function public">
+			<h4 id=".mappingMembersIdentifier" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">mappingMembersIdentifier</span><span class="signature-params">()</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details function public">
+	<div class="symbol-details-inner">
+	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title function public">
+			<h4 id=".addMappingIdentifiers" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">addMappingIdentifiers</span><span class="signature-params">()</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details function public">
+	<div class="symbol-details-inner">
+	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title function public">
+			<h4 id=".compareMappings" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">compareMappings</span><span class="signature-params">()</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details function public">
+	<div class="symbol-details-inner">
+	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title function public">
+			<h4 id=".compareMappingMembers" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">compareMappingMembers</span><span class="signature-params">()</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details function public">
+	<div class="symbol-details-inner">
+	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title function public">
+			<h4 id=".guessObjectType" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">guessObjectType</span><span class="signature-params">( <span class="signature-param">jskos|name|uri</span>, <span class="signature-param">shortname</span>&nbsp;)</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details function public">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Guess the JSKOS Concept Type name from an object or name.</p></div>
+			</div>			<div class="callout callout-info">
+				<h5>Parameters</h5>
+				<table class="params table table-striped">
+					<thead>
+					<tr>
+							<th>Name</th>
+						<th>Type</th>
+						<th class="last">Description</th>
+					</tr>
+					</thead>
+					<tbody>
+						<tr>
+								<td><code>jskos|name|uri</code></td>
+							<td><span class="param-type">object</span> | <span class="param-type">string</span></td>
+							<td class="last">
+									<p>object or string to guess from</p>
+							</td>
+						</tr>
+						<tr>
+								<td><code>shortname</code></td>
+							<td><span class="param-type">boolean</span></td>
+							<td class="last">
+									<p>return short name if enabled (false by default)</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title function public">
+			<h4 id=".addContext" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">addContext</span><span class="signature-params">( <span class="signature-param">jskos</span>&nbsp;)</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details function public">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Add @context URI to a JSKOS resource or to an array of JSKOS resources.</p></div>
+			</div>			<div class="callout callout-info">
+				<h5>Parameters</h5>
+				<table class="params table table-striped">
+					<thead>
+					<tr>
+							<th>Name</th>
+						<th>Type</th>
+						<th class="last">Description</th>
+					</tr>
+					</thead>
+					<tbody>
+						<tr>
+								<td><code>jskos</code></td>
+							<td><span class="param-type">object</span></td>
+							<td class="last">
+									<p>object or array of objects</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title function public">
+			<h4 id=".clean" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">clean</span><span class="signature-params">( <span class="signature-param">jskos</span>&nbsp;)</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details function public">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Recursively cleans JSKOS object by removing properties starting with _ or containing only uppercase letters.
+			Warning: Works directly on the object without creating a copy!</p></div>
+			</div>			<div class="callout callout-info">
+				<h5>Parameters</h5>
+				<table class="params table table-striped">
+					<thead>
+					<tr>
+							<th>Name</th>
+						<th>Type</th>
+						<th class="last">Description</th>
+					</tr>
+					</thead>
+					<tbody>
+						<tr>
+								<td><code>jskos</code></td>
+							<td><span class="param-type">object</span></td>
+							<td class="last">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title function public">
+			<h4 id=".copyDeep" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">copyDeep</span><span class="signature-params">( <span class="signature-param">object</span>, <span class="signature-param">replaceCircular</span>, <span class="signature-param">skipUnderscore</span>&nbsp;)</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details function public">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Creates a deep copy of a JSKOS object, replacing possibly circular structures with open world [null] statements.
+			All properties starting with an underscore (_) will be ignored.</p></div>
+			</div>			<div class="callout callout-info">
+				<h5>Parameters</h5>
+				<table class="params table table-striped">
+					<thead>
+					<tr>
+							<th>Name</th>
+						<th>Type</th>
+							<th>Default</th>
+						<th class="last">Description</th>
+					</tr>
+					</thead>
+					<tbody>
+						<tr>
+								<td><code>object</code></td>
+							<td><span class="param-type">object</span></td>
+								<td></td>
+							<td class="last">
+							</td>
+						</tr>
+						<tr>
+								<td><code>replaceCircular</code></td>
+							<td><span class="param-type">array</span></td>
+								<td></td>
+							<td class="last">
+									<p>additional property names that should be replace with open world [null] statements</p>
+							</td>
+						</tr>
+						<tr>
+								<td><code>skipUnderscore</code></td>
+							<td><span class="param-type">bool</span></td>
+								<td>true</td>
+							<td class="last">
+									<p>whether to skip properties starting with <code>_</code> (default <code>true</code>)</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title function public">
+			<h4 id=".getAllUris" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">getAllUris</span><span class="signature-params">( <span class="signature-param">object</span>&nbsp;)</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details function public">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Returns all possible URIs for a JSKOS object. Takes into consideration both the uri and identifier properties, as well as different variants of those identifiers.</p>
+			<p>Variants:</p>
+			<ul>
+			<li>http vs. https</li>
+			<li>with trailing slash vs. without trailing slash</li>
+			<li>/en/ vs. /de/</li>
+			</ul></div>
+			</div>			<div class="callout callout-info">
+				<h5>Parameters</h5>
+				<table class="params table table-striped">
+					<thead>
+					<tr>
+							<th>Name</th>
+						<th>Type</th>
+						<th class="last">Description</th>
+					</tr>
+					</thead>
+					<tbody>
+						<tr>
+								<td><code>object</code></td>
+							<td><span class="param-type">object</span></td>
+							<td class="last">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title function public">
+			<h4 id=".compare" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">compare</span><span class="signature-params">( <span class="signature-param">object1</span>, <span class="signature-param">object2</span>&nbsp;)</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details function public">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Compares two objects based on their URIs, using getAllUris.</p></div>
+			</div>			<div class="callout callout-info">
+				<h5>Parameters</h5>
+				<table class="params table table-striped">
+					<thead>
+					<tr>
+							<th>Name</th>
+						<th>Type</th>
+						<th class="last">Description</th>
+					</tr>
+					</thead>
+					<tbody>
+						<tr>
+								<td><code>object1</code></td>
+							<td><span class="param-type">object</span></td>
+							<td class="last">
+							</td>
+						</tr>
+						<tr>
+								<td><code>object2</code></td>
+							<td><span class="param-type">object</span></td>
+							<td class="last">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title function public">
+			<h4 id=".isConcept" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">isConcept</span><span class="signature-params">()</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details function public">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Checks whether JSKOS object is a concept based on type property.</p></div>
+			</div>	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title function public">
+			<h4 id=".isScheme" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">isScheme</span><span class="signature-params">()</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details function public">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Checks whether JSKOS object is a concept scheme based on type property.</p></div>
+			</div>	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title function public">
+			<h4 id=".isContainedIn" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">isContainedIn</span><span class="signature-params">()</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details function public">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Checks whether an object is contained in a list of objects using compare.</p></div>
+			</div>	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title function public">
+			<h4 id=".sortConcepts" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">sortConcepts</span><span class="signature-params">( <span class="signature-param">concepts</span>&nbsp;)</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details function public">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Sorts a list of concepts by their notation, then URI.</p></div>
+			</div>			<div class="callout callout-info">
+				<h5>Parameters</h5>
+				<table class="params table table-striped">
+					<thead>
+					<tr>
+							<th>Name</th>
+						<th>Type</th>
+						<th class="last">Description</th>
+					</tr>
+					</thead>
+					<tbody>
+						<tr>
+								<td><code>concepts</code></td>
+							<td><span class="param-type">*</span></td>
+							<td class="last">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title function public">
+			<h4 id=".sortSchemes" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">sortSchemes</span><span class="signature-params">( <span class="signature-param">schemes</span>&nbsp;)</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details function public">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Sorts a list of schemes by their prefLabel (German or English), then notation, then URI.</p></div>
+			</div>			<div class="callout callout-info">
+				<h5>Parameters</h5>
+				<table class="params table table-striped">
+					<thead>
+					<tr>
+							<th>Name</th>
+						<th>Type</th>
+						<th class="last">Description</th>
+					</tr>
+					</thead>
+					<tbody>
+						<tr>
+								<td><code>schemes</code></td>
+							<td><span class="param-type">*</span></td>
+							<td class="last">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title function public">
+			<h4 id=".minifyMapping" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">minifyMapping</span><span class="signature-params">()</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details function public">
+	<div class="symbol-details-inner">
+	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title function public">
+			<h4 id=".mappingTypeByUri" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">mappingTypeByUri</span><span class="signature-params">()</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details function public">
+	<div class="symbol-details-inner">
+	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title function public">
+			<h4 id=".mappingTypeByType" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">mappingTypeByType</span><span class="signature-params">()</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details function public">
+	<div class="symbol-details-inner">
+	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title function public">
+			<h4 id=".flattenMapping" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">flattenMapping</span><span class="signature-params">()</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details function public">
+	<div class="symbol-details-inner">
+	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title function public">
+			<h4 id=".conceptsOfMapping" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">conceptsOfMapping</span><span class="signature-params">( <span class="signature-param">mapping</span>, <span class="signature-param">side</span>&nbsp;)</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details function public">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Returns a list of concepts for a mapping.</p></div>
+			</div>			<div class="callout callout-info">
+				<h5>Parameters</h5>
+				<table class="params table table-striped">
+					<thead>
+					<tr>
+							<th>Name</th>
+						<th>Type</th>
+						<th class="last">Description</th>
+					</tr>
+					</thead>
+					<tbody>
+						<tr>
+								<td><code>mapping</code></td>
+							<td><span class="param-type">*</span></td>
+							<td class="last">
+							</td>
+						</tr>
+						<tr>
+								<td><code>side</code></td>
+							<td><span class="param-type">*</span></td>
+							<td class="last">
+									<p>Either <code>from</code> or <code>to</code>. Default is both.</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title function public">
+			<h4 id=".mappingCSV" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">mappingCSV</span><span class="signature-params">( <span class="signature-param">options</span>&nbsp;)</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details function public">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Returns an object of preconfigured conversion functions to convert mappings into CSV.</p></div>
+			</div>			<div class="callout callout-info">
+				<h5>Parameters</h5>
+				<table class="params table table-striped">
+					<thead>
+					<tr>
+							<th>Name</th>
+						<th>Type</th>
+						<th class="last">Description</th>
+					</tr>
+					</thead>
+					<tbody>
+						<tr>
+								<td><code>options</code></td>
+							<td><span class="param-type">object</span></td>
+							<td class="last">
+									<p>Possible options:</p>
+			<ul>
+			<li>delimiter: delimiter character (default <code>,</code>)</li>
+			<li>quoteChar: quote character (default <code>&quot;</code>)</li>
+			<li>lineTerminator: line terminator (default <code>\n</code>)</li>
+			<li>type: whether to include mapping type in output (default true)</li>
+			<li>schemes: whether to include scheme notations in output (default false)</li>
+			<li>labels: whether to include concept labels in output (default false)</li>
+			<li>creator: whether to include mapping creator in output (default false)</li>
+			</ul>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title function public">
+			<h4 id=".compareMappingsDeep" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">compareMappingsDeep</span><span class="signature-params">()</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details function public">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Compare two mappings based on their properties. Concept sets and schemes are compared by URI.</p></div>
+			</div>	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title function public">
+			<h4 id=".matchObjectTypes" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">matchObjectTypes</span><span class="signature-params">( <span class="signature-param">a</span>, <span class="signature-param">b</span>&nbsp;)</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details function public">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Checks if two objects have a matching object type. Returns false only if types for both objects could be guessed and they did not match.</p></div>
+			</div>			<div class="callout callout-info">
+				<h5>Parameters</h5>
+				<table class="params table table-striped">
+					<thead>
+					<tr>
+							<th>Name</th>
+						<th>Type</th>
+						<th class="last">Description</th>
+					</tr>
+					</thead>
+					<tbody>
+						<tr>
+								<td><code>a</code></td>
+							<td><span class="param-type">object</span></td>
+							<td class="last">
+							</td>
+						</tr>
+						<tr>
+								<td><code>b</code></td>
+							<td><span class="param-type">object</span></td>
+							<td class="last">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title function public">
+			<h4 id=".mergeUris" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">mergeUris</span><span class="signature-params">( <span class="signature-param">a</span>, <span class="signature-param">b</span>&nbsp;)</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details function public">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Merge URIs of two objects <code>a</code> and <code>b</code> into <code>a</code> by adding/removing URIs from identifier property.</p></div>
+			</div>			<div class="callout callout-info">
+				<h5>Parameters</h5>
+				<table class="params table table-striped">
+					<thead>
+					<tr>
+							<th>Name</th>
+						<th>Type</th>
+						<th class="last">Description</th>
+					</tr>
+					</thead>
+					<tbody>
+						<tr>
+								<td><code>a</code></td>
+							<td><span class="param-type">object</span></td>
+							<td class="last">
+							</td>
+						</tr>
+						<tr>
+								<td><code>b</code></td>
+							<td><span class="param-type">object</span></td>
+							<td class="last">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title function public">
+			<h4 id=".merge" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">merge</span><span class="signature-params">( <span class="signature-param">a</span>, <span class="signature-param">b</span>, <span class="signature-param">options</span>&nbsp;)</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details function public">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Merges two JSKOS objects. Object properties will be merged deeply. Array properties will be combined (and URIs will be used for comparison if it's an array of objects).</p>
+			<p>The <code>options</code> property allows for different options:</p>
+			<ul>
+			<li><code>mergeUris</code> (boolean, default <code>false</code>) - appends b's URI to the result's <code>identifier</code> property if necessary, removes a's URI from the result's <code>identifier</code> property if necessary (useful for merging ConceptSchemes)</li>
+			<li><code>detectMismatch</code> (array of strings, default <code>[]</code>) - throws an error if the value at a certain path does not match between the two objects (allows for deep properties, e.g. <code>prefLabel.de</code>)</li>
+			<li><code>skipPaths</code> (array of strings, default <code>[]</code>) - provide paths to completely skip when merging</li>
+			</ul></div>
+			</div>			<div class="callout callout-info">
+				<h5>Parameters</h5>
+				<table class="params table table-striped">
+					<thead>
+					<tr>
+							<th>Name</th>
+						<th>Type</th>
+						<th class="last">Description</th>
+					</tr>
+					</thead>
+					<tbody>
+						<tr>
+								<td><code>a</code></td>
+							<td><span class="param-type">object</span></td>
+							<td class="last">
+							</td>
+						</tr>
+						<tr>
+								<td><code>b</code></td>
+							<td><span class="param-type">object</span></td>
+							<td class="last">
+							</td>
+						</tr>
+						<tr>
+								<td><code>options</code></td>
+							<td><span class="param-type">object</span></td>
+							<td class="last">
+									<p>optional, see above</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title function public">
+			<h4 id=".csvSerializer" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">csvSerializer</span><span class="signature-params">()</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details function public">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Returns a function to serialize an array as CSV row as configured.
+			See CSV Dialect (<a href="https:%5C/%5C/frictionlessdata.io/specs/csv-dialect/">https://frictionlessdata.io/specs/csv-dialect/</a>).</p></div>
+			</div>	</div>
+</dd>
+									</dl>
+							</article>
+					</section>
+			</div>
+				<div class="col-md-3 side-content">
+					<nav class="toc hidden-print hidden-sm hidden-xs"></nav>
+				</div>
+		</div>
+	</div>
+	<footer>
+			<div class="generated-by">Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on 27th Jan 2020 using the <a href="https://github.com/steveush/foodoc">FooDoc template</a>.</div>
+	</footer>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/clipboard.min.js"></script>
+	<script src="js/prism.min.js"></script>
+	<script src="js/template.min.js"></script>
+		<!-- start:lunr-search-modal.hbs -->
+		<div class="modal fade" id="lunr-search-modal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Search results</h4>
+					</div>
+					<div class="modal-body" id="lunr-search-body">
+					</div>
+					<div class="modal-footer" id="lunr-search-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div>
+		<!-- end:lunr-search-modal.hbs -->		<script src="js/lunr.min.js"></script>
+	
+</body>
+</html>

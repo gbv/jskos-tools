@@ -1,0 +1,388 @@
+<!-- start:readme.hbs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width">
+		<title>jskos-tools</title>
+		<!--[if lt IE 9]>
+		<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet">
+		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css">
+		<link type="text/css" rel="stylesheet" href="css/prism.min.css">
+		<link type="text/css" rel="stylesheet" href="css/template.min.css">
+			<link type="text/css" rel="stylesheet" href="style.css">
+		<script type="text/javascript">
+			window.TEMPLATE_OPTIONS = {"includeDate":true,"dateFormat":"Do MMM YYYY","systemName":"jskos-tools","systemSummary":"Tools for working with the JSKOS data format","systemLogo":"","systemColor":"","navMembers":[{"kind":"class","title":"Classes","summary":"All documented classes."},{"kind":"external","title":"Externals","summary":"All documented external members."},{"kind":"global","title":"Globals","summary":"All documented globals."},{"kind":"mixin","title":"Mixins","summary":"All documented mixins."},{"kind":"interface","title":"Interfaces","summary":"All documented interfaces."},{"kind":"module","title":"Modules","summary":"All documented modules."},{"kind":"namespace","title":"Namespaces","summary":"All documented namespaces."},{"kind":"tutorial","title":"Tutorials","summary":"All available tutorials."}],"footer":"","copyright":"","linenums":true,"collapseSymbols":false,"inverseNav":true,"inlineNav":false,"outputSourceFiles":false,"sourceRootPath":null,"disablePackagePath":true,"outputSourcePath":false,"showTableOfContents":true,"showAccessFilter":true,"analytics":null,"methodHeadingReturns":true,"sort":"linenum, longname, version, since","search":true,"favicon":null,"stylesheets":["style.css"],"scripts":[],"monospaceLinks":false,"cleverLinks":false};
+			window.DOCLET_TOC_ENABLED = true;
+			window.DOCLET_AFILTER_ENABLED = false;
+		</script>
+</head>
+<body>
+	<!-- start:navbar.hbs -->
+	<header class="navbar navbar-default navbar-fixed-top navbar-inverse">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="index.html">
+					jskos-tools
+				</a>
+				<!-- displayed on small devices -->
+				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#topNavigation">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="navbar-collapse collapse" id="topNavigation">
+				<ul class="nav navbar-nav">
+								<li class="dropdown">
+									<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Globals<b class="caret"></b></a>
+									<ul class="dropdown-menu">
+											<li><a href="global.html#compareFunctions">compareFunctions</a></li>
+											<li><a href="global.html#isValidUri">isValidUri</a></li>
+											<li><a href="global.html#normalize">normalize</a></li>
+									</ul>
+								</li>
+								<li class="dropdown">
+									<a href="list_class.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
+									<ul class="dropdown-menu">
+											<li><a href="module-jskos-tools.ConceptScheme.html">jskos-tools.ConceptScheme</a></li>
+									</ul>
+								</li>
+								<li class="dropdown">
+									<a href="list_module.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
+									<ul class="dropdown-menu">
+											<li><a href="module-jskos-tools.html">jskos-tools</a></li>
+									</ul>
+								</li>
+				</ul>
+					<!-- start:lunr-search-navbar.hbs -->
+					<form class="navbar-form navbar-right" role="search">
+						<div class="input-group">
+							<input type="text" class="form-control" placeholder="Search" id="lunr-search-input">
+							<div class="input-group-btn">
+								<button class="btn btn-default" id="lunr-search-submit">
+									<i class="glyphicon glyphicon-search"></i>
+								</button>
+							</div>
+						</div>
+					</form>
+					<!-- start:lunr-search-navbar.hbs -->		</div>
+		</div>
+	</header>
+	<!-- end:navbar.hbs -->		<div class="page-header">
+			<div class="container">
+				<span class="kind">readme</span>
+				<h1><span class="name">jskos-tools</span></h1>
+				<div class="summary"><p>Tools for working with the JSKOS data format</p></div>			</div>
+		</div>
+	<div class="container content">
+		<div class="row">
+			<div class="col-md-9 main-content">
+		<section class="readme-section">
+			<article><h1 id="jskos-tools">JSKOS Tools</h1>
+<p><a href="https://travis-ci.com/gbv/jskos-tools"><img src="https://travis-ci.com/gbv/jskos-tools.svg?branch=master" alt="Build Status"></a>
+<a href="https://github.com/gbv/jskos-tools"><img src="https://img.shields.io/github/package-json/v/gbv/jskos-tools.svg?label=version" alt="GitHub package version"></a>
+<a href="https://www.npmjs.com/package/jskos-tools"><img src="https://img.shields.io/badge/npm-jskos--tools-blue.svg" alt="NPM package name"></a>
+<a href="https://github.com/RichardLitt/standard-readme"><img src="https://img.shields.io/badge/readme%20style-standard-brightgreen.svg" alt="standard-readme compliant"></a></p>
+<blockquote>
+<p>Tools for working with the JSKOS data format.</p>
+</blockquote>
+<p>This repository contains tools for working with the <a href="http://gbv.github.io/jskos/">JSKOS data format for knowledge organization systems</a>.</p>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#install">Install</a></li>
+<li><a href="#usage">Usage</a>
+<ul>
+<li><a href="#mapping-identifiers">Mapping Identifiers</a>
+<ul>
+<li><a href="#mappingcontentidentifier">mappingContentIdentifier</a></li>
+<li><a href="#mappingmembersidentifier">mappingMembersIdentifier</a></li>
+<li><a href="#addmappingidentifiers">addMappingIdentifiers</a></li>
+<li><a href="#comparemappings">compareMappings</a></li>
+<li><a href="#comparemappingmembers">compareMappingMembers</a></li>
+</ul>
+</li>
+<li><a href="#conceptscheme">ConceptScheme</a></li>
+<li><a href="#tools">Tools</a>
+<ul>
+<li><a href="#addcontext">addContext</a></li>
+<li><a href="#clean">clean</a></li>
+<li><a href="#copydeep">copyDeep</a></li>
+<li><a href="#getalluris">getAllUris</a></li>
+<li><a href="#compare">compare</a></li>
+<li><a href="#isconcept">isConcept</a></li>
+<li><a href="#isscheme">isScheme</a></li>
+<li><a href="#iscontainedin">isContainedIn</a></li>
+<li><a href="#sortconcepts">sortConcepts</a></li>
+<li><a href="#sortschemes">sortSchemes</a></li>
+<li><a href="#minifymapping">minifyMapping</a></li>
+<li><a href="#mappingtypes">mappingTypes</a></li>
+<li><a href="#mappingtypebyuri">mappingTypeByUri</a></li>
+<li><a href="#mappingtypebytype">mappingTypeByType</a></li>
+<li><a href="#defaultmappingtype">defaultMappingType</a></li>
+<li><a href="#flattenmapping">flattenMapping</a></li>
+<li><a href="#mappingcsv">mappingCSV</a></li>
+<li><a href="#serializecsv">serializeCSV</a></li>
+<li><a href="#conceptsofmapping">conceptsOfMapping</a></li>
+<li><a href="#comparemappingsdeep">compareMappingsDeep</a></li>
+<li><a href="#guessobjecttype">guessObjectType</a></li>
+<li><a href="#objecttypes">objectTypes</a></li>
+<li><a href="#matchobjecttypes">matchObjectTypes</a></li>
+<li><a href="#mergeuris">mergeUris</a></li>
+<li><a href="#merge">merge</a></li>
+<li><a href="#normalize">normalize</a></li>
+<li><a href="#isvaliduri">isValidUri</a></li>
+<li><a href="#comparefunctions">compareFunctions</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#build">Build</a></li>
+<li><a href="#test">Test</a></li>
+<li><a href="#maintainers">Maintainers</a></li>
+<li><a href="#publish">Publish</a></li>
+<li><a href="#contribute">Contribute</a></li>
+<li><a href="#license">License</a></li>
+</ul>
+<h2 id="install">Install</h2>
+<pre class="prettyprint source lang-bash"><code>git clone https://github.com/gbv/jskos-tools.git
+cd jskos-tools
+npm i jskos-tools
+</code></pre>
+<h2 id="usage">Usage</h2>
+<pre class="prettyprint source lang-js"><code>const jskos = require(&quot;jskos-tools&quot;)
+</code></pre>
+<p>See <a href="https:%5C/%5C/gbv.github.io/jskos-tools/">https://gbv.github.io/jskos-tools/</a> for full API documentation of
+<a href="https://gbv.github.io/jskos-tools/module-jskos-tools.html">module jskos-tools</a>.</p>
+<h3 id="mapping-identifiers">Mapping Identifiers</h3>
+<pre class="prettyprint source lang-js"><code>let mapping = {
+  ...
+}
+</code></pre>
+<h4 id="mappingcontentidentifier">mappingContentIdentifier</h4>
+<p><code>mappingContentIdentifier</code> starts with urn:jskos:mapping:content: and takes concepts and type into consideration. It uses the <code>mappingContent</code> function to get relevant properties from the mapping.</p>
+<pre class="prettyprint source lang-js"><code>let contentIdentifier = jskos.mappingContentIdentifier(mapping)
+</code></pre>
+<h4 id="mappingmembersidentifier">mappingMembersIdentifier</h4>
+<p><code>mappingMembersIdentifier</code> starts with urn:jskos:mapping:members: and only takes concepts into consideration. It uses the <code>mappingMembers</code> function to get relevant properties from the mapping.</p>
+<pre class="prettyprint source lang-js"><code>let membersIdentifier = jskos.mappingMembersIdentifier(mapping)
+</code></pre>
+<h4 id="addmappingidentifiers">addMappingIdentifiers</h4>
+<p><code>addMappingIdentifiers</code> creates a new mapping with property &quot;identifiers&quot;, containing mappingContentIdentifier and mappingMembersIdentifier.</p>
+<pre class="prettyprint source lang-js"><code>let mappingWithIdentifiers = jskos.addMappingIdentifiers(mapping)
+</code></pre>
+<h4 id="comparemappings">compareMappings</h4>
+<p><code>compareMappings</code> compares two mappings based on their <code>mappingContentIdentifier</code>.</p>
+<pre class="prettyprint source lang-js"><code>if (jskos.compareMappings(mapping1, mapping2)) { ... }
+</code></pre>
+<p>Aliases: <code>compareMappingContent</code></p>
+<h4 id="comparemappingmembers">compareMappingMembers</h4>
+<p><code>compareMappingMembers</code> compares two mappings based on their <code>mappingMembersIdentifier</code>.</p>
+<pre class="prettyprint source lang-js"><code>if (jskos.compareMappingMembers(mapping1, mapping2)) { ... }
+</code></pre>
+<h3 id="conceptscheme">ConceptScheme</h3>
+<p>See <a href="https://gbv.github.io/jskos-tools/module-jskos-tools.ConceptScheme.html">class ConceptScheme</a>.</p>
+<h3 id="tools">Tools</h3>
+<h4 id="addcontext">addContext</h4>
+<p>Add <code>@context</code> URI to a JSKOS object or to an array of JSKOS objects.</p>
+<pre class="prettyprint source lang-js"><code>jskos.addContext(object)
+</code></pre>
+<h4 id="clean">clean</h4>
+<p>Removes properties starting with <code>_</code> or containing only uppercase letters from a JSKOS object.</p>
+<pre class="prettyprint source lang-js"><code>jskos.clean(object)
+</code></pre>
+<p>Aliases: <code>cleanJSKOS</code></p>
+<h4 id="copydeep">copyDeep</h4>
+<p>Creates a deep copy of a JSKOS object, replacing possibly circular structures with open world <code>[null]</code> statements. As the second argument it is possible to add additional properties that should be replaced with open world <code>[null]</code> statements. The third argument determines whether all properties starting with <code>_</code> should be ignored (<code>true</code> by default).</p>
+<pre class="prettyprint source lang-js"><code>jskos.copyDeep(object)
+jskos.copyDeep(object, [&quot;someCircularProperty&quot;])
+jskos.copyDeep(object, null, false)
+</code></pre>
+<p>Aliases: <code>deepCopy</code></p>
+<h4 id="getalluris">getAllUris</h4>
+<p>Returns all possible URIs for a JSKOS object. Takes into consideration both the uri and identifier properties, as well as different variants of those identifiers. Returns an empty array if object is <code>null</code>.</p>
+<pre class="prettyprint source lang-js"><code>jskos.getAllUris(object)
+</code></pre>
+<h4 id="compare">compare</h4>
+<p>Compares two objects based on their URIs, using <code>getAllUris</code>. Returns <code>true</code> if both objects are <code>null</code>.</p>
+<pre class="prettyprint source lang-js"><code>jskos.compare(object1, object2)
+</code></pre>
+<p>Aliases: <code>compareObjects</code>, <code>compareSchemes</code>, <code>compareConcepts</code></p>
+<h4 id="isconcept">isConcept</h4>
+<p>Checks whether JSKOS object is a concept based on type property.</p>
+<pre class="prettyprint source lang-js"><code>jskos.isConcept(object)
+</code></pre>
+<h4 id="isscheme">isScheme</h4>
+<p>Checks whether JSKOS object is a concept scheme based on type property.</p>
+<pre class="prettyprint source lang-js"><code>jskos.isScheme(object)
+</code></pre>
+<h4 id="iscontainedin">isContainedIn</h4>
+<p>// Checks whether an object is contained in a list of objects using <code>compare</code>.</p>
+<pre class="prettyprint source lang-js"><code>jskos.isContainedIn(object, listOfObjects)
+</code></pre>
+<p>Aliases: <code>isSchemeInList</code></p>
+<h4 id="sortconcepts">sortConcepts</h4>
+<p>Sorts a list of concepts by their notation, then URI. Returns a copy of the list. If the second parameter is <code>true</code>, it will try to sort by numerical notations.</p>
+<pre class="prettyprint source lang-js"><code>jskos.sortConcepts(concepts)
+</code></pre>
+<h4 id="sortschemes">sortSchemes</h4>
+<p>Sorts a list of schemes by their prefLabel (de or en), then notation, then URI. Returns a copy of the list.</p>
+<pre class="prettyprint source lang-js"><code>jskos.sortSchemes(schemes)
+</code></pre>
+<h4 id="minifymapping">minifyMapping</h4>
+<p>Removes unnecessary properties from mapping before export or saving. In particular, all properties except for <code>to</code>, <code>from</code>, <code>toScheme</code>, <code>fromScheme</code>, <code>type</code>, <code>creator</code>, <code>contributor</code>, <code>created</code>, <code>modified</code>, <code>note</code>, and <code>identifier</code> on the mapping will be removed, and all properties except for <code>uri</code> and <code>notation</code> on concepts and schemes will be removed.</p>
+<pre class="prettyprint source lang-js"><code>let newMapping = jskos.minifyMapping(mapping)
+</code></pre>
+<h4 id="mappingtypes">mappingTypes</h4>
+<p>An array of mapping types in form of objects. Objects can have the following properties:</p>
+<ul>
+<li><code>notation</code> - an array of notations (in this case symbols)</li>
+<li><code>uri</code> - the URI of the mapping type</li>
+<li><code>prefLabel</code> - a language maps of labels</li>
+<li><code>broader</code> - array of broader mapping types for this type</li>
+<li><code>related</code> - array of related mapping types</li>
+<li><code>RELEVANCE</code> - relevance label for GND terms (low, medium, high, very high)</li>
+<li><code>SHORT</code> - a short name for the type, used for CSV import/export</li>
+</ul>
+<p>The labels are taken from Wikidata (see script <code>bin/localize-mapping-types</code>).</p>
+<p>Example object:</p>
+<pre class="prettyprint source lang-json"><code>{
+  &quot;notation&quot;: [&quot;≈&quot;],
+  &quot;uri&quot;: &quot;http://www.w3.org/2004/02/skos/core#closeMatch&quot;,
+  &quot;prefLabel&quot;: { &quot;en&quot;: &quot;close match&quot; },
+  &quot;broader&quot;: [ { &quot;uri&quot;: &quot;http://www.w3.org/2004/02/skos/core#mappingRelation&quot; } ],
+  &quot;RELEVANCE&quot;: &quot;high&quot;,
+  &quot;SHORT&quot;: &quot;close&quot;
+}
+</code></pre>
+<h4 id="mappingtypebyuri">mappingTypeByUri</h4>
+<p>Returns a mapping type object for an URI.</p>
+<pre class="prettyprint source lang-js"><code>jskos.mappingTypeByUri(&quot;http://www.w3.org/2004/02/skos/core#closeMatch&quot;)
+</code></pre>
+<h4 id="mappingtypebytype">mappingTypeByType</h4>
+<p>Returns a mapping type for a JSKOS type property. This is usually an array where the first type is taken, but a workaround for string types is included as well.</p>
+<pre class="prettyprint source lang-js"><code>jskos.mappingTypeByType(mapping.type)
+</code></pre>
+<h4 id="defaultmappingtype">defaultMappingType</h4>
+<p>The default mapping type (currently <code>mapping relation</code>).</p>
+<h4 id="flattenmapping">flattenMapping</h4>
+<p>Converts a mapping into a flat object with for serialization as CSV. Returns an object with fields <code>fromNotation</code>, <code>toNotation</code>, <code>type</code>, and (if option <code>language</code> has been provided) <code>fromLabel</code>, <code>toLabel</code>, and <code>creator</code>.</p>
+<h4 id="mappingcsv">mappingCSV</h4>
+<p>Returns an object of preconfigured conversion functions to convert mappings into CSV. Supports 1-to-1, 1-to-n, and n-to-n mappings.</p>
+<pre class="prettyprint source lang-js"><code>// Initialize converter with default options
+const csv = jskos.mappingCSV({
+  delimiter: &quot;,&quot;,
+  quoteChar: &quot;\&quot;&quot;,
+  lineTerminator: &quot;\n&quot;,
+  type: true,
+  schemes: false,
+  labels: false,
+  creator: false,
+  language: &quot;en&quot;,
+})
+// Header line for an array of mappings (assuming 1-to-1 mappings if no array is given)
+csv.header(mappings)
+// Single CSV line for a mapping (uses fromCount and toCount from the mapping by default)
+csv.fromMapping(mapping, { fromCount: null, toCount: null })
+// Multiline CSV from array of mappings (includes header by default)
+csv.fromMappings(mappings, { header: true })
+</code></pre>
+<p>The order of the CSV fields is fromScheme, fromNotation, (fromLabel,) (fromNotation2, fromLabel2, ...) toNotation, (toLabel,) (toNotation2, toLabel2, ...) type, creator.</p>
+<h4 id="serializecsv">serializeCSV</h4>
+<p>Returns a function to serialize an array as CSV row as configured with <a href="https://frictionlessdata.io/specs/csv-dialect/">CSV Dialect</a>.</p>
+<h4 id="conceptsofmapping">conceptsOfMapping</h4>
+<p>Returns an array of concepts contained in a mapping. <code>side</code> can either be <code>from</code> or <code>to</code>. If <code>side</code> is left out, concepts from both sides will be returned. <code>null</code> values will be omitted.</p>
+<pre class="prettyprint source lang-js"><code>jskos.conceptsOfMapping(mapping)
+</code></pre>
+<h4 id="comparemappingsdeep">compareMappingsDeep</h4>
+<p><code>compareMappingsDeep</code> compares two mappings based on their properties. Concept sets and schemes are compared by URI.</p>
+<pre class="prettyprint source lang-js"><code>if (jskos.compareMappingsDeep(mapping1, mapping2)) { ... }
+</code></pre>
+<h4 id="matchobjecttypes">matchObjectTypes</h4>
+<p>Compares two JSKOS objects based on their types. Returns <code>false</code> only if both types could be guessed using <a href="#guessobjecttype"><code>guessObjectType</code></a> and they did not match, otherwise it will assume that the types match.</p>
+<h4 id="mergeuris">mergeUris</h4>
+<p>Merge URIs of two objects <code>a</code> and <code>b</code> into <code>a</code> by adding/removing URIs from identifier property.</p>
+<h4 id="merge">merge</h4>
+<p>Merges two JSKOS objects. See <a href="https://gbv.github.io/jskos-tools/module-jskos-tools.html#.merge">documentation</a> for more information.</p>
+<h4 id="normalize">normalize</h4>
+<p>Applies recursive unicode normalization to data.</p>
+<h4 id="isvaliduri">isValidUri</h4>
+<p>Checks whether a string is a valid URI.</p>
+<h4 id="objecttypes">objectTypes</h4>
+<p>An object that maps JSKOS object type names to their description.</p>
+<h4 id="guessobjecttype">guessObjectType</h4>
+<p>Guess the JSKOS object type of an object, URI or name and return its canonical name.</p>
+<pre class="prettyprint source lang-js"><code>type = guessObjectType(objectOrString)        // get full name such as `ConceptScheme`
+type = guessObjectType(objectOrString, true)  // get short name such as `scheme`
+</code></pre>
+<h4 id="comparefunctions">compareFunctions</h4>
+<p>An object containing compare functions that can be used with <code>array.sort()</code> etc.</p>
+<p>Available functions:</p>
+<ul>
+<li><code>compareFunctions.mappingsByConcepts</code> - compares mappings by the notations of their first concepts</li>
+</ul>
+<h2 id="build">Build</h2>
+<pre class="prettyprint source lang-bash"><code>git clone --recursive https://github.com/gbv/jskos-tools.git
+cd jskos-tools/
+npm install
+</code></pre>
+<p>API documentation can be generated in directory <code>jsdoc/build</code>:</p>
+<pre class="prettyprint source lang-bash"><code>npm run docs
+</code></pre>
+<h2 id="test">Test</h2>
+<pre class="prettyprint source lang-bash"><code>npm test
+</code></pre>
+<h2 id="maintainers">Maintainers</h2>
+<ul>
+<li><a href="https://github.com/stefandesu">@stefandesu</a></li>
+<li><a href="https://github.com/nichtich">@nichtich</a></li>
+</ul>
+<h2 id="publish">Publish</h2>
+<p>To publish a new version on npm after committing your changes, follow these steps:</p>
+<pre class="prettyprint source lang-bash"><code>npm version patch # or minor, or major
+git push --tags origin master
+</code></pre>
+<p>Travis will automatically deploy the new version based on the tag to npm.</p>
+<h2 id="contribute">Contribute</h2>
+<p>PRs accepted.</p>
+<p>Small note: If editing the README, please conform to the <a href="https://github.com/RichardLitt/standard-readme">standard-readme</a> specification.</p>
+<h2 id="license">License</h2>
+<p>MIT © 2018 Verbundzentrale des GBV (VZG)</p></article>
+		</section>
+			</div>
+				<div class="col-md-3 side-content">
+					<nav class="toc hidden-print hidden-sm hidden-xs"></nav>
+				</div>
+		</div>
+	</div>
+	<footer>
+			<div class="generated-by">Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on 27th Jan 2020 using the <a href="https://github.com/steveush/foodoc">FooDoc template</a>.</div>
+	</footer>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/clipboard.min.js"></script>
+	<script src="js/prism.min.js"></script>
+	<script src="js/template.min.js"></script>
+		<!-- start:lunr-search-modal.hbs -->
+		<div class="modal fade" id="lunr-search-modal">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Search results</h4>
+					</div>
+					<div class="modal-body" id="lunr-search-body">
+					</div>
+					<div class="modal-footer" id="lunr-search-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal-dialog -->
+		</div>
+		<!-- end:lunr-search-modal.hbs -->		<script src="js/lunr.min.js"></script>
+	
+</body>
+</html>
+<!-- end:readme.hbs -->
