@@ -751,6 +751,29 @@ describe("Tools", () => {
       assert.equal(typeof tools.compareFunctions[func] === "function", true)
     }
     // TODO: Test actual functionality
+    let mappings = [
+      {
+        from: {
+          memberSet: [
+            {
+              notation: ["b"]
+            }
+          ]
+        }
+      },
+      {
+        from: {
+          memberSet: [
+            {
+              notation: ["a"]
+            }
+          ]
+        }
+      },
+    ]
+    mappings.sort((a, b) =>  tools.compareFunctions.mappingsByConcepts(a, b, "from"))
+    assert.equal(mappings[0].from.memberSet[0].notation[0], "a")
+    assert.equal(mappings[1].from.memberSet[0].notation[0], "b")
   })
 
 })
