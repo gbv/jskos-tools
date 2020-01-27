@@ -15,6 +15,7 @@ deploy:
     npm: 8
     tags: true
     repo: gbv/jskos-tools
+  edge: true
 - provider: pages
   local-dir: jsdoc/build
   skip-cleanup: true
