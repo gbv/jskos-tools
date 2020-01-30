@@ -49,6 +49,7 @@ This repository contains tools for working with the [JSKOS data format for knowl
     - [normalize](#normalize)
     - [isValidUri](#isvaliduri)
     - [compareFunctions](#comparefunctions)
+    - [userOwnsMapping](#userownsmapping)
 - [Build](#build)
 - [Test](#test)
 - [Maintainers](#maintainers)
@@ -332,6 +333,10 @@ An object containing compare functions that can be used with `array.sort()` etc.
 
 Available functions:
 - `compareFunctions.mappingsByConcepts` - compares mappings by the notations of their first concepts
+
+#### userOwnsMapping
+
+Determines whether a ([login-server](https://github.com/gbv/login-server)-compatible) user owns a mapping (i.e. is the first `creator`) or not.
 
 ## Build
 

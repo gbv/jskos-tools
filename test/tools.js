@@ -776,4 +776,84 @@ describe("Tools", () => {
     assert.equal(mappings[1].from.memberSet[0].notation[0], "b")
   })
 
+  it("userOwnsMapping", () => {
+    const user1 = {
+      uri: "default:user1",
+      identities: {
+        provider1: {
+          uri: "provider1:user1"
+        }
+      }
+    }
+    const user2 = {
+      uri: "default:user2",
+      identities: {
+        provider1: {
+          uri: "provider1:user2"
+        }
+      }
+    }
+    const mapping1 = {
+      creator: [
+        {
+          uri: "default:user1"
+        }
+      ]
+    }
+    const mapping2 = {
+      creator: [
+        {
+          uri: "provider1:user2"
+        }
+      ]
+    }
+    const mapping3 = {
+      creator: [
+        {
+          uri: "provider1:user1"
+        },
+        {
+          uri: "default:user2"
+        }
+      ]
+    }
+
+    const tests = [
+      {
+        user: user1,
+        mapping: mapping1,
+        result: true,
+      },
+      {
+        user: user1,
+        mapping: mapping2,
+        result: false,
+      },
+      {
+        user: user1,
+        mapping: mapping3,
+        result: true,
+      },
+      {
+        user: user2,
+        mapping: mapping1,
+        result: false,
+      },
+      {
+        user: user2,
+        mapping: mapping2,
+        result: true,
+      },
+      {
+        user: user2,
+        mapping: mapping3,
+        result: false,
+      },
+    ]
+
+    for (let test of tests) {
+      assert.equal(tools.userOwnsMapping(test.user, test.mapping), test.result)
+    }
+  })
+
 })
