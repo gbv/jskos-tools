@@ -20,6 +20,7 @@ This repository contains tools for working with the [JSKOS data format for knowl
     - [compareMappings](#comparemappings)
     - [compareMappingMembers](#comparemappingmembers)
   - [ConceptScheme](#conceptscheme)
+  - [LanguagePreference](#languagepreference)
   - [Tools](#tools)
     - [addContext](#addcontext)
     - [clean](#clean)
@@ -122,6 +123,12 @@ if (jskos.compareMappingMembers(mapping1, mapping2)) { ... }
 ### ConceptScheme
 
 See [class ConceptScheme](https://gbv.github.io/jskos-tools/module-jskos-tools.ConceptScheme.html).
+
+### LanguagePreference
+
+See [class LanguagePreference](https://gbv.github.io/jskos-tools/module-jskos-tools.LanguagePreference.html).
+
+Used to provide access to a preference list of language tags.
 
 ### Tools
 
