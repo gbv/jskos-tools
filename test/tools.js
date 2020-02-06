@@ -13,7 +13,7 @@ describe("Tools", () => {
   it("clean", () => {
     let object = {
       uri: "http://example.com/test",
-      _id: "some_database_identifier"
+      _id: "some_database_identifier",
     }
     assert.ok(object._id)
     tools.clean(object)
@@ -50,8 +50,8 @@ describe("Tools", () => {
     let object = {
       uri: "http://example.com/test",
       identifier: [
-        "http://alternative.com/test"
-      ]
+        "http://alternative.com/test",
+      ],
     }
     let uris = tools.getAllUris(object)
     assert.deepEqual(uris, [
@@ -70,22 +70,22 @@ describe("Tools", () => {
       "http://example.com/test/",
       "http://alternative.com/test/",
       "https://example.com/test/",
-      "https://alternative.com/test/"
+      "https://alternative.com/test/",
     ])
   })
 
   it("compare", () => {
     let object1 = {
-      uri: "http://example.com/test"
+      uri: "http://example.com/test",
     }
     let object2 = {
       uri: "http://alternative.com/test",
       identifier: [
-        "http://example.com/test"
-      ]
+        "http://example.com/test",
+      ],
     }
     let object3 = {
-      uri: "http://example.com/test2"
+      uri: "http://example.com/test2",
     }
     assert.ok(tools.compare(object1, object2))
     assert.ok(!tools.compare(object1, object3))
@@ -97,20 +97,20 @@ describe("Tools", () => {
   it("isConcept, isScheme", () => {
     let concepts = [
       {
-        type: ["http://www.w3.org/2004/02/skos/core#Concept"]
+        type: ["http://www.w3.org/2004/02/skos/core#Concept"],
       },
       {
-        inScheme: { uri: "test" }
+        inScheme: { uri: "test" },
       },
       {
-        topConceptOf: [{ uri: "test" }]
-      }
+        topConceptOf: [{ uri: "test" }],
+      },
     ]
     let scheme = {
-      type: ["http://www.w3.org/2004/02/skos/core#ConceptScheme"]
+      type: ["http://www.w3.org/2004/02/skos/core#ConceptScheme"],
     }
     let other = {
-      type: ["something else"]
+      type: ["something else"],
     }
     for (let concept of concepts) {
       assert.ok(tools.isConcept(concept))
@@ -126,7 +126,7 @@ describe("Tools", () => {
     let objects = [
       { uri: "test1" },
       { uri: "test2" },
-      { uri: "test3" }
+      { uri: "test3" },
     ]
     let object1 = { uri: "test1" }
     let object2 = { identifier: ["test2"] }
@@ -142,37 +142,37 @@ describe("Tools", () => {
         uri: "1",
         notation: ["1"],
         prefLabel: {
-          de: "Erster Test"
-        }
+          de: "Erster Test",
+        },
       },
       {
         uri: "0",
         notation: ["1"],
         prefLabel: {
-          en: "Erster Test"
-        }
+          en: "Erster Test",
+        },
       },
       {
         uri: "3",
         notation: ["3"],
         prefLabel: {
-          de: "Dritter Test"
-        }
+          de: "Dritter Test",
+        },
       },
       {
         uri: "2",
         notation: ["2"],
         prefLabel: {
-          de: "Zweiter Test"
-        }
+          de: "Zweiter Test",
+        },
       },
       {
         uri: "11",
         notation: ["11"],
         prefLabel: {
-          en: "vierter Test"
-        }
-      }
+          en: "vierter Test",
+        },
+      },
     ]
     let sortedConcepts = tools.sortConcepts(objects)
     assert.ok(sortedConcepts[0].uri == "0")
@@ -201,32 +201,32 @@ describe("Tools", () => {
         memberSet: [
           {
             uri: "test",
-            test: "hello world"
-          }
-        ]
+            test: "hello world",
+          },
+        ],
       },
       to: {
         memberChoice: [
           {
             notation: ["TEST2"],
-            test: "hello world"
-          }
-        ]
+            test: "hello world",
+          },
+        ],
       },
       fromScheme: {
-        test: "hello world"
+        test: "hello world",
       },
       toScheme: {
-        test: "hello world"
+        test: "hello world",
       },
       type: ["test"],
       test: "hello world",
       created: "123",
       modified: "456",
       note: {
-        de: ["test"]
+        de: ["test"],
       },
-      identifier: ["hallo"]
+      identifier: ["hallo"],
     }
     let newMapping = tools.minifyMapping(mapping)
     // Check if test properties got removed
@@ -263,12 +263,12 @@ describe("Tools", () => {
       from: { memberSet: [{ notation: ["0"], prefLabel: { en: "'" }}] },
       toScheme: { notation: ["B"] },
       to: { memberSet: [{ notation: ["a'c"], prefLabel: { en: "0" } }] },
-      type: ["http://www.w3.org/2004/02/skos/core#broadMatch"]
+      type: ["http://www.w3.org/2004/02/skos/core#broadMatch"],
     }
     const mappingCompound = {
       from: { memberSet: [{ notation: ["0"], prefLabel: { en: "'" }}] },
       to: { memberSet: [{ notation: ["a'c"], prefLabel: { en: "0" } }, { notation: ["b\" d\""], prefLabel: { en: "1 and some" } }] },
-      creator: [{ prefLabel: { en: "someone" } }]
+      creator: [{ prefLabel: { en: "someone" } }],
     }
     const mappings = [mappingNormal, mappingCompound]
 
@@ -282,7 +282,7 @@ describe("Tools", () => {
       optionsOther: {
         delimiter: ";",
         quoteChar: "'",
-      }
+      },
     }
 
     const testCases = [
@@ -293,7 +293,7 @@ describe("Tools", () => {
           optionsNone: "\"fromNotation\",\"toNotation\",\"toNotation2\",\"type\"\n",
           optionsAllColumns: "\"fromScheme\",\"fromNotation\",\"fromLabel\",\"toScheme\",\"toNotation\",\"toLabel\",\"toNotation2\",\"toLabel2\",\"type\",\"creator\"\n",
           optionsOther: "'fromNotation';'toNotation';'toNotation2';'type'\n",
-        }
+        },
       },
       {
         function: "header",
@@ -302,7 +302,7 @@ describe("Tools", () => {
           optionsNone: "\"fromNotation\",\"toNotation\",\"type\"\n",
           optionsAllColumns: "\"fromScheme\",\"fromNotation\",\"fromLabel\",\"toScheme\",\"toNotation\",\"toLabel\",\"type\",\"creator\"\n",
           optionsOther: "'fromNotation';'toNotation';'type'\n",
-        }
+        },
       },
       {
         function: "fromMapping",
@@ -311,7 +311,7 @@ describe("Tools", () => {
           optionsNone: "\"0\",\"a'c\",\"broad\"\n",
           optionsAllColumns: "\"A\",\"0\",\"'\",\"B\",\"a'c\",\"0\",\"broad\",\"\"\n",
           optionsOther: "'0';'a''c';'broad'\n",
-        }
+        },
       },
       {
         function: "fromMapping",
@@ -320,7 +320,7 @@ describe("Tools", () => {
           optionsNone: "\"0\",\"a'c\",\"b\"\" d\"\"\",\"\"\n",
           optionsAllColumns: "\"\",\"0\",\"'\",\"\",\"a'c\",\"0\",\"b\"\" d\"\"\",\"1 and some\",\"\",\"someone\"\n",
           optionsOther: "'0';'a''c';'b\" d\"';''\n",
-        }
+        },
       },
       {
         function: "fromMappings",
@@ -329,7 +329,7 @@ describe("Tools", () => {
           optionsNone: "\"fromNotation\",\"toNotation\",\"toNotation2\",\"type\"\n\"0\",\"a'c\",\"\",\"broad\"\n\"0\",\"a'c\",\"b\"\" d\"\"\",\"\"\n",
           optionsAllColumns: "\"fromScheme\",\"fromNotation\",\"fromLabel\",\"toScheme\",\"toNotation\",\"toLabel\",\"toNotation2\",\"toLabel2\",\"type\",\"creator\"\n\"A\",\"0\",\"'\",\"B\",\"a'c\",\"0\",\"\",\"\",\"broad\",\"\"\n\"\",\"0\",\"'\",\"\",\"a'c\",\"0\",\"b\"\" d\"\"\",\"1 and some\",\"\",\"someone\"\n",
           optionsOther: "'fromNotation';'toNotation';'toNotation2';'type'\n'0';'a''c';'';'broad'\n'0';'a''c';'b\" d\"';''\n",
-        }
+        },
       },
     ]
 
@@ -386,127 +386,127 @@ describe("Tools", () => {
           {
             "uri": "http://dewey.info/class/612.112/e23/",
             "notation": [
-              "612.112"
-            ]
-          }
-        ]
+              "612.112",
+            ],
+          },
+        ],
       },
       "to": {
         "memberSet": [
           {
             "uri": "http://www.wikidata.org/entity/Q42395",
             "notation": [
-              "Q42395"
-            ]
-          }
-        ]
+              "Q42395",
+            ],
+          },
+        ],
       },
       "fromScheme": {
         "uri": "http://dewey.info/scheme/edition/e23/",
         "notation": [
-          "DDC"
-        ]
+          "DDC",
+        ],
       },
       "toScheme": {
-        "uri": "http://bartoc.org/en/node/1940"
+        "uri": "http://bartoc.org/en/node/1940",
       },
       "creator": [
         {
           "prefLabel": {
-            "de": "Stefan Peters (VZG)"
-          }
-        }
-      ]
+            "de": "Stefan Peters (VZG)",
+          },
+        },
+      ],
     }
     // Same as mapping1 except without notations
     let mapping2 = {
       "from": {
         "memberSet": [
           {
-            "uri": "http://dewey.info/class/612.112/e23/"
-          }
-        ]
+            "uri": "http://dewey.info/class/612.112/e23/",
+          },
+        ],
       },
       "to": {
         "memberSet": [
           {
-            "uri": "http://www.wikidata.org/entity/Q42395"
-          }
-        ]
+            "uri": "http://www.wikidata.org/entity/Q42395",
+          },
+        ],
       },
       "fromScheme": {
-        "uri": "http://dewey.info/scheme/edition/e23/"
+        "uri": "http://dewey.info/scheme/edition/e23/",
       },
       "toScheme": {
-        "uri": "http://bartoc.org/en/node/1940"
+        "uri": "http://bartoc.org/en/node/1940",
       },
       "creator": [
         {
           "prefLabel": {
-            "de": "Stefan Peters (VZG)"
-          }
-        }
-      ]
+            "de": "Stefan Peters (VZG)",
+          },
+        },
+      ],
     }
     // Same as mapping2 except with different creator prefLabel
     let mapping3 = {
       "from": {
         "memberSet": [
           {
-            "uri": "http://dewey.info/class/612.112/e23/"
-          }
-        ]
+            "uri": "http://dewey.info/class/612.112/e23/",
+          },
+        ],
       },
       "to": {
         "memberSet": [
           {
-            "uri": "http://www.wikidata.org/entity/Q42395"
-          }
-        ]
+            "uri": "http://www.wikidata.org/entity/Q42395",
+          },
+        ],
       },
       "fromScheme": {
-        "uri": "http://dewey.info/scheme/edition/e23/"
+        "uri": "http://dewey.info/scheme/edition/e23/",
       },
       "toScheme": {
-        "uri": "http://bartoc.org/en/node/1940"
+        "uri": "http://bartoc.org/en/node/1940",
       },
       "creator": [
         {
           "prefLabel": {
-            "de": "Stefan Peters"
-          }
-        }
-      ]
+            "de": "Stefan Peters",
+          },
+        },
+      ],
     }
     // Same as mapping3 except with different concept in from
     let mapping4 = {
       "from": {
         "memberSet": [
           {
-            "uri": "http://dewey.info/class/612.11/e23/"
-          }
-        ]
+            "uri": "http://dewey.info/class/612.11/e23/",
+          },
+        ],
       },
       "to": {
         "memberSet": [
           {
-            "uri": "http://www.wikidata.org/entity/Q42395"
-          }
-        ]
+            "uri": "http://www.wikidata.org/entity/Q42395",
+          },
+        ],
       },
       "fromScheme": {
-        "uri": "http://dewey.info/scheme/edition/e23/"
+        "uri": "http://dewey.info/scheme/edition/e23/",
       },
       "toScheme": {
-        "uri": "http://bartoc.org/en/node/1940"
+        "uri": "http://bartoc.org/en/node/1940",
       },
       "creator": [
         {
           "prefLabel": {
-            "de": "Stefan Peters"
-          }
-        }
-      ]
+            "de": "Stefan Peters",
+          },
+        },
+      ],
     }
     assert.ok(tools.compareMappingsDeep(mapping1, mapping2))
     assert.ok(!tools.compareMappingsDeep(mapping2, mapping3))
@@ -518,22 +518,22 @@ describe("Tools", () => {
       {
         a: { type: ["http://www.w3.org/2004/02/skos/core#Concept"] },
         b: { type: ["http://www.w3.org/2004/02/skos/core#ConceptScheme"] },
-        result: false
+        result: false,
       },
       {
         a: { type: ["http://www.w3.org/2004/02/skos/core#Concept"] },
         b: { type: ["http://www.w3.org/2004/02/skos/core#Concept"] },
-        result: true
+        result: true,
       },
       {
         a: { type: [] },
         b: { type: ["http://www.w3.org/2004/02/skos/core#Concept"] },
-        result: true
+        result: true,
       },
       {
         a: {},
         b: {},
-        result: true
+        result: true,
       },
     ]
     for (let test of tests) {
@@ -546,33 +546,33 @@ describe("Tools", () => {
       {
         a: {},
         b: {},
-        result: {}
+        result: {},
       },
       {
         a: null,
         b: {},
-        result: null
+        result: null,
       },
       {
         a: {},
         b: null,
-        result: {}
+        result: {},
       },
       {
         a: { uri: "test1" },
         b: { uri: "test2" },
-        result: { uri: "test1", identifier: ["test2"] }
+        result: { uri: "test1", identifier: ["test2"] },
       },
       {
         a: { uri: "test1" },
         b: { uri: "test2", identifier: ["test1", "test3"] },
-        result: { uri: "test1", identifier: ["test3", "test2"] }
+        result: { uri: "test1", identifier: ["test3", "test2"] },
       },
       // Expect identifier property to be removed if empty
       {
         a: { uri: "test1" },
         b: { identifier: ["test1"] },
-        result: { uri: "test1" }
+        result: { uri: "test1" },
       },
     ]
     for (let test of tests) {
@@ -586,49 +586,49 @@ describe("Tools", () => {
       {
         a: {},
         b: {},
-        result: {}
+        result: {},
       },
       // Test adding properties from b to a
       {
         a: { uri: "test" },
         b: { prefLabel: { de: "Test" }},
-        result: { uri: "test", prefLabel: { de: "Test" }}
+        result: { uri: "test", prefLabel: { de: "Test" }},
       },
       // Test merging simple object properties
       {
         a: { prefLabel: { de: "testDe" }},
         b: { prefLabel: { en: "testEn" }},
-        result: { prefLabel: { de: "testDe", en: "testEn" }}
+        result: { prefLabel: { de: "testDe", en: "testEn" }},
       },
       // Test merging simple array properties
       {
         a: { test: ["a"] },
         b: { test: ["b"] },
-        result: { test: ["a", "b"] }
+        result: { test: ["a", "b"] },
       },
       // Test merging simple array properties with duplicate values
       {
         a: { test: ["a"] },
         b: { test: ["b","a","c"] },
-        result: { test: ["a", "b", "c"] }
+        result: { test: ["a", "b", "c"] },
       },
       // Test merging null values in array
       {
         a: { test: ["a"] },
         b: { test: ["b", null] },
-        result: { test: ["a", "b", null] }
+        result: { test: ["a", "b", null] },
       },
       // Test merging null values in array, null should be last element
       {
         a: { test: ["a", null] },
         b: { test: ["b"] },
-        result: { test: ["a", "b", null] }
+        result: { test: ["a", "b", null] },
       },
       // Test merging null values in array, null should only appear once and at the end
       {
         a: { test: ["a", null] },
         b: { test: ["b", null] },
-        result: { test: ["a", "b", null] }
+        result: { test: ["a", "b", null] },
       },
       // Test deep merging of arrays
       {
@@ -641,28 +641,28 @@ describe("Tools", () => {
         a: { uri: "test1" },
         b: { uri: "test2" },
         options: { mergeUris: true },
-        result: { uri: "test1", identifier: ["test2"] }
+        result: { uri: "test1", identifier: ["test2"] },
       },
       // Test URI merging 2 ("test1" should be removed from identifier)
       {
         a: { uri: "test1" },
         b: { uri: "test2", identifier: ["test1", "test3"] },
         options: { mergeUris: true },
-        result: { uri: "test1", identifier: ["test3", "test2"] }
+        result: { uri: "test1", identifier: ["test3", "test2"] },
       },
       // Test throwing an error on simple property mismatch
       {
         a: { uri: "test1" },
         b: { uri: "test2" },
         options: { detectMismatch: ["uri"] },
-        throws: true
+        throws: true,
       },
       // Test throwing an error on deep property mismatch
       {
         a: { prefLabel: { de: "test1" }},
         b: { prefLabel: { de: "test2" }},
         options: { detectMismatch: ["prefLabel.de"] },
-        throws: true
+        throws: true,
       },
       // Test not throwing an error on deep property match
       {
@@ -701,11 +701,11 @@ describe("Tools", () => {
     let tests = [
       {
         a: "ä",
-        b: "ä"
+        b: "ä",
       },
       {
         a: ["ä"],
-        b: ["ä"]
+        b: ["ä"],
       },
       {
         a: { test: [{ blubb: "ä" }] },
@@ -756,19 +756,19 @@ describe("Tools", () => {
         from: {
           memberSet: [
             {
-              notation: ["b"]
-            }
-          ]
-        }
+              notation: ["b"],
+            },
+          ],
+        },
       },
       {
         from: {
           memberSet: [
             {
-              notation: ["a"]
-            }
-          ]
-        }
+              notation: ["a"],
+            },
+          ],
+        },
       },
     ]
     mappings.sort((a, b) =>  tools.compareFunctions.mappingsByConcepts(a, b, "from"))
@@ -781,41 +781,41 @@ describe("Tools", () => {
       uri: "default:user1",
       identities: {
         provider1: {
-          uri: "provider1:user1"
-        }
-      }
+          uri: "provider1:user1",
+        },
+      },
     }
     const user2 = {
       uri: "default:user2",
       identities: {
         provider1: {
-          uri: "provider1:user2"
-        }
-      }
+          uri: "provider1:user2",
+        },
+      },
     }
     const mapping1 = {
       creator: [
         {
-          uri: "default:user1"
-        }
-      ]
+          uri: "default:user1",
+        },
+      ],
     }
     const mapping2 = {
       creator: [
         {
-          uri: "provider1:user2"
-        }
-      ]
+          uri: "provider1:user2",
+        },
+      ],
     }
     const mapping3 = {
       creator: [
         {
-          uri: "provider1:user1"
+          uri: "provider1:user1",
         },
         {
-          uri: "default:user2"
-        }
-      ]
+          uri: "default:user2",
+        },
+      ],
     }
 
     const tests = [

@@ -57,7 +57,7 @@ describe("ConceptScheme", () => {
 describe("ConceptScheme with spaces in notation", () => {
   const scheme = new ConceptScheme({
     namespace: "http://example.org/",
-    notationPattern: "[A-Z]( [A-Z])*"
+    notationPattern: "[A-Z]( [A-Z])*",
   })
   const notation = "A B"
   const uri = "http://example.org/A%20B"

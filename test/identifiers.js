@@ -8,26 +8,26 @@ let examples =
       from: {
         memberSet: [
           {
-            uri: "http://dewey.info/class/612.112/e23/"
-          }
-        ]
+            uri: "http://dewey.info/class/612.112/e23/",
+          },
+        ],
       },
       fromScheme: {
-        uri: "http://bartoc.org/en/node/241"
+        uri: "http://bartoc.org/en/node/241",
       },
       to: {
         memberSet: [
           {
-            uri: "http://rvk.uni-regensburg.de/nt/WW_8844"
-          }
-        ]
+            uri: "http://rvk.uni-regensburg.de/nt/WW_8844",
+          },
+        ],
       },
       toScheme: {
-        uri: "http://bartoc.org/en/node/533"
+        uri: "http://bartoc.org/en/node/533",
       },
       type: [
-        "http://www.w3.org/2004/02/skos/core#mappingRelation"
-      ]
+        "http://www.w3.org/2004/02/skos/core#mappingRelation",
+      ],
     },
     contentId: "urn:jskos:mapping:content:ecfbefed9712bf4b5c90269ddbb6788bff15b7d6",
     memberId: "urn:jskos:mapping:members:60db81bc36d826b5a4164f8184593e723a45e874",
@@ -37,26 +37,26 @@ let examples =
       from: {
         memberSet: [
           {
-            uri: "http://dewey.info/class/612.112/e23/"
-          }
-        ]
+            uri: "http://dewey.info/class/612.112/e23/",
+          },
+        ],
       },
       fromScheme: {
-        uri: "http://bartoc.org/en/node/241"
+        uri: "http://bartoc.org/en/node/241",
       },
       to: {
         memberSet: [
           {
-            uri: "http://rvk.uni-regensburg.de/nt/WW_8844"
-          }
-        ]
+            uri: "http://rvk.uni-regensburg.de/nt/WW_8844",
+          },
+        ],
       },
       toScheme: {
-        uri: "http://bartoc.org/en/node/533"
+        uri: "http://bartoc.org/en/node/533",
       },
       type: [
-        "http://www.w3.org/2004/02/skos/core#closeMatch"
-      ]
+        "http://www.w3.org/2004/02/skos/core#closeMatch",
+      ],
     },
     contentId: "urn:jskos:mapping:content:1390cef486ef701f5de02cba042e605c58e71fd6",
     memberId: "urn:jskos:mapping:members:60db81bc36d826b5a4164f8184593e723a45e874",
@@ -66,29 +66,29 @@ let examples =
       from: {
         memberSet: [
           {
-            uri: "http://dewey.info/class/612.112/e23/"
-          }
-        ]
+            uri: "http://dewey.info/class/612.112/e23/",
+          },
+        ],
       },
       fromScheme: {
-        uri: "http://bartoc.org/en/node/241"
+        uri: "http://bartoc.org/en/node/241",
       },
       to: {
         memberSet: [
           {
-            uri: "http://rvk.uni-regensburg.de/nt/WW_8840"
-          }
-        ]
+            uri: "http://rvk.uni-regensburg.de/nt/WW_8840",
+          },
+        ],
       },
       toScheme: {
-        uri: "http://bartoc.org/en/node/533"
+        uri: "http://bartoc.org/en/node/533",
       },
       type: [
-        "http://www.w3.org/2004/02/skos/core#mappingRelation"
-      ]
+        "http://www.w3.org/2004/02/skos/core#mappingRelation",
+      ],
     },
     contentId: "urn:jskos:mapping:content:fa693e08d92696e453208ce478e988434cc73a0e",
-    memberId: "urn:jskos:mapping:members:1c76d05b5d223acb96bd41687e1f3900aa8b908c"
+    memberId: "urn:jskos:mapping:members:1c76d05b5d223acb96bd41687e1f3900aa8b908c",
   },
 ]
 
@@ -98,22 +98,22 @@ let examples2 = [
       from: {
         memberSet: [
           {
-            uri: "http://dewey.info/class/612.112/e23/"
-          }
-        ]
+            uri: "http://dewey.info/class/612.112/e23/",
+          },
+        ],
       },
       fromScheme: {
-        uri: "http://bartoc.org/en/node/241"
+        uri: "http://bartoc.org/en/node/241",
       },
       to: {
-        memberSet: []
+        memberSet: [],
       },
       toScheme: {
-        uri: "http://bartoc.org/en/node/533"
+        uri: "http://bartoc.org/en/node/533",
       },
       type: [
-        "http://www.w3.org/2004/02/skos/core#mappingRelation"
-      ]
+        "http://www.w3.org/2004/02/skos/core#mappingRelation",
+      ],
     },
   },
   {
@@ -121,46 +121,46 @@ let examples2 = [
       from: {
         memberSet: [
           {
-            uri: "http://dewey.info/class/612.112/e23/"
-          }
-        ]
+            uri: "http://dewey.info/class/612.112/e23/",
+          },
+        ],
       },
       fromScheme: {
-        uri: "http://bartoc.org/en/node/241"
+        uri: "http://bartoc.org/en/node/241",
       },
       to: {
-        memberSet: []
-      },
-      toScheme: {
-        uri: "http://bartoc.org/en/node/18785"
-      },
-      type: [
-        "http://www.w3.org/2004/02/skos/core#mappingRelation"
-      ]
-    },
-  },
-  {
-    mapping: {
-      from: {
-        memberSet: [
-          {
-            uri: "http://dewey.info/class/612.112/e23/"
-          }
-        ]
-      },
-      fromScheme: {
-        uri: "http://bartoc.org/en/node/241"
-      },
-      to: {
-        memberSet: []
+        memberSet: [],
       },
       toScheme: {
         uri: "http://bartoc.org/en/node/18785",
-        type: ["http://testtype"]
       },
       type: [
-        "http://www.w3.org/2004/02/skos/core#mappingRelation"
-      ]
+        "http://www.w3.org/2004/02/skos/core#mappingRelation",
+      ],
+    },
+  },
+  {
+    mapping: {
+      from: {
+        memberSet: [
+          {
+            uri: "http://dewey.info/class/612.112/e23/",
+          },
+        ],
+      },
+      fromScheme: {
+        uri: "http://bartoc.org/en/node/241",
+      },
+      to: {
+        memberSet: [],
+      },
+      toScheme: {
+        uri: "http://bartoc.org/en/node/18785",
+        type: ["http://testtype"],
+      },
+      type: [
+        "http://www.w3.org/2004/02/skos/core#mappingRelation",
+      ],
     },
   },
 ]
