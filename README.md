@@ -124,11 +124,38 @@ if (jskos.compareMappingMembers(mapping1, mapping2)) { ... }
 
 See [class ConceptScheme](https://gbv.github.io/jskos-tools/module-jskos-tools.ConceptScheme.html).
 
-### LanguagePreference
-
-See [class LanguagePreference](https://gbv.github.io/jskos-tools/module-jskos-tools.LanguagePreference.html).
+### languagePreference
 
 Used to provide access to a preference list of language tags.
+
+#### How to Configure
+
+If this is used inside a web application that allows multiple interface languages and depends on reactivity, it is necessary to properly configure this at the start of the application. There are two ways to do this:
+
+1. Provide a reference to the Vuex store and path where the language preference list of the application resides:
+```javascript
+const store = require("./store") // import the Vuex store
+jskos.languagePreference.store = store
+jskos.languagePreference.path = "state.languages" // or wherever your languages array resides
+```
+
+Note: In theory, `store` doesn't HAVE to be a Vuex store. It could be any kind of object which contains the `languages` array somewhere. (See also: [Tests](https://github.com/gbv/jskos-tools/blob/master/test/language-preference.js#L34-L39))
+
+2. Provide a reference to a preference list array of languages tags directly via `defaults`. Note: Make sure that this array only gets modified in-place, otherwise you will override the previous reference to the array. (Example using [array.prototype.move](https://www.npmjs.com/package/array.prototype.move).)
+
+```javascript
+const languages = ["en", "de"]
+jskos.languagePreference.defaults = languages
+languages.move(1, 0) // moves "de" to the front of the preference list
+```
+
+#### getLanguages
+
+Returns the current preference list of language tags (either from `store` or `defaults`).
+
+#### selectLanguage
+
+Selects a language tag from a language map according to the current preference list or `null` if no language was found.
 
 ### Tools
 
