@@ -14,11 +14,11 @@ describe("languagePreference", () => {
   })
 
   it("selects 'en' as default", () => {
-    assert.equal(languagePreference.selectLanguage({ fr:"", es: "", en: "" }), "en")
+    assert.equal(languagePreference.selectLanguage({ fr: "a", es: "b", en: "c" }), "en")
   })
 
   it("selects any given language as fallback", () => {
-    assert.equal(languagePreference.selectLanguage({ fr:"" }), "fr")
+    assert.equal(languagePreference.selectLanguage({ fr: "a" }), "fr")
   })
 
 
@@ -26,7 +26,7 @@ describe("languagePreference", () => {
     const defaults = ["es", "en"]
     languagePreference.defaults = defaults
     assert.deepEqual(languagePreference.getLanguages(), defaults)
-    assert.equal(languagePreference.selectLanguage({ fr:"", es: "", en: "" }), "es")
+    assert.equal(languagePreference.selectLanguage({ fr: "a", es: "b", en: "c" }), "es")
   })
 
 
@@ -36,7 +36,7 @@ describe("languagePreference", () => {
     languagePreference.store = store
     languagePreference.path = path
     assert.deepEqual(languagePreference.getLanguages(), _.get(store, path))
-    assert.equal(languagePreference.selectLanguage({ fr:"", es: "", en: "" }), "es")
+    assert.equal(languagePreference.selectLanguage({ fr: "a", es: "b", en: "c" }), "es")
   })
 
 })
