@@ -108,7 +108,7 @@ function reduceBundle(bundle) {
   const field = memberField(bundle)
   const set = bundle[field] ? reduceSet(bundle[field]) : []
   return {
-    [set.length > 1 ? field : "memberSet"]: set.map(uri => ({uri}))
+    [set.length > 1 ? field : "memberSet"]: set.map(uri => ({uri})),
   }
 }
 
@@ -119,8 +119,8 @@ function mappingContent(mapping) {
     from: reduceBundle(from || {}),
     to: reduceBundle(to || {}),
     type: [
-      type &amp;&amp; type[0] || "http://www.w3.org/2004/02/skos/core#mappingRelation"
-    ]
+      type &amp;&amp; type[0] || "http://www.w3.org/2004/02/skos/core#mappingRelation",
+    ],
   }
   for (let side of ["from", "to"]) {
     if ((result[side][memberField(result[side])] || []).length == 0) {
@@ -166,10 +166,10 @@ function mappingMembersIdentifier(mapping) {
  */
 function addMappingIdentifiers(mapping) {
   const identifier = (mapping.identifier || []).filter(
-    id => !id.startsWith("urn:jskos:mapping:")
+    id => !id.startsWith("urn:jskos:mapping:"),
   ).concat([
     mappingMembersIdentifier(mapping),
-    mappingContentIdentifier(mapping)
+    mappingContentIdentifier(mapping),
   ]).sort()
   return Object.assign({}, mapping, {identifier})
 }
