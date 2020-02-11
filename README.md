@@ -397,6 +397,18 @@ Returns the definition of a JSKOS Item as an array. If there is no definition, a
 
 Returns whether a mapping registry has stored mappings (`true` = database) or not (`false` = recommendations).
 
+#### annotationCreatorUri
+
+Returns the creator URI for an annotation.
+
+#### annotationCreatorName
+
+Returns the craetor name for an annotation.
+
+#### annotationCreatorMatches
+
+Matches an annotation's creator URI against a list of URIs (e.g. from a user).
+
 ## Build
 
 ```bash
