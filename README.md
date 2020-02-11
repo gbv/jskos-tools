@@ -51,6 +51,10 @@ This repository contains tools for working with the [JSKOS data format for knowl
     - [isValidUri](#isvaliduri)
     - [compareFunctions](#comparefunctions)
     - [userOwnsMapping](#userownsmapping)
+    - [notation](#notation)
+    - [languageMapContent](#languagemapcontent)
+    - [prefLabel](#preflabel)
+    - [definition](#definition)
 - [Build](#build)
 - [Test](#test)
 - [Maintainers](#maintainers)
@@ -371,6 +375,22 @@ Available functions:
 #### userOwnsMapping
 
 Determines whether a ([login-server](https://github.com/gbv/login-server)-compatible) user owns a mapping (i.e. is the first `creator`) or not.
+
+#### notation
+
+Returns the primary notation for a JSKOS Item. If there is no notation, it will return an empty string. Scheme notations will be uppercased.
+
+#### languageMapContent
+
+Returns the content of a language map for a JSKOS Item.
+
+#### prefLabel
+
+Returns the prefLabel of a JSKOS Item. If there is no label, it will return the URI. If there is no URI, it will return an empty string.
+
+#### definition
+
+Returns the definition of a JSKOS Item as an array. If there is no definition, an empty array will be returned.
 
 ## Build
 
