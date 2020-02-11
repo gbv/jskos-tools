@@ -39,9 +39,13 @@
 									<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Globals<b class="caret"></b></a>
 									<ul class="dropdown-menu">
 											<li><a href="global.html#compareFunctions">compareFunctions</a></li>
+											<li><a href="global.html#definition">definition</a></li>
 											<li><a href="global.html#getLanguages">getLanguages</a></li>
 											<li><a href="global.html#isValidUri">isValidUri</a></li>
+											<li><a href="global.html#languageMapContent">languageMapContent</a></li>
 											<li><a href="global.html#normalize">normalize</a></li>
+											<li><a href="global.html#notation">notation</a></li>
+											<li><a href="global.html#prefLabel">prefLabel</a></li>
 											<li><a href="global.html#selectLanguage">selectLanguage</a></li>
 											<li><a href="global.html#userOwnsMapping">userOwnsMapping</a></li>
 									</ul>
@@ -487,6 +491,16 @@
 </dd>
 											<hr/>
 											<dt class="symbol-title function public">
+			<h4 id=".csvSerializer" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">csvSerializer</span><span class="signature-params">()</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details function public">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Returns a function to serialize an array as CSV row as configured.
+			See CSV Dialect (<a href="https:%5C/%5C/frictionlessdata.io/specs/csv-dialect/">https://frictionlessdata.io/specs/csv-dialect/</a>).</p></div>
+			</div>	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title function public">
 			<h4 id=".conceptsOfMapping" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">conceptsOfMapping</span><span class="signature-params">( <span class="signature-param">mapping</span>, <span class="signature-param">side</span>&nbsp;)</span><span class="signature-type"></span></h4>
 		</dt>
 <dd class="symbol-details function public">
@@ -514,45 +528,6 @@
 							<td><span class="param-type">*</span></td>
 							<td class="last">
 									<p>Either <code>from</code> or <code>to</code>. Default is both.</p>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-	</div>
-</dd>
-											<hr/>
-											<dt class="symbol-title function public">
-			<h4 id=".mappingCSV" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">mappingCSV</span><span class="signature-params">( <span class="signature-param">options</span>&nbsp;)</span><span class="signature-type"></span></h4>
-		</dt>
-<dd class="symbol-details function public">
-	<div class="symbol-details-inner">
-			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Returns an object of preconfigured conversion functions to convert mappings into CSV.</p></div>
-			</div>			<div class="callout callout-info">
-				<h5>Parameters</h5>
-				<table class="params table table-striped">
-					<thead>
-					<tr>
-							<th>Name</th>
-						<th>Type</th>
-						<th class="last">Description</th>
-					</tr>
-					</thead>
-					<tbody>
-						<tr>
-								<td><code>options</code></td>
-							<td><span class="param-type">object</span></td>
-							<td class="last">
-									<p>Possible options:</p>
-			<ul>
-			<li>delimiter: delimiter character (default <code>,</code>)</li>
-			<li>quoteChar: quote character (default <code>&quot;</code>)</li>
-			<li>lineTerminator: line terminator (default <code>\n</code>)</li>
-			<li>type: whether to include mapping type in output (default true)</li>
-			<li>schemes: whether to include scheme notations in output (default false)</li>
-			<li>labels: whether to include concept labels in output (default false)</li>
-			<li>creator: whether to include mapping creator in output (default false)</li>
-			</ul>
 							</td>
 						</tr>
 					</tbody>
@@ -689,13 +664,42 @@
 </dd>
 											<hr/>
 											<dt class="symbol-title function public">
-			<h4 id=".csvSerializer" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">csvSerializer</span><span class="signature-params">()</span><span class="signature-type"></span></h4>
+			<h4 id=".mappingCSV" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">mappingCSV</span><span class="signature-params">( <span class="signature-param">options</span>&nbsp;)</span><span class="signature-type"></span></h4>
 		</dt>
 <dd class="symbol-details function public">
 	<div class="symbol-details-inner">
-			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Returns a function to serialize an array as CSV row as configured.
-			See CSV Dialect (<a href="https:%5C/%5C/frictionlessdata.io/specs/csv-dialect/">https://frictionlessdata.io/specs/csv-dialect/</a>).</p></div>
-			</div>	</div>
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Returns an object of preconfigured conversion functions to convert mappings into CSV.</p></div>
+			</div>			<div class="callout callout-info">
+				<h5>Parameters</h5>
+				<table class="params table table-striped">
+					<thead>
+					<tr>
+							<th>Name</th>
+						<th>Type</th>
+						<th class="last">Description</th>
+					</tr>
+					</thead>
+					<tbody>
+						<tr>
+								<td><code>options</code></td>
+							<td><span class="param-type">object</span></td>
+							<td class="last">
+									<p>Possible options:</p>
+			<ul>
+			<li>delimiter: delimiter character (default <code>,</code>)</li>
+			<li>quoteChar: quote character (default <code>&quot;</code>)</li>
+			<li>lineTerminator: line terminator (default <code>\n</code>)</li>
+			<li>type: whether to include mapping type in output (default true)</li>
+			<li>schemes: whether to include scheme notations in output (default false)</li>
+			<li>labels: whether to include concept labels in output (default false)</li>
+			<li>creator: whether to include mapping creator in output (default false)</li>
+			</ul>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+	</div>
 </dd>
 									</dl>
 							</article>
@@ -707,7 +711,7 @@
 		</div>
 	</div>
 	<footer>
-			<div class="generated-by">Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on 6th Feb 2020 using the <a href="https://github.com/steveush/foodoc">FooDoc template</a>.</div>
+			<div class="generated-by">Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.3</a> on 11th Feb 2020 using the <a href="https://github.com/steveush/foodoc">FooDoc template</a>.</div>
 	</footer>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>
