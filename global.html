@@ -38,6 +38,9 @@
 								<li class="dropdown">
 									<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Globals<b class="caret"></b></a>
 									<ul class="dropdown-menu">
+											<li><a href="global.html#annotationCreatorMatches">annotationCreatorMatches</a></li>
+											<li><a href="global.html#annotationCreatorName">annotationCreatorName</a></li>
+											<li><a href="global.html#annotationCreatorUri">annotationCreatorUri</a></li>
 											<li><a href="global.html#compareFunctions">compareFunctions</a></li>
 											<li><a href="global.html#definition">definition</a></li>
 											<li><a href="global.html#getLanguages">getLanguages</a></li>
@@ -437,6 +440,103 @@
 							<td><span class="param-type">object</span></td>
 							<td class="last">
 									<p>JSKOS registry</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title function public">
+			<h4 id="annotationCreatorUri" class="function public"><span class="name">annotationCreatorUri</span><span class="signature-params">( <span class="signature-param">annotation</span>&nbsp;)</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details function public">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Returns the creator URI for an annotation.</p></div>
+			</div>			<div class="callout callout-info">
+				<h5>Parameters</h5>
+				<table class="params table table-striped">
+					<thead>
+					<tr>
+							<th>Name</th>
+						<th>Type</th>
+						<th class="last">Description</th>
+					</tr>
+					</thead>
+					<tbody>
+						<tr>
+								<td><code>annotation</code></td>
+							<td><span class="param-type">object</span></td>
+							<td class="last">
+									<p>a JSKOS annotation</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title function public">
+			<h4 id="annotationCreatorName" class="function public"><span class="name">annotationCreatorName</span><span class="signature-params">( <span class="signature-param">annotation</span>&nbsp;)</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details function public">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Returns the craetor name for an annotation.</p></div>
+			</div>			<div class="callout callout-info">
+				<h5>Parameters</h5>
+				<table class="params table table-striped">
+					<thead>
+					<tr>
+							<th>Name</th>
+						<th>Type</th>
+						<th class="last">Description</th>
+					</tr>
+					</thead>
+					<tbody>
+						<tr>
+								<td><code>annotation</code></td>
+							<td><span class="param-type">object</span></td>
+							<td class="last">
+									<p>a JSKOS annotation</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title function public">
+			<h4 id="annotationCreatorMatches" class="function public"><span class="name">annotationCreatorMatches</span><span class="signature-params">( <span class="signature-param">annotation</span>, <span class="signature-param">uris</span>&nbsp;)</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details function public">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Matches an annotation's creator URI against a list of URIs (e.g. from a user).</p></div>
+			</div>			<div class="callout callout-info">
+				<h5>Parameters</h5>
+				<table class="params table table-striped">
+					<thead>
+					<tr>
+							<th>Name</th>
+						<th>Type</th>
+						<th class="last">Description</th>
+					</tr>
+					</thead>
+					<tbody>
+						<tr>
+								<td><code>annotation</code></td>
+							<td><span class="param-type">object</span></td>
+							<td class="last">
+									<p>a JSKOS annotation</p>
+							</td>
+						</tr>
+						<tr>
+								<td><code>uris</code></td>
+							<td><span class="param-type">array</span></td>
+							<td class="last">
+									<p>array of user URIs</p>
 							</td>
 						</tr>
 					</tbody>

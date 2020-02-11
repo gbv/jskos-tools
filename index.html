@@ -39,6 +39,9 @@
 								<li class="dropdown">
 									<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Globals<b class="caret"></b></a>
 									<ul class="dropdown-menu">
+											<li><a href="global.html#annotationCreatorMatches">annotationCreatorMatches</a></li>
+											<li><a href="global.html#annotationCreatorName">annotationCreatorName</a></li>
+											<li><a href="global.html#annotationCreatorUri">annotationCreatorUri</a></li>
 											<li><a href="global.html#compareFunctions">compareFunctions</a></li>
 											<li><a href="global.html#definition">definition</a></li>
 											<li><a href="global.html#getLanguages">getLanguages</a></li>
@@ -373,6 +376,12 @@ type = guessObjectType(objectOrString, true)  // get short name such as `scheme`
 <p>Returns the definition of a JSKOS Item as an array. If there is no definition, an empty array will be returned.</p>
 <h4 id="mappingregistryisstored">mappingRegistryIsStored</h4>
 <p>Returns whether a mapping registry has stored mappings (<code>true</code> = database) or not (<code>false</code> = recommendations).</p>
+<h4 id="annotationcreatoruri">annotationCreatorUri</h4>
+<p>Returns the creator URI for an annotation.</p>
+<h4 id="annotationcreatorname">annotationCreatorName</h4>
+<p>Returns the craetor name for an annotation.</p>
+<h4 id="annotationcreatormatches">annotationCreatorMatches</h4>
+<p>Matches an annotation's creator URI against a list of URIs (e.g. from a user).</p>
 <h2 id="build">Build</h2>
 <pre class="prettyprint source lang-bash"><code>git clone --recursive https://github.com/gbv/jskos-tools.git
 cd jskos-tools/

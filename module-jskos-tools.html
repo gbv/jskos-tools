@@ -38,6 +38,9 @@
 								<li class="dropdown">
 									<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Globals<b class="caret"></b></a>
 									<ul class="dropdown-menu">
+											<li><a href="global.html#annotationCreatorMatches">annotationCreatorMatches</a></li>
+											<li><a href="global.html#annotationCreatorName">annotationCreatorName</a></li>
+											<li><a href="global.html#annotationCreatorUri">annotationCreatorUri</a></li>
 											<li><a href="global.html#compareFunctions">compareFunctions</a></li>
 											<li><a href="global.html#definition">definition</a></li>
 											<li><a href="global.html#getLanguages">getLanguages</a></li>
@@ -538,6 +541,45 @@
 </dd>
 											<hr/>
 											<dt class="symbol-title function public">
+			<h4 id=".mappingCSV" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">mappingCSV</span><span class="signature-params">( <span class="signature-param">options</span>&nbsp;)</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details function public">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Returns an object of preconfigured conversion functions to convert mappings into CSV.</p></div>
+			</div>			<div class="callout callout-info">
+				<h5>Parameters</h5>
+				<table class="params table table-striped">
+					<thead>
+					<tr>
+							<th>Name</th>
+						<th>Type</th>
+						<th class="last">Description</th>
+					</tr>
+					</thead>
+					<tbody>
+						<tr>
+								<td><code>options</code></td>
+							<td><span class="param-type">object</span></td>
+							<td class="last">
+									<p>Possible options:</p>
+			<ul>
+			<li>delimiter: delimiter character (default <code>,</code>)</li>
+			<li>quoteChar: quote character (default <code>&quot;</code>)</li>
+			<li>lineTerminator: line terminator (default <code>\n</code>)</li>
+			<li>type: whether to include mapping type in output (default true)</li>
+			<li>schemes: whether to include scheme notations in output (default false)</li>
+			<li>labels: whether to include concept labels in output (default false)</li>
+			<li>creator: whether to include mapping creator in output (default false)</li>
+			</ul>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title function public">
 			<h4 id=".compareMappingsDeep" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">compareMappingsDeep</span><span class="signature-params">()</span><span class="signature-type"></span></h4>
 		</dt>
 <dd class="symbol-details function public">
@@ -656,45 +698,6 @@
 							<td><span class="param-type">object</span></td>
 							<td class="last">
 									<p>optional, see above</p>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-	</div>
-</dd>
-											<hr/>
-											<dt class="symbol-title function public">
-			<h4 id=".mappingCSV" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">mappingCSV</span><span class="signature-params">( <span class="signature-param">options</span>&nbsp;)</span><span class="signature-type"></span></h4>
-		</dt>
-<dd class="symbol-details function public">
-	<div class="symbol-details-inner">
-			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Returns an object of preconfigured conversion functions to convert mappings into CSV.</p></div>
-			</div>			<div class="callout callout-info">
-				<h5>Parameters</h5>
-				<table class="params table table-striped">
-					<thead>
-					<tr>
-							<th>Name</th>
-						<th>Type</th>
-						<th class="last">Description</th>
-					</tr>
-					</thead>
-					<tbody>
-						<tr>
-								<td><code>options</code></td>
-							<td><span class="param-type">object</span></td>
-							<td class="last">
-									<p>Possible options:</p>
-			<ul>
-			<li>delimiter: delimiter character (default <code>,</code>)</li>
-			<li>quoteChar: quote character (default <code>&quot;</code>)</li>
-			<li>lineTerminator: line terminator (default <code>\n</code>)</li>
-			<li>type: whether to include mapping type in output (default true)</li>
-			<li>schemes: whether to include scheme notations in output (default false)</li>
-			<li>labels: whether to include concept labels in output (default false)</li>
-			<li>creator: whether to include mapping creator in output (default false)</li>
-			</ul>
 							</td>
 						</tr>
 					</tbody>
