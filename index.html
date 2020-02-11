@@ -44,6 +44,7 @@
 											<li><a href="global.html#getLanguages">getLanguages</a></li>
 											<li><a href="global.html#isValidUri">isValidUri</a></li>
 											<li><a href="global.html#languageMapContent">languageMapContent</a></li>
+											<li><a href="global.html#mappingRegistryIsStored">mappingRegistryIsStored</a></li>
 											<li><a href="global.html#normalize">normalize</a></li>
 											<li><a href="global.html#notation">notation</a></li>
 											<li><a href="global.html#prefLabel">prefLabel</a></li>
@@ -148,6 +149,7 @@
 <li><a href="#languagemapcontent">languageMapContent</a></li>
 <li><a href="#preflabel">prefLabel</a></li>
 <li><a href="#definition">definition</a></li>
+<li><a href="#mappingregistryisstored">mappingRegistryIsStored</a></li>
 </ul>
 </li>
 </ul>
@@ -369,6 +371,8 @@ type = guessObjectType(objectOrString, true)  // get short name such as `scheme`
 <p>Returns the prefLabel of a JSKOS Item. If there is no label, it will return the URI. If there is no URI, it will return an empty string.</p>
 <h4 id="definition">definition</h4>
 <p>Returns the definition of a JSKOS Item as an array. If there is no definition, an empty array will be returned.</p>
+<h4 id="mappingregistryisstored">mappingRegistryIsStored</h4>
+<p>Returns whether a mapping registry has stored mappings (<code>true</code> = database) or not (<code>false</code> = recommendations).</p>
 <h2 id="build">Build</h2>
 <pre class="prettyprint source lang-bash"><code>git clone --recursive https://github.com/gbv/jskos-tools.git
 cd jskos-tools/
