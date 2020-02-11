@@ -856,4 +856,54 @@ describe("Tools", () => {
     }
   })
 
+  it("mappingRegistryIsStored", () => {
+    const tests = [
+      {
+        registry: {
+          stored: true,
+        },
+        result: true,
+      },
+      {
+        registry: {
+          stored: false,
+        },
+        result: false,
+      },
+      {
+        registry: null,
+        result: false,
+      },
+      {
+        registry: {},
+        result: false,
+      },
+      {
+        registry: {
+          stored: true,
+          provider: {
+            constructor: {
+              stored: false,
+            },
+          },
+        },
+        result: true,
+      },
+      {
+        registry: {
+          stored: false,
+          provider: {
+            constructor: {
+              stored: true,
+            },
+          },
+        },
+        result: false,
+      },
+    ]
+    for (let test of tests) {
+      assert.equal(tools.mappingRegistryIsStored(test.registry), test.result)
+    }
+  })
+
 })

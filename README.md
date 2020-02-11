@@ -55,6 +55,7 @@ This repository contains tools for working with the [JSKOS data format for knowl
     - [languageMapContent](#languagemapcontent)
     - [prefLabel](#preflabel)
     - [definition](#definition)
+    - [mappingRegistryIsStored](#mappingregistryisstored)
 - [Build](#build)
 - [Test](#test)
 - [Maintainers](#maintainers)
@@ -391,6 +392,10 @@ Returns the prefLabel of a JSKOS Item. If there is no label, it will return the 
 #### definition
 
 Returns the definition of a JSKOS Item as an array. If there is no definition, an empty array will be returned.
+
+#### mappingRegistryIsStored
+
+Returns whether a mapping registry has stored mappings (`true` = database) or not (`false` = recommendations).
 
 ## Build
 
