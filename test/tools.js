@@ -1,5 +1,6 @@
 const assert = require("assert")
 const tools = require("../lib/tools")
+const languagePreference = require("../lib/language-preference")
 
 describe("Tools", () => {
   it("addContext", () => {
@@ -856,6 +857,197 @@ describe("Tools", () => {
     }
   })
 
+  it("notation", () => {
+    let tests = [
+      {
+        item: {
+          notation: ["1", "2"],
+        },
+        type: null,
+        expected: "1",
+        message: "Did not return the first notation",
+      },
+      {
+        item: {
+          notation: ["test"],
+        },
+        type: "scheme",
+        expected: "TEST",
+        message: "Notation for scheme should be uppercased",
+      },
+      {
+        item: {
+          notation: ["test"],
+          type: ["http://www.w3.org/2004/02/skos/core#ConceptScheme"],
+        },
+        type: "null",
+        expected: "TEST",
+        message: "Notation for scheme should be uppercased",
+      },
+    ]
+
+    for (let test of tests) {
+      let notation = tools.notation(test.item, test.type)
+      assert.equal(notation, test.expected, `${test.message} (actual: ${notation}, expected: ${test.expected})`)
+    }
+  })
+
+  it("languageMapContent", () => {
+
+  })
+
+  it("prefLabel", () => {
+    let tests = [
+      {
+        item: {
+          prefLabel: {
+            en: "English label",
+            de: "German label",
+          },
+        },
+        options: {},
+        expected: "English label",
+        message: "Did not return the expected English label",
+      },
+      {
+        item: {
+          prefLabel: {
+            en: "English label",
+            de: "German label",
+          },
+        },
+        options: {
+          language: "de",
+        },
+        expected: "German label",
+        message: "Did not return the expected German label",
+      },
+      {
+        preRun: () => {
+          languagePreference.store = null
+          languagePreference.defaults = ["de"]
+        },
+        postRun: () => {
+          languagePreference.defaults = ["en"]
+        },
+        item: {
+          prefLabel: {
+            en: "English label",
+            de: "German label",
+          },
+        },
+        options: {},
+        expected: "German label",
+        message: "Did not return the expected German label",
+      },
+      {
+        item: {
+          uri: "test:hello",
+        },
+        options: {},
+        expected: "test:hello",
+        message: "Did not fall back to URI as expected",
+      },
+      {
+        item: {
+          uri: "test:hello",
+        },
+        options: {
+          fallbackToUri: false,
+        },
+        expected: "",
+        message: "Did not respect fallbackToUri option",
+      },
+    ]
+
+    for (let test of tests) {
+      test.preRun && test.preRun()
+      let prefLabel = tools.prefLabel(test.item, test.options)
+      assert.equal(prefLabel, test.expected, `${test.message} (actual: ${prefLabel}, expected: ${test.expected})`)
+      test.postRun && test.postRun()
+    }
+  })
+
+  it("definition", () => {
+    let tests = [
+      {
+        item: {},
+        options: {},
+        expected: [],
+        message: "Did not return the expected empty array",
+      },
+      {
+        item: {
+          definition: {
+            en: ["English definition"],
+            de: ["German definition"],
+          },
+        },
+        options: {},
+        expected: ["English definition"],
+        message: "Did not return the expected English definition",
+      },
+      {
+        item: {
+          definition: {
+            en: ["English definition"],
+            de: ["German definition"],
+          },
+        },
+        options: {
+          language: "de",
+        },
+        expected: ["German definition"],
+        message: "Did not return the expected German definition",
+      },
+      {
+        preRun: () => {
+          languagePreference.store = null
+          languagePreference.defaults = ["de"]
+        },
+        postRun: () => {
+          languagePreference.defaults = ["en"]
+        },
+        item: {
+          definition: {
+            en: ["English definition"],
+            de: ["German definition"],
+          },
+        },
+        options: {},
+        expected: ["German definition"],
+        message: "Did not return the expected German definition",
+      },
+      {
+        item: {
+          definition: {
+            en: "English definition",
+          },
+        },
+        options: {},
+        expected: ["English definition"],
+        message: "Did not convert defintion to array",
+      },
+      {
+        item: {
+          definition: {
+            jp: ["日本語の定義"],
+          },
+        },
+        options: {},
+        expected: ["日本語の定義"],
+        message: "Did not fall back to Japanese definition",
+      },
+    ]
+
+    for (let test of tests) {
+      test.preRun && test.preRun()
+      let definition = tools.definition(test.item, test.options)
+      assert.deepEqual(definition, test.expected, `${test.message} (actual: ${definition}, expected: ${test.expected})`)
+      test.postRun && test.postRun()
+    }
+  })
+
   it("mappingRegistryIsStored", () => {
     const tests = [
       {
@@ -903,6 +1095,110 @@ describe("Tools", () => {
     ]
     for (let test of tests) {
       assert.equal(tools.mappingRegistryIsStored(test.registry), test.result)
+    }
+  })
+
+  it("annotationCreatorUri", () => {
+    const tests = [
+      {
+        annotation: {},
+        creatorUri: null,
+      },
+      {
+        annotation: {
+          creator: "test:blubb",
+        },
+        creatorUri: "test:blubb",
+      },
+      {
+        annotation: {
+          creator: {
+            id: "test:blubb2",
+            name: "test",
+          },
+        },
+        creatorUri: "test:blubb2",
+      },
+    ]
+    for (let test of tests) {
+      const creatorUri = tools.annotationCreatorUri(test.annotation)
+      assert.equal(creatorUri, test.creatorUri, `did not return the expected creator URI (actual: ${creatorUri}, expected: ${test.creatorUri})`)
+    }
+  })
+
+  it("annotationCreatorName", () => {
+    const tests = [
+      {
+        annotation: {},
+        creatorName: "",
+      },
+      {
+        annotation: {
+          creator: "test:blubb",
+        },
+        creatorName: "",
+      },
+      {
+        annotation: {
+          creator: {
+            id: "test:blubb2",
+            name: "test",
+          },
+        },
+        creatorName: "test",
+      },
+    ]
+    for (let test of tests) {
+      const creatorName = tools.annotationCreatorName(test.annotation)
+      assert.equal(creatorName, test.creatorName, `did not return the expected creator name (actual: ${creatorName}, expected: ${test.creatorName})`)
+    }
+  })
+
+  it("annotationCreatorMatches", () => {
+    const tests = [
+      {
+        annotation: {},
+        uris: ["test:blubb"],
+        result: false,
+      },
+      {
+        annotation: {
+          creator: "test:blubb",
+        },
+        uris: ["test:blubb2"],
+        result: false,
+      },
+      {
+        annotation: {
+          creator: "test:blubb",
+        },
+        uris: ["test:blubb"],
+        result: true,
+      },
+      {
+        annotation: {
+          creator: {
+            id: "test:blubb",
+            name: "test",
+          },
+        },
+        uris: ["test:blubb2"],
+        result: false,
+      },
+      {
+        annotation: {
+          creator: {
+            id: "test:blubb2",
+            name: "test",
+          },
+        },
+        uris: ["test:blubb2"],
+        result: true,
+      },
+    ]
+    for (let test of tests) {
+      const result = tools.annotationCreatorMatches(test.annotation, test.uris)
+      assert.equal(result, test.result, `did not return the expected creator URI (actual: ${result}, expected: ${test.result})`)
     }
   })
 
