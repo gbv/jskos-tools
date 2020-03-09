@@ -31,7 +31,7 @@
   "author": "Stefan Peters",
   "devDependencies": {
     "eslint": "^5.16.0",
-    "eslint-config-gbv": "github:gbv/eslint-config-gbv",
+    "eslint-config-gbv": "github:gbv/eslint-config-gbv#ecaf810",
     "foodoc": "0.0.9",
     "glob": "^7.1.4",
     "jsdoc": "^3.6.2",
