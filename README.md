@@ -19,7 +19,13 @@ This repository contains tools for working with the [JSKOS data format for knowl
     - [addMappingIdentifiers](#addmappingidentifiers)
     - [compareMappings](#comparemappings)
     - [compareMappingMembers](#comparemappingmembers)
+  - [Resource](#resource)
+  - [Item](#item)
+  - [Concept](#concept)
   - [ConceptScheme](#conceptscheme)
+  - [Mapping](#mapping)
+  - [Concordance](#concordance)
+  - [Occurrence](#occurrence)
   - [LanguagePreference](#languagepreference)
   - [Tools](#tools)
     - [addContext](#addcontext)
@@ -128,9 +134,26 @@ Aliases: `compareMappingContent`
 if (jskos.compareMappingMembers(mapping1, mapping2)) { ... }
 ```
 
-### ConceptScheme
+### Resource
+See [class Resource](https://gbv.github.io/jskos-tools/module-jskos-tools.Resource.html).
 
+### Item
+See [class Item](https://gbv.github.io/jskos-tools/module-jskos-tools.Item.html).
+
+### Concept
+See [class Concept](https://gbv.github.io/jskos-tools/module-jskos-tools.Concept.html).
+
+### ConceptScheme
 See [class ConceptScheme](https://gbv.github.io/jskos-tools/module-jskos-tools.ConceptScheme.html).
+
+### Mapping
+See [class Mapping](https://gbv.github.io/jskos-tools/module-jskos-tools.Mapping.html).
+
+### Concordance
+See [class Concordance](https://gbv.github.io/jskos-tools/module-jskos-tools.Concordance.html).
+
+### Occurrence
+See [class Occurrence](https://gbv.github.io/jskos-tools/module-jskos-tools.Occurrence.html).
 
 ### languagePreference
 
