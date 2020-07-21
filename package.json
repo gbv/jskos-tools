@@ -30,22 +30,20 @@
   ],
   "author": "Stefan Peters",
   "devDependencies": {
+    "axios": "^0.19.2",
     "eslint": "^6.8.0",
     "eslint-config-gbv": "github:gbv/eslint-config-gbv#ecaf810",
     "foodoc": "0.0.9",
-    "glob": "^7.1.4",
-    "jsdoc": "^3.6.2",
-    "lint-staged": "^7.3.0",
-    "mocha": "^5.2.0",
+    "glob": "^7.1.6",
+    "jsdoc": "^3.6.4",
+    "lint-staged": "^10.2.11",
+    "mocha": "^7.2.0",
     "mocha-eslint": "^6.0.0",
     "pre-commit": "^1.2.2",
-    "request": "^2.88.0",
-    "request-promise-core": "^1.1.2",
-    "request-promise-native": "^1.0.7",
-    "wikidata-sdk": "^5.16.2"
+    "wikidata-sdk": "^7.7.0"
   },
   "dependencies": {
-    "lodash": "^4.17.11",
-    "simple-sha1": "^2.1.2"
+    "lodash": "^4.17.19",
+    "simple-sha1": "^3.0.1"
   }
 }
