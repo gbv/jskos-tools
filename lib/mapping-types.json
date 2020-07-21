@@ -18,6 +18,8 @@
       "="
     ],
     "prefLabel": {
+      "ar": "تطابق تام",
+      "be": "дакладная адпаведнасць",
       "be-tarask": "дакладная адпаведнасьць",
       "ca": "equivalència exacta",
       "cs": "přesná shoda",
@@ -28,22 +30,27 @@
       "es": "equivalencia exacta",
       "fi": "vastaava käsite",
       "fr": "équivalence exacte",
-      "he": "התאמה מדוייקת",
+      "he": "התאמה מדויקת",
       "hu": "pontos egyezés",
       "id": "sama persis",
       "it": "corrispondenza esatta",
+      "ja": "完全一致",
       "mk": "точно совпаѓање",
+      "ms": "padanan tepat",
       "nb": "eksakt samsvar",
       "nl": "exacte match",
       "nn": "eksakt samsvar",
       "pl": "dokładne dopasowanie",
       "pt": "correspondência exata",
+      "ro": "echivalentul exact",
       "ru": "точное соответствие",
+      "sq": "përputhje e përpiktë",
       "sr": "тачно подударање",
       "sv": "exakt träff",
       "uk": "точна відповідність",
       "zh": "精確匹配",
-      "zh-hans": "精确匹配"
+      "zh-hans": "精确匹配",
+      "zh-hant": "精確匹配"
     },
     "SHORT": "exact",
     "uri": "http://www.w3.org/2004/02/skos/core#exactMatch"
@@ -67,12 +74,16 @@
       "≈"
     ],
     "prefLabel": {
+      "ar": "تطابق قريب",
       "be-tarask": "блізкая адпаведнасьць",
       "ca": "equivalència inexacta",
       "de": "hohe Übereinstimmung",
       "en": "close match",
+      "eo": "proksima kongruaĵo",
       "es": "equivalencia inexacta",
       "fi": "lähes vastaava käsite",
+      "fr": "quasi-équivalence",
+      "he": "התאמה קרובה",
       "it": "corrispondenza stretta",
       "mk": "блиско совпаѓање",
       "nb": "nært samsvar",
@@ -107,15 +118,20 @@
       ">"
     ],
     "prefLabel": {
+      "be-tarask": "шырокая адпаведнасьць",
       "de": "allgemeinere Bedeutung",
       "en": "broad match",
+      "eo": "malstrikta kongruo",
       "fi": "vastaava laajempi käsite",
+      "he": "התאמה רחבה",
       "it": "corrispondenza generica",
+      "ja": "部分一致",
       "mk": "пошироко совпаѓање",
       "nb": "bredere samsvar",
       "nl": "brede match",
       "nn": "breitt samsvar",
       "pl": "dopasowanie pojęcia o szerszym znaczeniu",
+      "pt-br": "correspondência genérica",
       "ru": "более широкое соответствие",
       "sv": "bred träff",
       "zh-hans": "广泛匹配"
@@ -147,14 +163,18 @@
       "<"
     ],
     "prefLabel": {
+      "be-tarask": "вузкая адпаведнасьць",
       "de": "spezifischere Bedeutung",
       "en": "narrow match",
+      "eo": "strikta kongruo",
       "fi": "vastaava suppeampi käsite",
+      "he": "התאמה צרה",
       "mk": "потесно совпаѓање",
       "nb": "smalere samsvar",
       "nl": "nauwe match",
       "nn": "snevert samsvar",
       "pl": "dopasowanie pojęcia o węższym znaczeniu",
+      "pt-br": "correspondência aproximada",
       "ru": "более узкое соответствие",
       "sv": "smal träff",
       "zh-hans": "有限匹配"
@@ -189,6 +209,7 @@
       "be-tarask": "зьвязаная адпаведнасьць",
       "de": "verwandte Bedeutung",
       "en": "related match",
+      "he": "התאמה קשורה",
       "it": "corrispondenza correlata",
       "mk": "поврзано совпаѓање",
       "nb": "relatert samsvar",
@@ -214,14 +235,21 @@
       "→"
     ],
     "prefLabel": {
+      "ar": "نوع علاقة التطبيق",
+      "be": "характэрная адносіна адлюстравання",
+      "be-tarask": "характэрная адносіна адлюстраваньня",
       "ca": "relació de mapatge",
       "de": "allgemeine Mapping-Relation",
-      "en": "generic mapping relation",
+      "en": "SKOS generic mapping relation",
+      "he": "יחס מיפוי כללי",
       "id": "relasi pemetaan",
       "mk": "пресликувачки однос",
+      "nb": "generell mappingrelasjon",
+      "pt-br": "relação genérica de mapeamento",
       "sr": "релација мапирања",
       "sv": "mappnings relation",
-      "zh": "映射關係"
+      "zh": "映射關係",
+      "zh-hant": "映射關係"
     },
     "SHORT": "",
     "uri": "http://www.w3.org/2004/02/skos/core#mappingRelation"
