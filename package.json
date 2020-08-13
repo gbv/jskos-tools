@@ -44,6 +44,6 @@
   },
   "dependencies": {
     "lodash": "^4.17.19",
-    "simple-sha1": "^3.0.1"
+    "rusha": "^0.8.13"
   }
 }
