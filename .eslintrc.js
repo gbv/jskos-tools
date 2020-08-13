@@ -7,7 +7,7 @@ module.exports = {
   },
   extends: ["gbv"],
   parserOptions: {
-      sourceType: "module",
-      ecmaVersion: 2017,
+    sourceType: "module",
+    ecmaVersion: 2017,
   },
 }
