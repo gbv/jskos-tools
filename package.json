@@ -12,11 +12,16 @@
   },
   "license": "MIT",
   "main": "index.js",
+  "module": "dist/jskos-tools.esm.js",
+  "browser": {
+    "lib/sha1-browser.js": "lib/sha1-browser.js"
+  },
   "scripts": {
     "test": "mocha",
     "lint": "eslint .",
     "fix": "eslint --fix .",
     "lint-staged": "lint-staged",
+    "dist": "rollup -c",
     "docs": "jsdoc --configure jsdoc.json && cp -r jsdoc/assets/* jsdoc/build"
   },
   "lint-staged": {
@@ -30,6 +35,8 @@
   ],
   "author": "Stefan Peters",
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^14.0.0",
+    "@rollup/plugin-node-resolve": "^8.4.0",
     "axios": "^0.19.2",
     "eslint": "^6.8.0",
     "eslint-config-gbv": "github:gbv/eslint-config-gbv#ecaf810",
@@ -40,6 +47,7 @@
     "mocha": "^7.2.0",
     "mocha-eslint": "^6.0.0",
     "pre-commit": "^1.2.2",
+    "rollup": "^2.23.1",
     "wikidata-sdk": "^7.7.0"
   },
   "dependencies": {
