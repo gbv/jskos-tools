@@ -13,3 +13,4 @@ package-lock.json
 
 # build artifacts
 jsdoc/build
+dist/

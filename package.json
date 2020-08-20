@@ -11,18 +11,20 @@
     "url": "https://github.com/gbv/jskos-tools/issues"
   },
   "license": "MIT",
-  "main": "index.js",
+  "main": "dist/jskos-tools.cjs.js",
   "module": "dist/jskos-tools.esm.js",
-  "browser": {
-    "lib/sha1-browser.js": "lib/sha1-browser.js"
-  },
+  "browser": "dist/jskos-tools.umd.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "mocha",
     "lint": "eslint .",
     "fix": "eslint --fix .",
     "lint-staged": "lint-staged",
     "dist": "rollup -c",
-    "docs": "jsdoc --configure jsdoc.json && cp -r jsdoc/assets/* jsdoc/build"
+    "docs": "jsdoc --configure jsdoc.json && cp -r jsdoc/assets/* jsdoc/build",
+    "build": "rollup -c"
   },
   "lint-staged": {
     "**/*.js": [
@@ -35,8 +37,12 @@
   ],
   "author": "Stefan Peters",
   "devDependencies": {
+    "@babel/core": "^7.11.1",
+    "@babel/preset-env": "^7.11.0",
+    "@rollup/plugin-babel": "^5.2.0",
     "@rollup/plugin-commonjs": "^14.0.0",
-    "@rollup/plugin-node-resolve": "^8.4.0",
+    "@rollup/plugin-node-resolve": "^9.0.0",
+    "@yuloh/rollup-plugin-terser": "^0.1.1",
     "axios": "^0.19.2",
     "eslint": "^6.8.0",
     "eslint-config-gbv": "github:gbv/eslint-config-gbv#ecaf810",
