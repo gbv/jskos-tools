@@ -1,6 +1,6 @@
 {
   "name": "jskos-tools",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "Tools for working with the JSKOS data format.",
   "homepage": "https://github.com/gbv/jskos-tools",
   "repository": {
@@ -51,7 +51,6 @@
     "wikidata-sdk": "^7.7.0"
   },
   "dependencies": {
-    "lodash": "^4.17.19",
-    "rusha": "^0.8.13"
+    "lodash": "^4.17.19"
   }
 }
