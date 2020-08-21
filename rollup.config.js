@@ -3,6 +3,7 @@ import commonjs from "@rollup/plugin-commonjs"
 import { nodeResolve } from "@rollup/plugin-node-resolve"
 import babel from "@rollup/plugin-babel"
 import terser from "@yuloh/rollup-plugin-terser"
+import json from "@rollup/plugin-json"
 
 export default [
   // browser-friendly UMD build
@@ -16,6 +17,7 @@ export default [
     plugins: [
       nodeResolve(),
       commonjs(),
+      json(),
       babel(),
       terser(),
     ],
@@ -31,6 +33,7 @@ export default [
     ],
     plugins: [
       commonjs(),
+      json(),
       terser(),
     ],
   },
