@@ -446,12 +446,23 @@ npm test
 - [@nichtich](https://github.com/nichtich)
 
 ## Publish
+Please work on the `dev` branch during development (or better yet, develop in a feature branch and merge into `dev` when ready).
 
-To publish a new version on npm after committing your changes, follow these steps:
+When a new release is ready (i.e. the features are finished, merged into `dev`, and all tests succeed), follow these steps:
 
 ```bash
-npm version patch # or minor, or major
+# Increment version (patch/minor/major)
+npm version patch
+# Push dev (without tags!)
+git push
+# Switch to master branch
+git checkout master
+# Merge dev (should fast-forward merge)
+git merge dev
+# Push masater (including tags)
 git push --tags origin master
+# Switch back to dev (don't accidentally work on master)
+git checkout dev
 ```
 
 Travis will automatically deploy the new version based on the tag to npm.
