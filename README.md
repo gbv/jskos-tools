@@ -75,10 +75,18 @@ npm i jskos-tools
 ```
 
 ## Usage
+If you installed jskos-tools via npm, use it like this:
 
 ```js
 const jskos = require("jskos-tools")
 ```
+
+We are also providing browser bundles:
+- Development (not minified, ~190K): https://cdn.jsdelivr.net/npm/jskos-tools/dist/jskos-tools.js
+- Production (minified, ~66K): https://cdn.jsdelivr.net/npm/jskos-tools/
+  - It is recommended to pin the version to the desired major version number, e.g.: https://cdn.jsdelivr.net/npm/jskos-tools@1
+
+Including these bundles will provide you with the `jskos` global variable.
 
 See <https://gbv.github.io/jskos-tools/> for full API documentation of
 [module jskos-tools](https://gbv.github.io/jskos-tools/module-jskos-tools.html).

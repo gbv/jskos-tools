@@ -11,9 +11,8 @@
     "url": "https://github.com/gbv/jskos-tools/issues"
   },
   "license": "MIT",
-  "main": "dist/jskos-tools.cjs.js",
-  "module": "dist/jskos-tools.esm.js",
-  "browser": "dist/jskos-tools.umd.js",
+  "main": "./index.js",
+  "browser": "./dist/jskos-tools.js",
   "files": [
     "dist"
   ],
