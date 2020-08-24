@@ -121,86 +121,6 @@
 									<dl class="symbol">
 											<hr/>
 											<dt class="symbol-title function public">
-			<h4 id=".mappingContentIdentifier" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">mappingContentIdentifier</span><span class="signature-params">()</span><span class="signature-type"></span></h4>
-		</dt>
-<dd class="symbol-details function public">
-	<div class="symbol-details-inner">
-			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Returns a mapping content identifier. The identifier starts with <code>urn:jskos:mapping:content:</code>
-			and takes concepts and type into consideration. It uses the <code>mappingContent</code> function to get
-			relevant properties from the mapping.</p></div>
-			</div>	</div>
-</dd>
-											<hr/>
-											<dt class="symbol-title function public">
-			<h4 id=".mappingMembersIdentifier" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">mappingMembersIdentifier</span><span class="signature-params">()</span><span class="signature-type"></span></h4>
-		</dt>
-<dd class="symbol-details function public">
-	<div class="symbol-details-inner">
-	</div>
-</dd>
-											<hr/>
-											<dt class="symbol-title function public">
-			<h4 id=".addMappingIdentifiers" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">addMappingIdentifiers</span><span class="signature-params">()</span><span class="signature-type"></span></h4>
-		</dt>
-<dd class="symbol-details function public">
-	<div class="symbol-details-inner">
-	</div>
-</dd>
-											<hr/>
-											<dt class="symbol-title function public">
-			<h4 id=".compareMappings" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">compareMappings</span><span class="signature-params">()</span><span class="signature-type"></span></h4>
-		</dt>
-<dd class="symbol-details function public">
-	<div class="symbol-details-inner">
-	</div>
-</dd>
-											<hr/>
-											<dt class="symbol-title function public">
-			<h4 id=".compareMappingMembers" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">compareMappingMembers</span><span class="signature-params">()</span><span class="signature-type"></span></h4>
-		</dt>
-<dd class="symbol-details function public">
-	<div class="symbol-details-inner">
-	</div>
-</dd>
-											<hr/>
-											<dt class="symbol-title function public">
-			<h4 id=".guessObjectType" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">guessObjectType</span><span class="signature-params">( <span class="signature-param">jskos|name|uri</span>, <span class="signature-param">shortname</span>&nbsp;)</span><span class="signature-type"></span></h4>
-		</dt>
-<dd class="symbol-details function public">
-	<div class="symbol-details-inner">
-			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Guess the JSKOS Concept Type name from an object or name.</p></div>
-			</div>			<div class="callout callout-info">
-				<h5>Parameters</h5>
-				<table class="params table table-striped">
-					<thead>
-					<tr>
-							<th>Name</th>
-						<th>Type</th>
-						<th class="last">Description</th>
-					</tr>
-					</thead>
-					<tbody>
-						<tr>
-								<td><code>jskos|name|uri</code></td>
-							<td><span class="param-type">object</span> | <span class="param-type">string</span></td>
-							<td class="last">
-									<p>object or string to guess from</p>
-							</td>
-						</tr>
-						<tr>
-								<td><code>shortname</code></td>
-							<td><span class="param-type">boolean</span></td>
-							<td class="last">
-									<p>return short name if enabled (false by default)</p>
-							</td>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-	</div>
-</dd>
-											<hr/>
-											<dt class="symbol-title function public">
 			<h4 id=".addContext" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">addContext</span><span class="signature-params">( <span class="signature-param">jskos</span>&nbsp;)</span><span class="signature-type"></span></h4>
 		</dt>
 <dd class="symbol-details function public">
@@ -261,6 +181,70 @@
 </dd>
 											<hr/>
 											<dt class="symbol-title function public">
+			<h4 id=".mappingContentIdentifier" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">mappingContentIdentifier</span><span class="signature-params">()</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details function public">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Returns a mapping content identifier. The identifier starts with <code>urn:jskos:mapping:content:</code>
+			and takes concepts and type into consideration. It uses the <code>mappingContent</code> function to get
+			relevant properties from the mapping.</p></div>
+			</div>	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title function public">
+			<h4 id=".guessObjectType" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">guessObjectType</span><span class="signature-params">( <span class="signature-param">jskos|name|uri</span>, <span class="signature-param">shortname</span>&nbsp;)</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details function public">
+	<div class="symbol-details-inner">
+			<div class="callout callout-primary"><h5>Description</h5>		<div class="description"><p>Guess the JSKOS Concept Type name from an object or name.</p></div>
+			</div>			<div class="callout callout-info">
+				<h5>Parameters</h5>
+				<table class="params table table-striped">
+					<thead>
+					<tr>
+							<th>Name</th>
+						<th>Type</th>
+						<th class="last">Description</th>
+					</tr>
+					</thead>
+					<tbody>
+						<tr>
+								<td><code>jskos|name|uri</code></td>
+							<td><span class="param-type">object</span> | <span class="param-type">string</span></td>
+							<td class="last">
+									<p>object or string to guess from</p>
+							</td>
+						</tr>
+						<tr>
+								<td><code>shortname</code></td>
+							<td><span class="param-type">boolean</span></td>
+							<td class="last">
+									<p>return short name if enabled (false by default)</p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title function public">
+			<h4 id=".mappingMembersIdentifier" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">mappingMembersIdentifier</span><span class="signature-params">()</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details function public">
+	<div class="symbol-details-inner">
+	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title function public">
+			<h4 id=".addMappingIdentifiers" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">addMappingIdentifiers</span><span class="signature-params">()</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details function public">
+	<div class="symbol-details-inner">
+	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title function public">
 			<h4 id=".copyDeep" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">copyDeep</span><span class="signature-params">( <span class="signature-param">object</span>, <span class="signature-param">replaceCircular</span>, <span class="signature-param">skipUnderscore</span>&nbsp;)</span><span class="signature-type"></span></h4>
 		</dt>
 <dd class="symbol-details function public">
@@ -305,6 +289,22 @@
 					</tbody>
 				</table>
 			</div>
+	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title function public">
+			<h4 id=".compareMappings" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">compareMappings</span><span class="signature-params">()</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details function public">
+	<div class="symbol-details-inner">
+	</div>
+</dd>
+											<hr/>
+											<dt class="symbol-title function public">
+			<h4 id=".compareMappingMembers" class="function public"><span class="signature-attribs">&lt;static> </span><span class="name">compareMappingMembers</span><span class="signature-params">()</span><span class="signature-type"></span></h4>
+		</dt>
+<dd class="symbol-details function public">
+	<div class="symbol-details-inner">
 	</div>
 </dd>
 											<hr/>
@@ -716,7 +716,7 @@
 		</div>
 	</div>
 	<footer>
-			<div class="generated-by">Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a> on 18th Aug 2020 using the <a href="https://github.com/steveush/foodoc">FooDoc template</a>.</div>
+			<div class="generated-by">Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a> on 24th Aug 2020 using the <a href="https://github.com/steveush/foodoc">FooDoc template</a>.</div>
 	</footer>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js"></script>

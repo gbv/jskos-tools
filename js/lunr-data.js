@@ -74,6 +74,21 @@ window.lunrData = {
           "tools.conceptschem",
           "tools~conceptschem"
         ],
+        "module-jskos-tools.ConceptScheme.html#isValidNotation": [
+          "array|nul",
+          "check",
+          "conceptscheme#isvalidnot",
+          "defin",
+          "function",
+          "isvalidnot",
+          "module:jsko",
+          "notat",
+          "notationpattern",
+          "string",
+          "tools.conceptscheme#isvalidnot",
+          "valid",
+          "whether"
+        ],
         "module-jskos-tools.ConceptScheme.html#notationFromUri": [
           "belong",
           "check",
@@ -147,21 +162,6 @@ window.lunrData = {
           "tools.conceptscheme#conceptfromnot",
           "uripattern",
           "valid"
-        ],
-        "module-jskos-tools.ConceptScheme.html#isValidNotation": [
-          "array|nul",
-          "check",
-          "conceptscheme#isvalidnot",
-          "defin",
-          "function",
-          "isvalidnot",
-          "module:jsko",
-          "notat",
-          "notationpattern",
-          "string",
-          "tools.conceptscheme#isvalidnot",
-          "valid",
-          "whether"
         ],
         "module-jskos-tools.html": [
           "jsko",
@@ -279,6 +279,10 @@ window.lunrData = {
                       "docs": {},
                       "n": {
                         "docs": {
+                          "module-jskos-tools.ConceptScheme.html#isValidNotation": {
+                            "ref": "module-jskos-tools.ConceptScheme.html#isValidNotation",
+                            "tf": 110
+                          },
                           "module-jskos-tools.ConceptScheme.html#notationFromUri": {
                             "ref": "module-jskos-tools.ConceptScheme.html#notationFromUri",
                             "tf": 110
@@ -293,10 +297,6 @@ window.lunrData = {
                           },
                           "module-jskos-tools.ConceptScheme.html#conceptFromNotation": {
                             "ref": "module-jskos-tools.ConceptScheme.html#conceptFromNotation",
-                            "tf": 110
-                          },
-                          "module-jskos-tools.ConceptScheme.html#isValidNotation": {
-                            "ref": "module-jskos-tools.ConceptScheme.html#isValidNotation",
                             "tf": 110
                           }
                         }
@@ -509,6 +509,41 @@ window.lunrData = {
                                               "docs": {},
                                               "#": {
                                                 "docs": {},
+                                                "i": {
+                                                  "docs": {},
+                                                  "s": {
+                                                    "docs": {},
+                                                    "v": {
+                                                      "docs": {},
+                                                      "a": {
+                                                        "docs": {},
+                                                        "l": {
+                                                          "docs": {},
+                                                          "i": {
+                                                            "docs": {},
+                                                            "d": {
+                                                              "docs": {},
+                                                              "n": {
+                                                                "docs": {},
+                                                                "o": {
+                                                                  "docs": {},
+                                                                  "t": {
+                                                                    "docs": {
+                                                                      "module-jskos-tools.ConceptScheme.html#isValidNotation": {
+                                                                        "ref": "module-jskos-tools.ConceptScheme.html#isValidNotation",
+                                                                        "tf": 575
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                }
+                                                              }
+                                                            }
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                },
                                                 "n": {
                                                   "docs": {},
                                                   "o": {
@@ -654,41 +689,6 @@ window.lunrData = {
                                                       }
                                                     }
                                                   }
-                                                },
-                                                "i": {
-                                                  "docs": {},
-                                                  "s": {
-                                                    "docs": {},
-                                                    "v": {
-                                                      "docs": {},
-                                                      "a": {
-                                                        "docs": {},
-                                                        "l": {
-                                                          "docs": {},
-                                                          "i": {
-                                                            "docs": {},
-                                                            "d": {
-                                                              "docs": {},
-                                                              "n": {
-                                                                "docs": {},
-                                                                "o": {
-                                                                  "docs": {},
-                                                                  "t": {
-                                                                    "docs": {
-                                                                      "module-jskos-tools.ConceptScheme.html#isValidNotation": {
-                                                                        "ref": "module-jskos-tools.ConceptScheme.html#isValidNotation",
-                                                                        "tf": 575
-                                                                      }
-                                                                    }
-                                                                  }
-                                                                }
-                                                              }
-                                                            }
-                                                          }
-                                                        }
-                                                      }
-                                                    }
-                                                  }
                                                 }
                                               }
                                             }
@@ -782,6 +782,10 @@ window.lunrData = {
                     "docs": {},
                     "r": {
                       "docs": {
+                        "module-jskos-tools.ConceptScheme.html#isValidNotation": {
+                          "ref": "module-jskos-tools.ConceptScheme.html#isValidNotation",
+                          "tf": 7.142857142857142
+                        },
                         "module-jskos-tools.ConceptScheme.html#notationFromUri": {
                           "ref": "module-jskos-tools.ConceptScheme.html#notationFromUri",
                           "tf": 3.8461538461538463
@@ -793,10 +797,6 @@ window.lunrData = {
                         "module-jskos-tools.ConceptScheme.html#conceptFromUri": {
                           "ref": "module-jskos-tools.ConceptScheme.html#conceptFromUri",
                           "tf": 4.166666666666666
-                        },
-                        "module-jskos-tools.ConceptScheme.html#isValidNotation": {
-                          "ref": "module-jskos-tools.ConceptScheme.html#isValidNotation",
-                          "tf": 7.142857142857142
                         }
                       }
                     }
@@ -896,6 +896,41 @@ window.lunrData = {
                                   "docs": {},
                                   "#": {
                                     "docs": {},
+                                    "i": {
+                                      "docs": {},
+                                      "s": {
+                                        "docs": {},
+                                        "v": {
+                                          "docs": {},
+                                          "a": {
+                                            "docs": {},
+                                            "l": {
+                                              "docs": {},
+                                              "i": {
+                                                "docs": {},
+                                                "d": {
+                                                  "docs": {},
+                                                  "n": {
+                                                    "docs": {},
+                                                    "o": {
+                                                      "docs": {},
+                                                      "t": {
+                                                        "docs": {
+                                                          "module-jskos-tools.ConceptScheme.html#isValidNotation": {
+                                                            "ref": "module-jskos-tools.ConceptScheme.html#isValidNotation",
+                                                            "tf": 75
+                                                          }
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                }
+                                              }
+                                            }
+                                          }
+                                        }
+                                      }
+                                    },
                                     "n": {
                                       "docs": {},
                                       "o": {
@@ -1041,41 +1076,6 @@ window.lunrData = {
                                           }
                                         }
                                       }
-                                    },
-                                    "i": {
-                                      "docs": {},
-                                      "s": {
-                                        "docs": {},
-                                        "v": {
-                                          "docs": {},
-                                          "a": {
-                                            "docs": {},
-                                            "l": {
-                                              "docs": {},
-                                              "i": {
-                                                "docs": {},
-                                                "d": {
-                                                  "docs": {},
-                                                  "n": {
-                                                    "docs": {},
-                                                    "o": {
-                                                      "docs": {},
-                                                      "t": {
-                                                        "docs": {
-                                                          "module-jskos-tools.ConceptScheme.html#isValidNotation": {
-                                                            "ref": "module-jskos-tools.ConceptScheme.html#isValidNotation",
-                                                            "tf": 75
-                                                          }
-                                                        }
-                                                      }
-                                                    }
-                                                  }
-                                                }
-                                              }
-                                            }
-                                          }
-                                        }
-                                      }
                                     }
                                   }
                                 }
@@ -1138,6 +1138,10 @@ window.lunrData = {
                 "docs": {},
                 "k": {
                   "docs": {
+                    "module-jskos-tools.ConceptScheme.html#isValidNotation": {
+                      "ref": "module-jskos-tools.ConceptScheme.html#isValidNotation",
+                      "tf": 7.142857142857142
+                    },
                     "module-jskos-tools.ConceptScheme.html#notationFromUri": {
                       "ref": "module-jskos-tools.ConceptScheme.html#notationFromUri",
                       "tf": 3.8461538461538463
@@ -1149,10 +1153,6 @@ window.lunrData = {
                     "module-jskos-tools.ConceptScheme.html#conceptFromUri": {
                       "ref": "module-jskos-tools.ConceptScheme.html#conceptFromUri",
                       "tf": 4.166666666666666
-                    },
-                    "module-jskos-tools.ConceptScheme.html#isValidNotation": {
-                      "ref": "module-jskos-tools.ConceptScheme.html#isValidNotation",
-                      "tf": 7.142857142857142
                     }
                   }
                 }
@@ -1284,6 +1284,10 @@ window.lunrData = {
                                   "ref": "module-jskos-tools.ConceptScheme.html",
                                   "tf": 600
                                 },
+                                "module-jskos-tools.ConceptScheme.html#isValidNotation": {
+                                  "ref": "module-jskos-tools.ConceptScheme.html#isValidNotation",
+                                  "tf": 575
+                                },
                                 "module-jskos-tools.ConceptScheme.html#notationFromUri": {
                                   "ref": "module-jskos-tools.ConceptScheme.html#notationFromUri",
                                   "tf": 575
@@ -1298,10 +1302,6 @@ window.lunrData = {
                                 },
                                 "module-jskos-tools.ConceptScheme.html#conceptFromNotation": {
                                   "ref": "module-jskos-tools.ConceptScheme.html#conceptFromNotation",
-                                  "tf": 575
-                                },
-                                "module-jskos-tools.ConceptScheme.html#isValidNotation": {
-                                  "ref": "module-jskos-tools.ConceptScheme.html#isValidNotation",
                                   "tf": 575
                                 },
                                 "module-jskos-tools.html": {
@@ -1450,25 +1450,30 @@ window.lunrData = {
             }
           }
         },
-        "b": {
+        "a": {
           "docs": {},
-          "e": {
+          "r": {
             "docs": {},
-            "l": {
+            "r": {
               "docs": {},
-              "o": {
+              "a": {
                 "docs": {},
-                "n": {
+                "y": {
                   "docs": {},
-                  "g": {
-                    "docs": {
-                      "module-jskos-tools.ConceptScheme.html#notationFromUri": {
-                        "ref": "module-jskos-tools.ConceptScheme.html#notationFromUri",
-                        "tf": 3.8461538461538463
-                      },
-                      "module-jskos-tools.ConceptScheme.html#conceptFromUri": {
-                        "ref": "module-jskos-tools.ConceptScheme.html#conceptFromUri",
-                        "tf": 4.166666666666666
+                  "|": {
+                    "docs": {},
+                    "n": {
+                      "docs": {},
+                      "u": {
+                        "docs": {},
+                        "l": {
+                          "docs": {
+                            "module-jskos-tools.ConceptScheme.html#isValidNotation": {
+                              "ref": "module-jskos-tools.ConceptScheme.html#isValidNotation",
+                              "tf": 33.33333333333333
+                            }
+                          }
+                        }
                       }
                     }
                   }
@@ -1479,6 +1484,96 @@ window.lunrData = {
         },
         "n": {
           "docs": {},
+          "o": {
+            "docs": {},
+            "t": {
+              "docs": {},
+              "a": {
+                "docs": {},
+                "t": {
+                  "docs": {
+                    "module-jskos-tools.ConceptScheme.html#isValidNotation": {
+                      "ref": "module-jskos-tools.ConceptScheme.html#isValidNotation",
+                      "tf": 40.47619047619047
+                    },
+                    "module-jskos-tools.ConceptScheme.html#notationFromUri": {
+                      "ref": "module-jskos-tools.ConceptScheme.html#notationFromUri",
+                      "tf": 3.8461538461538463
+                    },
+                    "module-jskos-tools.ConceptScheme.html#uriFromNotation": {
+                      "ref": "module-jskos-tools.ConceptScheme.html#uriFromNotation",
+                      "tf": 58.33333333333333
+                    },
+                    "module-jskos-tools.ConceptScheme.html#conceptFromNotation": {
+                      "ref": "module-jskos-tools.ConceptScheme.html#conceptFromNotation",
+                      "tf": 43.33333333333333
+                    }
+                  },
+                  "i": {
+                    "docs": {},
+                    "o": {
+                      "docs": {},
+                      "n": {
+                        "docs": {},
+                        "p": {
+                          "docs": {},
+                          "a": {
+                            "docs": {},
+                            "t": {
+                              "docs": {},
+                              "t": {
+                                "docs": {},
+                                "e": {
+                                  "docs": {},
+                                  "r": {
+                                    "docs": {},
+                                    "n": {
+                                      "docs": {
+                                        "module-jskos-tools.ConceptScheme.html#isValidNotation": {
+                                          "ref": "module-jskos-tools.ConceptScheme.html#isValidNotation",
+                                          "tf": 7.142857142857142
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        },
+                        "f": {
+                          "docs": {},
+                          "r": {
+                            "docs": {},
+                            "o": {
+                              "docs": {},
+                              "m": {
+                                "docs": {},
+                                "u": {
+                                  "docs": {},
+                                  "r": {
+                                    "docs": {},
+                                    "i": {
+                                      "docs": {
+                                        "module-jskos-tools.ConceptScheme.html#notationFromUri": {
+                                          "ref": "module-jskos-tools.ConceptScheme.html#notationFromUri",
+                                          "tf": 608.3333333333334
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
           "a": {
             "docs": {},
             "m": {
@@ -1516,90 +1611,55 @@ window.lunrData = {
                 }
               }
             }
-          },
-          "o": {
+          }
+        },
+        "v": {
+          "docs": {},
+          "a": {
             "docs": {},
-            "t": {
+            "l": {
               "docs": {},
-              "a": {
+              "i": {
                 "docs": {},
-                "t": {
+                "d": {
                   "docs": {
-                    "module-jskos-tools.ConceptScheme.html#notationFromUri": {
-                      "ref": "module-jskos-tools.ConceptScheme.html#notationFromUri",
-                      "tf": 3.8461538461538463
+                    "module-jskos-tools.ConceptScheme.html#isValidNotation": {
+                      "ref": "module-jskos-tools.ConceptScheme.html#isValidNotation",
+                      "tf": 7.142857142857142
                     },
                     "module-jskos-tools.ConceptScheme.html#uriFromNotation": {
                       "ref": "module-jskos-tools.ConceptScheme.html#uriFromNotation",
-                      "tf": 58.33333333333333
+                      "tf": 4.166666666666666
                     },
                     "module-jskos-tools.ConceptScheme.html#conceptFromNotation": {
                       "ref": "module-jskos-tools.ConceptScheme.html#conceptFromNotation",
-                      "tf": 43.33333333333333
-                    },
-                    "module-jskos-tools.ConceptScheme.html#isValidNotation": {
-                      "ref": "module-jskos-tools.ConceptScheme.html#isValidNotation",
-                      "tf": 40.47619047619047
+                      "tf": 5
                     }
-                  },
-                  "i": {
-                    "docs": {},
-                    "o": {
-                      "docs": {},
-                      "n": {
-                        "docs": {},
-                        "f": {
-                          "docs": {},
-                          "r": {
-                            "docs": {},
-                            "o": {
-                              "docs": {},
-                              "m": {
-                                "docs": {},
-                                "u": {
-                                  "docs": {},
-                                  "r": {
-                                    "docs": {},
-                                    "i": {
-                                      "docs": {
-                                        "module-jskos-tools.ConceptScheme.html#notationFromUri": {
-                                          "ref": "module-jskos-tools.ConceptScheme.html#notationFromUri",
-                                          "tf": 608.3333333333334
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        },
-                        "p": {
-                          "docs": {},
-                          "a": {
-                            "docs": {},
-                            "t": {
-                              "docs": {},
-                              "t": {
-                                "docs": {},
-                                "e": {
-                                  "docs": {},
-                                  "r": {
-                                    "docs": {},
-                                    "n": {
-                                      "docs": {
-                                        "module-jskos-tools.ConceptScheme.html#isValidNotation": {
-                                          "ref": "module-jskos-tools.ConceptScheme.html#isValidNotation",
-                                          "tf": 7.142857142857142
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "b": {
+          "docs": {},
+          "e": {
+            "docs": {},
+            "l": {
+              "docs": {},
+              "o": {
+                "docs": {},
+                "n": {
+                  "docs": {},
+                  "g": {
+                    "docs": {
+                      "module-jskos-tools.ConceptScheme.html#notationFromUri": {
+                        "ref": "module-jskos-tools.ConceptScheme.html#notationFromUri",
+                        "tf": 3.8461538461538463
+                      },
+                      "module-jskos-tools.ConceptScheme.html#conceptFromUri": {
+                        "ref": "module-jskos-tools.ConceptScheme.html#conceptFromUri",
+                        "tf": 4.166666666666666
                       }
                     }
                   }
@@ -1694,34 +1754,6 @@ window.lunrData = {
             }
           }
         },
-        "v": {
-          "docs": {},
-          "a": {
-            "docs": {},
-            "l": {
-              "docs": {},
-              "i": {
-                "docs": {},
-                "d": {
-                  "docs": {
-                    "module-jskos-tools.ConceptScheme.html#uriFromNotation": {
-                      "ref": "module-jskos-tools.ConceptScheme.html#uriFromNotation",
-                      "tf": 4.166666666666666
-                    },
-                    "module-jskos-tools.ConceptScheme.html#conceptFromNotation": {
-                      "ref": "module-jskos-tools.ConceptScheme.html#conceptFromNotation",
-                      "tf": 5
-                    },
-                    "module-jskos-tools.ConceptScheme.html#isValidNotation": {
-                      "ref": "module-jskos-tools.ConceptScheme.html#isValidNotation",
-                      "tf": 7.142857142857142
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
         "o": {
           "docs": {},
           "p": {
@@ -1741,38 +1773,6 @@ window.lunrData = {
                       "module-jskos-tools.ConceptScheme.html#conceptFromNotation": {
                         "ref": "module-jskos-tools.ConceptScheme.html#conceptFromNotation",
                         "tf": 33.33333333333333
-                      }
-                    }
-                  }
-                }
-              }
-            }
-          }
-        },
-        "a": {
-          "docs": {},
-          "r": {
-            "docs": {},
-            "r": {
-              "docs": {},
-              "a": {
-                "docs": {},
-                "y": {
-                  "docs": {},
-                  "|": {
-                    "docs": {},
-                    "n": {
-                      "docs": {},
-                      "u": {
-                        "docs": {},
-                        "l": {
-                          "docs": {
-                            "module-jskos-tools.ConceptScheme.html#isValidNotation": {
-                              "ref": "module-jskos-tools.ConceptScheme.html#isValidNotation",
-                              "tf": 33.33333333333333
-                            }
-                          }
-                        }
                       }
                     }
                   }
@@ -1903,6 +1903,16 @@ window.lunrData = {
       "description": "A JSKOS Concept Scheme.",
       "body": ""
     },
+    "module-jskos-tools.ConceptScheme.html#isValidNotation": {
+      "id": "module-jskos-tools.ConceptScheme.html#isValidNotation",
+      "kind": "function",
+      "title": "isValidNotation( notation ) → {array|null}",
+      "longname": "module:jskos-tools.ConceptScheme#isValidNotation",
+      "name": "isValidNotation",
+      "tags": "module:jskos-tools.ConceptScheme#isValidNotation ConceptScheme#isValidNotation isValidNotation",
+      "summary": "",
+      "description": "Check whether a string is a valid notation as defined by notationPattern."
+    },
     "module-jskos-tools.ConceptScheme.html#notationFromUri": {
       "id": "module-jskos-tools.ConceptScheme.html#notationFromUri",
       "kind": "function",
@@ -1942,16 +1952,6 @@ window.lunrData = {
       "tags": "module:jskos-tools.ConceptScheme#conceptFromNotation ConceptScheme#conceptFromNotation conceptFromNotation",
       "summary": "",
       "description": "Map local notation to concept, if notation is valid. Requires scheme to have uriPattern or namespace."
-    },
-    "module-jskos-tools.ConceptScheme.html#isValidNotation": {
-      "id": "module-jskos-tools.ConceptScheme.html#isValidNotation",
-      "kind": "function",
-      "title": "isValidNotation( notation ) → {array|null}",
-      "longname": "module:jskos-tools.ConceptScheme#isValidNotation",
-      "name": "isValidNotation",
-      "tags": "module:jskos-tools.ConceptScheme#isValidNotation ConceptScheme#isValidNotation isValidNotation",
-      "summary": "",
-      "description": "Check whether a string is a valid notation as defined by notationPattern."
     },
     "module-jskos-tools.html": {
       "id": "module-jskos-tools.html",
