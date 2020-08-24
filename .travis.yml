@@ -17,7 +17,7 @@ deploy:
   on:
     node_js: node
     tags: true
-    repo: gbv/jskos-tools
+    branch: master
   edge: true
 - provider: pages
   local_dir: jsdoc/build
