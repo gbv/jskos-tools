@@ -83,8 +83,7 @@ const jskos = require("jskos-tools")
 
 We are also providing browser bundles:
 - Development (not minified, ~190K): https://cdn.jsdelivr.net/npm/jskos-tools/dist/jskos-tools.js
-- Production (minified, ~66K): https://cdn.jsdelivr.net/npm/jskos-tools/
-  - It is recommended to pin the version to the desired major version number, e.g.: https://cdn.jsdelivr.net/npm/jskos-tools@1
+- Production (minified, ~50K): https://cdn.jsdelivr.net/npm/jskos-tools@1
 
 Including these bundles will provide you with the `jskos` global variable.
 
