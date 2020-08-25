@@ -69,10 +69,12 @@ This repository contains tools for working with the [JSKOS data format for knowl
 ## Install
 
 ```bash
-git clone https://github.com/gbv/jskos-tools.git
-cd jskos-tools
 npm i jskos-tools
 ```
+
+We are also providing browser bundles:
+- Development (not minified, ~68K): https://cdn.jsdelivr.net/npm/jskos-tools/dist/jskos-tools.js
+- Production (minified, ~26K): https://cdn.jsdelivr.net/npm/jskos-tools@1
 
 ## Usage
 If you installed jskos-tools via npm, use it like this:
@@ -81,11 +83,7 @@ If you installed jskos-tools via npm, use it like this:
 const jskos = require("jskos-tools")
 ```
 
-We are also providing browser bundles:
-- Development (not minified, ~190K): https://cdn.jsdelivr.net/npm/jskos-tools/dist/jskos-tools.js
-- Production (minified, ~50K): https://cdn.jsdelivr.net/npm/jskos-tools@1
-
-Including these bundles will provide you with the `jskos` global variable.
+Using the browser bundles will provide you with the `jskos` global variable.
 
 See <https://gbv.github.io/jskos-tools/> for full API documentation of
 [module jskos-tools](https://gbv.github.io/jskos-tools/module-jskos-tools.html).

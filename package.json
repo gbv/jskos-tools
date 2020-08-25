@@ -50,13 +50,12 @@
     "glob": "^7.1.6",
     "jsdoc": "^3.6.4",
     "lint-staged": "^10.2.11",
+    "lodash": "^4.17.20",
     "mocha": "^7.2.0",
     "mocha-eslint": "^6.0.0",
     "pre-commit": "^1.2.2",
     "rollup": "^2.23.1",
     "wikidata-sdk": "^7.7.0"
   },
-  "dependencies": {
-    "lodash": "^4.17.19"
-  }
+  "dependencies": {}
 }
