@@ -445,24 +445,24 @@ npm test
 ## Publish
 Please work on the `dev` branch during development (or better yet, develop in a feature branch and merge into `dev` when ready).
 
-When a new release is ready (i.e. the features are finished, merged into `dev`, and all tests succeed), follow these steps:
+When a new release is ready (i.e. the features are finished, merged into `dev`, and all tests succeed), run the included release script (replace "patch" with "minor" or "major" if necessary):
 
 ```bash
-# Increment version (patch/minor/major)
-npm version patch
-# Push dev (without tags!)
-git push
-# Switch to master branch
-git checkout master
-# Merge dev (should fast-forward merge)
-git merge dev
-# Push masater (including tags)
-git push --tags origin master
-# Switch back to dev (don't accidentally work on master)
-git checkout dev
+npm run release:patch
 ```
 
-Travis will automatically deploy the new version based on the tag to npm.
+This will:
+- Run tests and build to make sure everything works
+- Switch to `dev`
+- Make sure `dev` is up-to-date
+- Run `npm version patch` (or "minor"/"major")
+- Push changes to `dev`
+- Switch to `master`
+- Merge changes from `dev`
+- Push `master` with tags
+- Switch back to `dev`
+
+After running this, GitHub Actions will automatically publish the new version to npm. It will also create a new GitHub Release draft. Please edit and publish the release manually.
 
 ## Contribute
 

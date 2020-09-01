@@ -11,11 +11,11 @@
   },
   "templates": {
     "systemName": "jskos-tools",
-    "systemSummary": "Tools for working with the JSKOS data format", 
+    "systemSummary": "Tools for working with the JSKOS data format",
     "copyright": "",
     "collapseSymbols": false,
     "outputSourceFiles": false,
-    "stylesheets": ["style.css"]
+    "stylesheets": ["css/style.css"]
   },
   "opts": {
     "destination": "jsdoc/build",

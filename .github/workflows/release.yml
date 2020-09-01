@@ -1,0 +1,51 @@
+# This workflow will release a package at npmjs and at GitHub releases
+
+name: Release
+
+on:
+  push:
+    tags:
+      - v*
+
+jobs:
+  npm:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: 14.x
+        registry-url: https://registry.npmjs.org/
+    - run: npm ci
+    - run: npm run build
+    - run: npm publish --access=public
+      env:
+        NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+  github:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: npm pack
+    - name: set release name, artifact, and message
+      run: |
+        echo "::set-env ARTIFACT_NAME=$(ls jskos-tools-*.tgz)"
+        echo "::set-env ARTIFACT_PATH=./${{ env.ARTIFACT_NAME }}"
+        echo "::set-env RELEASE_MESSAGE=$(git log -1 --pretty=%B)"
+    - id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref }}
+        body: TODO
+        draft: true
+        prerelease: false
+    - uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ${{ env.ARTIFACT_PATH }}
+        asset_name: ${{ env.ARTIFACT_NAME }}
+        asset_content_type: application/gzip
