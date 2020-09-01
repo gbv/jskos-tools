@@ -14,7 +14,9 @@
   "main": "./index.js",
   "browser": "./dist/jskos-tools.js",
   "files": [
-    "dist"
+    "dist",
+    "lib",
+    "index.js"
   ],
   "scripts": {
     "test": "mocha",
@@ -55,6 +57,7 @@
     "mocha-eslint": "^6.0.0",
     "pre-commit": "^1.2.2",
     "rollup": "^2.23.1",
+    "rollup-plugin-license": "^2.2.0",
     "wikidata-sdk": "^7.7.0"
   },
   "dependencies": {}
