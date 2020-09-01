@@ -28,15 +28,14 @@ jobs:
     - run: npm pack
     - name: set release name, artifact, and message
       run: |
-        echo "::set-env ARTIFACT_NAME=$(ls jskos-tools-*.tgz)"
-        echo "::set-env RELEASE_MESSAGE=$(git log -1 --pretty=%B)"
+        echo "::set-env name=ARTIFACT_NAME::$(ls jskos-tools-*.tgz)"
     - id: create_release
       uses: actions/create-release@v1
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         tag_name: ${{ github.ref }}
-        release_name: Release ${{ github.ref }}
+        release_name: jskos-tools ${{ github.ref }}
         body: TODO
         draft: true
         prerelease: false
