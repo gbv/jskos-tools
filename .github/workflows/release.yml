@@ -16,7 +16,7 @@ jobs:
       with:
         node-version: 14.x
         registry-url: https://registry.npmjs.org/
-    - run: npm ci
+    - run: npm install
     - run: npm run build
     - run: npm publish --access=public
       env:
@@ -29,7 +29,6 @@ jobs:
     - name: set release name, artifact, and message
       run: |
         echo "::set-env ARTIFACT_NAME=$(ls jskos-tools-*.tgz)"
-        echo "::set-env ARTIFACT_PATH=./${{ env.ARTIFACT_NAME }}"
         echo "::set-env RELEASE_MESSAGE=$(git log -1 --pretty=%B)"
     - id: create_release
       uses: actions/create-release@v1
@@ -46,6 +45,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ${{ env.ARTIFACT_PATH }}
+        asset_path: ./${{ env.ARTIFACT_NAME }}
         asset_name: ${{ env.ARTIFACT_NAME }}
         asset_content_type: application/gzip
