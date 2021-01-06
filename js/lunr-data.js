@@ -71,8 +71,7 @@ window.lunrData = {
           "jsko",
           "module:jsko",
           "scheme",
-          "tools.conceptschem",
-          "tools~conceptschem"
+          "tools.conceptschem"
         ],
         "module-jskos-tools.ConceptScheme.html#isValidNotation": [
           "array|nul",
@@ -502,7 +501,7 @@ window.lunrData = {
                                             "docs": {
                                               "module-jskos-tools.ConceptScheme.html": {
                                                 "ref": "module-jskos-tools.ConceptScheme.html",
-                                                "tf": 600
+                                                "tf": 650
                                               }
                                             },
                                             "e": {
@@ -690,50 +689,6 @@ window.lunrData = {
                                                     }
                                                   }
                                                 }
-                                              }
-                                            }
-                                          }
-                                        }
-                                      }
-                                    }
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  },
-                  "~": {
-                    "docs": {},
-                    "c": {
-                      "docs": {},
-                      "o": {
-                        "docs": {},
-                        "n": {
-                          "docs": {},
-                          "c": {
-                            "docs": {},
-                            "e": {
-                              "docs": {},
-                              "p": {
-                                "docs": {},
-                                "t": {
-                                  "docs": {},
-                                  "s": {
-                                    "docs": {},
-                                    "c": {
-                                      "docs": {},
-                                      "h": {
-                                        "docs": {},
-                                        "e": {
-                                          "docs": {},
-                                          "m": {
-                                            "docs": {
-                                              "module-jskos-tools.ConceptScheme.html": {
-                                                "ref": "module-jskos-tools.ConceptScheme.html",
-                                                "tf": 50
                                               }
                                             }
                                           }
@@ -1782,7 +1737,7 @@ window.lunrData = {
           }
         }
       },
-      "length": 108
+      "length": 107
     },
     "corpusTokens": [
       "array|nul",
@@ -1833,7 +1788,6 @@ window.lunrData = {
       "tools.conceptscheme#isvalidnot",
       "tools.conceptscheme#notationfromuri",
       "tools.conceptscheme#urifromnot",
-      "tools~conceptschem",
       "uri",
       "urifromnot",
       "uripattern",
@@ -1895,7 +1849,7 @@ window.lunrData = {
     "module-jskos-tools.ConceptScheme.html": {
       "id": "module-jskos-tools.ConceptScheme.html",
       "kind": "class",
-      "title": "jskos-tools~ConceptScheme",
+      "title": "jskos-tools.ConceptScheme",
       "longname": "module:jskos-tools.ConceptScheme",
       "name": "ConceptScheme",
       "tags": "module:jskos-tools.ConceptScheme ConceptScheme",
