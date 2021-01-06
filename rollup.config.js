@@ -14,7 +14,9 @@ export default [
       format: "umd",
     },
     plugins: [
-      resolve(),
+      resolve({
+        browser: true,
+      }),
       commonjs(),
       json(),
       // Add a plugin that assembles licenses for dependencies
