@@ -12,10 +12,13 @@
   },
   "license": "MIT",
   "main": "./index.js",
-  "browser": "./dist/jskos-tools.js",
+  "jsdelivr": "./dist/jskos-tools.js",
+  "unpkg": "./dist/jskos-tools.js",
+  "browserslist": "defaults and not ie<=11 and supports es6",
   "files": [
     "dist",
     "lib",
+    "bin",
     "index.js"
   ],
   "scripts": {
