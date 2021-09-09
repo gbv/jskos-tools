@@ -73,8 +73,10 @@ npm i jskos-tools
 ```
 
 We are also providing browser bundles:
-- Development (not minified, ~68K): https://cdn.jsdelivr.net/npm/jskos-tools/dist/jskos-tools.js
-- Production (minified, ~26K): https://cdn.jsdelivr.net/npm/jskos-tools@1
+- Development (not minified, ~19K gzipped, ~68K not gzipped): https://cdn.jsdelivr.net/npm/jskos-tools/dist/jskos-tools.js
+- **Production** (minified, ~10K gzipped, ~26K not gzipped): https://cdn.jsdelivr.net/npm/jskos-tools@1/dist/jskos-tools.min.js
+
+[![](https://data.jsdelivr.com/v1/package/npm/jskos-tools/badge?style=rounded)](https://www.jsdelivr.com/package/npm/jskos-tools)
 
 ## Usage
 If you installed jskos-tools via npm, use it like this:
