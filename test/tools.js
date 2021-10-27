@@ -64,14 +64,6 @@ describe("Tools", () => {
       "http://alternative.com/test/",
       "https://example.com/test/",
       "https://alternative.com/test/",
-      "http://example.com/test",
-      "http://alternative.com/test",
-      "https://example.com/test",
-      "https://alternative.com/test",
-      "http://example.com/test/",
-      "http://alternative.com/test/",
-      "https://example.com/test/",
-      "https://alternative.com/test/",
     ])
   })
 
