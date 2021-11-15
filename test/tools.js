@@ -58,12 +58,6 @@ describe("Tools", () => {
     assert.deepEqual(uris, [
       "http://example.com/test",
       "http://alternative.com/test",
-      "https://example.com/test",
-      "https://alternative.com/test",
-      "http://example.com/test/",
-      "http://alternative.com/test/",
-      "https://example.com/test/",
-      "https://alternative.com/test/",
     ])
   })
 
@@ -74,7 +68,7 @@ describe("Tools", () => {
     let object2 = {
       uri: "http://alternative.com/test",
       identifier: [
-        "http://example.com/test",
+        "https://example.com/test",
       ],
     }
     let object3 = {
