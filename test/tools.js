@@ -214,6 +214,9 @@ describe("Tools", () => {
         de: ["test"],
       },
       identifier: ["hallo"],
+      partOf: [
+        { uri: "test:concordance" },
+      ],
     }
     let newMapping = tools.minifyMapping(mapping)
     // Check if test properties got removed
@@ -230,6 +233,9 @@ describe("Tools", () => {
     assert.ok(newMapping.modified)
     assert.equal(newMapping.note.de[0], mapping.note.de[0])
     assert.equal(newMapping.identifier[0], mapping.identifier[0])
+    assert.ok(newMapping.partOf)
+    assert.ok(newMapping.partOf.length)
+    assert.deepEqual(newMapping.partOf[0], mapping.partOf[0])
     // Check if test properties remain in original object
     assert.ok(mapping.from.memberSet[0].test)
     assert.ok(mapping.to.memberChoice[0].test)
