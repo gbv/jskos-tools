@@ -54,13 +54,13 @@ describe("ConceptScheme", () => {
 
 })
 
-describe("ConceptScheme with spaces in notation", () => {
+describe("ConceptScheme with spaces and umlaut in notation", () => {
   const scheme = new ConceptScheme({
     namespace: "http://example.org/",
-    notationPattern: "[A-Z]( [A-Z])*",
+    notationPattern: "([A-Z]|Ä)( [A-Z])*",
   })
-  const notation = "A B"
-  const uri = "http://example.org/A%20B"
+  const notation = "Ä B C"
+  const uri = "http://example.org/%C3%84%20B%20C"
 
   it("isValidNotation", () => {
     assert.ok(scheme.isValidNotation(notation))
