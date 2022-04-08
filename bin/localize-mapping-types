@@ -20,8 +20,8 @@ const query = `SELECT ?uri ?label WHERE {
     { ?item wdt:P31 wd:Q60817979 } UNION
     { BIND(wd:Q60817979 AS ?item) }
   }
-  ?item wdt:P2699 ?uri .
-  ?item rdfs:label ?label .
+  OPTIONAL { ?item wdt:P2888 ?uri }
+  OPTIONAL { ?item rdfs:label ?label }
 } ORDER BY LANG(?label)`
 
 const url = wdk.sparqlQuery(query)
