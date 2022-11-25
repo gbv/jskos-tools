@@ -255,7 +255,7 @@ describe("Tools", () => {
       fromScheme: { notation: ["A"] },
       from: { memberSet: [{ notation: ["0"], prefLabel: { en: "'" }}] },
       toScheme: { notation: ["B"] },
-      to: { memberSet: [{ notation: ["a'c"], prefLabel: { en: "0" } }] },
+      to: { memberSet: [{ notation: ["a'c"], prefLabel: { de: "0" } }] },
       type: ["http://www.w3.org/2004/02/skos/core#broadMatch"],
     }
     const mappingCompound = {
