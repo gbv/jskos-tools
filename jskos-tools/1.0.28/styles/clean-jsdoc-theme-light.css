@@ -13,6 +13,10 @@ body.light {
     color: #007bff;
 }
 
+.light hr {
+    color: #f7f7f7;
+}
+
 .light h1,
 .light h2,
 .light h3,
@@ -83,11 +87,11 @@ body.light {
 }
 
 .light .icon-button:hover {
-    background: #f1f1f1;
+    background: #ddd;
 }
 
 .light .icon-button:active {
-    background: #e5e5e5;
+    background: #ccc;
 }
 
 .light .navbar-item a:active {
@@ -139,7 +143,7 @@ body.light {
 }
 
 .light .important {
-    color: #950b02;
+    color: #ee1313;
 }
 
 .light .type-signature {
@@ -154,10 +158,6 @@ body.light {
 .light .details {
     background: #f9f9f9;
     color: #101010;
-}
-
-.light .details a {
-    color: #111;
 }
 
 .light .member-item-container strong,
@@ -228,25 +228,11 @@ body.light {
     color: #454545;
 }
 
-.light .code-copy-icon-container {
-    fill: #111;
-}
-
-.light .code-copy-icon-container:hover {
-    background-color: #ddd;
-}
-
 .light .code-lang-name {
     color: #ff0000;
 }
 
 .light .tooltip {
-    background: #ffce76;
-    color: #000;
-}
-
-.light .tooltip .pun,
-.light .tooltip .typ {
     background: #ffce76;
     color: #000;
 }
@@ -330,7 +316,7 @@ body.light {
 }
 
 .light code {
-    background: #eee;
+    background: #ddd;
     color: #000;
 }
 
@@ -389,4 +375,14 @@ body.light {
 
 .light .mobile-sidebar-wrapper {
     background: #f7f7f7;
+}
+
+/* scroll bar */
+.light ::-webkit-scrollbar-track {
+    background: #ddd;
+}
+
+.light ::-webkit-scrollbar-thumb {
+    background: #aaa;
+    outline: 0.06125rem solid #aaa;
 }

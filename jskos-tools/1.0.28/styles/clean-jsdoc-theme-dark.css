@@ -13,6 +13,10 @@ a:active {
     color: #00bbff;
 }
 
+hr {
+    color: #222;
+}
+
 h1,
 h2,
 h3,
@@ -121,7 +125,7 @@ tt,
 code,
 kbd,
 samp {
-    background: #222;
+    background: #333;
 }
 
 .signature-attributes {
@@ -137,7 +141,7 @@ samp {
 }
 
 .important {
-    color: #950b02;
+    color: #c51313;
 }
 
 .type-signature {
@@ -151,10 +155,6 @@ samp {
 
 .details {
     background: #222;
-    color: #fff;
-}
-
-.details a {
     color: #fff;
 }
 
@@ -226,25 +226,11 @@ table .params thead tr,
     color: #aaaaaa;
 }
 
-.code-copy-icon-container {
-    fill: #fff;
-}
-
-.code-copy-icon-container:hover {
-    background-color: #444;
-}
-
 .code-lang-name {
     color: #ff8a00;
 }
 
 .tooltip {
-    background: #ffce76;
-    color: #222;
-}
-
-.tooltip .pun,
-.tooltip .typ {
     background: #ffce76;
     color: #222;
 }
@@ -408,4 +394,14 @@ blockquote {
 
 .mobile-sidebar-wrapper {
     background: #222;
+}
+
+/* scroll bar */
+::-webkit-scrollbar-track {
+    background: #333;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #555;
+    outline: 0.06125rem solid #555;
 }

@@ -1,16 +1,19 @@
 @font-face {
     font-family: 'heading';
     src: url('../fonts/WorkSans-Bold.ttf') format('truetype');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'body';
     src: url('../fonts/OpenSans-Regular.ttf') format('truetype');
+    font-display: swap;
 }
 
 @font-face {
     font-family: 'code';
     src: url('../fonts/Inconsolata-Regular.ttf') format('truetype');
+    font-display: swap;
 }
 
 * {
@@ -32,6 +35,10 @@ body {
     position: relative;
 }
 
+b {
+    font-family: heading;
+}
+
 h1,
 h2,
 h3,
@@ -40,6 +47,7 @@ h5,
 h6 {
     font-family: 'heading';
     font-weight: normal;
+    line-height: 1.75;
 }
 
 h1 {
@@ -53,17 +61,15 @@ h2 {
 }
 
 h3 {
-    font-size: 2rem;
-    margin: 2rem 0 0;
+    font-size: 1.5rem;
 }
 
 h4 {
-    font-size: 1.5rem;
-    margin: 1.5rem 0 0;
+    font-size: 1.25rem;
 }
 
 h5 {
-    font-size: 1.25rem;
+    font-size: 1rem;
 }
 
 h6 {
@@ -93,12 +99,6 @@ p {
 
 article ul {
     list-style: none;
-    padding-left: 1rem;
-}
-
-article ul li::before {
-    content: '\2014\a0';
-    margin-right: 0.5rem;
 }
 
 article ul li,
@@ -106,8 +106,14 @@ article ol li {
     padding: 0.5rem 0;
 }
 
-article ol {
-    padding-left: 1rem;
+article ol,
+article ul {
+    padding-left: 3rem;
+}
+
+article ol p,
+article ul p {
+    margin: 0;
 }
 
 /* stylelint-disable-next-line */
@@ -129,10 +135,6 @@ article ol {
     font-weight: bold;
 }
 
-.yes-def {
-    text-indent: -1000px;
-}
-
 .signature {
     font-family: 'code';
 }
@@ -146,6 +148,7 @@ blockquote {
     font-size: 0.875rem;
     padding: 0.0625rem 1.25rem;
     border-radius: 1rem;
+    margin: 0.5rem 0;
 }
 
 .details {
@@ -164,28 +167,20 @@ dt {
 
 .details dt {
     float: left;
-    min-width: 180px;
-    padding: 0 10px;
+    min-width: 11rem;
 }
 
 .details ul {
     margin: 0;
-}
-
-.details ul {
+    display: inline-flex;
     list-style-type: none;
 }
 
 .details ul li {
-    display: inline-block;
-    margin-right: 10px;
+    display: inline-flex;
+    margin-right: 0.6125rem;
     padding: 0;
     word-break: break-word;
-}
-
-.details ul li::before {
-    content: '';
-    margin: 0;
 }
 
 /* stylelint-disable-next-line */
@@ -197,6 +192,7 @@ dt {
 .details pre.prettyprint {
     margin: 0;
 }
+
 /* stylelint-enable */
 
 .details .object-value {
@@ -204,11 +200,11 @@ dt {
 }
 
 .description {
-    margin-bottom: 32px;
+    margin-bottom: 2rem;
 }
 
 .method-member-container table {
-    margin-top: 15px;
+    margin-top: 1rem;
 }
 
 .pre-div .hljs-ln {
@@ -237,6 +233,10 @@ pre.prettyprint {
     font-size: 1rem;
     line-height: 1.75;
     padding: 0 0 1rem;
+}
+
+.prettyprint .compact {
+    padding: 0;
 }
 
 h4.name {
@@ -309,14 +309,14 @@ td {
     font-weight: bold;
 }
 
-.params td.description > p:first-child,
-.props td.description > p:first-child {
+.params td.description>p:first-child,
+.props td.description>p:first-child {
     margin-top: 0;
     padding-top: 0;
 }
 
-.params td.description > p:last-child,
-.props td.description > p:last-child {
+.params td.description>p:last-child,
+.props td.description>p:last-child {
     margin-bottom: 0;
     padding-bottom: 0;
 }
@@ -443,12 +443,12 @@ code {
     text-decoration: none;
 }
 
-.with-arrow[data-isopen='false'] + .sidebar-section-children-container {
+.with-arrow[data-isopen='false']+.sidebar-section-children-container {
     height: 0;
     overflow: hidden;
 }
 
-.with-arrow[data-isopen='true'] + .sidebar-section-children-container {
+.with-arrow[data-isopen='true']+.sidebar-section-children-container {
     height: auto;
 }
 
@@ -468,7 +468,7 @@ code {
     height: 100%;
 }
 
-#toc {
+#eed4d2a0bfd64539bb9df78095dec881 {
     margin: 2rem 0;
     flex: 1;
     overflow: auto;
@@ -502,6 +502,7 @@ code {
 .has-anchor .link-anchor {
     position: absolute;
     left: 0;
+    top: 0;
     transform: translateX(-100%);
     text-decoration: none;
     visibility: hidden;
@@ -546,6 +547,7 @@ code {
 
 .icon-button {
     background: transparent;
+    position: relative;
     display: inline-flex;
     border: 0;
     padding: 0.5rem;
@@ -612,7 +614,7 @@ code {
     justify-content: center;
 }
 
-.source-page + .footer {
+.source-page+.footer {
     margin-top: 3rem;
 }
 
@@ -636,8 +638,12 @@ pre {
 .hljs .hljs-ln-numbers {
     width: 2rem;
     white-space: nowrap;
-    user-select: none;
+    /* user-select: none; */
     padding-left: 1.5rem;
+}
+
+.hljs-ln-line.hljs-ln-numbers::before {
+    content: attr(data-line-number);
 }
 
 .pre-div {
@@ -656,7 +662,6 @@ pre {
     position: absolute;
     right: 0;
     top: 0;
-    z-index: 1;
 }
 
 .code-copy-icon-container {
@@ -670,7 +675,7 @@ pre {
     width: 1.875rem;
 }
 
-.code-copy-icon-container > div {
+.code-copy-icon-container>div {
     margin-top: 0.25rem;
     position: relative;
 }
@@ -691,7 +696,7 @@ pre {
     padding: 0.1875rem 0.5rem;
     position: absolute;
     right: 2rem;
-    top: -0.125rem;
+    top: 0.3125rem;
     transform: scale(0);
     transition: 0.3s;
 }
@@ -733,6 +738,12 @@ pre {
     position: absolute;
     top: 1rem;
     right: 1rem;
+}
+
+.search-result-c-text {
+    display: flex;
+    justify-content: center;
+    user-select: none;
 }
 
 .search-result-c {
@@ -845,6 +856,35 @@ pre {
     padding: 1rem;
 }
 
+.rel {
+    position: relative;
+}
+
+.icon-button.codepen-button svg {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.table-div {
+    width: 100%;
+    overflow: auto;
+}
+
+.tag-default {
+    overflow: auto
+}
+
+/* scroll bar */
+::-webkit-scrollbar {
+    width: 0.3125rem;
+    height: 0.3125rem;
+}
+
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-track {
+    border-radius: 1rem;
+}
+
 @media screen and (max-width: 100em) {
     .toc-container {
         display: none;
@@ -896,6 +936,7 @@ pre {
     .search-result-c {
         max-height: 25rem;
     }
+
     .mobile-menu-icon-container {
         display: block;
     }
@@ -903,6 +944,7 @@ pre {
     .sidebar-container {
         display: none;
     }
+
     .search-container .wrapper {
         margin-left: 1rem;
     }
@@ -916,7 +958,7 @@ pre {
         display: none;
     }
 
-    .source-page + .footer,
+    .source-page+.footer,
     .footer {
         margin-top: 2rem;
     }
@@ -924,18 +966,4 @@ pre {
     .has-anchor:hover .link-anchor {
         visibility: hidden;
     }
-}
-
-.rel {
-    position: relative;
-}
-
-.icon-button.codepen-button svg {
-    height: 1.5rem;
-    width: 1.5rem;
-}
-
-.table-div {
-    width: 100%;
-    overflow: auto;
 }
