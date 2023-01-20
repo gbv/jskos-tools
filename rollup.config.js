@@ -1,11 +1,11 @@
-import pkg from "./package.json"
-import commonjs from "@rollup/plugin-commonjs"
-import resolve from "@rollup/plugin-node-resolve"
-import babel from "@rollup/plugin-babel"
-import json from "@rollup/plugin-json"
-import license from "rollup-plugin-license"
+const pkg = require("./package.json")
+const commonjs = require("@rollup/plugin-commonjs")
+const resolve = require("@rollup/plugin-node-resolve")
+const babel = require("@rollup/plugin-babel")
+const json = require("@rollup/plugin-json")
+const license = require("rollup-plugin-license")
 
-export default [
+module.exports = [
   {
     input: "index.js",
     output: {
@@ -35,5 +35,6 @@ export default [
         babelHelpers: "bundled",
       }),
     ],
+    strictDeprecations: true,
   },
 ]
