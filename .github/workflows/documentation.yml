@@ -5,7 +5,7 @@ name: Build Documentation for GitHub pages
 on:
   push:
     branches:
-      - dev
+      - master
 
 jobs:
   deploy:
