@@ -15,7 +15,7 @@
     "copyright": "",
     "collapseSymbols": false,
     "outputSourceFiles": false,
-    "stylesheets": ["css/style.css"]
+    "stylesheets": ["style/style.css"]
   },
   "opts": {
     "destination": "jsdoc/build",
