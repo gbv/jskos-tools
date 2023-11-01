@@ -1198,7 +1198,7 @@ describe("Tools", () => {
     const schemes = [
       {uri:"x:notationPatternMissing"},
       {uri:"x:any",notationPattern:".+"},
-      {uri:"x:digits",notationPattern:"[0-9]+"},
+      {uri:"x:digits",notationPattern:"0|[1-9]+"},
       {uri:"x:alpha",notationPattern:"[a-z]+"},
       {uri:"x:alphanum",notationPattern:"[a-z0-9]+"},
     ] 
