@@ -1194,4 +1194,23 @@ describe("Tools", () => {
     }
   })
 
+  it("guessSchemeFromNotation", () => {
+    const schemes = [
+      {uri:"x:notationPatternMissing"},
+      {uri:"x:any",notationPattern:".+"},
+      {uri:"x:digits",notationPattern:"[0-9]+"},
+      {uri:"x:alpha",notationPattern:"[a-z]+"},
+      {uri:"x:alphanum",notationPattern:"[a-z0-9]+"},
+    ] 
+    const tests = [
+      [".", []],
+      ["a", ["x:alpha","x:alphanum"]],
+      ["123", ["x:digits","x:alphanum"]],
+      ["a2", ["x:alphanum"]],
+    ]
+    for (let [notation,uris] of tests) {
+      const found = tools.guessSchemeFromNotation(notation, schemes)
+      assert.deepEqual(found.map(({uri})=>uri),uris)
+    }
+  })
 })

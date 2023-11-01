@@ -43,6 +43,7 @@ This repository contains tools for working with the [JSKOS data format for knowl
     - [conceptsOfMapping](#conceptsofmapping)
     - [compareMappingsDeep](#comparemappingsdeep)
     - [guessObjectType](#guessobjecttype)
+    - [guessSchemeFromNotation](#guessschemefromnotation) 
     - [objectTypes](#objecttypes)
     - [matchObjectTypes](#matchobjecttypes)
     - [mergeUris](#mergeuris)
@@ -374,6 +375,14 @@ Guess the JSKOS object type of an object, URI or name and return its canonical n
 ```js
 type = guessObjectType(objectOrString)        // get full name such as `ConceptScheme`
 type = guessObjectType(objectOrString, true)  // get short name such as `scheme`
+```
+
+#### guessSchemeFromNotation
+
+Filter a list of concept schemes with a given notation to guess which scheme(s) the notation origins from. Schemes without `notationPattern` or default pattern `.+` are ignored. Returns a (posssibly empty) array of concept schemes.
+
+```js
+matchingSchemes = guessSchemeFromNotation(notation, schemes)
 ```
 
 #### compareFunctions
