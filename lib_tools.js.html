@@ -1,6 +1,10 @@
 <!DOCTYPE html><html lang="en" style="font-size:16px"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Source: lib/tools.js</title><!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]--><script src="scripts/third-party/hljs.js" defer="defer"></script><script src="scripts/third-party/hljs-line-num.js" defer="defer"></script><script src="scripts/third-party/popper.js" defer="defer"></script><script src="scripts/third-party/tippy.js" defer="defer"></script><script src="scripts/third-party/tocbot.min.js"></script><script>var baseURL="/",locationPathname="";baseURL=(locationPathname=document.location.pathname).substr(0,locationPathname.lastIndexOf("/")+1)</script><link rel="stylesheet" href="styles/clean-jsdoc-theme.min.css"><svg aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display:none"><defs><symbol id="copy-icon" viewbox="0 0 488.3 488.3"><g><path d="M314.25,85.4h-227c-21.3,0-38.6,17.3-38.6,38.6v325.7c0,21.3,17.3,38.6,38.6,38.6h227c21.3,0,38.6-17.3,38.6-38.6V124    C352.75,102.7,335.45,85.4,314.25,85.4z M325.75,449.6c0,6.4-5.2,11.6-11.6,11.6h-227c-6.4,0-11.6-5.2-11.6-11.6V124    c0-6.4,5.2-11.6,11.6-11.6h227c6.4,0,11.6,5.2,11.6,11.6V449.6z"/><path d="M401.05,0h-227c-21.3,0-38.6,17.3-38.6,38.6c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5c0-6.4,5.2-11.6,11.6-11.6h227    c6.4,0,11.6,5.2,11.6,11.6v325.7c0,6.4-5.2,11.6-11.6,11.6c-7.5,0-13.5,6-13.5,13.5s6,13.5,13.5,13.5c21.3,0,38.6-17.3,38.6-38.6    V38.6C439.65,17.3,422.35,0,401.05,0z"/></g></symbol><symbol id="search-icon" viewBox="0 0 512 512"><g><g><path d="M225.474,0C101.151,0,0,101.151,0,225.474c0,124.33,101.151,225.474,225.474,225.474    c124.33,0,225.474-101.144,225.474-225.474C450.948,101.151,349.804,0,225.474,0z M225.474,409.323    c-101.373,0-183.848-82.475-183.848-183.848S124.101,41.626,225.474,41.626s183.848,82.475,183.848,183.848    S326.847,409.323,225.474,409.323z"/></g></g><g><g><path d="M505.902,476.472L386.574,357.144c-8.131-8.131-21.299-8.131-29.43,0c-8.131,8.124-8.131,21.306,0,29.43l119.328,119.328    c4.065,4.065,9.387,6.098,14.715,6.098c5.321,0,10.649-2.033,14.715-6.098C514.033,497.778,514.033,484.596,505.902,476.472z"/></g></g></symbol><symbol id="font-size-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M11.246 15H4.754l-2 5H.6L7 4h2l6.4 16h-2.154l-2-5zm-.8-2L8 6.885 5.554 13h4.892zM21 12.535V12h2v8h-2v-.535a4 4 0 1 1 0-6.93zM19 18a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></symbol><symbol id="add-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"/></symbol><symbol id="minus-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M5 11h14v2H5z"/></symbol><symbol id="dark-theme-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2h.1A6.979 6.979 0 0 0 10 7zm-6 5a8 8 0 0 0 15.062 3.762A9 9 0 0 1 8.238 4.938 7.999 7.999 0 0 0 4 12z"/></symbol><symbol id="light-theme-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"/></symbol><symbol id="reset-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M18.537 19.567A9.961 9.961 0 0 1 12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10c0 2.136-.67 4.116-1.81 5.74L17 12h3a8 8 0 1 0-2.46 5.772l.997 1.795z"/></symbol><symbol id="down-icon" viewBox="0 0 16 16"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path></symbol><symbol id="codepen-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M16.5 13.202L13 15.535v3.596L19.197 15 16.5 13.202zM14.697 12L12 10.202 9.303 12 12 13.798 14.697 12zM20 10.869L18.303 12 20 13.131V10.87zM19.197 9L13 4.869v3.596l3.5 2.333L19.197 9zM7.5 10.798L11 8.465V4.869L4.803 9 7.5 10.798zM4.803 15L11 19.131v-3.596l-3.5-2.333L4.803 15zM4 13.131L5.697 12 4 10.869v2.262zM2 9a1 1 0 0 1 .445-.832l9-6a1 1 0 0 1 1.11 0l9 6A1 1 0 0 1 22 9v6a1 1 0 0 1-.445.832l-9 6a1 1 0 0 1-1.11 0l-9-6A1 1 0 0 1 2 15V9z"/></symbol><symbol id="close-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></symbol><symbol id="menu-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/></symbol></defs></svg></head><body data-theme="dark"><div class="sidebar-container"><div class="sidebar" id="sidebar"><a href="/" class="sidebar-title sidebar-title-anchor">Home</a><div class="sidebar-items-container"><div class="sidebar-section-title with-arrow" data-isopen="false" id="sidebar-modules"><div>Modules</div><svg><use xlink:href="#down-icon"></use></svg></div><div class="sidebar-section-children-container"><div class="sidebar-section-children"><a href="module-jskos-tools.html">jskos-tools</a></div></div><div class="sidebar-section-title with-arrow" data-isopen="false" id="sidebar-classes"><div>Classes</div><svg><use xlink:href="#down-icon"></use></svg></div><div class="sidebar-section-children-container"><div class="sidebar-section-children"><a href="module-jskos-tools.ConceptScheme.html">ConceptScheme</a></div></div><div class="sidebar-section-title with-arrow" data-isopen="false" id="sidebar-global"><div>Global</div><svg><use xlink:href="#down-icon"></use></svg></div><div class="sidebar-section-children-container"><div class="sidebar-section-children"><a href="global.html#annotationCreatorMatches">annotationCreatorMatches</a></div><div class="sidebar-section-children"><a href="global.html#annotationCreatorName">annotationCreatorName</a></div><div class="sidebar-section-children"><a href="global.html#annotationCreatorUri">annotationCreatorUri</a></div><div class="sidebar-section-children"><a href="global.html#compareFunctions">compareFunctions</a></div><div class="sidebar-section-children"><a href="global.html#definition">definition</a></div><div class="sidebar-section-children"><a href="global.html#getLanguages">getLanguages</a></div><div class="sidebar-section-children"><a href="global.html#isValidUri">isValidUri</a></div><div class="sidebar-section-children"><a href="global.html#languageMapContent">languageMapContent</a></div><div class="sidebar-section-children"><a href="global.html#mappingRegistryIsStored">mappingRegistryIsStored</a></div><div class="sidebar-section-children"><a href="global.html#normalize">normalize</a></div><div class="sidebar-section-children"><a href="global.html#notation">notation</a></div><div class="sidebar-section-children"><a href="global.html#prefLabel">prefLabel</a></div><div class="sidebar-section-children"><a href="global.html#selectLanguage">selectLanguage</a></div><div class="sidebar-section-children"><a href="global.html#sha1">sha1</a></div><div class="sidebar-section-children"><a href="global.html#userOwnsMapping">userOwnsMapping</a></div></div></div></div></div><div class="navbar-container" id="VuAckcnZhf"><nav class="navbar"><div class="navbar-left-items"></div><div class="navbar-right-items"><div class="navbar-right-item"><button class="icon-button search-button" aria-label="open-search"><svg><use xlink:href="#search-icon"></use></svg></button></div><div class="navbar-right-item"><button class="icon-button theme-toggle" aria-label="toggle-theme"><svg><use class="theme-svg-use" xlink:href="#light-theme-icon"></use></svg></button></div><div class="navbar-right-item"><button class="icon-button font-size" aria-label="change-font-size"><svg><use xlink:href="#font-size-icon"></use></svg></button></div></div><nav></nav></nav></div><div class="toc-container"><div class="toc-content"><span class="bold">On this page</span><div id="eed4d2a0bfd64539bb9df78095dec881"></div></div></div><div class="body-wrapper"><div class="main-content"><div class="main-wrapper"><section id="source-page" class="source-page"><header><h1 id="title" class="has-anchor">lib_tools.js</h1></header><article><pre class="prettyprint source lang-js"><code>const _ = require("./utils")
+    <![endif]--><script src="scripts/third-party/hljs.js" defer="defer"></script><script src="scripts/third-party/hljs-line-num.js" defer="defer"></script><script src="scripts/third-party/popper.js" defer="defer"></script><script src="scripts/third-party/tippy.js" defer="defer"></script><script src="scripts/third-party/tocbot.min.js"></script><script>var baseURL="/",locationPathname="";baseURL=(locationPathname=document.location.pathname).substr(0,locationPathname.lastIndexOf("/")+1)</script><link rel="stylesheet" href="styles/clean-jsdoc-theme.min.css"><svg aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display:none"><defs><symbol id="copy-icon" viewbox="0 0 488.3 488.3"><g><path d="M314.25,85.4h-227c-21.3,0-38.6,17.3-38.6,38.6v325.7c0,21.3,17.3,38.6,38.6,38.6h227c21.3,0,38.6-17.3,38.6-38.6V124    C352.75,102.7,335.45,85.4,314.25,85.4z M325.75,449.6c0,6.4-5.2,11.6-11.6,11.6h-227c-6.4,0-11.6-5.2-11.6-11.6V124    c0-6.4,5.2-11.6,11.6-11.6h227c6.4,0,11.6,5.2,11.6,11.6V449.6z"/><path d="M401.05,0h-227c-21.3,0-38.6,17.3-38.6,38.6c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5c0-6.4,5.2-11.6,11.6-11.6h227    c6.4,0,11.6,5.2,11.6,11.6v325.7c0,6.4-5.2,11.6-11.6,11.6c-7.5,0-13.5,6-13.5,13.5s6,13.5,13.5,13.5c21.3,0,38.6-17.3,38.6-38.6    V38.6C439.65,17.3,422.35,0,401.05,0z"/></g></symbol><symbol id="search-icon" viewBox="0 0 512 512"><g><g><path d="M225.474,0C101.151,0,0,101.151,0,225.474c0,124.33,101.151,225.474,225.474,225.474    c124.33,0,225.474-101.144,225.474-225.474C450.948,101.151,349.804,0,225.474,0z M225.474,409.323    c-101.373,0-183.848-82.475-183.848-183.848S124.101,41.626,225.474,41.626s183.848,82.475,183.848,183.848    S326.847,409.323,225.474,409.323z"/></g></g><g><g><path d="M505.902,476.472L386.574,357.144c-8.131-8.131-21.299-8.131-29.43,0c-8.131,8.124-8.131,21.306,0,29.43l119.328,119.328    c4.065,4.065,9.387,6.098,14.715,6.098c5.321,0,10.649-2.033,14.715-6.098C514.033,497.778,514.033,484.596,505.902,476.472z"/></g></g></symbol><symbol id="font-size-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M11.246 15H4.754l-2 5H.6L7 4h2l6.4 16h-2.154l-2-5zm-.8-2L8 6.885 5.554 13h4.892zM21 12.535V12h2v8h-2v-.535a4 4 0 1 1 0-6.93zM19 18a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></symbol><symbol id="add-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M11 11V5h2v6h6v2h-6v6h-2v-6H5v-2z"/></symbol><symbol id="minus-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M5 11h14v2H5z"/></symbol><symbol id="dark-theme-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2h.1A6.979 6.979 0 0 0 10 7zm-6 5a8 8 0 0 0 15.062 3.762A9 9 0 0 1 8.238 4.938 7.999 7.999 0 0 0 4 12z"/></symbol><symbol id="light-theme-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"/></symbol><symbol id="reset-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M18.537 19.567A9.961 9.961 0 0 1 12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10c0 2.136-.67 4.116-1.81 5.74L17 12h3a8 8 0 1 0-2.46 5.772l.997 1.795z"/></symbol><symbol id="down-icon" viewBox="0 0 16 16"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.7803 6.21967C13.0732 6.51256 13.0732 6.98744 12.7803 7.28033L8.53033 11.5303C8.23744 11.8232 7.76256 11.8232 7.46967 11.5303L3.21967 7.28033C2.92678 6.98744 2.92678 6.51256 3.21967 6.21967C3.51256 5.92678 3.98744 5.92678 4.28033 6.21967L8 9.93934L11.7197 6.21967C12.0126 5.92678 12.4874 5.92678 12.7803 6.21967Z"></path></symbol><symbol id="codepen-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M16.5 13.202L13 15.535v3.596L19.197 15 16.5 13.202zM14.697 12L12 10.202 9.303 12 12 13.798 14.697 12zM20 10.869L18.303 12 20 13.131V10.87zM19.197 9L13 4.869v3.596l3.5 2.333L19.197 9zM7.5 10.798L11 8.465V4.869L4.803 9 7.5 10.798zM4.803 15L11 19.131v-3.596l-3.5-2.333L4.803 15zM4 13.131L5.697 12 4 10.869v2.262zM2 9a1 1 0 0 1 .445-.832l9-6a1 1 0 0 1 1.11 0l9 6A1 1 0 0 1 22 9v6a1 1 0 0 1-.445.832l-9 6a1 1 0 0 1-1.11 0l-9-6A1 1 0 0 1 2 15V9z"/></symbol><symbol id="close-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z"/></symbol><symbol id="menu-icon" viewBox="0 0 24 24"><path fill="none" d="M0 0h24v24H0z"/><path d="M3 4h18v2H3V4zm0 7h18v2H3v-2zm0 7h18v2H3v-2z"/></symbol></defs></svg></head><body data-theme="dark"><div class="sidebar-container"><div class="sidebar" id="sidebar"><a href="/" class="sidebar-title sidebar-title-anchor">Home</a><div class="sidebar-items-container"><div class="sidebar-section-title with-arrow" data-isopen="false" id="sidebar-modules"><div>Modules</div><svg><use xlink:href="#down-icon"></use></svg></div><div class="sidebar-section-children-container"><div class="sidebar-section-children"><a href="module-jskos-tools.html">jskos-tools</a></div></div><div class="sidebar-section-title with-arrow" data-isopen="false" id="sidebar-classes"><div>Classes</div><svg><use xlink:href="#down-icon"></use></svg></div><div class="sidebar-section-children-container"><div class="sidebar-section-children"><a href="module-jskos-tools.ConceptScheme.html">ConceptScheme</a></div></div><div class="sidebar-section-title with-arrow" data-isopen="false" id="sidebar-global"><div>Global</div><svg><use xlink:href="#down-icon"></use></svg></div><div class="sidebar-section-children-container"><div class="sidebar-section-children"><a href="global.html#annotationCreatorMatches">annotationCreatorMatches</a></div><div class="sidebar-section-children"><a href="global.html#annotationCreatorName">annotationCreatorName</a></div><div class="sidebar-section-children"><a href="global.html#annotationCreatorUri">annotationCreatorUri</a></div><div class="sidebar-section-children"><a href="global.html#compareFunctions">compareFunctions</a></div><div class="sidebar-section-children"><a href="global.html#definition">definition</a></div><div class="sidebar-section-children"><a href="global.html#getLanguages">getLanguages</a></div><div class="sidebar-section-children"><a href="global.html#isValidUri">isValidUri</a></div><div class="sidebar-section-children"><a href="global.html#languageMapContent">languageMapContent</a></div><div class="sidebar-section-children"><a href="global.html#mappingRegistryIsStored">mappingRegistryIsStored</a></div><div class="sidebar-section-children"><a href="global.html#normalize">normalize</a></div><div class="sidebar-section-children"><a href="global.html#notation">notation</a></div><div class="sidebar-section-children"><a href="global.html#prefLabel">prefLabel</a></div><div class="sidebar-section-children"><a href="global.html#selectLanguage">selectLanguage</a></div><div class="sidebar-section-children"><a href="global.html#userOwnsMapping">userOwnsMapping</a></div></div></div></div></div><div class="navbar-container" id="VuAckcnZhf"><nav class="navbar"><div class="navbar-left-items"></div><div class="navbar-right-items"><div class="navbar-right-item"><button class="icon-button search-button" aria-label="open-search"><svg><use xlink:href="#search-icon"></use></svg></button></div><div class="navbar-right-item"><button class="icon-button theme-toggle" aria-label="toggle-theme"><svg><use class="theme-svg-use" xlink:href="#light-theme-icon"></use></svg></button></div><div class="navbar-right-item"><button class="icon-button font-size" aria-label="change-font-size"><svg><use xlink:href="#font-size-icon"></use></svg></button></div></div><nav></nav></nav></div><div class="toc-container"><div class="toc-content"><span class="bold">On this page</span><div id="eed4d2a0bfd64539bb9df78095dec881"></div></div></div><div class="body-wrapper"><div class="main-content"><div class="main-wrapper"><section id="source-page" class="source-page"><header><h1 id="title" class="has-anchor">lib_tools.js</h1></header><article><pre class="prettyprint source lang-js"><code>import * as _ from "./utils.js"
+import { objectTypes, guessObjectType } from "./object-types.js"
+import ConceptScheme from "./concept-scheme.js"
+import languagePreference from "./language-preference.js"
+import mappingTypes from "./mapping-types.js"
 
 /**
  * Tests if a string only contains uppercase letters.
@@ -27,7 +31,7 @@ const getNested = (object, path) => {
  * @memberof module:jskos-tools
  * @param {object} jskos object or array of objects
  */
-const addContext = jskos => {
+export const addContext = jskos => {
   let array = jskos instanceof Array ? jskos : [jskos]
   array.forEach(resource => {
     resource["@context"] = "https://gbv.github.io/jskos/context.json"
@@ -41,7 +45,7 @@ const addContext = jskos => {
  * @memberof module:jskos-tools
  * @param {object} jskos
  */
-const clean = jskos => {
+export const clean = jskos => {
   Object.keys(jskos).forEach(key => {
     if (isUpperCase(key) || key.startsWith("_")) {
       delete jskos[key]
@@ -55,7 +59,7 @@ const clean = jskos => {
 }
 
 // cleanJSKOS as alias for clean.
-const cleanJSKOS = clean
+export const cleanJSKOS = clean
 
 /**
  * Creates a deep copy of a JSKOS object, replacing possibly circular structures with open world [null] statements.
@@ -65,7 +69,7 @@ const cleanJSKOS = clean
  * @param {array} replaceCircular - additional property names that should be replace with open world [null] statements
  * @param {bool} skipUnderscore - whether to skip properties starting with `_` (default `true`)
  */
-const copyDeep = (object, replaceCircular = [], skipUnderscore = true) => {
+export const copyDeep = (object, replaceCircular = [], skipUnderscore = true) => {
   replaceCircular = replaceCircular.concat([
     "ancestors", "narrower", "broader", "mappings", "memberList", "TOPCONCEPTS", "MAPPINGS", "PROVIDER",
   ])
@@ -115,7 +119,7 @@ const copyDeep = (object, replaceCircular = [], skipUnderscore = true) => {
 }
 
 // deepCopy as alias for copyDeep.
-const deepCopy = copyDeep
+export const deepCopy = copyDeep
 
 /**
  * Returns all possible URIs for a JSKOS object. Takes into consideration both the uri and identifier properties.
@@ -123,7 +127,7 @@ const deepCopy = copyDeep
  * @memberof module:jskos-tools
  * @param {object} object
  */
-const getAllUris = object => {
+export const getAllUris = object => {
   if (!object) {
     return []
   }
@@ -137,7 +141,7 @@ const getAllUris = object => {
  * @param {object} object1
  * @param {object} object2
  */
-const compare = (object1, object2) => {
+export const compare = (object1, object2) => {
   // Return true if both objects are null.
   if (object1 == null &amp;&amp; object2 == null) {
     return true
@@ -154,15 +158,15 @@ const compare = (object1, object2) => {
 }
 
 // compareObjects, compareSchemes and compareConcepts as aliases for compare, for compatibility.
-const compareObjects = compare
-const compareSchemes = compare
-const compareConcepts = compare
+export const compareObjects = compare
+export const compareSchemes = compare
+export const compareConcepts = compare
 
 /**
  * Checks whether JSKOS object is a concept based on type property.
  * @memberof module:jskos-tools
  */
-const isConcept = object => {
+export const isConcept = object => {
   return _.get(object, "type", []).includes("http://www.w3.org/2004/02/skos/core#Concept") || _.get(object, "inScheme") != null || _.get(object, "topConceptOf") != null
 }
 
@@ -170,7 +174,7 @@ const isConcept = object => {
  * Checks whether JSKOS object is a concept scheme based on type property.
  * @memberof module:jskos-tools
  */
-const isScheme = object => {
+export const isScheme = object => {
   return _.get(object, "type", []).includes("http://www.w3.org/2004/02/skos/core#ConceptScheme")
 }
 
@@ -178,7 +182,7 @@ const isScheme = object => {
  * Checks whether an object is contained in a list of objects using compare.
  * @memberof module:jskos-tools
  */
-const isContainedIn = (object, objects) => {
+export const isContainedIn = (object, objects) => {
   if (!object || !objects) {
     return false
   }
@@ -191,7 +195,7 @@ const isContainedIn = (object, objects) => {
 }
 
 // isSchemeInList as alias for isContainedIn.
-const isSchemeInList = isContainedIn
+export const isSchemeInList = isContainedIn
 
 /**
  * Sorts a list of concepts by their notation, then URI.
@@ -199,7 +203,7 @@ const isSchemeInList = isContainedIn
  * @memberof module:jskos-tools
  * @param {*} concepts
  */
-const sortConcepts = (concepts, numerical = false) => {
+export const sortConcepts = (concepts, numerical = false) => {
   return concepts.sort(
     (a, b) => {
       let _a = _.get(a, "notation[0]"), _b = _.get(b, "notation[0]")
@@ -253,7 +257,7 @@ const sortConcepts = (concepts, numerical = false) => {
  * @memberof module:jskos-tools
  * @param {*} schemes
  */
-const sortSchemes = schemes => {
+export const sortSchemes = schemes => {
   let order = ["notation[0]", ["prefLabel.de", "prefLabel.en"], "uri"]
   return schemes.sort(
     (a, b) => {
@@ -286,7 +290,7 @@ const sortSchemes = schemes => {
 /**
  * @memberof module:jskos-tools
  */
-const minifyMapping = mapping => {
+export const minifyMapping = mapping => {
   let newMapping = _.pick(copyDeep(mapping), ["from", "to", "fromScheme", "toScheme", "creator", "contributor", "type", "created", "modified", "note", "identifier", "uri", "partOf", "mappingRelevance"])
   for (let fromTo of [newMapping.from, newMapping.to]) {
     _.forOwn(fromTo, (value, key) => {
@@ -313,13 +317,14 @@ const minifyMapping = mapping => {
  * @memberof module:jskos-tools
  *
  * Run `bin/localize-mapping-types` to update labels from Wikidata.
+ * 
  */
-const mappingTypes = require("./mapping-types.json")
+export { mappingTypes }
 
 /**
  * @memberof module:jskos-tools
  */
-const mappingTypeByUri = function(uri) {
+export const mappingTypeByUri = function(uri) {
   for(let mappingType of mappingTypes) {
     if (uri == mappingType.uri) {
       return mappingType
@@ -331,12 +336,12 @@ const mappingTypeByUri = function(uri) {
 /**
  * @memberof module:jskos-tools
  */
-const defaultMappingType = mappingTypeByUri("http://www.w3.org/2004/02/skos/core#mappingRelation")
+export const defaultMappingType = mappingTypeByUri("http://www.w3.org/2004/02/skos/core#mappingRelation")
 
 /**
  * @memberof module:jskos-tools
  */
-const mappingTypeByType = function(type, defaultType = defaultMappingType) {
+export const mappingTypeByType = function(type, defaultType = defaultMappingType) {
   let uri
   if (Array.isArray(type) &amp;&amp; type.length > 0) {
     uri = type[0]
@@ -350,7 +355,7 @@ const mappingTypeByType = function(type, defaultType = defaultMappingType) {
 /**
  * @memberof module:jskos-tools
  */
-const flattenMapping = (mapping, options = {}) => {
+export const flattenMapping = (mapping, options = {}) => {
   const { language } = options
 
   let fromNotation = getNested(mapping, "from.memberSet.0.notation.0")
@@ -390,7 +395,7 @@ const csvSerializer = (options = {}) => {
  * @param {*} mapping
  * @param {*} side - Either `from` or `to`. Default is both.
  */
-const conceptsOfMapping = (mapping, side) => {
+export const conceptsOfMapping = (mapping, side) => {
   let concepts = []
   for (let s of ["from", "to"]) {
     if (side == null || s === side) {
@@ -421,7 +426,7 @@ const conceptsOfMapping = (mapping, side) => {
  * - creator: whether to include mapping creator in output (default false)
  *
  */
-const mappingCSV = (options = {}) => {
+export const mappingCSV = (options = {}) => {
   const toCSV = csvSerializer(options)
   const language = options.language || "en"
   if (options.type == null) {
@@ -531,7 +536,7 @@ const mappingCSV = (options = {}) => {
  *
  * @memberof module:jskos-tools
  */
-function compareMappingsDeep(mapping1, mapping2) {
+export function compareMappingsDeep(mapping1, mapping2) {
   return _.isEqualWith(mapping1, mapping2, (object1, object2, prop) => {
     let mapping1 = { [prop]: object1 }
     let mapping2 = { [prop]: object2 }
@@ -554,7 +559,6 @@ function compareMappingsDeep(mapping1, mapping2) {
   })
 }
 
-const { objectTypes, guessObjectType } = require("./object-types")
 
 /**
  * Checks if two objects have a matching object type. Returns false only if types for both objects could be guessed and they did not match.
@@ -563,7 +567,7 @@ const { objectTypes, guessObjectType } = require("./object-types")
  * @param {object} a
  * @param {object} b
  */
-const matchObjectTypes = (a, b) => {
+export const matchObjectTypes = (a, b) => {
   // Guess object types of both objects
   let aType = guessObjectType(a), bType = guessObjectType(b)
   // If both object types could be guessed, throw an error if they don't match
@@ -600,7 +604,7 @@ const _nullSort = (array) => {
  * @param {object} a
  * @param {object} b
  */
-const mergeUris = (a, b) => {
+export const mergeUris = (a, b) => {
   if (!a || !b) {
     return a
   }
@@ -642,7 +646,7 @@ const mergeUris = (a, b) => {
  * @param {object} b
  * @param {object} options - optional, see above
  */
-const merge = (a, b, options) => {
+export const merge = (a, b, options) => {
   if (!a || !b) {
     return a ? a : b
   }
@@ -706,7 +710,7 @@ const merge = (a, b, options) => {
  *
  * @param {*} data
  */
-const normalize = data => {
+export const normalize = data => {
   if (Array.isArray(data)) {
     return data.map(element => normalize(element))
   } else if (_.isObject(data)) {
@@ -728,7 +732,7 @@ const normalize = data => {
  *
  * @param {string} uri URI to be tested
  */
-let isValidUri = (uri) => {
+export const isValidUri = (uri) => {
   // from: http://jmrware.com/articles/2009/uri_regexp/URI_regex.html
   var re_js_rfc3986_URI = /^[A-Za-z][A-Za-z0-9+\-.]*:(?:\/\/(?:(?:[A-Za-z0-9\-._~!$&amp;'()*+,;=:]|%[0-9A-Fa-f]{2})*@)?(?:\[(?:(?:(?:(?:[0-9A-Fa-f]{1,4}:){6}|::(?:[0-9A-Fa-f]{1,4}:){5}|(?:[0-9A-Fa-f]{1,4})?::(?:[0-9A-Fa-f]{1,4}:){4}|(?:(?:[0-9A-Fa-f]{1,4}:){0,1}[0-9A-Fa-f]{1,4})?::(?:[0-9A-Fa-f]{1,4}:){3}|(?:(?:[0-9A-Fa-f]{1,4}:){0,2}[0-9A-Fa-f]{1,4})?::(?:[0-9A-Fa-f]{1,4}:){2}|(?:(?:[0-9A-Fa-f]{1,4}:){0,3}[0-9A-Fa-f]{1,4})?::[0-9A-Fa-f]{1,4}:|(?:(?:[0-9A-Fa-f]{1,4}:){0,4}[0-9A-Fa-f]{1,4})?::)(?:[0-9A-Fa-f]{1,4}:[0-9A-Fa-f]{1,4}|(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))|(?:(?:[0-9A-Fa-f]{1,4}:){0,5}[0-9A-Fa-f]{1,4})?::[0-9A-Fa-f]{1,4}|(?:(?:[0-9A-Fa-f]{1,4}:){0,6}[0-9A-Fa-f]{1,4})?::)|[Vv][0-9A-Fa-f]+\.[A-Za-z0-9\-._~!$&amp;'()*+,;=:]+)\]|(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)|(?:[A-Za-z0-9\-._~!$&amp;'()*+,;=]|%[0-9A-Fa-f]{2})*)(?::[0-9]*)?(?:\/(?:[A-Za-z0-9\-._~!$&amp;'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*|\/(?:(?:[A-Za-z0-9\-._~!$&amp;'()*+,;=:@]|%[0-9A-Fa-f]{2})+(?:\/(?:[A-Za-z0-9\-._~!$&amp;'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*)?|(?:[A-Za-z0-9\-._~!$&amp;'()*+,;=:@]|%[0-9A-Fa-f]{2})+(?:\/(?:[A-Za-z0-9\-._~!$&amp;'()*+,;=:@]|%[0-9A-Fa-f]{2})*)*|)(?:\?(?:[A-Za-z0-9\-._~!$&amp;'()*+,;=:@/?]|%[0-9A-Fa-f]{2})*)?(?:#(?:[A-Za-z0-9\-._~!$&amp;'()*+,;=:@/?]|%[0-9A-Fa-f]{2})*)?$/
   return uri.match(re_js_rfc3986_URI) !== null
@@ -739,7 +743,7 @@ let isValidUri = (uri) => {
  *
  * TODO: Add more functions.
  */
-let compareFunctions = {
+export const compareFunctions = {
   /**
    * Compare mappings by their first concept.
    *
@@ -769,15 +773,13 @@ let compareFunctions = {
  * @param {*} user a login-server compatible user object
  * @param {*} mapping a JSKOS mapping
  */
-const userOwnsMapping = (user, mapping) => {
+export const userOwnsMapping = (user, mapping) => {
   if (!user || !mapping) {
     return false
   }
   return [user.uri].concat(Object.values(user.identities || {}).map(identity => identity.uri)).filter(uri => uri != null).includes(_.get(mapping, "creator[0].uri"))
 }
 
-const ConceptScheme = require("./concept-scheme")
-const languagePreference = require("./language-preference")
 
 /**
  * Returns the primary notation for a JSKOS Item. If there is no notation, it will return an empty string.
@@ -786,7 +788,7 @@ const languagePreference = require("./language-preference")
  * @param {object} item a JSKOS Item
  * @param {string} type type of item (optional)
  */
-function notation(item, type) {
+export function notation(item, type) {
   let notation
   if (item &amp;&amp; item.notation &amp;&amp; item.notation.length) {
     notation = item.notation[0]
@@ -813,7 +815,7 @@ function notation(item, type) {
  * @param {object} options options object:
  * - `language`: preferred language
  */
-function languageMapContent(item, prop, { language } = {}) {
+export function languageMapContent(item, prop, { language } = {}) {
   let languageMap = (item &amp;&amp; prop) ? item[prop] : item
   if (languageMap) {
     if (languageMap[language]) {
@@ -835,7 +837,7 @@ function languageMapContent(item, prop, { language } = {}) {
  * - `fallbackToUri`: return URI if no prefLabel can be found (default: true)
  * - `language`: preferred language
  */
-function prefLabel(item, options = {}) {
+export function prefLabel(item, options = {}) {
   options = options || {}
   const fallbackToUri = options.fallbackToUri == null ? true : options.fallbackToUri
   return _.get(item, `prefLabel.${options.language}`)
@@ -850,7 +852,7 @@ function prefLabel(item, options = {}) {
  * @param {object} options options object:
  * - `language`: preferred language
  */
-function definition(item, options = {}) {
+export function definition(item, options = {}) {
   options = options || {}
   let content = _.get(item, `definition.${options.language}`)
     || languageMapContent(item, "definition", options)
@@ -867,7 +869,7 @@ function definition(item, options = {}) {
  *
  * @param {object} registry JSKOS registry
  */
-function mappingRegistryIsStored(registry) {
+export function mappingRegistryIsStored(registry) {
   return _.get(registry, "stored", _.get(registry, "constructor.stored", _.get(registry, "provider.constructor.stored", false)))
 }
 
@@ -876,7 +878,7 @@ function mappingRegistryIsStored(registry) {
  *
  * @param {object} annotation a JSKOS annotation
  */
-function annotationCreatorUri(annotation) {
+export function annotationCreatorUri(annotation) {
   if (_.isString(annotation.creator)) {
     return annotation.creator
   }
@@ -888,7 +890,7 @@ function annotationCreatorUri(annotation) {
  *
  * @param {object} annotation a JSKOS annotation
  */
-function annotationCreatorName(annotation) {
+export function annotationCreatorName(annotation) {
   return _.get(annotation, "creator.name") || ""
 }
 
@@ -898,11 +900,11 @@ function annotationCreatorName(annotation) {
  * @param {object} annotation a JSKOS annotation
  * @param {array} uris array of user URIs
  */
-function annotationCreatorMatches(annotation, uris) {
+export function annotationCreatorMatches(annotation, uris) {
   return !!(annotation &amp;&amp; _.isString(annotation.creator) ? uris &amp;&amp; uris.includes(annotation.creator) : uris &amp;&amp; annotation.creator &amp;&amp; uris.includes(annotation.creator.id))
 }
 
-function guessSchemeFromNotation(notation, schemes) {
+export function guessSchemeFromNotation(notation, schemes) {
   return schemes.filter(({notationPattern}) => {
     if ((notationPattern||".+") === ".+") {
       return false
@@ -911,7 +913,5 @@ function guessSchemeFromNotation(notation, schemes) {
   })
 }
 
-module.exports = {
-  addContext, clean, cleanJSKOS, copyDeep, deepCopy, getAllUris, compare,compareObjects, compareSchemes, compareConcepts, isConcept, isScheme, isContainedIn, isSchemeInList, sortConcepts, sortSchemes, minifyMapping, mappingTypes, mappingTypeByUri, mappingTypeByType, flattenMapping, mappingCSV, defaultMappingType, conceptsOfMapping, compareMappingsDeep, objectTypes, guessObjectType, matchObjectTypes, mergeUris, merge, normalize, isValidUri, compareFunctions, userOwnsMapping, notation, languageMapContent, prefLabel, definition, mappingRegistryIsStored, annotationCreatorUri, annotationCreatorName, annotationCreatorMatches, guessSchemeFromNotation,
-}
-</code></pre></article></section></div></div></div><div class="search-container" id="PkfLWpAbet" style="display:none"><div class="wrapper" id="iCxFxjkHbP"><button class="icon-button search-close-button" id="VjLlGakifb" aria-label="close search"><svg><use xlink:href="#close-icon"></use></svg></button><div class="search-box-c"><svg><use xlink:href="#search-icon"></use></svg> <input type="text" id="vpcKVYIppa" class="search-input" placeholder="Search..." autofocus></div><div class="search-result-c" id="fWwVHRuDuN"><span class="search-result-c-text">Type anything to view search result</span></div></div></div><div class="mobile-menu-icon-container"><button class="icon-button" id="mobile-menu" data-isopen="false" aria-label="menu"><svg><use xlink:href="#menu-icon"></use></svg></button></div><div id="mobile-sidebar" class="mobile-sidebar-container"><div class="mobile-sidebar-wrapper"><a href="/" class="sidebar-title sidebar-title-anchor">Home</a><div class="mobile-nav-links"></div><div class="mobile-sidebar-items-c"><div class="sidebar-section-title with-arrow" data-isopen="false" id="sidebar-modules"><div>Modules</div><svg><use xlink:href="#down-icon"></use></svg></div><div class="sidebar-section-children-container"><div class="sidebar-section-children"><a href="module-jskos-tools.html">jskos-tools</a></div></div><div class="sidebar-section-title with-arrow" data-isopen="false" id="sidebar-classes"><div>Classes</div><svg><use xlink:href="#down-icon"></use></svg></div><div class="sidebar-section-children-container"><div class="sidebar-section-children"><a href="module-jskos-tools.ConceptScheme.html">ConceptScheme</a></div></div><div class="sidebar-section-title with-arrow" data-isopen="false" id="sidebar-global"><div>Global</div><svg><use xlink:href="#down-icon"></use></svg></div><div class="sidebar-section-children-container"><div class="sidebar-section-children"><a href="global.html#annotationCreatorMatches">annotationCreatorMatches</a></div><div class="sidebar-section-children"><a href="global.html#annotationCreatorName">annotationCreatorName</a></div><div class="sidebar-section-children"><a href="global.html#annotationCreatorUri">annotationCreatorUri</a></div><div class="sidebar-section-children"><a href="global.html#compareFunctions">compareFunctions</a></div><div class="sidebar-section-children"><a href="global.html#definition">definition</a></div><div class="sidebar-section-children"><a href="global.html#getLanguages">getLanguages</a></div><div class="sidebar-section-children"><a href="global.html#isValidUri">isValidUri</a></div><div class="sidebar-section-children"><a href="global.html#languageMapContent">languageMapContent</a></div><div class="sidebar-section-children"><a href="global.html#mappingRegistryIsStored">mappingRegistryIsStored</a></div><div class="sidebar-section-children"><a href="global.html#normalize">normalize</a></div><div class="sidebar-section-children"><a href="global.html#notation">notation</a></div><div class="sidebar-section-children"><a href="global.html#prefLabel">prefLabel</a></div><div class="sidebar-section-children"><a href="global.html#selectLanguage">selectLanguage</a></div><div class="sidebar-section-children"><a href="global.html#sha1">sha1</a></div><div class="sidebar-section-children"><a href="global.html#userOwnsMapping">userOwnsMapping</a></div></div></div><div class="mobile-navbar-actions"><div class="navbar-right-item"><button class="icon-button search-button" aria-label="open-search"><svg><use xlink:href="#search-icon"></use></svg></button></div><div class="navbar-right-item"><button class="icon-button theme-toggle" aria-label="toggle-theme"><svg><use class="theme-svg-use" xlink:href="#light-theme-icon"></use></svg></button></div><div class="navbar-right-item"><button class="icon-button font-size" aria-label="change-font-size"><svg><use xlink:href="#font-size-icon"></use></svg></button></div></div></div></div><script type="text/javascript" src="scripts/core.min.js"></script><script src="scripts/search.min.js" defer="defer"></script><script src="scripts/third-party/fuse.js" defer="defer"></script><script type="text/javascript">var tocbotInstance=tocbot.init({tocSelector:"#eed4d2a0bfd64539bb9df78095dec881",contentSelector:".main-content",headingSelector:"h1, h2, h3",hasInnerContainers:!0,scrollContainer:".main-content",headingsOffset:130,onClick:bringLinkToView})</script></body></html>
+export { objectTypes }
+</code></pre></article></section></div></div></div><div class="search-container" id="PkfLWpAbet" style="display:none"><div class="wrapper" id="iCxFxjkHbP"><button class="icon-button search-close-button" id="VjLlGakifb" aria-label="close search"><svg><use xlink:href="#close-icon"></use></svg></button><div class="search-box-c"><svg><use xlink:href="#search-icon"></use></svg> <input type="text" id="vpcKVYIppa" class="search-input" placeholder="Search..." autofocus></div><div class="search-result-c" id="fWwVHRuDuN"><span class="search-result-c-text">Type anything to view search result</span></div></div></div><div class="mobile-menu-icon-container"><button class="icon-button" id="mobile-menu" data-isopen="false" aria-label="menu"><svg><use xlink:href="#menu-icon"></use></svg></button></div><div id="mobile-sidebar" class="mobile-sidebar-container"><div class="mobile-sidebar-wrapper"><a href="/" class="sidebar-title sidebar-title-anchor">Home</a><div class="mobile-nav-links"></div><div class="mobile-sidebar-items-c"><div class="sidebar-section-title with-arrow" data-isopen="false" id="sidebar-modules"><div>Modules</div><svg><use xlink:href="#down-icon"></use></svg></div><div class="sidebar-section-children-container"><div class="sidebar-section-children"><a href="module-jskos-tools.html">jskos-tools</a></div></div><div class="sidebar-section-title with-arrow" data-isopen="false" id="sidebar-classes"><div>Classes</div><svg><use xlink:href="#down-icon"></use></svg></div><div class="sidebar-section-children-container"><div class="sidebar-section-children"><a href="module-jskos-tools.ConceptScheme.html">ConceptScheme</a></div></div><div class="sidebar-section-title with-arrow" data-isopen="false" id="sidebar-global"><div>Global</div><svg><use xlink:href="#down-icon"></use></svg></div><div class="sidebar-section-children-container"><div class="sidebar-section-children"><a href="global.html#annotationCreatorMatches">annotationCreatorMatches</a></div><div class="sidebar-section-children"><a href="global.html#annotationCreatorName">annotationCreatorName</a></div><div class="sidebar-section-children"><a href="global.html#annotationCreatorUri">annotationCreatorUri</a></div><div class="sidebar-section-children"><a href="global.html#compareFunctions">compareFunctions</a></div><div class="sidebar-section-children"><a href="global.html#definition">definition</a></div><div class="sidebar-section-children"><a href="global.html#getLanguages">getLanguages</a></div><div class="sidebar-section-children"><a href="global.html#isValidUri">isValidUri</a></div><div class="sidebar-section-children"><a href="global.html#languageMapContent">languageMapContent</a></div><div class="sidebar-section-children"><a href="global.html#mappingRegistryIsStored">mappingRegistryIsStored</a></div><div class="sidebar-section-children"><a href="global.html#normalize">normalize</a></div><div class="sidebar-section-children"><a href="global.html#notation">notation</a></div><div class="sidebar-section-children"><a href="global.html#prefLabel">prefLabel</a></div><div class="sidebar-section-children"><a href="global.html#selectLanguage">selectLanguage</a></div><div class="sidebar-section-children"><a href="global.html#userOwnsMapping">userOwnsMapping</a></div></div></div><div class="mobile-navbar-actions"><div class="navbar-right-item"><button class="icon-button search-button" aria-label="open-search"><svg><use xlink:href="#search-icon"></use></svg></button></div><div class="navbar-right-item"><button class="icon-button theme-toggle" aria-label="toggle-theme"><svg><use class="theme-svg-use" xlink:href="#light-theme-icon"></use></svg></button></div><div class="navbar-right-item"><button class="icon-button font-size" aria-label="change-font-size"><svg><use xlink:href="#font-size-icon"></use></svg></button></div></div></div></div><script type="text/javascript" src="scripts/core.min.js"></script><script src="scripts/search.min.js" defer="defer"></script><script src="scripts/third-party/fuse.js" defer="defer"></script><script type="text/javascript">var tocbotInstance=tocbot.init({tocSelector:"#eed4d2a0bfd64539bb9df78095dec881",contentSelector:".main-content",headingSelector:"h1, h2, h3",hasInnerContainers:!0,scrollContainer:".main-content",headingsOffset:130,onClick:bringLinkToView})</script></body></html>
