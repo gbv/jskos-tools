@@ -1,10 +1,6 @@
-const assert = require("assert")
-
-const { languagePreference } = require("../index.js")
-
-const _ = {
-  get: require("lodash/get"),
-}
+import assert from "assert"
+import { languagePreference } from "../index.js"
+import _ from "lodash"
 
 describe("languagePreference", () => {
 

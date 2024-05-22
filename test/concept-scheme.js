@@ -1,9 +1,9 @@
-const assert = require("assert")
-
-const { ConceptScheme } = require("../index.js")
+import assert from "assert"
+import { ConceptScheme } from "../index.js"
+import fs from "node:fs"
 
 describe("ConceptScheme", () => {
-  const gnd = require("./gnd.scheme.json")
+  const gnd = JSON.parse(fs.readFileSync(import.meta.dirname + "/gnd.scheme.json", { encoding: "utf8" }))
   const uri = "http://d-nb.info/gnd/4021477-1"
   const notation = "4021477-1"
   const scheme = new ConceptScheme(gnd)

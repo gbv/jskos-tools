@@ -2,12 +2,12 @@
 /**
  * Localize mapping type names from Wikidata.
  */
-const wdk = require("wikidata-sdk")
-const fs = require("fs")
-const axios = require("axios")
+import wdk from "wikidata-sdk"
+import fs from "node:fs"
+import axios from "axios"
 
 // load existing mapping types
-const { mappingTypes } = require("../index")
+import { mappingTypes } from "../index.js"
 const types = mappingTypes.reduce( (obj, m) => {
   obj[m.uri] = m
   m.prefLabel = {}
@@ -35,5 +35,5 @@ axios.get(url).then(res => res.data.results.bindings)
       types[uri].prefLabel[lang] = label
     })
     let json = JSON.stringify(mappingTypes, null, 2)
-    fs.writeFileSync(__dirname+"/../lib/mapping-types.json", json)
+    fs.writeFileSync(import.meta.dirname+"/../lib/mapping-types.js", "export default " + json)
   })

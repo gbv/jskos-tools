@@ -11,9 +11,11 @@
     "url": "https://github.com/gbv/jskos-tools/issues"
   },
   "license": "MIT",
-  "main": "./index.js",
-  "jsdelivr": "./dist/jskos-tools.js",
-  "unpkg": "./dist/jskos-tools.js",
+  "type": "module",
+  "exports": {
+    "require": "./dist/jskos-tools.umd.cjs",
+    "import": "./dist/jskos-tools.js"
+  },
   "browserslist": "defaults and not ie<=11 and supports es6",
   "files": [
     "dist",
@@ -46,9 +48,6 @@
   ],
   "author": "Stefan Peters",
   "devDependencies": {
-    "@babel/core": "^7.23.3",
-    "@babel/preset-env": "^7.23.3",
-    "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-json": "^6.0.1",
     "@rollup/plugin-node-resolve": "^15.2.3",

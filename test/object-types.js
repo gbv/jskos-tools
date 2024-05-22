@@ -1,6 +1,5 @@
-const assert = require("assert")
-const { objectTypes, guessObjectType } = require("../lib/object-types")
-
+import assert from "assert"
+import { objectTypes, guessObjectType } from "../lib/object-types.js"
 describe("Object Types", () => {
   it("objectTypes", () => {
     assert.ok("ConceptScheme" in objectTypes)

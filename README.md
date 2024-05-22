@@ -20,7 +20,10 @@ This repository contains tools for working with the [JSKOS data format for knowl
     - [compareMappings](#comparemappings)
     - [compareMappingMembers](#comparemappingmembers)
   - [ConceptScheme](#conceptscheme)
-  - [LanguagePreference](#languagepreference)
+  - [languagePreference](#languagepreference)
+    - [How to Configure](#how-to-configure)
+    - [getLanguages](#getlanguages)
+    - [selectLanguage](#selectlanguage)
   - [Tools](#tools)
     - [addContext](#addcontext)
     - [clean](#clean)
@@ -42,14 +45,14 @@ This repository contains tools for working with the [JSKOS data format for knowl
     - [serializeCSV](#serializecsv)
     - [conceptsOfMapping](#conceptsofmapping)
     - [compareMappingsDeep](#comparemappingsdeep)
-    - [guessObjectType](#guessobjecttype)
-    - [guessSchemeFromNotation](#guessschemefromnotation) 
-    - [objectTypes](#objecttypes)
     - [matchObjectTypes](#matchobjecttypes)
     - [mergeUris](#mergeuris)
     - [merge](#merge)
     - [normalize](#normalize)
     - [isValidUri](#isvaliduri)
+    - [objectTypes](#objecttypes)
+    - [guessObjectType](#guessobjecttype)
+    - [guessSchemeFromNotation](#guessschemefromnotation)
     - [compareFunctions](#comparefunctions)
     - [userOwnsMapping](#userownsmapping)
     - [notation](#notation)
@@ -84,6 +87,12 @@ If you installed jskos-tools via npm, use it like this:
 
 ```js
 const jskos = require("jskos-tools")
+```
+
+Or as an ES module:
+
+```js
+import * as jskos from "jskos-tools"
 ```
 
 Using the browser bundles will provide you with the `jskos` global variable.

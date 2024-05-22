@@ -3,9 +3,21 @@
  * @module jskos-tools
  */
 
-const identifiers = require("./lib/identifiers")
-const tools = require("./lib/tools")
-const ConceptScheme = require("./lib/concept-scheme")
-const languagePreference = require("./lib/language-preference")
+export * from "./lib/identifiers.js"
+export * from "./lib/tools.js"
 
-module.exports = Object.assign({ ConceptScheme, languagePreference }, identifiers, tools)
+import ConceptScheme from "./lib/concept-scheme.js"
+export { ConceptScheme }
+
+import languagePreference from "./lib/language-preference.js"
+export { languagePreference}
+
+import * as identifiers from "./lib/identifiers.js"
+import * as tools from "./lib/tools.js"
+
+export default {
+  ...identifiers,
+  ...tools,
+  ConceptScheme,
+  languagePreference,
+}

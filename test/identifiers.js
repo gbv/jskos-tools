@@ -1,6 +1,5 @@
-const assert = require("assert")
-const identifiers = require("../lib/identifiers")
-
+import assert from "assert"
+import * as identifiers from "../lib/identifiers.js"
 let examples =
 [
   {

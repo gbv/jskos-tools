@@ -1,7 +1,6 @@
-const assert = require("assert")
-const tools = require("../lib/tools")
-const languagePreference = require("../lib/language-preference")
-
+import assert from "assert"
+import * as tools from "../lib/tools.js"
+import languagePreference from "../lib/language-preference.js"
 describe("Tools", () => {
   it("addContext", () => {
     let object = { }
