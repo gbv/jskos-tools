@@ -179,6 +179,35 @@ describe("Tools", () => {
     assert.ok(sortedSchemes[2].uri == "11")
     assert.ok(sortedSchemes[3].uri == "2")
     assert.ok(sortedSchemes[4].uri == "3")
+
+    // Numerical sorting with different notation parts
+    const objects2 = [
+      {
+        notation: ["3"],
+      },
+      {
+        notation: ["A B"],
+      },
+      {
+        notation: ["A B 5"],
+      },
+      {
+        notation: ["A B 1"],
+      },
+      {
+        notation: ["A C 2"],
+      },
+      {
+        notation: ["A B 11"],
+      },
+    ]
+    sortedConcepts = tools.sortConcepts(objects2, true)
+    assert.equal(sortedConcepts[0].notation[0], "3")
+    assert.equal(sortedConcepts[1].notation[0], "A B")
+    assert.equal(sortedConcepts[2].notation[0], "A B 1")
+    assert.equal(sortedConcepts[3].notation[0], "A B 5")
+    assert.equal(sortedConcepts[4].notation[0], "A B 11")
+    assert.equal(sortedConcepts[5].notation[0], "A C 2")
   })
 
   it("minifyMapping", () => {
