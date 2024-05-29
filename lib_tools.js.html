@@ -167,7 +167,7 @@ export const compareConcepts = compare
  * @memberof module:jskos-tools
  */
 export const isConcept = object => {
-  return _.get(object, "type", []).includes("http://www.w3.org/2004/02/skos/core#Concept") || _.get(object, "inScheme") != null || _.get(object, "topConceptOf") != null
+  return _.get(object, "type", [])?.includes("http://www.w3.org/2004/02/skos/core#Concept") || _.get(object, "inScheme") != null || _.get(object, "topConceptOf") != null
 }
 
 /**
@@ -175,7 +175,7 @@ export const isConcept = object => {
  * @memberof module:jskos-tools
  */
 export const isScheme = object => {
-  return _.get(object, "type", []).includes("http://www.w3.org/2004/02/skos/core#ConceptScheme")
+  return _.get(object, "type", [])?.includes("http://www.w3.org/2004/02/skos/core#ConceptScheme")
 }
 
 /**
