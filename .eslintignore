@@ -3,3 +3,4 @@
 jsdoc/
 dist/
 lib/mapping-types.js
+node_modules/
