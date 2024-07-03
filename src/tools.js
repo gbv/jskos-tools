@@ -911,4 +911,4 @@ export function guessSchemeFromNotation(notation, schemes) {
   })
 }
 
-export { objectTypes }
+export { guessObjectType, objectTypes }
