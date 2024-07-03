@@ -13,8 +13,8 @@
   "license": "MIT",
   "type": "module",
   "exports": {
-    "require": "./dist/jskos-tools.umd.cjs",
-    "import": "./dist/jskos-tools.js"
+    "require": "./dist/cjs/index.cjs",
+    "import": "./dist/esm/index.js"
   },
   "jsdelivr": "dist/jskos-tools.js",
   "unpkg": "dist/jskos-tools.js",
