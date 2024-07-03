@@ -1,5 +1,5 @@
 import assert from "assert"
-import * as identifiers from "../lib/identifiers.js"
+import * as identifiers from "../src/identifiers.js"
 let examples =
 [
   {

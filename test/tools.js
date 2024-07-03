@@ -1,6 +1,6 @@
 import assert from "assert"
-import * as tools from "../lib/tools.js"
-import languagePreference from "../lib/language-preference.js"
+import * as tools from "../src/tools.js"
+import languagePreference from "../src/language-preference.js"
 describe("Tools", () => {
   it("addContext", () => {
     let object = { }

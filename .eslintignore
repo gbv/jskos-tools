@@ -2,5 +2,5 @@
 !**/*.js
 jsdoc/
 dist/
-lib/mapping-types.js
+src/mapping-types.js
 node_modules/

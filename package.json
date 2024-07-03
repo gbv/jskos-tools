@@ -16,6 +16,8 @@
     "require": "./dist/jskos-tools.umd.cjs",
     "import": "./dist/jskos-tools.js"
   },
+  "jsdelivr": "dist/jskos-tools.js",
+  "unpkg": "dist/jskos-tools.js",
   "browserslist": "defaults and not ie<=11 and supports es6",
   "files": [
     "dist",
@@ -28,9 +30,9 @@
     "lint": "eslint .",
     "fix": "eslint --fix .",
     "lint-staged": "lint-staged",
-    "dist": "rollup -c",
+    "dist": "node build.js",
     "docs": "NPM_NAME=$(npm pkg get name | tr -d '\"'); NPM_VERSION=$(npm pkg get version | tr -d '\"'); jsdoc -c jsdoc.json && rm -rf jsdoc/out && mv jsdoc/build/$NPM_NAME/$NPM_VERSION jsdoc/out && cp -r jsdoc/assets/* jsdoc/out/styles/",
-    "build": "rollup -c",
+    "build": "node build.js",
     "release": "npm run build && npm test && git checkout dev && git pull && npm version $SEMVER && git push && git checkout master && git merge dev && git push --follow-tags && git checkout dev",
     "release:patch": "SEMVER=patch npm run release",
     "release:minor": "SEMVER=minor npm run release",
@@ -48,22 +50,18 @@
   ],
   "author": "Stefan Peters",
   "devDependencies": {
-    "@rollup/plugin-commonjs": "^25.0.8",
-    "@rollup/plugin-json": "^6.1.0",
-    "@rollup/plugin-node-resolve": "^15.2.3",
     "axios": "^1.7.2",
     "clean-jsdoc-theme": "^4.3.0",
+    "esbuild": "^0.23.0",
     "eslint": "^8.57.0",
     "eslint-config-gbv": "^1.1.0",
-    "glob": "^8.1.0",
+    "glob": "^10.4.2",
     "jsdoc": "^4.0.3",
     "lint-staged": "^15.2.7",
     "lodash": "^4.17.21",
-    "mocha": "^10.5.2",
+    "mocha": "^10.6.0",
     "mocha-eslint": "^7.0.0",
     "pre-commit": "^1.2.2",
-    "rollup": "^3.29.4",
-    "rollup-plugin-license": "^3.5.1",
     "wikidata-sdk": "^8.1.1"
   }
 }

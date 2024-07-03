@@ -1,6 +1,6 @@
 import assert from "assert"
 import fs from "fs"
-import * as jskos from "../index.js"
+import * as jskos from "../src/index.js"
 import _ from "lodash"
 
 let readme = fs.readFileSync("./README.md", "utf8")

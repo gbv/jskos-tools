@@ -1,5 +1,5 @@
 import assert from "assert"
-import { languagePreference } from "../index.js"
+import { languagePreference } from "../src/index.js"
 import _ from "lodash"
 
 describe("languagePreference", () => {

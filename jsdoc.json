@@ -1,6 +1,6 @@
 {
   "source": {
-    "include": ["lib", "package.json", "index.js", "README.md"],
+    "include": ["src", "package.json", "README.md"],
     "includePattern": ".+\\.(js|md|json)$"
   },
   "plugins": [

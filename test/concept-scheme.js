@@ -1,5 +1,5 @@
 import assert from "assert"
-import { ConceptScheme } from "../index.js"
+import { ConceptScheme } from "../src/index.js"
 import fs from "node:fs"
 
 describe("ConceptScheme", () => {

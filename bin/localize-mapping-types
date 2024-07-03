@@ -7,7 +7,7 @@ import fs from "node:fs"
 import axios from "axios"
 
 // load existing mapping types
-import { mappingTypes } from "../index.js"
+import { mappingTypes } from "../src/index.js"
 const types = mappingTypes.reduce( (obj, m) => {
   obj[m.uri] = m
   m.prefLabel = {}

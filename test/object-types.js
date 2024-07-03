@@ -1,5 +1,5 @@
 import assert from "assert"
-import { objectTypes, guessObjectType } from "../lib/object-types.js"
+import { objectTypes, guessObjectType } from "../src/object-types.js"
 describe("Object Types", () => {
   it("objectTypes", () => {
     assert.ok("ConceptScheme" in objectTypes)
