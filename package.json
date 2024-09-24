@@ -16,14 +16,10 @@
     "require": "./dist/cjs/index.cjs",
     "import": "./dist/esm/index.js"
   },
-  "jsdelivr": "dist/jskos-tools.js",
-  "unpkg": "dist/jskos-tools.js",
-  "browserslist": "defaults and not ie<=11 and supports es6",
+  "jsdelivr": "./dist/jskos-tools.js",
+  "unpkg": "./dist/jskos-tools.js",
   "files": [
-    "dist",
-    "lib",
-    "bin",
-    "index.js"
+    "dist"
   ],
   "scripts": {
     "test": "mocha",
