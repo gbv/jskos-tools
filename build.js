@@ -42,7 +42,7 @@ const readFile = fs.promises.readFile
   await esbuild.build({
     entryPoints: [`${sourceFolder}/index.js`],
     bundle: true,
-    minify: true,
+    minify: false,
     sourcemap: true,
     target: "es2015",
     format: "iife",
