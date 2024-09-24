@@ -1,9 +1,12 @@
 import assert from "assert"
 import { ConceptScheme } from "../src/index.js"
 import fs from "node:fs"
+import path from "node:path"
+import { fileURLToPath } from "node:url"
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 describe("ConceptScheme", () => {
-  const gnd = JSON.parse(fs.readFileSync(import.meta.dirname + "/gnd.scheme.json", { encoding: "utf8" }))
+  const gnd = JSON.parse(fs.readFileSync(__dirname + "/gnd.scheme.json", { encoding: "utf8" }))
   const uri = "http://d-nb.info/gnd/4021477-1"
   const notation = "4021477-1"
   const scheme = new ConceptScheme(gnd)
