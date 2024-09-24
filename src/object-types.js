@@ -61,7 +61,7 @@ const objectTypeUris = Object.keys(objectTypes).reduce((map, name) => {
  * @param {boolean} shortname return short name if enabled (false by default)
  */
 export function guessObjectType(obj, shortname=false) {
-  var type
+  let type
   if (typeof obj === "string" && obj) {
     if (obj in objectTypeUris) {
       // given by URI

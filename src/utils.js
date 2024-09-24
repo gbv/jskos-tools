@@ -1,15 +1,15 @@
 export function isEqualWith(a, b, compare) {
-  var pSlice = Array.prototype.slice
-  var Object_keys = typeof Object.keys === "function"
+  const pSlice = Array.prototype.slice
+  const Object_keys = typeof Object.keys === "function"
     ? Object.keys
     : function (obj) {
-      var keys = []
-      for (var key in obj) {
+      const keys = []
+      for (const key in obj) {
         keys.push(key)
       }
       return keys
     }
-  var deepEqual = function (actual, expected) {
+  const deepEqual = function (actual, expected) {
     if (actual === expected) {
       return true
     } else if (actual instanceof Date && expected instanceof Date) {
@@ -41,10 +41,10 @@ export function isEqualWith(a, b, compare) {
       b = pSlice.call(b)
       return deepEqual(a, b)
     }
+    let ka, kb, key, i
     try {
-      var ka = Object_keys(a),
-        kb = Object_keys(b),
-        key, i
+      ka = Object_keys(a)
+      kb = Object_keys(b)
     } catch (e) {
       return false
     }
