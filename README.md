@@ -76,6 +76,8 @@ This repository contains tools for working with the [JSKOS data format for knowl
 npm i jskos-tools
 ```
 
+jskos-tools requires Node.js 18 or later.
+
 We are also providing browser bundles:
 - Development (not minified, ~19K gzipped, ~68K not gzipped): https://cdn.jsdelivr.net/npm/jskos-tools/dist/jskos-tools.js
 - **Production** (minified, ~10K gzipped, ~26K not gzipped): https://cdn.jsdelivr.net/npm/jskos-tools@1/dist/jskos-tools.min.js
