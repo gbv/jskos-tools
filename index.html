@@ -1,0 +1,11 @@
+<script src="dist/jskos-tools.js"></script>
+<script>
+console.log(jskos)
+const object = {
+  prefLabel: { de: "Test Label" },
+  notation: ["TEST"],
+}
+console.log(object, jskos.prefLabel(object), jskos.notation(object))
+</script>
+
+See console.
