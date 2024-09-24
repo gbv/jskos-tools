@@ -34,6 +34,7 @@ export default [
       "et": "täpne vaste",
       "fi": "vastaava käsite",
       "fr": "équivalence exacte",
+      "ga": "meaitseáil chruinn",
       "gl": "correspondencia exacta",
       "he": "התאמה מדויקת",
       "hu": "pontos egyezés",

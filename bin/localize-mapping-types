@@ -5,6 +5,9 @@
 import wdk from "wikidata-sdk"
 import fs from "node:fs"
 import axios from "axios"
+import path from "node:path"
+import { fileURLToPath } from "node:url"
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 // load existing mapping types
 import { mappingTypes } from "../src/index.js"
@@ -35,5 +38,5 @@ axios.get(url).then(res => res.data.results.bindings)
       types[uri].prefLabel[lang] = label
     })
     let json = JSON.stringify(mappingTypes, null, 2)
-    fs.writeFileSync(import.meta.dirname+"/../lib/mapping-types.js", "export default " + json)
+    fs.writeFileSync(__dirname+"/../src/mapping-types.js", "export default " + json)
   })
