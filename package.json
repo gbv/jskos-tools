@@ -27,8 +27,8 @@
   ],
   "scripts": {
     "test": "mocha",
-    "lint": "eslint .",
-    "fix": "eslint --fix .",
+    "lint": "eslint",
+    "fix": "eslint --fix",
     "lint-staged": "lint-staged",
     "dist": "node build.js",
     "docs": "NPM_NAME=$(npm pkg get name | tr -d '\"'); NPM_VERSION=$(npm pkg get version | tr -d '\"'); jsdoc -c jsdoc.json && rm -rf jsdoc/out && mv jsdoc/build/$NPM_NAME/$NPM_VERSION jsdoc/out && cp -r jsdoc/assets/* jsdoc/out/styles/",
@@ -45,16 +45,16 @@
     ]
   },
   "pre-commit": [
-    "test",
-    "lint-staged"
+    "lint-staged",
+    "test"
   ],
   "author": "Stefan Peters",
   "devDependencies": {
     "axios": "^1.7.7",
     "clean-jsdoc-theme": "^4.3.0",
     "esbuild": "^0.24.0",
-    "eslint": "^8.57.0",
-    "eslint-config-gbv": "^1.1.0",
+    "eslint": "~9.11",
+    "eslint-config-gbv": "~2.1",
     "glob": "^11.0.0",
     "jsdoc": "^4.0.3",
     "lint-staged": "^15.2.10",
