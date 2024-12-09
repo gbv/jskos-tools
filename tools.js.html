@@ -146,9 +146,10 @@ export const compare = (object1, object2) => {
   if (object1 == null &amp;&amp; object2 == null) {
     return true
   }
-  // Check if any of object2's URIs is in object1's URIs.
-  const replaceUri = uri => uri.replace("http://").replace("https://")
+  // Normalize all URIs to http:// for comparison
+  const replaceUri = uri => uri.replace("https://", "http://")
   const object1uris = getAllUris(object1).map(replaceUri)
+  // Check if any of object2's URIs is in object1's URIs.
   for (let uri of getAllUris(object2).map(replaceUri)) {
     if (object1uris.indexOf(uri) !== -1) {
       return true
