@@ -33,17 +33,14 @@
     "release:patch": "SEMVER=patch npm run release",
     "release:minor": "SEMVER=minor npm run release",
     "release:major": "SEMVER=major npm run release",
-    "postinstall": "[ -d './dist' ] || npm run build"
+    "postinstall": "[ -d './dist' ] || npm run build",
+    "prepare": "husky || true"
   },
   "lint-staged": {
     "**/*.js": [
       "eslint --fix"
     ]
   },
-  "pre-commit": [
-    "lint-staged",
-    "test"
-  ],
   "author": "Stefan Peters",
   "devDependencies": {
     "axios": "^1.7.9",
@@ -52,12 +49,12 @@
     "eslint": "~9.16",
     "eslint-config-gbv": "~2.6",
     "glob": "^11.0.0",
+    "husky": "^9.1.7",
     "jsdoc": "^4.0.4",
     "lint-staged": "^15.2.10",
     "lodash": "^4.17.21",
     "mocha": "^11.0.1",
     "mocha-eslint": "^7.0.0",
-    "pre-commit": "^1.2.2",
     "wikidata-sdk": "^8.1.1"
   }
 }
