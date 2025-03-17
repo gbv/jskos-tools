@@ -73,12 +73,20 @@ describe("Tools", () => {
     let object3 = {
       uri: "http://example.com/test2",
     }
+    let object4 = {
+      uri: "http://example.com/test2/",
+    }
     assert.ok(tools.compare(object1, object2))
     assert.ok(!tools.compare(object1, object3))
     assert.ok(!tools.compare(object1, null))
     assert.ok(!tools.compare(null, object3))
     assert.ok(tools.compare(null, null))
+    assert.ok(tools.compare(object3, object4))
+    assert.ok(!tools.compare(object1, object3))
+    assert.ok(!tools.compare(object1, object4))
+
   })
+
 
   it("isConcept, isScheme", () => {
     let concepts = [

@@ -145,7 +145,7 @@ export const compare = (object1, object2) => {
     return true
   }
   // Normalize all URIs to http:// for comparison
-  const replaceUri = uri => uri.replace("https://", "http://")
+  const replaceUri = uri => uri.replace("https://", "http://").replace(/\/+$/, "")
   const object1uris = getAllUris(object1).map(replaceUri)
   // Check if any of object2's URIs is in object1's URIs.
   for (let uri of getAllUris(object2).map(replaceUri)) {
