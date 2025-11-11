@@ -14,6 +14,8 @@ This repository contains tools for working with the [JSKOS data format for knowl
 - [Install](#install)
 - [Usage](#usage)
   - [Mapping Identifiers](#mapping-identifiers)
+    - [mappingContent](#mappingcontent)
+    - [mappingMembers](#mappingmembers)
     - [mappingContentIdentifier](#mappingcontentidentifier)
     - [mappingMembersIdentifier](#mappingmembersidentifier)
     - [addMappingIdentifiers](#addmappingidentifiers)
@@ -110,15 +112,23 @@ let mapping = {
 }
 ```
 
+#### mappingContent
+
+Normalized a mapping to its core semantics by reduction to fields `from`, `to`, and `type`. Concepts in `from` and `to` are reduced to their `uri` field. Fields `fromScheme` and/or `toScheme` are only kept (reduced to concept scheme URI) if `from` or `to` is empty, respectively. `type` is set to `["http://www.w3.org/2004/02/skos/core#mappingRelation"]` if missing.
+
+#### mappingMembers
+
+Returns a normalized (sorted) list of concept URIs found in a mapping.
+
 #### mappingContentIdentifier
-`mappingContentIdentifier` starts with urn:jskos:mapping:content: and takes concepts and type into consideration. It uses the `mappingContent` function to get relevant properties from the mapping.
+`mappingContentIdentifier` starts with urn:jskos:mapping:content: and takes concepts and type into consideration. It uses the [`mappingContent`](#mappingcontent) function to get relevant properties from the mapping.
 
 ```js
 let contentIdentifier = jskos.mappingContentIdentifier(mapping)
 ```
 
 #### mappingMembersIdentifier
-`mappingMembersIdentifier` starts with urn:jskos:mapping:members: and only takes concepts into consideration. It uses the `mappingMembers` function to get relevant properties from the mapping.
+`mappingMembersIdentifier` starts with urn:jskos:mapping:members: and only takes concepts into consideration. It uses the [`mappingMembers`](#mappingmembers) function to get relevant properties from the mapping.
 
 ```js
 let membersIdentifier = jskos.mappingMembersIdentifier(mapping)
