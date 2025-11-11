@@ -14,14 +14,11 @@ export const objectTypes = {
   ConceptMapping: {
     type: mappingTypes.map(type => type.uri),
   },
-  ConceptOccurrence: {
-    type: [
-      "http://purl.org/cld/cdtype/CatalogueOrIndex",
-    ],
-  },
+  ConceptOccurrence: {},
   Registry: {
     type: [
       "http://www.w3.org/ns/dcat#Catalog",
+      "http://purl.org/cld/cdtype/CatalogueOrIndex",
     ],
   },
   Distribution: {
@@ -31,8 +28,9 @@ export const objectTypes = {
   },
   Concordance: {
     type: [
-      "http://rdfs.org/ns/void#Linkset",
       "http://rdf-vocabulary.ddialliance.org/xkos#Correspondence",
+      "http://rdfs.org/ns/void#Linkset",
+      "http://purl.org/spar/fabio/VocabularyMapping",
     ],
   },
   Resource: {},

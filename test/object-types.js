@@ -25,6 +25,7 @@ describe("Object Types", () => {
     assert.equal(guessObjectType("occurrences"), "ConceptOccurrence")
     assert.equal(guessObjectType("annotations"), "Annotation")
     assert.equal(guessObjectType("http://www.w3.org/ns/oa#Annotation"), "Annotation")
+    assert.equal(guessObjectType("http://purl.org/cld/cdtype/CatalogueOrIndex"), "Registry")
     assert.ok(!guessObjectType(""))
     assert.ok(!guessObjectType("?"))
   })
