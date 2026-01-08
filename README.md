@@ -65,11 +65,11 @@ This repository contains tools for working with the [JSKOS data format for knowl
     - [annotationCreatorUri](#annotationcreatoruri)
     - [annotationCreatorName](#annotationcreatorname)
     - [annotationCreatorMatches](#annotationcreatormatches)
-- [Build](#build)
-- [Test](#test)
 - [Maintainers](#maintainers)
-- [Publish](#publish)
-- [Contribute](#contribute)
+- [Contributing](#contributing)
+  - [Build](#build)
+  - [Test](#test)
+  - [Publish](#publish)
 - [License](#license)
 
 ## Install
@@ -449,7 +449,17 @@ Returns the craetor name for an annotation.
 
 Matches an annotation's creator URI against a list of URIs (e.g. from a user).
 
-## Build
+## Maintainers
+
+- [@nichtich](https://github.com/nichtich)
+
+## Contributing
+
+Please work on the `dev` branch during development (or better yet, develop in a feature branch and merge into `dev` when ready).
+
+If editing `README.md`, please conform to the [standard-readme](https://github.com/RichardLitt/standard-readme) specification.
+
+### Build
 
 ```bash
 git clone --recursive https://github.com/gbv/jskos-tools.git
@@ -463,19 +473,14 @@ API documentation can be generated in directory `jsdoc/build`:
 npm run docs
 ```
 
-## Test
+### Test
 
 ```bash
 npm test
+npm run coverage    # same with code coverage
 ```
 
-## Maintainers
-
-- [@stefandesu](https://github.com/stefandesu)
-- [@nichtich](https://github.com/nichtich)
-
-## Publish
-Please work on the `dev` branch during development (or better yet, develop in a feature branch and merge into `dev` when ready).
+### Publish
 
 When a new release is ready (i.e. the features are finished, merged into `dev`, and all tests succeed), run the included release script (replace "patch" with "minor" or "major" if necessary):
 
@@ -495,12 +500,6 @@ This will:
 - Switch back to `dev`
 
 After running this, GitHub Actions will automatically publish the new version to npm. It will also create a new GitHub Release draft. Please edit and publish the release manually.
-
-## Contribute
-
-PRs accepted.
-
-Small note: If editing the README, please conform to the [standard-readme](https://github.com/RichardLitt/standard-readme) specification.
 
 ## License
 
