@@ -1,5 +1,5 @@
 import * as _ from "./utils.js"
-import { objectTypes, guessObjectType } from "./object-types.js"
+import { objectTypes, guessObjectType, usedObjectTypes } from "./object-types.js"
 import ConceptScheme from "./concept-scheme.js"
 import languagePreference from "./language-preference.js"
 import mappingTypes from "./mapping-types.js"
@@ -912,4 +912,4 @@ export function guessSchemeFromNotation(notation, schemes) {
   })
 }
 
-export { guessObjectType, objectTypes }
+export { guessObjectType, objectTypes, usedObjectTypes }

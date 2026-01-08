@@ -3,9 +3,6 @@
  * @module jskos-tools
  */
 
-export * from "./identifiers.js"
-export * from "./tools.js"
-
 import ConceptScheme from "./concept-scheme.js"
 export { ConceptScheme }
 

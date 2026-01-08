@@ -1222,6 +1222,24 @@ describe("Tools", () => {
     }
   })
 
+  it("usedObjectTypes", () => {
+    [
+      [{}, []],
+      [{properties:[]}, []],
+      [{properties:[null]}, []],
+      [{properties:[{}]}, ["http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"]],
+      [ 
+        {concepts:[], mappings:[{},null], annotations:[{},{}]},
+        ["http://www.w3.org/2004/02/skos/core#mappingRelation","http://www.w3.org/ns/oa#Annotation"],
+      ],
+      [
+        {concepts:[{}],schemes:[{}]},
+        ["http://www.w3.org/2004/02/skos/core#Concept","http://www.w3.org/2004/02/skos/core#ConceptScheme"],
+      ],
+    ]
+      .forEach(([obj, expect]) => assert.deepEqual(tools.usedObjectTypes(obj), expect))
+  })
+
   it("guessSchemeFromNotation", () => {
     const schemes = [
       {uri:"x:notationPatternMissing"},

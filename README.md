@@ -54,6 +54,7 @@ This repository contains tools for working with the [JSKOS data format for knowl
     - [isValidUri](#isvaliduri)
     - [objectTypes](#objecttypes)
     - [guessObjectType](#guessobjecttype)
+    - [usedObjectTypes](#usedobjecttypes)
     - [guessSchemeFromNotation](#guessschemefromnotation)
     - [compareFunctions](#comparefunctions)
     - [userOwnsMapping](#userownsmapping)
@@ -386,17 +387,18 @@ Applies recursive unicode normalization to data.
 Checks whether a string is a valid URI.
 
 #### objectTypes
-
-An object that maps JSKOS object type names to their description.
+An object that maps JSKOS object type names (CamelCase) to their description.
 
 #### guessObjectType
-
 Guess the JSKOS object type of an object, URI or name and return its canonical name.
 
 ```js
 type = guessObjectType(objectOrString)        // get full name such as `ConceptScheme`
 type = guessObjectType(objectOrString, true)  // get short name such as `scheme`
 ```
+
+#### usedObjectTypes
+Return an array of object type URIs used in a dataset.
 
 #### guessSchemeFromNotation
 
