@@ -1,3 +1,7 @@
+# 1.1.2
+
+- Fix named export
+
 # 1.1.1
 
 - Extend `objectTypes` with `Service` and `Dataset` (JSKOS 0.7.1)
