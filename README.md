@@ -81,12 +81,6 @@ npm i jskos-tools
 
 jskos-tools requires Node.js 18 or later.
 
-We are also providing browser bundles:
-- Development (not minified, ~19K gzipped, ~68K not gzipped): https://cdn.jsdelivr.net/npm/jskos-tools/dist/jskos-tools.js
-- **Production** (minified, ~10K gzipped, ~26K not gzipped): https://cdn.jsdelivr.net/npm/jskos-tools@1/dist/jskos-tools.min.js
-
-[![](https://data.jsdelivr.com/v1/package/npm/jskos-tools/badge?style=rounded)](https://www.jsdelivr.com/package/npm/jskos-tools)
-
 ## Usage
 If you installed jskos-tools via npm, use it like this:
 
@@ -99,6 +93,12 @@ Or as an ES module:
 ```js
 import * as jskos from "jskos-tools"
 ```
+
+A browser bundle is provided at <https://cdn.jsdelivr.net/npm/jskos-tools/dist/jskos-tools.js>,
+<https://cdn.jsdelivr.net/npm/jskos-tools/dist/jskos-tools.umd.js>, and
+<https://cdn.jsdelivr.net/npm/jskos-tools/dist/jskos-tools.cjs.js>.
+
+[![](https://data.jsdelivr.com/v1/package/npm/jskos-tools/badge?style=rounded)](https://www.jsdelivr.com/package/npm/jskos-tools)
 
 Using the browser bundles will provide you with the `jskos` global variable.
 

@@ -14,9 +14,10 @@ const readFile = fs.promises.readFile
   // Node ESM build
   await esbuild.build({
     entryPoints: glob(`${sourceFolder}/**/*.js`),
-    platform: "node",
+    platform: "neutral",
     format: "esm",
     outdir: `${targetFolder}/esm`,
+    bundle: true,
   })
 
   // Node CJS build
