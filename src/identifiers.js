@@ -73,13 +73,24 @@ export function mappingMembersIdentifier(mapping) {
 }
 
 /**
- * Returns a hex SHA-256 digest of a UTF-8 input string using the Web Crypto API.
+ * Returns a hex SHA-256 digest of a UTF-8 input string.
+ *
+ * Uses `globalThis.crypto.subtle` (browsers, Node >= 19). Falls back to
+ * `webcrypto.subtle` for Node 18.
+ *
  * @param {string} input
  * @returns {Promise<string>}
  */
 const getSHA256Hash = async (input) => {
+  let subtle
+  if (globalThis.crypto?.subtle) {
+    subtle = globalThis.crypto.subtle
+  } else {
+    const { webcrypto } = await import("node:crypto")
+    subtle = webcrypto.subtle
+  }
   const textAsBuffer = new TextEncoder().encode(input)
-  const hashBuffer = await globalThis.crypto.subtle.digest("SHA-256", textAsBuffer)
+  const hashBuffer = await subtle.digest("SHA-256", textAsBuffer)
   const hashArray = Array.from(new Uint8Array(hashBuffer))
   const hash = hashArray
     .map(b => b.toString(16).padStart(2, "0"))
