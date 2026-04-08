@@ -18,6 +18,7 @@ This repository contains tools for working with the [JSKOS data format for knowl
     - [mappingMembers](#mappingmembers)
     - [mappingContentIdentifier](#mappingcontentidentifier)
     - [mappingMembersIdentifier](#mappingmembersidentifier)
+    - [mappingSamenessIdentifier](#mappingsamenessidentifier)
     - [addMappingIdentifiers](#addmappingidentifiers)
     - [compareMappings](#comparemappings)
     - [compareMappingMembers](#comparemappingmembers)
@@ -135,8 +136,15 @@ let contentIdentifier = jskos.mappingContentIdentifier(mapping)
 let membersIdentifier = jskos.mappingMembersIdentifier(mapping)
 ```
 
+#### mappingSamenessIdentifier
+`mappingSamenessIdentifier` computes a [mapping sameness identifier](https://ts4nfdi.github.io/mapping-sameness-identifier/) from a mapping with `subjects`, `objects`, `predicate`, and `negativity` fields. The identifier starts with `mapping:` followed by a SHA-256 hex digest, and ends with `~` when `negativity` is true.
+
+```js
+let id = jskos.mappingSamenessIdentifier({ subjects: ["http://example.org/feline"], objects: ["http://example.com/cat"], predicate: "http://www.w3.org/2002/07/owl#sameAs", negativity: false })
+```
+
 #### addMappingIdentifiers
-`addMappingIdentifiers` creates a new mapping with property "identifiers", containing mappingContentIdentifier and mappingMembersIdentifier.
+`addMappingIdentifiers` creates a new mapping with property "identifiers", containing mappingContentIdentifier, mappingMembersIdentifier, and mappingSamenessIdentifier.
 
 ```js
 let mappingWithIdentifiers = jskos.addMappingIdentifiers(mapping)

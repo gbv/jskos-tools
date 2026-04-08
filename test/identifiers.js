@@ -178,18 +178,18 @@ describe("JSKOS Mapping Identifiers", () => {
     }
   })
 
-  it("should add identifiers to the mapping", () => {
+  it("should add identifiers to the mapping", async () => {
     for (let example of examples) {
-      let mapping = identifiers.addMappingIdentifiers(example.mapping)
+      let mapping = await identifiers.addMappingIdentifiers(example.mapping)
       assert.ok(mapping.identifier != null)
       assert.ok(mapping.identifier.includes(example.contentId))
       assert.ok(mapping.identifier.includes(example.memberId))
     }
   })
 
-  it("should generate different content identifiers when member sets are empty and scheme is different", () => {
-    let mapping1 = identifiers.addMappingIdentifiers(examples2[0].mapping)
-    let mapping2 = identifiers.addMappingIdentifiers(examples2[1].mapping)
+  it("should generate different content identifiers when member sets are empty and scheme is different", async () => {
+    let mapping1 = await identifiers.addMappingIdentifiers(examples2[0].mapping)
+    let mapping2 = await identifiers.addMappingIdentifiers(examples2[1].mapping)
     let contentId1 = mapping1.identifier.find(id => id.startsWith("urn:jskos:mapping:content:"))
     let contentId2 = mapping2.identifier.find(id => id.startsWith("urn:jskos:mapping:content:"))
     assert.ok(contentId1 != null)
@@ -197,9 +197,9 @@ describe("JSKOS Mapping Identifiers", () => {
     assert.ok(contentId1 != contentId2)
   })
 
-  it("should ignore type property inside of fromScheme/toScheme", () => {
-    let mapping1 = identifiers.addMappingIdentifiers(examples2[1].mapping)
-    let mapping2 = identifiers.addMappingIdentifiers(examples2[2].mapping)
+  it("should ignore type property inside of fromScheme/toScheme", async () => {
+    let mapping1 = await identifiers.addMappingIdentifiers(examples2[1].mapping)
+    let mapping2 = await identifiers.addMappingIdentifiers(examples2[2].mapping)
     let contentId1 = mapping1.identifier.find(id => id.startsWith("urn:jskos:mapping:content:"))
     let contentId2 = mapping2.identifier.find(id => id.startsWith("urn:jskos:mapping:content:"))
     assert.ok(contentId1 != null)
