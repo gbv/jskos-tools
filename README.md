@@ -140,7 +140,7 @@ let membersIdentifier = jskos.mappingMembersIdentifier(mapping)
 `mappingSamenessIdentifier` computes a [mapping sameness identifier](https://ts4nfdi.github.io/mapping-sameness-identifier/) from a mapping with `subjects`, `objects`, `predicate`, and `negativity` fields. The identifier starts with `mapping:` followed by a SHA-256 hex digest, and ends with `~` when `negativity` is true.
 
 ```js
-let id = jskos.mappingSamenessIdentifier({ subjects: ["http://example.org/feline"], objects: ["http://example.com/cat"], predicate: "http://www.w3.org/2002/07/owl#sameAs", negativity: false })
+let id = await jskos.mappingSamenessIdentifier({ subjects: ["http://example.org/feline"], objects: ["http://example.com/cat"], predicate: "http://www.w3.org/2002/07/owl#sameAs", negativity: false })
 ```
 
 #### addMappingIdentifiers
