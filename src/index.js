@@ -6,6 +6,9 @@
 import ConceptScheme from "./concept-scheme.js"
 export { ConceptScheme }
 
+import { templateVariables } from "./link-template.js"
+export { templateVariables }
+
 import languagePreference from "./language-preference.js"
 export { languagePreference}
 
