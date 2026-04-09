@@ -67,6 +67,7 @@ This repository contains tools for working with the [JSKOS data format for knowl
     - [annotationCreatorUri](#annotationcreatoruri)
     - [annotationCreatorName](#annotationcreatorname)
     - [annotationCreatorMatches](#annotationcreatormatches)
+    - [templateVariables](#templatevariables)
 - [Maintainers](#maintainers)
 - [Contributing](#contributing)
   - [Build](#build)
@@ -458,6 +459,14 @@ Returns the craetor name for an annotation.
 #### annotationCreatorMatches
 
 Matches an annotation's creator URI against a list of URIs (e.g. from a user).
+
+#### templateVariables
+
+Returns the template variables used for [expansion of link templates](https://gbv.github.io/jskos/#expansion-of-link-templates):
+
+~~~js
+const { uri, notation, prefLabel, language } = templateVariables(concepts, { separator, languageTags })
+~~~
 
 ## Maintainers
 
