@@ -1,3 +1,9 @@
+# 1.2.0
+
+- Support mapping sameness identifier (#50)
+- Add function templateVariables for link templates (#48)
+- Replace esbuild with vite and update dependencies 
+
 # 1.1.2
 
 - Fix named export
