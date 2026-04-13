@@ -423,7 +423,8 @@ export const conceptsOfMapping = (mapping, side) => {
  * - schemes: whether to include scheme notations in output (default false)
  * - labels: whether to include concept labels in output (default false)
  * - creator: whether to include mapping creator in output (default false)
- *
+ * - uri: whether to include uri in output (default false)
+ * - identifier: whether to include additional identifiers in output (default false)
  */
 export const mappingCSV = (options = {}) => {
   const toCSV = csvSerializer(options)
@@ -451,13 +452,10 @@ export const mappingCSV = (options = {}) => {
         }
       }
     }
-    // Type
-    if (options.type) {
-      fields.push("type")
-    }
-    // Creator
-    if (options.creator) {
-      fields.push("creator")
+    for (let name of ["type","creator","uri","identifier"]) {
+      if (options[name]) {
+        fields.push(name)
+      }
     }
     return toCSV(fields)
   }
@@ -491,13 +489,17 @@ export const mappingCSV = (options = {}) => {
         }
       }
     }
-    // Type
     if (options.type) {
       fields.push(_.get(mappingTypeByUri(_.get(mapping, "type[0]")), "SHORT", ""))
     }
-    // Creator
     if (options.creator) {
-      fields.push(prefLabel(_.get(mapping, "creator[0]"), { language, fallbackToUri: false }))
+      fields.push(prefLabel(mapping.creator?.[0], { language, fallbackToUri: false }))
+    }
+    if (options.uri) {
+      fields.push(mapping.uri || "")
+    }
+    if (options.identifier) {
+      fields.push((mapping.identifier || []).join("|"))
     }
     return toCSV(fields)
   }

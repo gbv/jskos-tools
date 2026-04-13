@@ -336,10 +336,10 @@ jskos.mappingTypeByType(mapping.type)
 The default mapping type (currently `mapping relation`).
 
 #### flattenMapping
-Converts a mapping into a flat object with for serialization as CSV. Returns an object with fields `fromNotation`, `toNotation`, `type`, and (if option `language` has been provided) `fromLabel`, `toLabel`, and `creator`.
+Converts a mapping into a flat object with for serialization as CSV. Returns an object with fields `fromNotation`, `toNotation`, `type`, and (if option `language` has been provided) `fromLabel`, `toLabel`, and `creator`. See also `mappingCSV` for an alternative.
 
 #### mappingCSV
-Returns an object of preconfigured conversion functions to convert mappings into CSV. Supports 1-to-1, 1-to-n, and n-to-n mappings.
+Returns an object of preconfigured conversion functions to convert JSKOS mappings to CSV. Supports 1-to-1, 1-to-n, and n-to-n mappings.
 
 ```js
 // Initialize converter with default options
@@ -347,15 +347,18 @@ const csv = jskos.mappingCSV({
   delimiter: ",",
   quoteChar: "\"",
   lineTerminator: "\n",
-  type: true,
+  type: true,           // include mapping type
   schemes: false,
-  labels: false,
-  creator: false,
-  language: "en",
+  labels: false,        // include labels
+  creator: false,       // include name of first creator
+  language: "en",       // which language to use for labels
+  uri: false,           // include field uri
+  identifier: false,    // include field identifier
 })
 // Header line for an array of mappings (assuming 1-to-1 mappings if no array is given)
 csv.header(mappings)
-// Single CSV line for a mapping (uses fromCount and toCount from the mapping by default)
+// Single CSV line for a mapping. Uses fromCount and toCount from the mapping by default.
+// Make sure these values are the same for multiple mappings to keep same columns!
 csv.fromMapping(mapping, { fromCount: null, toCount: null })
 // Multiline CSV from array of mappings (includes header by default)
 csv.fromMappings(mappings, { header: true })
