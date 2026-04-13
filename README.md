@@ -247,8 +247,6 @@ Compares two objects based on their URIs, using `getAllUris`. Returns `true` if 
 jskos.compare(object1, object2)
 ```
 
-Aliases: `compareObjects`, `compareSchemes`, `compareConcepts`
-
 #### isConcept
 Checks whether JSKOS object is a concept based on type property.
 

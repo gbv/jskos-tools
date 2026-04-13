@@ -3,26 +3,7 @@ import { objectTypes, guessObjectType, usedObjectTypes } from "./object-types.js
 import ConceptScheme from "./concept-scheme.js"
 import languagePreference from "./language-preference.js"
 import mappingTypes from "./mapping-types.js"
-
-/**
- * Tests if a string only contains uppercase letters.
- * @private
- * @param {string} str
- */
-const isUpperCase = str => {
-  return (/^[A-Z]*$/).test(str)
-}
-
-/**
- * Safely get a nested property.
- * @private
- * @param {*} object the object to access
- * @param {*} path path expression
- */
-const getNested = (object, path) => {
-  return path.split(".").reduce(
-    (xs, x) => (xs && xs[x]) ? xs[x] : null, object)
-}
+import { conceptsOfMapping } from "./mapping.js"
 
 /**
  * Add @context URI to a JSKOS resource or to an array of JSKOS resources.
@@ -45,7 +26,7 @@ export const addContext = jskos => {
  */
 export const clean = jskos => {
   Object.keys(jskos).forEach(key => {
-    if (isUpperCase(key) || key.startsWith("_")) {
+    if ((/^[A-Z]*$/).test(key) || key.startsWith("_")) {
       delete jskos[key]
     } else {
       if (jskos[key] != null && typeof jskos[key] === "object") {
@@ -155,11 +136,6 @@ export const compare = (object1, object2) => {
   }
   return false
 }
-
-// compareObjects, compareSchemes and compareConcepts as aliases for compare, for compatibility.
-export const compareObjects = compare
-export const compareSchemes = compare
-export const compareConcepts = compare
 
 /**
  * Checks whether JSKOS object is a concept based on type property.
@@ -316,7 +292,7 @@ export const minifyMapping = mapping => {
  * @memberof module:jskos-tools
  *
  * Run `bin/localize-mapping-types` to update labels from Wikidata.
- * 
+ *
  */
 export { mappingTypes }
 
@@ -352,6 +328,14 @@ export const mappingTypeByType = function(type, defaultType = defaultMappingType
 }
 
 /**
+ * Safely get a nested property.
+ * @private
+ * @param {*} object the object to access
+ * @param {*} path path expression
+ */
+const getNested = (object, path) => path.split(".").reduce((xs, x) => (xs && xs[x]) ? xs[x] : null, object)
+
+/**
  * @memberof module:jskos-tools
  */
 export const flattenMapping = (mapping, options = {}) => {
@@ -385,28 +369,6 @@ const csvSerializer = (options = {}) => {
   const quote = s => quoteChar + (s == null ? "" : s.split(quoteChar).join(doubleQuote)) + quoteChar
 
   return row => row.map(quote).join(delimiter) + lineTerminator
-}
-
-/**
- * Returns a list of concepts for a mapping.
- *
- * @memberof module:jskos-tools
- * @param {*} mapping
- * @param {*} side - Either `from` or `to`. Default is both.
- */
-export const conceptsOfMapping = (mapping, side) => {
-  let concepts = []
-  for (let s of ["from", "to"]) {
-    if (side == null || s === side) {
-      concepts = concepts.concat(
-        _.get(mapping, `${s}.memberSet`) ||
-        _.get(mapping, `${s}.memberChoice`) ||
-        _.get(mapping, `${s}.memberList`) ||
-        [],
-      )
-    }
-  }
-  return concepts.filter(c => c != null)
 }
 
 /**
@@ -720,7 +682,7 @@ export const normalize = data => {
     })
     return data
   } else {
-    if (_.isString(data)) {
+    if (typeof data === "string") {
       return data.normalize()
     } else {
       return data
@@ -859,10 +821,7 @@ export function definition(item, options = {}) {
     || languageMapContent(item, "definition", options)
     || []
   // Make sure an array is returned
-  if (_.isString(content)) {
-    content = [content]
-  }
-  return content
+  return typeof content === "string" ? [content] : content
 }
 
 /**
@@ -871,7 +830,7 @@ export function definition(item, options = {}) {
  * @param {object} registry JSKOS registry
  */
 export function mappingRegistryIsStored(registry) {
-  return _.get(registry, "stored", _.get(registry, "constructor.stored", _.get(registry, "provider.constructor.stored", false)))
+  return (registry?.stored ?? registry?.constructor?.stored ?? registry?.provider?.constructor?.stored) || false
 }
 
 /**
@@ -879,21 +838,14 @@ export function mappingRegistryIsStored(registry) {
  *
  * @param {object} annotation a JSKOS annotation
  */
-export function annotationCreatorUri(annotation) {
-  if (_.isString(annotation.creator)) {
-    return annotation.creator
-  }
-  return annotation.creator && annotation.creator.id
-}
+export const annotationCreatorUri = ({ creator }) => typeof creator === "string" ? creator : creator?.id
 
 /**
- * Returns the craetor name for an annotation.
+ * Returns the creator name for an annotation.
  *
  * @param {object} annotation a JSKOS annotation
  */
-export function annotationCreatorName(annotation) {
-  return _.get(annotation, "creator.name") || ""
-}
+export const annotationCreatorName = ({ creator }) => creator?.name || ""
 
 /**
  * Matches an annotation's creator URI against a list of URIs (e.g. from a user).
@@ -901,17 +853,15 @@ export function annotationCreatorName(annotation) {
  * @param {object} annotation a JSKOS annotation
  * @param {array} uris array of user URIs
  */
-export function annotationCreatorMatches(annotation, uris) {
-  return !!(annotation && _.isString(annotation.creator) ? uris && uris.includes(annotation.creator) : uris && annotation.creator && uris.includes(annotation.creator.id))
-}
+export const annotationCreatorMatches = ({ creator }, uris) => uris?.includes(annotationCreatorUri({ creator }))
 
 export function guessSchemeFromNotation(notation, schemes) {
   return schemes.filter(({notationPattern}) => {
     if ((notationPattern||".+") === ".+") {
       return false
-    } 
+    }
     return RegExp("^(" + notationPattern + ")$").test(notation)
   })
 }
 
-export { guessObjectType, objectTypes, usedObjectTypes }
+export { guessObjectType, objectTypes, usedObjectTypes, conceptsOfMapping }
