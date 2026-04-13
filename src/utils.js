@@ -113,14 +113,6 @@ export function isObject(object) {
   return typeof object === "object" && object !== null
 }
 
-export function isString(str) {
-  return (str && typeof str.valueOf() === "string") ? true : false
-}
-
-export function union(a, b) {
-  return [...new Set([...a, ...b])]
-}
-
 export function unionWith(a, b, compare) {
   return [...a, ...b].reduce((p, c) => {
     if (p.findIndex(v => compare(v, c)) !== -1) {

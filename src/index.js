@@ -17,6 +17,7 @@ import * as tools from "./tools.js"
 
 export * from "./identifiers.js"
 export * from "./tools.js"
+export * from "./mapping.js"
 
 export default {
   ...identifiers,
