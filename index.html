@@ -25,7 +25,7 @@ jskos.copyDeep(object, [&quot;someCircularProperty&quot;])
 jskos.copyDeep(object, null, false)
 </code></pre><p>Aliases: <code>deepCopy</code></p><h4 id="getalluris">getAllUris</h4><p>Returns all possible URIs for a JSKOS object. Takes into consideration both the uri and identifier properties, as well as different variants of those identifiers. Returns an empty array if object is <code>null</code>.</p><pre class="prettyprint source lang-js"><code>jskos.getAllUris(object)
 </code></pre><h4 id="compare">compare</h4><p>Compares two objects based on their URIs, using <code>getAllUris</code>. Returns <code>true</code> if both objects are <code>null</code>.</p><pre class="prettyprint source lang-js"><code>jskos.compare(object1, object2)
-</code></pre><p>Aliases: <code>compareObjects</code>, <code>compareSchemes</code>, <code>compareConcepts</code></p><h4 id="isconcept">isConcept</h4><p>Checks whether JSKOS object is a concept based on type property.</p><pre class="prettyprint source lang-js"><code>jskos.isConcept(object)
+</code></pre><h4 id="isconcept">isConcept</h4><p>Checks whether JSKOS object is a concept based on type property.</p><pre class="prettyprint source lang-js"><code>jskos.isConcept(object)
 </code></pre><h4 id="isscheme">isScheme</h4><p>Checks whether JSKOS object is a concept scheme based on type property.</p><pre class="prettyprint source lang-js"><code>jskos.isScheme(object)
 </code></pre><h4 id="iscontainedin">isContainedIn</h4><p>// Checks whether an object is contained in a list of objects using <code>compare</code>.</p><pre class="prettyprint source lang-js"><code>jskos.isContainedIn(object, listOfObjects)
 </code></pre><p>Aliases: <code>isSchemeInList</code></p><h4 id="sortconcepts">sortConcepts</h4><p>Sorts a list of concepts by their notation, then URI. Returns a copy of the list. If the second parameter is <code>true</code>, it will try to sort by numerical notations.</p><pre class="prettyprint source lang-js"><code>jskos.sortConcepts(concepts)
@@ -41,20 +41,23 @@ jskos.copyDeep(object, null, false)
 }
 </code></pre><h4 id="mappingtypebyuri">mappingTypeByUri</h4><p>Returns a mapping type object for an URI.</p><pre class="prettyprint source lang-js"><code>jskos.mappingTypeByUri(&quot;http://www.w3.org/2004/02/skos/core#closeMatch&quot;)
 </code></pre><h4 id="mappingtypebytype">mappingTypeByType</h4><p>Returns a mapping type for a JSKOS type property. This is usually an array where the first type is taken, but a workaround for string types is included as well.</p><pre class="prettyprint source lang-js"><code>jskos.mappingTypeByType(mapping.type)
-</code></pre><h4 id="defaultmappingtype">defaultMappingType</h4><p>The default mapping type (currently <code>mapping relation</code>).</p><h4 id="flattenmapping">flattenMapping</h4><p>Converts a mapping into a flat object with for serialization as CSV. Returns an object with fields <code>fromNotation</code>, <code>toNotation</code>, <code>type</code>, and (if option <code>language</code> has been provided) <code>fromLabel</code>, <code>toLabel</code>, and <code>creator</code>.</p><h4 id="mappingcsv">mappingCSV</h4><p>Returns an object of preconfigured conversion functions to convert mappings into CSV. Supports 1-to-1, 1-to-n, and n-to-n mappings.</p><pre class="prettyprint source lang-js"><code>// Initialize converter with default options
+</code></pre><h4 id="defaultmappingtype">defaultMappingType</h4><p>The default mapping type (currently <code>mapping relation</code>).</p><h4 id="flattenmapping">flattenMapping</h4><p>Converts a mapping into a flat object with for serialization as CSV. Returns an object with fields <code>fromNotation</code>, <code>toNotation</code>, <code>type</code>, and (if option <code>language</code> has been provided) <code>fromLabel</code>, <code>toLabel</code>, and <code>creator</code>. See also <code>mappingCSV</code> for an alternative.</p><h4 id="mappingcsv">mappingCSV</h4><p>Returns an object of preconfigured conversion functions to convert JSKOS mappings to CSV. Supports 1-to-1, 1-to-n, and n-to-n mappings.</p><pre class="prettyprint source lang-js"><code>// Initialize converter with default options
 const csv = jskos.mappingCSV({
   delimiter: &quot;,&quot;,
   quoteChar: &quot;\&quot;&quot;,
   lineTerminator: &quot;\n&quot;,
-  type: true,
+  type: true,           // include mapping type
   schemes: false,
-  labels: false,
-  creator: false,
-  language: &quot;en&quot;,
+  labels: false,        // include labels
+  creator: false,       // include name of first creator
+  language: &quot;en&quot;,       // which language to use for labels
+  uri: false,           // include field uri
+  identifier: false,    // include field identifier
 })
 // Header line for an array of mappings (assuming 1-to-1 mappings if no array is given)
 csv.header(mappings)
-// Single CSV line for a mapping (uses fromCount and toCount from the mapping by default)
+// Single CSV line for a mapping. Uses fromCount and toCount from the mapping by default.
+// Make sure these values are the same for multiple mappings to keep same columns!
 csv.fromMapping(mapping, { fromCount: null, toCount: null })
 // Multiline CSV from array of mappings (includes header by default)
 csv.fromMappings(mappings, { header: true })
