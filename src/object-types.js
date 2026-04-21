@@ -84,7 +84,7 @@ export function guessObjectType(obj, shortname=false) {
       type = objectTypeUris[obj]
     } else {
       // given by name
-      obj = obj.toLowerCase().replace(/s$/,"")
+      obj = obj.toLowerCase().replace(/ies$/,"y").replace(/s$/,"")
       type = Object.keys(objectTypes).find(name => {
         const lowercase = name.toLowerCase()
         if (lowercase === obj || lowercase === "concept" + obj) {

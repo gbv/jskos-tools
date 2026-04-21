@@ -10,7 +10,7 @@ describe("Object Types", () => {
       let shortName = name.toLowerCase().replace(/^concept(.+)/, "$1")
       assert.equal(guessObjectType(name, true), shortName)
 
-      let plural = shortName[-1] === "y"
+      let plural = shortName.slice(-1) === "y"
         ? shortName.slice(0,-1) + "ies" : shortName + "s"
       assert.equal(guessObjectType(plural, true), shortName)
     }
