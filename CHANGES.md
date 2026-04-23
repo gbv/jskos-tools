@@ -1,9 +1,6 @@
-# 1.3.1
+# 1.2.1
 
 - Fix guessObjectType for registries
-
-# 1.3.0
-
 - Remove aliases `compareObjects`, `compareSchemes`, and `compareConcepts`
 
 # 1.2.0
