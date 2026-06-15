@@ -295,5 +295,3 @@ export const flattenMapping = (mapping, options = {}) => {
 
   return {fromNotation, toNotation, fromLabel, toLabel, type, creator}
 }
-
-

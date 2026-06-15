@@ -1,5 +1,5 @@
 import assert from "assert"
-import { conceptsOfMapping, userOwnsMapping, compareMappingsDeep, mappingCSV, minifyMapping } from "../src/mapping.js"
+import { conceptsOfMapping, userOwnsMapping, compareMappingsDeep, mappingCSV, minifyMapping } from "../src/index.js"
 
 describe("mapping", () => {
 
