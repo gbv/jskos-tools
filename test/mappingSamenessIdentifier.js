@@ -36,18 +36,18 @@ const examples = [
 
 describe("Mapping Sameness Identifier", () => {
 
-  it("should compute correct identifiers for all reference examples", async () => {
+  it("should compute correct identifiers for all reference examples", () => {
     for (const example of examples) {
       assert.strictEqual(
-        await mappingSamenessIdentifier(example.mapping),
+        mappingSamenessIdentifier(example.mapping),
         example.id,
         `failed for: ${example.name}`,
       )
     }
   })
 
-  it("should append ~ for negative mappings", async () => {
-    const id = await mappingSamenessIdentifier({
+  it("should append ~ for negative mappings", () => {
+    const id = mappingSamenessIdentifier({
       subjects: ["x:a"],
       objects: ["x:b"],
       predicate: "x:p",
@@ -56,8 +56,8 @@ describe("Mapping Sameness Identifier", () => {
     assert.ok(id.endsWith("~"), `expected id to end with ~, got: ${id}`)
   })
 
-  it("should not append ~ for non-negative mappings", async () => {
-    const id = await mappingSamenessIdentifier({
+  it("should not append ~ for non-negative mappings", () => {
+    const id = mappingSamenessIdentifier({
       subjects: ["x:a"],
       objects: ["x:b"],
       predicate: "x:p",
@@ -66,14 +66,14 @@ describe("Mapping Sameness Identifier", () => {
     assert.ok(!id.endsWith("~"), `expected id not to end with ~, got: ${id}`)
   })
 
-  it("should produce the same identifier regardless of subject/object input order", async () => {
-    const id1 = await mappingSamenessIdentifier({
+  it("should produce the same identifier regardless of subject/object input order", () => {
+    const id1 = mappingSamenessIdentifier({
       subjects: ["x:a", "x:b"],
       objects: ["x:z"],
       predicate: "x:p",
       negativity: false,
     })
-    const id2 = await mappingSamenessIdentifier({
+    const id2 = mappingSamenessIdentifier({
       subjects: ["x:b", "x:a"],
       objects: ["x:z"],
       predicate: "x:p",
@@ -82,17 +82,17 @@ describe("Mapping Sameness Identifier", () => {
     assert.strictEqual(id1, id2)
   })
 
-  it("should add sameness identifier in addMappingIdentifiers", async () => {
+  it("should add sameness identifier in addMappingIdentifiers", () => {
     const mapping = {
       from: { memberSet: [{ uri: "http://example.org/feline" }] },
       to: { memberSet: [{ uri: "http://example.com/cat" }] },
       type: ["http://www.w3.org/2002/07/owl#sameAs"],
     }
-    const result = await addMappingIdentifiers(mapping)
+    const result = addMappingIdentifiers(mapping)
     const samenessId = result.identifier.find(id => id.startsWith("mapping:"))
     assert.ok(samenessId != null, "sameness identifier should be present")
     // Verify it matches directly computed value
-    const expected = await mappingSamenessIdentifier({
+    const expected = mappingSamenessIdentifier({
       subjects: ["http://example.org/feline"],
       objects: ["http://example.com/cat"],
       predicate: "http://www.w3.org/2002/07/owl#sameAs",
@@ -101,14 +101,14 @@ describe("Mapping Sameness Identifier", () => {
     assert.strictEqual(samenessId, expected)
   })
 
-  it("should replace existing sameness identifier in addMappingIdentifiers", async () => {
+  it("should replace existing sameness identifier in addMappingIdentifiers", () => {
     const mapping = {
       from: { memberSet: [{ uri: "http://example.org/feline" }] },
       to: { memberSet: [{ uri: "http://example.com/cat" }] },
       type: ["http://www.w3.org/2002/07/owl#sameAs"],
       identifier: ["mapping:olddeadbeef"],
     }
-    const result = await addMappingIdentifiers(mapping)
+    const result = addMappingIdentifiers(mapping)
     const samenessIds = result.identifier.filter(id => id.startsWith("mapping:"))
     assert.strictEqual(samenessIds.length, 1)
     assert.ok(!samenessIds[0].includes("olddeadbeef"))

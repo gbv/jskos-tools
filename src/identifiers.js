@@ -3,6 +3,7 @@
  */
 
 import sha1 from "./sha1.js"
+import { sha256Digest } from "./sha256.js"
 
 // Reduce JSKOS set to members with URI.
 function reduceSet(set) {
@@ -73,32 +74,6 @@ export function mappingMembersIdentifier(mapping) {
 }
 
 /**
- * Returns a hex SHA-256 digest of a UTF-8 input string.
- *
- * Uses `globalThis.crypto.subtle` (browsers, Node >= 19). Falls back to
- * `webcrypto.subtle` for Node 18.
- *
- * @param {string} input
- * @returns {Promise<string>}
- */
-const getSHA256Hash = async (input) => {
-  let subtle
-  if (globalThis.crypto?.subtle) {
-    subtle = globalThis.crypto.subtle
-  } else {
-    const { webcrypto } = await import("node:crypto")
-    subtle = webcrypto.subtle
-  }
-  const textAsBuffer = new TextEncoder().encode(input)
-  const hashBuffer = await subtle.digest("SHA-256", textAsBuffer)
-  const hashArray = Array.from(new Uint8Array(hashBuffer))
-  const hash = hashArray
-    .map(b => b.toString(16).padStart(2, "0"))
-    .join("")
-  return hash
-}
-
-/**
  * Compares two strings by Unicode code point order
  * @param {string} left
  * @param {string} right
@@ -136,16 +111,16 @@ function codePointCompare (left, right) {
  * and ends with `~` when `negativity` is true.
  * @memberof module:jskos-tools
  * @param {{ subjects: string[], objects: string[], predicate: string, negativity: boolean }} mapping
- * @returns {Promise<string>}
+ * @returns {string}
  */
-export async function mappingSamenessIdentifier(mapping) {
+export function mappingSamenessIdentifier(mapping) {
   const { subjects, objects, predicate, negativity } = mapping
 
   subjects.sort(codePointCompare)
   objects.sort(codePointCompare)
 
   const str = [subjects.join("|"), predicate, objects.join("|")].join(" ")
-  const digest = await getSHA256Hash(str)
+  const digest = sha256Digest(str)
 
   return `mapping:${digest}${negativity ? "~" : ""}`
 }
@@ -153,7 +128,7 @@ export async function mappingSamenessIdentifier(mapping) {
 /**
  * @memberof module:jskos-tools
  */
-export async function addMappingIdentifiers(mapping) {
+export function addMappingIdentifiers(mapping) {
   const fromField = memberField(mapping.from || {})
   const toField = memberField(mapping.to || {})
   const subjects = fromField ? reduceSet(mapping.from[fromField]) : []
@@ -166,7 +141,7 @@ export async function addMappingIdentifiers(mapping) {
   ).concat([
     mappingMembersIdentifier(mapping),
     mappingContentIdentifier(mapping),
-    await mappingSamenessIdentifier({ subjects, objects, predicate, negativity: false }),
+    mappingSamenessIdentifier({ subjects, objects, predicate, negativity: false }),
   ]).sort()
   return Object.assign({}, mapping, {identifier})
 }
