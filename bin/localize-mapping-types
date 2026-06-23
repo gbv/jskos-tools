@@ -4,7 +4,6 @@
  */
 import wdk from "wikidata-sdk"
 import fs from "node:fs"
-import axios from "axios"
 import path from "node:path"
 import { fileURLToPath } from "node:url"
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
@@ -28,8 +27,11 @@ const query = `SELECT ?uri ?label WHERE {
 } ORDER BY LANG(?label)`
 
 const url = wdk.sparqlQuery(query)
+const headers = { 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.82 Safari/537.36' }
 
-axios.get(url).then(res => res.data.results.bindings)
+fetch(url, { headers })
+  .then(res => res.json())
+  .then(res => res.results.bindings)
   .then(res => {
     res.forEach(row => {
       let uri = row.uri.value

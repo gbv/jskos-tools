@@ -302,7 +302,7 @@ An array of mapping types in form of objects. Objects can have the following pro
 - `RELEVANCE` - relevance label for GND terms (low, medium, high, very high)
 - `SHORT` - a short name for the type, used for CSV import/export
 
-The labels are taken from Wikidata (see script `bin/localize-mapping-types`).
+The labels are taken from Wikidata (see script `bin/localize-mapping-types`). Please adjust labels of Wikidata items listed at <https://w.wiki/Rg6a> and open an issue to update labels, if needed.
 
 Example object:
 ```json
