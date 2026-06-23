@@ -469,6 +469,17 @@ Returns the template variables used for [expansion of link templates](https://gb
 const { uri, notation, prefLabel, language } = templateVariables(concepts, { separator, languageTags })
 ~~~
 
+Requires an additional library such as [url-template](https://www.npmjs.com/package/url-template) to execute the actual URI expansion:
+
+~~~js
+import { templateVariables } from 'jskos-tools'
+import { parseTemplate } from 'url-template'
+
+const template = parseTemplate("http://example.org/lookup/{language}?id={uri}")
+const vars = templateVariables(concepts, { separator: "," })
+const url = template.expand(vars)
+~~~
+
 ## Maintainers
 
 - [@nichtich](https://github.com/nichtich)
