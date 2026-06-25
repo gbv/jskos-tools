@@ -1,3 +1,7 @@
+# 1.3.1
+
+- Update labels for mapping types
+
 # 1.3.0
 
 - Use synchronous SHA-256 implementation in pure JavaScript and change
